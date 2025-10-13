@@ -5,6 +5,7 @@ public class Enemy : HealthSystem
 {
     [Header("에너미 설1정")] 
     [SerializeField] private float attackRange = 2f;
+    [SerializeField] private float chaseRange = 10f;
     [SerializeField] private LayerMask playerMask;
     [field:SerializeField] public EnemyData EnemyData { get; private set; }
     
@@ -42,9 +43,16 @@ public class Enemy : HealthSystem
         return Physics2D.OverlapCircle(transform.position, attackRange, playerMask);
     }
 
+    public bool ChaseInPlayer()
+    {
+        return Physics2D.OverlapCircle(transform.position, chaseRange, playerMask);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, chaseRange);
     }
 }

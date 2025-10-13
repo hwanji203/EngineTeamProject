@@ -10,6 +10,7 @@ public class EnemyBrain : MonoBehaviour
         _enemy = GetComponent<Enemy>();
         
         _enemyStateMachine = new EnemyStateMachine(this);
+        _enemyStateMachine.AddState(StateType.Idle, new IdleState(_enemy, _enemyStateMachine, "Idle"));
         _enemyStateMachine.AddState(StateType.Chase, new ChaseState(_enemy, _enemyStateMachine, "Chase"));
         _enemyStateMachine.AddState(StateType.Attack, new AttackState(_enemy, _enemyStateMachine, "Attack"));
     }
@@ -25,9 +26,13 @@ public class EnemyBrain : MonoBehaviour
         {
             _enemyStateMachine.ChangeState(StateType.Attack);
         }
-        else
+        else if (_enemy.ChaseInPlayer())
         {
             _enemyStateMachine.ChangeState(StateType.Chase);
+        }
+        else
+        {
+            _enemyStateMachine.ChangeState(StateType.Idle);
         }
         
         _enemyStateMachine.currentState.UpdateState();

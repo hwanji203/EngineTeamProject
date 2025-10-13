@@ -9,6 +9,7 @@ public class IdleState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
+        Enemy.AgentMovemant.SetStat(0,0);
     }
 
     public override void UpdateState()

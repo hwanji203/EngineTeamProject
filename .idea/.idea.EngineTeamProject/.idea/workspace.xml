@@ -5,49 +5,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Death.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Hurt.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Hurt.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Idle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Idle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Special.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Special.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Walk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Walk.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/1.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/1.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/2.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/3.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/3.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Death.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Hurt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Idle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Special.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Special.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Walk.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/1.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/1.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/2.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/2.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/3.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0005_Asset/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/3.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/AgentMovemant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/AgentMovemant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/EnemyBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/EnemyBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/AttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/ChaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/NormalEnemyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/NormalEnemyData.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +97,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/EnemyBrain.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/EnemyStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/AttackState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/EnemyState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/IdleState.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -161,6 +192,8 @@
       <workItem from="1760248438076" duration="710000" />
       <workItem from="1760249192040" duration="575000" />
       <workItem from="1760253063540" duration="4274000" />
+      <workItem from="1760337472928" duration="6491000" />
+      <workItem from="1760369511679" duration="40000" />
     </task>
     <servers />
   </component>

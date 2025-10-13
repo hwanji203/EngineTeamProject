@@ -19,7 +19,7 @@ public class ChaseState : EnemyState
 
     public override void UpdateState()
     {
-        Enemy.AgentMovemant.SetSpeed(Enemy.EnemyData.moveSpeed);
+        Enemy.AgentMovemant.SetStat(Enemy.EnemyData.moveSpeed,0);
         
         if (_chackDelay < _currentChackTime)
         {

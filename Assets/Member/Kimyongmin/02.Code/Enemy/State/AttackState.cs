@@ -10,7 +10,7 @@ public class AttackState : EnemyState
     {
         base.EnterState();
         Debug.Log("EnterAttack");
-        Enemy.AgentMovemant.SetSpeed(0);
+        Enemy.AgentMovemant.SetStat(0, 0);
     }
 
     public override void UpdateState()
