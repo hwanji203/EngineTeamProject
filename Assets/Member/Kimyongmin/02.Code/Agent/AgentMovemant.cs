@@ -10,12 +10,9 @@ public class AgentMovemant : MonoBehaviour
     private float _moveDelay;
     private float _currentMoveDelay;
 
-    private float _drag = 5f;
-
     private void Awake()
     {
         RbCompo = GetComponent<Rigidbody2D>();
-        RbCompo.linearDamping = _drag;
     }
 
     public void SetMoveDir(Vector2 moveDir)
@@ -34,13 +31,22 @@ public class AgentMovemant : MonoBehaviour
     //     _currentMoveDelay += Time.deltaTime;
     //     if (_moveDelay < _currentMoveDelay)
     //     {
-    //         _currentMoveDelay
+    //         _currentMoveDelay;
     //     }
     // }
 
+    private float _smooth = 3;
+    private Vector2 _targetVel;
+    
     private void FixedUpdate()
     {
+        Vector2 currentDir = RbCompo.linearVelocity.normalized;
         
-        RbCompo.linearVelocity = _moveDir * _speed;
+            if (RbCompo.linearVelocity.sqrMagnitude < 0.01f)
+            currentDir = _moveDir;
+            
+        Vector2 newDir = Vector2.Lerp(currentDir, _moveDir, _smooth * Time.fixedDeltaTime).normalized;
+
+        RbCompo.linearVelocity = newDir * _speed;
     }
 }

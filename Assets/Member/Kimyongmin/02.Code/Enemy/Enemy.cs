@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Enemy : HealthSystem
+public abstract class Enemy : HealthSystem
 {
     [Header("에너미 설1정")] 
     [SerializeField] private float attackRange = 2f;
