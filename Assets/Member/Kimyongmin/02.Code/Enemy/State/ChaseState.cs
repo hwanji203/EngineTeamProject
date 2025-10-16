@@ -8,7 +8,7 @@ public class ChaseState : EnemyState
     
     public ChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine, string animBoolName) : base(enemy, enemyStateMachine, animBoolName)
     {
-        _chackDelay = enemy.EnemyData.detectDelay;
+        _chackDelay = enemy.EnemyDataSo.detectDelay;
     }
 
     public override void EnterState()
@@ -19,11 +19,17 @@ public class ChaseState : EnemyState
 
     public override void UpdateState()
     {
-        Enemy.AgentMovemant.SetStat(Enemy.EnemyData.moveSpeed,0);
+        Enemy.AgentMovemant.SetStat(Enemy.EnemyDataSo.moveSpeed,0);
+        _currentChackTime += Time.deltaTime;
         
-        if (_chackDelay < _currentChackTime)
+        if (_chackDelay < _currentChackTime && Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)
         {
             Enemy.AgentMovemant.SetMoveDir(Enemy.GetTarget());
+            _currentChackTime = 0;
+        }
+        else
+        {
+            Enemy.AgentMovemant.SetMoveDir(-Enemy.GetTarget());
             _currentChackTime = 0;
         }
 
@@ -31,8 +37,9 @@ public class ChaseState : EnemyState
         {
             EnemyStateMachine.ChangeState(StateType.Attack);
         }
-        
-        _currentChackTime += Time.deltaTime;
+
+        Enemy.FilpX(-Enemy.GetTarget().x);
+
     }
 
     public override void ExitState()

@@ -198,7 +198,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: b28561b57b9ba1644a15da77d9767183, type: 3}
+  m_Sprite: {fileID: 7663568278468371721, guid: d8b335991ec7c3147aea04045b65cb49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -235,10 +235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CategoryHash: 0.009161512
+  m_CategoryHash: 6.3620425e-24
   m_labelHash: 0.009161512
   m_SpriteKey: 0
-  m_SpriteHash: 866593510
+  m_SpriteHash: 1021840339
 --- !u!95 &71000042
 Animator:
   serializedVersion: 7
@@ -249,7 +249,7 @@ Animator:
   m_GameObject: {fileID: 71000037}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 233ab5f58b172f54e9da2b030ec5c5f9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -290,7 +290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51489a72c5d9734c881a8235f082e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testValue: 0
 --- !u!4 &98819534
 Transform:
   m_ObjectHideFlags: 0
@@ -391,7 +390,7 @@ Transform:
   m_GameObject: {fileID: 894346449}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.794, y: 0.881, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -525,9 +524,9 @@ GameObject:
   - component: {fileID: 1418956087}
   - component: {fileID: 1418956088}
   - component: {fileID: 1418956089}
-  - component: {fileID: 1418956090}
+  - component: {fileID: 1418956092}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -542,7 +541,7 @@ Transform:
   m_GameObject: {fileID: 1418956084}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.04, y: 2.58, z: 0}
+  m_LocalPosition: {x: -0.57, y: 0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -600,8 +599,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1418956090
-BoxCollider2D:
+--- !u!114 &1418956091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418956084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc63cefc65e7a74db84955238368929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 0
+  chaseRange: 10
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  <EnemyDataSo>k__BackingField: {fileID: 11400000, guid: 4b63da7aaac8e2f4c9019ce4d2f39217, type: 2}
+--- !u!70 &1418956092
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -634,36 +651,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &1418956091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418956084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc63cefc65e7a74db84955238368929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: 0
-  chaseRange: 10
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  <EnemyData>k__BackingField: {fileID: 11400000, guid: 10d1c171350d6df45b781795e6bb21a3, type: 2}
+  m_Offset: {x: 0.008119466, y: 0.008119181}
+  m_Size: {x: 0.6914744, y: 0.3261114}
+  m_Direction: 1
 --- !u!1 &1779180265
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +716,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

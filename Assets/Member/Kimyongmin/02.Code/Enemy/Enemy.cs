@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using DG.Tweening;
 
 public abstract class Enemy : HealthSystem
 {
@@ -7,13 +7,13 @@ public abstract class Enemy : HealthSystem
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float chaseRange = 10f;
     [SerializeField] private LayerMask playerMask;
-    [field:SerializeField] public EnemyData EnemyData { get; private set; }
+    [field:SerializeField] public EnemyDataSO EnemyDataSo { get; private set; }
     
     public AgentMovemant AgentMovemant { get; private set; }
 
     private Transform _target;
 
-    private void Awake()
+    protected virtual void  Awake()
     {
         AgentMovemant = GetComponent<AgentMovemant>();
     }
@@ -23,14 +23,21 @@ public abstract class Enemy : HealthSystem
         Collider2D targetColl = Physics2D.OverlapCircle(transform.position, 519f, playerMask);
         if (targetColl != null)
             _target = targetColl.transform;
+        
+        
     }
 
     public void FilpX(float xDir)
     {
+        float angle = Mathf.Atan2(GetTarget().y,GetTarget().x) * Mathf.Rad2Deg;
+        
         if (xDir > 0)
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.DORotate(new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z), 0.2f);
         else if (xDir < 0)
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            transform.DORotate(new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z), 0.2f);
+        
+        transform.eulerAngles = new Vector3(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y, 
+            angle);
     }
 
     public Vector2 GetTarget()
