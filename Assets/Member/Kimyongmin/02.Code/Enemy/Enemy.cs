@@ -24,20 +24,22 @@ public abstract class Enemy : HealthSystem
         if (targetColl != null)
             _target = targetColl.transform;
         
-        
+        AgentMovemant.SetStat(EnemyDataSo.moveSpeed, 0);
     }
-
+    
     public void FilpX(float xDir)
     {
-        float angle = Mathf.Atan2(GetTarget().y,GetTarget().x) * Mathf.Rad2Deg;
+        float duration = 1f / EnemyDataSo.moveSpeed;
         
+
         if (xDir > 0)
-            transform.DORotate(new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z), 0.2f);
+        {
+            transform.DORotate(new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z), duration);
+        }
         else if (xDir < 0)
-            transform.DORotate(new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z), 0.2f);
-        
-        transform.eulerAngles = new Vector3(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y, 
-            angle);
+        {
+            transform.DORotate(new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z), duration);
+        }
     }
 
     public Vector2 GetTarget()
@@ -47,7 +49,10 @@ public abstract class Enemy : HealthSystem
 
     public bool AttackInPlayer()
     {
-        return Physics2D.OverlapCircle(transform.position, attackRange, playerMask);
+        if (EnemyDataSo.EnemyType != EnemyType.NotAggressive)
+            return Physics2D.OverlapCircle(transform.position, attackRange, playerMask);
+
+        return false;
     }
 
     public bool ChaseInPlayer()

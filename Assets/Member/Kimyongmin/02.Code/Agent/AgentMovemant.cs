@@ -35,7 +35,7 @@ public class AgentMovemant : MonoBehaviour
     //     }
     // }
 
-    private float _smooth = 3;
+    private float _smooth = 4;
     private Vector2 _targetVel;
     
     private void FixedUpdate()

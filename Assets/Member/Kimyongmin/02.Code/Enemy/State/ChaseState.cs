@@ -19,7 +19,6 @@ public class ChaseState : EnemyState
 
     public override void UpdateState()
     {
-        Enemy.AgentMovemant.SetStat(Enemy.EnemyDataSo.moveSpeed,0);
         _currentChackTime += Time.deltaTime;
         
         if (_chackDelay < _currentChackTime && Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)

@@ -17,7 +17,7 @@ public class EnemyBrain : MonoBehaviour
 
     private void Start()
     {
-        _enemyStateMachine.Initialize(StateType.Chase);
+        _enemyStateMachine.Initialize(StateType.Idle);
     }
 
     private void Update()
