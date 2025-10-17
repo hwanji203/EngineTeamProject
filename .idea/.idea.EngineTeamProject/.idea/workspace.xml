@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/SpriteLibrary.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/SpriteLibrary/Enemy.spriteLib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/SpriteLibrary/Enemy.spriteLib.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Death.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Hurt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Idle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Special.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Special.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Walk.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/1.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/1.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/2.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/2.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/3.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/3.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Fish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Fish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyDataSO.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/ChaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/NormalEnemyData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/NormalEnemyData.asset.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2431722e3e3e41d78b6718bb39ab91111df400/32/f88f2c8c/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/10/a2a6461a/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41be6feeab6c4531be9c4de02d5acaa92f400/5d/992e8472/Physics2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/b8/d3b9e340/IEnumerable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cca89918937e838503d883f1aa1784c57493a1cacd61b1f5fe1ebf5a1e3567a/System.Numerics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/HealthSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Ang.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/EnemyBrain.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/EnemyStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyDataSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/FishDataSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/AttackState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/EnemyState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/IdleState.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="335Wrq15oNi5Ktmn3mvRFu8SIyN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Kimyongmin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
+    <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UnityProject\EngineTeamProject -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\UnityProject\EngineTeamProject" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath D:\UnityProject\EngineTeamProject -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\UnityProject\EngineTeamProject" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="useMixedMode" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unreal 에디터에 연결 후 재생" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="useMixedMode" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="" />
+      <created>1758607615655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758607615655</updated>
+      <workItem from="1758607618768" duration="10000" />
+      <workItem from="1758607746424" duration="9230000" />
+      <workItem from="1758627902447" duration="4369000" />
+      <workItem from="1758671576643" duration="2180000" />
+      <workItem from="1759214493573" duration="7240000" />
+      <workItem from="1760234444468" duration="3206000" />
+      <workItem from="1760248438076" duration="710000" />
+      <workItem from="1760249192040" duration="575000" />
+      <workItem from="1760253063540" duration="4274000" />
+      <workItem from="1760337472928" duration="6491000" />
+      <workItem from="1760369511679" duration="40000" />
+      <workItem from="1760455326417" duration="1098000" />
+      <workItem from="1760457058296" duration="35000" />
+      <workItem from="1760490484132" duration="15364000" />
+      <workItem from="1760535125979" duration="3095000" />
+      <workItem from="1760582612814" duration="8148000" />
+      <workItem from="1760609194160" duration="1252000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
