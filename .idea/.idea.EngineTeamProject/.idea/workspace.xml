@@ -4,86 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/SpriteLibrary.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/SpriteLibrary/Enemy.spriteLib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/SpriteLibrary/Enemy.spriteLib.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Attack4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Death.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Death.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Hurt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Hurt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Idle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Special.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Special.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Walk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/2/Walk.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/1.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/1.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/2.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/2.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/3.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/PSD/3.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Fish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Fish.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyDataSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/SO/EnemyDataSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/ChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/NormalEnemyData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/NormalEnemyData.asset.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,6 +131,7 @@
       <workItem from="1760535125979" duration="3095000" />
       <workItem from="1760582612814" duration="8148000" />
       <workItem from="1760609194160" duration="1252000" />
+      <workItem from="1760612852306" duration="6872000" />
     </task>
     <servers />
   </component>
