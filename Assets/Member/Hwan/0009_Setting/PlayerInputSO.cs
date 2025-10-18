@@ -10,7 +10,7 @@ public class PlayerInputSO : ScriptableObject, IPlayerActions
     private Controlls controlls;
 
     public event Action OnMouseClick;
-    public event Action<bool> OnSpaceDown;
+    public event Action<bool> OnSpaceBtnChanged;
     public event Action<Vector2> OnMouseMove;
 
     private void OnEnable()
@@ -39,7 +39,7 @@ public class PlayerInputSO : ScriptableObject, IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        OnSpaceDown?.Invoke(context.performed);
+        OnSpaceBtnChanged?.Invoke(context.performed);
     }
 
     public void OnAim(InputAction.CallbackContext context)

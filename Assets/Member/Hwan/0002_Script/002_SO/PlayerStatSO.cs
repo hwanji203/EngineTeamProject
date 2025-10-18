@@ -10,7 +10,9 @@ public class PlayerStatSO : ScriptableObject
     public float hp;
     public float nomalDmg;
     public float dashDmg;
-    public float dashLength;
-    public float moveSpeed;
+    public float dashPower;
+    public float dashTime;
+    public float acceleration;
     public float rotateSpeed;
+    public float maxSpeed;
 }

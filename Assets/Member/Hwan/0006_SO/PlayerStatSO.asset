@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: PlayerStatSO
   m_EditorClassIdentifier: 
   maxstamina: 0
-  decreaseValue: 0
+  decreaseValue: 10
   hp: 9
   nomalDmg: 0
   dashDmg: 9
-  dashLength: 0
-  moveSpeed: 9
-  rotateSpeed: 766
+  dashPower: 1350
+  dashTime: 0.2
+  acceleration: 600
+  rotateSpeed: 750
+  maxSpeed: 1.65

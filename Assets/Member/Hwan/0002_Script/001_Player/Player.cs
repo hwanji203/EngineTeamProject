@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -21,9 +22,34 @@ public class Player : MonoBehaviour
         playerAttack = GetComponent<PlayerAttack>();
         playerAttack.StatSO = statSO;
 
-        inputSO.OnMouseMove += playerMovement.SetMouseDeg;
-        inputSO.OnSpaceDown += (performed) => IsMoving = performed;
-        //inputSO.OnMouseClick += () => playerAttack.Attack(playerMovement.IsMoving);
+        InputInitialize();
+        AnimationInitialize();
+    }
+
+    private void AnimationInitialize()
+    {
+        playerMovement.OnMoveChange += playerAnimation.ChangeAnimation;
+    }
+
+    private void InputInitialize()
+    {
+        inputSO.OnMouseMove += (mousePos) => playerMovement.MousePos = mousePos;
+        inputSO.OnSpaceBtnChanged += (isPerformed) => playerMovement.DoMove = isPerformed;
+        inputSO.OnMouseClick += () =>
+        {
+            bool canDash = playerMovement.DoMove && playerMovement.CanMove;
+            
+            playerAttack.Attack(canDash);
+
+            if (canDash == true)
+            {
+                playerMovement.DashMove();
+            }
+            else
+            {
+                playerAnimation.ChangeAnimation(PlayerState.Attack);
+            }
+        };
     }
 
     private void Update()
