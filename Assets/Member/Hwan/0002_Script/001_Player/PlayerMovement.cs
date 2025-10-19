@@ -7,8 +7,6 @@ using static UnityEngine.Rendering.DebugUI;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerMovementSO movementSO;
-    [SerializeField] private float dashDamping;
-    [SerializeField] private float mousePosLimitsRadius;
 
     private Rigidbody2D rb;
     public Vector2 MousePos { get; set; }
@@ -17,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 MoveDir { get; private set; }
 
     private Coroutine waitMoveCoroutine;
-    private float defaultDamping;
 
     public event Action<PlayerState> OnMoveChange;
 
@@ -25,13 +22,16 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-        defaultDamping = rb.linearDamping;
+        rb.linearDamping = movementSO.decreaseValue;
+        rb.gravityScale = movementSO.gravityScale;
 
         CanMove = true;
         DoMove = false;
     }
     private void Update()
     {
+        if (CanMove == false) return;
+
         Rotate();
         Move();
     }
@@ -44,10 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if (CanMove == false) return;
-
-        Debug.Log(DoMove);
-
         if (DoMove == true)
         {
             //스테미나 없으면 canMove false때리고 return
@@ -79,38 +75,33 @@ public class PlayerMovement : MonoBehaviour
                 {
                     rb.linearVelocity = Vector2.zero;
                     rb.AddForce(MoveDir * movementSO.dashPower, ForceMode2D.Force);
-                    rb.linearDamping = dashDamping;
-                    waitMoveCoroutine = StartCoroutine(DashCoroutine(movementSO.dashTime));
+                    rb.linearDamping = movementSO.dashDamping;
+                    waitMoveCoroutine = StartCoroutine(MoveCoroutine(movementSO.dashTime));
                 }
                 break;
             case PlayerAttackType.Default:
                 if (waitMoveCoroutine == null)
                 {
-                    transform.DORotate(new Vector3(0, 0, 360), movementSO.attackTime, RotateMode.FastBeyond360).SetEase(Ease.InCirc);
-                    waitMoveCoroutine = StartCoroutine(AttackCoroutine(movementSO.attackTime));
+                    transform.DORotate(new Vector3(0, 0, transform.eulerAngles.z + 360), movementSO.attackTime, RotateMode.FastBeyond360).SetEase(Ease.OutCirc);
+                    waitMoveCoroutine = StartCoroutine(MoveCoroutine(movementSO.attackTime));
                 }
                 break;
         }
     }
 
-    private IEnumerator DashCoroutine(float waitTime)
+    private IEnumerator MoveCoroutine(float waitTime)
     {
+        rb.gravityScale = 0;
         yield return new WaitForSeconds(waitTime);
+        rb.gravityScale = movementSO.gravityScale;
         CanMove = true;
-        waitMoveCoroutine = null;
-    }
-
-    private IEnumerator AttackCoroutine(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        CanMove = true;
-        rb.linearDamping = defaultDamping;
+        rb.linearDamping = movementSO.dashDamping;
         waitMoveCoroutine = null;
     }
 
     private void UpdateZValue()
     {
-        if ((MousePos - (Vector2)transform.position).magnitude > mousePosLimitsRadius) return;
+        if ((MousePos - (Vector2)transform.position).magnitude < movementSO.limitPos) return;
 
         float targetRad = Mathf.Atan2(MousePos.y - transform.position.y, MousePos.x - transform.position.x);
         float mouseDeg = targetRad * Mathf.Rad2Deg;

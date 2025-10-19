@@ -6,9 +6,11 @@ public class PlayerMovementSO : ScriptableObject
     [Header("DashAttack Setting")]
     public float dashTime; 
     public float dashPower;
+    public float dashDamping;
 
     [Header("Rotate Setting")]
     public float rotateSpeed;
+    public float limitPos;
 
     [Header("Move Setting")]
     public float acceleration;
@@ -18,4 +20,7 @@ public class PlayerMovementSO : ScriptableObject
     [Header("FlipAttack Setting")]
     public float attackSpeed;
     public float attackTime;
+
+    [Header("Others")]
+    public float gravityScale;
 }

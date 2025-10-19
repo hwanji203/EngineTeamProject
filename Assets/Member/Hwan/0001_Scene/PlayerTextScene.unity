@@ -431,8 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae3d6d4b277f8a4696e9d7c3cc7072d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDamping: 10
-  mousePosLimitsRadius: 0.5
+  movementSO: {fileID: 11400000, guid: 49f46e6aea384b147bac4ecfeb896325, type: 2}
 --- !u!58 &1181564150
 CircleCollider2D:
   m_ObjectHideFlags: 0
