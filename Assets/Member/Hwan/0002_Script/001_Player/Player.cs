@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
         playerAnimation = GetComponentInChildren<PlayerAnimation>();
 
         playerMovement = GetComponent<PlayerMovement>();
-        playerMovement.StatSO = statSO;
 
         playerAttack = GetComponent<PlayerAttack>();
         playerAttack.StatSO = statSO;
@@ -29,6 +28,7 @@ public class Player : MonoBehaviour
     private void AnimationInitialize()
     {
         playerMovement.OnMoveChange += playerAnimation.ChangeAnimation;
+        playerAnimation.OnAttack += playerMovement.AttackMove;
     }
 
     private void InputInitialize()
@@ -37,13 +37,13 @@ public class Player : MonoBehaviour
         inputSO.OnSpaceBtnChanged += (isPerformed) => playerMovement.DoMove = isPerformed;
         inputSO.OnMouseClick += () =>
         {
-            bool canDash = playerMovement.DoMove && playerMovement.CanMove;
-            
-            playerAttack.Attack(canDash);
+            if (playerMovement.CanMove == false) return;
 
-            if (canDash == true)
+            playerMovement.CanMove = false;
+
+            if (playerMovement.DoMove)
             {
-                playerMovement.DashMove();
+                playerAnimation.ChangeAnimation(PlayerState.Dash);
             }
             else
             {

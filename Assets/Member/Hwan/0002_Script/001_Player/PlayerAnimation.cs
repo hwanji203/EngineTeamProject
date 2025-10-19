@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,15 +10,23 @@ public enum PlayerState
     Attack
 }
 
+public enum PlayerAttackType
+{
+    Default,
+    Dash
+}
+
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator animator;
 
     private Dictionary<PlayerState, int> animationDictionary = new();
 
+    public event Action<PlayerAttackType> OnAttack;
+
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
 
         animationDictionary.Add(PlayerState.Idle, Animator.StringToHash("Idle"));
         animationDictionary.Add(PlayerState.Move, Animator.StringToHash("Move"));
@@ -36,5 +45,10 @@ public class PlayerAnimation : MonoBehaviour
         }
 
         animator.SetBool(animationDictionary[state], true);
+    }
+
+    public void StartDash(PlayerAttackType type)
+    {
+        OnAttack?.Invoke(type);
     }
 }

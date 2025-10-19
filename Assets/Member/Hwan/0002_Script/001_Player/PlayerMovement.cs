@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -5,37 +6,26 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private PlayerMovementSO movementSO;
     [SerializeField] private float dashDamping;
     [SerializeField] private float mousePosLimitsRadius;
 
     private Rigidbody2D rb;
-    public PlayerStatSO StatSO { get; set; }
-    public Vector2 MoveDir { get; private set; }
-    public bool CanMove { get; private set; }
     public Vector2 MousePos { get; set; }
+    public bool DoMove { get; set; }
+    public bool CanMove { get; set; }
+    public Vector2 MoveDir { get; private set; }
 
-    private bool doMove;
     private Coroutine waitMoveCoroutine;
     private float defaultDamping;
 
     public event Action<PlayerState> OnMoveChange;
 
-    public bool DoMove 
-    {
-        get
-        {
-            return doMove;
-        }
-        set
-        {
-            doMove = value;
-        }
-    }
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+        defaultDamping = rb.linearDamping;
 
         CanMove = true;
         DoMove = false;
@@ -49,8 +39,7 @@ public class PlayerMovement : MonoBehaviour
     private void Rotate()
     {
         UpdateZValue();
-        if ((MousePos - (Vector2)transform.position).magnitude > mousePosLimitsRadius)
-            RotateMove();
+        RotateMove();
     }
 
     private void Move()
@@ -72,8 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void GoDirectionMove()
     {
-        rb.AddForce(MoveDir * Time.deltaTime * StatSO.acceleration, ForceMode2D.Force);
-        rb.linearVelocity = rb.linearVelocity.normalized * Mathf.Clamp(rb.linearVelocity.magnitude, 0, StatSO.maxSpeed);
+        rb.AddForce(MoveDir * Time.deltaTime * movementSO.acceleration, ForceMode2D.Force);
+        rb.linearVelocity = rb.linearVelocity.normalized * Mathf.Clamp(rb.linearVelocity.magnitude, 0, movementSO.maxSpeed);
     }
     
     private void RotateMove()
@@ -81,21 +70,38 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(MoveDir.y, MoveDir.x)) * Mathf.Rad2Deg);
     }
 
-    public void DashMove()
+    public void AttackMove(PlayerAttackType type)
     {
-        if (waitMoveCoroutine == null)
+        switch (type)
         {
-            OnMoveChange?.Invoke(PlayerState.Dash);
-            rb.linearVelocity = Vector2.zero;
-            rb.AddForce(MoveDir * StatSO.dashPower, ForceMode2D.Force);
-            rb.linearDamping = dashDamping;
-            waitMoveCoroutine = StartCoroutine(DashCoroutine(StatSO.dashTime));
+            case PlayerAttackType.Dash:
+                if (waitMoveCoroutine == null)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    rb.AddForce(MoveDir * movementSO.dashPower, ForceMode2D.Force);
+                    rb.linearDamping = dashDamping;
+                    waitMoveCoroutine = StartCoroutine(DashCoroutine(movementSO.dashTime));
+                }
+                break;
+            case PlayerAttackType.Default:
+                if (waitMoveCoroutine == null)
+                {
+                    transform.DORotate(new Vector3(0, 0, 360), movementSO.attackTime, RotateMode.FastBeyond360).SetEase(Ease.InCirc);
+                    waitMoveCoroutine = StartCoroutine(AttackCoroutine(movementSO.attackTime));
+                }
+                break;
         }
     }
 
     private IEnumerator DashCoroutine(float waitTime)
     {
-        CanMove = false;
+        yield return new WaitForSeconds(waitTime);
+        CanMove = true;
+        waitMoveCoroutine = null;
+    }
+
+    private IEnumerator AttackCoroutine(float waitTime)
+    {
         yield return new WaitForSeconds(waitTime);
         CanMove = true;
         rb.linearDamping = defaultDamping;
@@ -104,10 +110,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateZValue()
     {
+        if ((MousePos - (Vector2)transform.position).magnitude > mousePosLimitsRadius) return;
+
         float targetRad = Mathf.Atan2(MousePos.y - transform.position.y, MousePos.x - transform.position.x);
         float mouseDeg = targetRad * Mathf.Rad2Deg;
 
-        float targetDeg = Mathf.MoveTowardsAngle(transform.eulerAngles.z, mouseDeg, StatSO.rotateSpeed * Time.deltaTime);
+        float targetDeg = Mathf.MoveTowardsAngle(transform.eulerAngles.z, mouseDeg, movementSO.rotateSpeed * Time.deltaTime);
 
         MoveDir = new Vector2(Mathf.Cos(targetDeg * Mathf.Deg2Rad), Mathf.Sin(targetDeg * Mathf.Deg2Rad));
     }
