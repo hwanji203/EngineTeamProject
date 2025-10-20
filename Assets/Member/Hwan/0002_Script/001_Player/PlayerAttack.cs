@@ -10,9 +10,9 @@ public class PlayerAttack : MonoBehaviour
     // 스페이스바가 눌렸으면 대시, 아니면 기본 공격
     // 공격 이벤트 발생
 
-    public void Attack(bool moving)
+    public void Attack(PlayerAttackType type)
     {
-        if (moving)
+        if (type == PlayerAttackType.Dash)
         {
             OnDashAttack?.Invoke();
             Debug.Log("대시 공격");

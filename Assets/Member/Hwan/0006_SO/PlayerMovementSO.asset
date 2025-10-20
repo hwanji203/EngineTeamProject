@@ -17,6 +17,7 @@ MonoBehaviour:
   dashDamping: 10
   rotateSpeed: 750
   limitPos: 0.5
+  moveRotateSpeed: 100
   acceleration: 600
   decreaseValue: 3
   maxSpeed: 1.65

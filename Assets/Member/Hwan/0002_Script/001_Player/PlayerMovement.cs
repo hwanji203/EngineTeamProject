@@ -10,11 +10,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     public Vector2 MousePos { get; set; }
-    public bool DoMove { get; set; }
-    public bool CanMove { get; set; }
+    public bool DoMove { get; private set; }
+    public bool CanMove { get; private set; }
     public Vector2 MoveDir { get; private set; }
 
     private Coroutine waitMoveCoroutine;
+    private float rotateSpeed;
 
     public event Action<PlayerState> OnMoveChange;
 
@@ -27,22 +28,37 @@ public class PlayerMovement : MonoBehaviour
 
         CanMove = true;
         DoMove = false;
+
+        rotateSpeed = movementSO.rotateSpeed;
     }
-    private void Update()
+
+    public void ChangeMove(bool performed)
     {
-        if (CanMove == false) return;
-
-        Rotate();
-        Move();
+        if (performed == true)
+        {
+            rotateSpeed = movementSO.moveRotateSpeed;
+            DoMove = true;
+        }
+        else
+        {
+            rotateSpeed = movementSO.rotateSpeed;
+            DoMove = false;
+        }
+    }
+    public void StartAttack()
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 0;
+        CanMove = false;
     }
 
-    private void Rotate()
+    public void Rotate()
     {
         UpdateZValue();
         RotateMove();
     }
 
-    private void Move()
+    public void Move()
     {
         if (DoMove == true)
         {
@@ -73,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
             case PlayerAttackType.Dash:
                 if (waitMoveCoroutine == null)
                 {
-                    rb.linearVelocity = Vector2.zero;
                     rb.AddForce(MoveDir * movementSO.dashPower, ForceMode2D.Force);
                     rb.linearDamping = movementSO.dashDamping;
                     waitMoveCoroutine = StartCoroutine(MoveCoroutine(movementSO.dashTime));
@@ -91,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator MoveCoroutine(float waitTime)
     {
-        rb.gravityScale = 0;
         yield return new WaitForSeconds(waitTime);
         rb.gravityScale = movementSO.gravityScale;
         CanMove = true;
@@ -106,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         float targetRad = Mathf.Atan2(MousePos.y - transform.position.y, MousePos.x - transform.position.x);
         float mouseDeg = targetRad * Mathf.Rad2Deg;
 
-        float targetDeg = Mathf.MoveTowardsAngle(transform.eulerAngles.z, mouseDeg, movementSO.rotateSpeed * Time.deltaTime);
+        float targetDeg = Mathf.MoveTowardsAngle(transform.eulerAngles.z, mouseDeg, rotateSpeed * Time.deltaTime);
 
         MoveDir = new Vector2(Mathf.Cos(targetDeg * Mathf.Deg2Rad), Mathf.Sin(targetDeg * Mathf.Deg2Rad));
     }

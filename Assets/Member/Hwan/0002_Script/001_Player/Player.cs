@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,8 +10,6 @@ public class Player : MonoBehaviour
     private PlayerAnimation playerAnimation;
     private PlayerMovement playerMovement;
     private PlayerAttack playerAttack;
-
-    private bool IsMoving;
 
     private void Awake()
     {
@@ -29,17 +28,18 @@ public class Player : MonoBehaviour
     {
         playerMovement.OnMoveChange += playerAnimation.ChangeAnimation;
         playerAnimation.OnAttack += playerMovement.AttackMove;
+        playerAnimation.OnAttack += playerAttack.Attack;
     }
 
     private void InputInitialize()
     {
         inputSO.OnMouseMove += (mousePos) => playerMovement.MousePos = mousePos;
-        inputSO.OnSpaceBtnChanged += (isPerformed) => playerMovement.DoMove = isPerformed;
+        inputSO.OnSpaceBtnChanged += playerMovement.ChangeMove;
         inputSO.OnMouseClick += () =>
         {
             if (playerMovement.CanMove == false) return;
 
-            playerMovement.CanMove = false;
+            playerMovement.StartAttack();
 
             if (playerMovement.DoMove)
             {
@@ -54,6 +54,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        
+        MovementUpdate();
+    }
+
+    private void MovementUpdate()
+    {
+        if (playerMovement.CanMove == false) return;
+
+        playerMovement.Rotate();
+        playerMovement.Move();
     }
 }

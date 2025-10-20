@@ -11,6 +11,7 @@ public class PlayerMovementSO : ScriptableObject
     [Header("Rotate Setting")]
     public float rotateSpeed;
     public float limitPos;
+    public float moveRotateSpeed;
 
     [Header("Move Setting")]
     public float acceleration;
