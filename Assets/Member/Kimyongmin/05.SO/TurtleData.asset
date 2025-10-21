@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: TurtleData
   m_EditorClassIdentifier: 
   EnemyType: 2
-  moveSpeed: 5
+  attackDelay: 5
+  idleSpeed: 1.5
+  moveSpeed: 3
   detectDelay: 0

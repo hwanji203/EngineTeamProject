@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
-
-[CreateAssetMenu(fileName = "FishDataSO", menuName = "SO/FishDataSO")]
-public class FishDataSO : EnemyDataSO 
+namespace Member.Kimyongmin._02.Code.Enemy.SO
 {
-    public SpriteLibraryAsset fishSpriteLibrary;
+    [CreateAssetMenu(fileName = "FishDataSO", menuName = "SO/FishDataSO")]
+    public class FishDataSO : EnemyDataSo 
+    {
+        public SpriteLibraryAsset fishSpriteLibrary;
+    }
 }

@@ -1,3 +1,5 @@
+using Member.Kimyongmin._02.Code.Enemy;
+using Member.Kimyongmin._02.Code.Enemy.SO;
 using UnityEngine;
 
 public abstract class EnemyState
@@ -14,7 +16,8 @@ public abstract class EnemyState
     }
     public virtual void EnterState()
     {
-        
+        if (Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)
+            Enemy.Animator.SetBool(AnimBoolName,true);
     }
 
     public virtual void UpdateState()
@@ -24,6 +27,7 @@ public abstract class EnemyState
     
     public virtual void ExitState()
     {
-        
+        if (Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)
+            Enemy.Animator.SetBool(AnimBoolName, false);
     }
 }

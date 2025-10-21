@@ -1,6 +1,7 @@
-using UnityEngine;
-
-public interface IDamageable
+namespace Member.Kimyongmin._02.Code.Agent
 {
-    public void GetDamage(float damage);
+    public interface IDamageable
+    {
+        public void GetDamage(float damage);
+    }
 }

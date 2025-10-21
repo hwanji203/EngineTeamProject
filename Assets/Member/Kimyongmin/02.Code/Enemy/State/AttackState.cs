@@ -1,25 +1,33 @@
 using UnityEngine;
 
-public class AttackState : EnemyState
+namespace Member.Kimyongmin._02.Code.Enemy.State
 {
-    public AttackState(Enemy enemy, EnemyStateMachine enemyStateMachine, string animBoolName) : base(enemy, enemyStateMachine, animBoolName)
+    public class AttackState : EnemyState
     {
-    }
+        public AttackState(global::Enemy enemy, EnemyStateMachine enemyStateMachine, string animBoolName) : base(enemy, enemyStateMachine, animBoolName)
+        {
+        }
 
-    public override void EnterState()
-    {
-        base.EnterState();
-        Debug.Log("EnterAttack");
-        Enemy.AgentMovemant.SetStat(0, 0);
-    }
+        public override void EnterState()
+        {
+            base.EnterState();
+            Enemy.AgentMovemant.SetSpeed(0, 0);
+            Enemy.Attack();
+        }
 
-    public override void UpdateState()
-    {
-        
-    }
+        public override void UpdateState()
+        {
+            if (!Enemy.AgentMovemant.IsDashing)
+            {
+                EnemyStateMachine.ChangeState(StateType.Chase);
+            }
+        }
 
-    public override void ExitState()
-    {
-        base.ExitState();
+        public override void ExitState()
+        {
+            base.ExitState();
+            if (!Enemy.AgentMovemant.IsDashing)
+                Enemy.AgentMovemant.RbCompo.AddForce(-Enemy.GetTarget() * 2f, ForceMode2D.Impulse);
+        }
     }
 }
