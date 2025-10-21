@@ -24,7 +24,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private Dictionary<PlayerState, int> animationDictionary = new();
 
-    public event Action<PlayerAttackType> OnAttack;
+    public event Action<PlayerAttackType, bool> OnAttackChange;
 
     private void Awake()
     {
@@ -39,33 +39,34 @@ public class PlayerAnimation : MonoBehaviour
 
     public void ChangeAnimation(PlayerState state)
     {
-        List<int> dontFalseList = new();
+        int trueStateHash;
 
-        ChangeList(state, dontFalseList);
+        trueStateHash = animationDictionary[state];
 
         if (animator.GetBool(animationDictionary[PlayerState.Dash]) == true && state == PlayerState.Move)
         {
-            ChangeList(PlayerState.StrMiddle, dontFalseList);
+            trueStateHash = animationDictionary[PlayerState.StrMiddle];
         }
 
         foreach (int hash in animationDictionary.Values)
         {
-            if (dontFalseList.Any(value => hash == value) == false)
+            if (trueStateHash != hash)
             {
                 animator.SetBool(hash, false);
+            }
+            else
+            {
+                animator.SetBool(hash, true);
             }
         }
     }
 
-    private void ChangeList(PlayerState state, List<int> dontFalseList)
+    public void StartAttack(PlayerAttackType type)
     {
-        dontFalseList.Clear();
-        dontFalseList.Add(animationDictionary[state]);
-        animator.SetBool(animationDictionary[state], true);
+        OnAttackChange?.Invoke(type, true);
     }
-
-    public void StartDash(PlayerAttackType type)
+    public void EndAttack(PlayerAttackType type)
     {
-        OnAttack?.Invoke(type);
+        OnAttackChange?.Invoke(type, false);
     }
 }

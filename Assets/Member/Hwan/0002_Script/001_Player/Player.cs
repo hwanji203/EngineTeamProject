@@ -27,29 +27,31 @@ public class Player : MonoBehaviour
     private void AnimationInitialize()
     {
         playerMovement.OnMoveChange += playerAnimation.ChangeAnimation;
-        playerAnimation.OnAttack += playerMovement.AttackMove;
-        playerAnimation.OnAttack += playerAttack.Attack;
+        playerAnimation.OnAttackChange += playerMovement.AttackMove;
+        playerAnimation.OnAttackChange += (PlayerAttackType type, bool start) => { if (start == true) playerAttack.Attack(type); };
     }
 
     private void InputInitialize()
     {
         inputSO.OnMouseMove += (mousePos) => playerMovement.MousePos = mousePos;
         inputSO.OnSpaceBtnChanged += playerMovement.ChangeMove;
-        inputSO.OnMouseClick += () =>
+        inputSO.OnMouseClick += OnClick;
+    }
+
+    private void OnClick()
+    {
+        if (playerMovement.CanMove == false) return;
+
+        playerMovement.StartAttack();
+
+        if (playerMovement.DoMove)
         {
-            if (playerMovement.CanMove == false) return;
-
-            playerMovement.StartAttack();
-
-            if (playerMovement.DoMove)
-            {
-                playerAnimation.ChangeAnimation(PlayerState.Dash);
-            }
-            else
-            {
-                playerAnimation.ChangeAnimation(PlayerState.Attack);
-            }
-        };
+            playerAnimation.ChangeAnimation(PlayerState.Dash);
+        }
+        else
+        {
+            playerAnimation.ChangeAnimation(PlayerState.Attack);
+        }
     }
 
     private void Update()

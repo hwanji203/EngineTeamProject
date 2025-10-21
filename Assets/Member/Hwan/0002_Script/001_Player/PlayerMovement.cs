@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     public bool CanMove { get; private set; }
     public Vector2 MoveDir { get; private set; }
 
-    private Coroutine waitMoveCoroutine;
     private float rotateSpeed;
 
     public event Action<PlayerState> OnMoveChange;
@@ -82,35 +81,26 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(MoveDir.y, MoveDir.x)) * Mathf.Rad2Deg);
     }
 
-    public void AttackMove(PlayerAttackType type)
+    public void AttackMove(PlayerAttackType type, bool start)
     {
+        if (start == true)
+        {
+            rb.gravityScale = movementSO.gravityScale;
+            CanMove = true;
+            rb.linearDamping = movementSO.dashDamping;
+            return;
+        }
+
         switch (type)
         {
             case PlayerAttackType.Dash:
-                if (waitMoveCoroutine == null)
-                {
-                    rb.AddForce(MoveDir * movementSO.dashPower, ForceMode2D.Force);
-                    rb.linearDamping = movementSO.dashDamping;
-                    waitMoveCoroutine = StartCoroutine(MoveCoroutine(movementSO.dashTime));
-                }
+                rb.AddForce(MoveDir * movementSO.dashPower, ForceMode2D.Force);
+                rb.linearDamping = movementSO.dashDamping;
                 break;
             case PlayerAttackType.Default:
-                if (waitMoveCoroutine == null)
-                {
-                    transform.DORotate(new Vector3(0, 0, transform.eulerAngles.z + 360), movementSO.attackTime, RotateMode.FastBeyond360).SetEase(Ease.OutCirc);
-                    waitMoveCoroutine = StartCoroutine(MoveCoroutine(movementSO.attackTime));
-                }
+                transform.DORotate(new Vector3(0, 0, transform.eulerAngles.z + 360), movementSO.attackTime, RotateMode.FastBeyond360).SetEase(Ease.OutCirc);
                 break;
         }
-    }
-
-    private IEnumerator MoveCoroutine(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        rb.gravityScale = movementSO.gravityScale;
-        CanMove = true;
-        rb.linearDamping = movementSO.dashDamping;
-        waitMoveCoroutine = null;
     }
 
     private void UpdateZValue()
