@@ -1,48 +1,60 @@
-using Unity.VisualScripting;
+using Member.Kimyongmin._02.Code.Enemy.Enemy;
+using Member.Kimyongmin._02.Code.Enemy.SO;
 using UnityEngine;
 
-public class ChaseState : EnemyState
+namespace Member.Kimyongmin._02.Code.Enemy.State
 {
-    private float _chackDelay;
-    private float _currentChackTime = 0;
+    public class ChaseState : EnemyState
+    {
+        private float _chackDelay;
+        private float _currentChackTime = 0;
     
-    public ChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine, string animBoolName) : base(enemy, enemyStateMachine, animBoolName)
-    {
-        _chackDelay = enemy.EnemyDataSo.detectDelay;
-    }
+        public ChaseState(global::Enemy enemy, EnemyStateMachine enemyStateMachine, string animBoolName) : base(enemy, enemyStateMachine, animBoolName)
+        {
+            _chackDelay = enemy.EnemyDataSo.detectDelay;
+        }
 
-    public override void EnterState()
-    {
-        base.EnterState();
-        Debug.Log("EnterChase");
-    }
+        public override void EnterState()
+        {
+            base.EnterState();
+            Enemy.AgentMovemant.SetSpeed(Enemy.EnemyDataSo.moveSpeed,0);
+            if (Enemy is Turtle turtle)
+            {
+                turtle.DashEnd();
+            }
+            
+        }
 
-    public override void UpdateState()
-    {
-        _currentChackTime += Time.deltaTime;
+        public override void UpdateState()
+        {
+            _currentChackTime += Time.deltaTime;
         
-        if (_chackDelay < _currentChackTime && Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)
-        {
-            Enemy.AgentMovemant.SetMoveDir(Enemy.GetTarget());
-            _currentChackTime = 0;
+            if (_chackDelay < _currentChackTime && Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)
+            {
+                Enemy.AgentMovemant.SetMoveDir(Enemy.GetTarget());
+                _currentChackTime = 0;
+            }
+            else
+            {
+                Enemy.AgentMovemant.SetMoveDir(-Enemy.GetTarget());
+                _currentChackTime = 0;
+            }
+
+            if (Enemy.AttackInPlayer() && Enemy.CanAttack && (EnemyStateMachine.currentState != EnemyStateMachine.StateDictionary[StateType.Attack]))
+            {
+                EnemyStateMachine.ChangeState(StateType.Attack);
+            }
+
+            if (Enemy.EnemyDataSo.EnemyType == EnemyType.NotAggressive)
+                Enemy.FilpX(-Enemy.GetTarget().x);
+            else
+                Enemy.FilpX(Enemy.GetTarget().x);
+
         }
-        else
+
+        public override void ExitState()
         {
-            Enemy.AgentMovemant.SetMoveDir(-Enemy.GetTarget());
-            _currentChackTime = 0;
+            base.ExitState();
         }
-
-        if (Enemy.AttackInPlayer())
-        {
-            EnemyStateMachine.ChangeState(StateType.Attack);
-        }
-
-        Enemy.FilpX(-Enemy.GetTarget().x);
-
-    }
-
-    public override void ExitState()
-    {
-        base.ExitState();
     }
 }

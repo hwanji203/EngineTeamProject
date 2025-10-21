@@ -1,43 +1,45 @@
 using System.Collections.Generic;
-using UnityEngine;
 
-public enum StateType
-{ 
-    Idle,
-    Chase,
-    Attack
-}
-public class EnemyStateMachine
+namespace Member.Kimyongmin._02.Code.Enemy
 {
-    public Dictionary<StateType, EnemyState> StateDictionary = new();
-
-    public EnemyState currentState;
-    private EnemyBrain _stateBrain;
-
-    public EnemyStateMachine(EnemyBrain brain)
-    {
-        _stateBrain = brain;
+    public enum StateType
+    { 
+        Idle,
+        Chase,
+        Attack
     }
-
-    public void Initialize(StateType startState)
+    public class EnemyStateMachine
     {
-        currentState = StateDictionary[startState];
-        currentState.EnterState();
-    }
+        public Dictionary<StateType, EnemyState> StateDictionary = new();
 
-    public void AddState(StateType stateType, EnemyState state)
-    {
-        StateDictionary.Add(stateType, state);
-    }
+        public EnemyState currentState;
+        private IBrain _stateBrain;
 
-    public void ChangeState(StateType stateType)
-    {
-        if (currentState != null)
-            currentState.ExitState();
-        
-        currentState = StateDictionary[stateType];
-        
-        if (currentState != null)
+        public EnemyStateMachine(IBrain brain)
+        {
+            _stateBrain = brain;
+        }
+
+        public void Initialize(StateType startState)
+        {
+            currentState = StateDictionary[startState];
             currentState.EnterState();
+        }
+
+        public void AddState(StateType stateType, EnemyState state)
+        {
+            StateDictionary.Add(stateType, state);
+        }
+
+        public void ChangeState(StateType stateType)
+        {
+            if (currentState != null)
+                currentState.ExitState();
+        
+            currentState = StateDictionary[stateType];
+        
+            if (currentState != null)
+                currentState.EnterState();
+        }
     }
 }

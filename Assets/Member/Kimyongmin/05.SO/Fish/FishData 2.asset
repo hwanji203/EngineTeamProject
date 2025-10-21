@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FishData 2
   m_EditorClassIdentifier: 
   EnemyType: 0
+  idleSpeed: 1
   moveSpeed: 1
   detectDelay: 0
   fishSpriteLibrary: {fileID: 7108339969198208228, guid: 482111b82cb2b834092e9a4464b7b663, type: 3}

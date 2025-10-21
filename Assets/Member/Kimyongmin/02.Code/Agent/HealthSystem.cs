@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class HealthSystem : MonoBehaviour, IDamageable
+namespace Member.Kimyongmin._02.Code.Agent
 {
-    public float MaxHealth { get; private set; }
-
-    private float health;
-
-    public float Health
+    public class HealthSystem : MonoBehaviour, IDamageable
     {
-        get => health;
-        set => Mathf.Clamp(value, 0, MaxHealth);
-    }
+        [SerializeField] public float MaxHealth { get; private set; }
+
+        private float health;
+
+        public float Health
+        {
+            get => health;
+            set => Mathf.Clamp(value, 0, MaxHealth);
+        }
 
 
-    public void GetDamage(float damage)
-    {
-        Health -= damage;
+        public void GetDamage(float damage)
+        {
+            Health -= damage;
+        }
     }
 }

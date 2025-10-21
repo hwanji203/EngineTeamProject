@@ -1,30 +1,42 @@
 using UnityEngine;
 using DG.Tweening;
+using Member.Kimyongmin._02.Code.Agent;
+using Member.Kimyongmin._02.Code.Enemy.SO;
 
-public abstract class Enemy : HealthSystem
+public abstract class Enemy : MonoBehaviour
 {
     [Header("에너미 설1정")] 
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float chaseRange = 10f;
     [SerializeField] private LayerMask playerMask;
-    [field:SerializeField] public EnemyDataSO EnemyDataSo { get; private set; }
+
+    public Animator Animator { get;private set; }
+    [field:SerializeField] public EnemyDataSo EnemyDataSo { get; private set; }
+    private float _currentAttackTime;
     
     public AgentMovemant AgentMovemant { get; private set; }
 
     private Transform _target;
 
+    private float _normalAttackRange;
+
     protected virtual void  Awake()
     {
         AgentMovemant = GetComponent<AgentMovemant>();
+        Animator = GetComponentInChildren<Animator>();
+
+        _currentAttackTime = EnemyDataSo.attackDelay;
+
+        _normalAttackRange = attackRange;
     }
 
-    private void Start()
+    protected virtual void Start()
     { 
         Collider2D targetColl = Physics2D.OverlapCircle(transform.position, 519f, playerMask);
         if (targetColl != null)
             _target = targetColl.transform;
         
-        AgentMovemant.SetStat(EnemyDataSo.moveSpeed, 0);
+        AgentMovemant.SetSpeed(EnemyDataSo.moveSpeed, 0);
     }
     
     public void FilpX(float xDir)
@@ -66,5 +78,36 @@ public abstract class Enemy : HealthSystem
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
+    }
+
+    public bool CanAttack { get; private set; } = true;
+    private void Update()
+    {
+        _currentAttackTime += Time.deltaTime;
+        
+        Debug.Log(CanAttack);
+        
+        if (_currentAttackTime > EnemyDataSo.attackDelay)
+        {
+            CanAttack = true;
+            EnableAttackRange();
+        }
+    }
+
+    public void ResetCooltime()
+    {
+        CanAttack = false;
+        _currentAttackTime = 0;
+    }
+
+    public abstract void Attack();
+
+    public void DisbleAttackRange()
+    {
+        attackRange = 0;
+    }
+    public void EnableAttackRange()
+    {
+        attackRange = _normalAttackRange;
     }
 }
