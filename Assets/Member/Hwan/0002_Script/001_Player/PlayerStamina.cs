@@ -7,7 +7,7 @@ public class PlayerStamina : MonoBehaviour
 
     public NotifyValue<float> CurrentStamina { get; private set; } = new(0);
 
-    private void Awake()
+    private void Start()
     {
         CurrentStamina.Value = StatSO.maxStamina;
     }
