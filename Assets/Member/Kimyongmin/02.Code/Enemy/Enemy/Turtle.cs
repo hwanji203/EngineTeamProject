@@ -20,9 +20,9 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         {
             AgentMovemant.IsDashing = true;
             StartCoroutine(_attackHitbox.ShowHitbox(Target.position));
-            Debug.Log("dd");
             
             _dashDir = (Target.position - transform.position).normalized;
+            ExpantionAttackRange();
         }
 
         public void Dash()

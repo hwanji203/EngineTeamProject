@@ -110,4 +110,9 @@ public abstract class Enemy : MonoBehaviour
     {
         attackRange = _normalAttackRange;
     }
+    
+    public void ExpantionAttackRange()
+    {
+        attackRange = 999;
+    }
 }
