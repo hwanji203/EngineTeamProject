@@ -17,10 +17,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
 
         public override void UpdateState()
         {
-            if (!Enemy.AgentMovemant.IsDashing)
-            {
-                EnemyStateMachine.ChangeState(StateType.Chase);
-            }
+
         }
 
         public override void ExitState()

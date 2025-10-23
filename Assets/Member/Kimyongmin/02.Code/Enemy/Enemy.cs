@@ -16,7 +16,7 @@ public abstract class Enemy : MonoBehaviour
     
     public AgentMovemant AgentMovemant { get; private set; }
 
-    private Transform _target;
+    protected Transform Target;
 
     private float _normalAttackRange;
 
@@ -34,7 +34,7 @@ public abstract class Enemy : MonoBehaviour
     { 
         Collider2D targetColl = Physics2D.OverlapCircle(transform.position, 519f, playerMask);
         if (targetColl != null)
-            _target = targetColl.transform;
+            Target = targetColl.transform;
         
         AgentMovemant.SetSpeed(EnemyDataSo.moveSpeed, 0);
     }
@@ -56,7 +56,7 @@ public abstract class Enemy : MonoBehaviour
 
     public Vector2 GetTarget()
     {
-        return (_target.transform.position - transform.position).normalized;
+        return (Target.transform.position - transform.position).normalized;
     }
 
     public bool AttackInPlayer()

@@ -33,13 +33,16 @@ namespace Member.Kimyongmin._02.Code.Enemy
 
         public void ChangeState(StateType stateType)
         {
-            if (currentState != null)
-                currentState.ExitState();
-        
-            currentState = StateDictionary[stateType];
-        
-            if (currentState != null)
-                currentState.EnterState();
+            if (currentState != StateDictionary[stateType])
+            {
+                if (currentState != null)
+                    currentState.ExitState();
+            
+                currentState = StateDictionary[stateType];
+
+                if (currentState != null)
+                    currentState.EnterState();
+            }
         }
     }
 }
