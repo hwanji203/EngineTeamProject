@@ -19,7 +19,6 @@ public class PlayerMovementSO : ScriptableObject
     public float maxSpeed;
 
     [Header("FlipAttack Setting")]
-    public float attackSpeed;
     public float attackTime;
 
     [Header("Others")]

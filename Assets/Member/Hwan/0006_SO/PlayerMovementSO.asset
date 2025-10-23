@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11583304a0c125e48ab7b776339658b6, type: 3}
   m_Name: PlayerMovementSO
   m_EditorClassIdentifier: 
-  dashTime: 0.2
+  dashTime: 0.35
   dashPower: 1350
   dashDamping: 10
   rotateSpeed: 750
   limitPos: 0.5
-  moveRotateSpeed: 100
+  moveRotateSpeed: 200
   acceleration: 600
   decreaseValue: 3
   maxSpeed: 1.65
-  attackSpeed: 0
-  attackTime: 0.8
+  attackTime: 0.45
   gravityScale: 0.325
