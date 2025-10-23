@@ -15,12 +15,10 @@ public class PlayerAttack : MonoBehaviour
         if (type == PlayerAttackType.Dash)
         {
             OnDashAttack?.Invoke();
-            Debug.Log("대시 공격");
         }
         else
         {
             OnBasicAttack?.Invoke();
-            Debug.Log("일반 공격");
         }
     }
 }

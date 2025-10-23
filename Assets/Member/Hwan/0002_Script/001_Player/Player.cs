@@ -1,3 +1,4 @@
+using Member.Kimyongmin._02.Code.Enemy;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
     private PlayerAnimation playerAnimation;
     private PlayerMovement playerMovement;
     private PlayerAttack playerAttack;
+    private PlayerStamina playerStamina;
 
     private void Awake()
     {
@@ -19,6 +21,9 @@ public class Player : MonoBehaviour
 
         playerAttack = GetComponent<PlayerAttack>();
         playerAttack.StatSO = statSO;
+
+        playerStamina = GetComponent<PlayerStamina>();
+        playerStamina.StatSO = statSO;
 
         InputInitialize();
         AnimationInitialize();

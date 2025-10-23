@@ -3,21 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public enum PlayerState
-{
-    Idle,
-    Move,
-    Dash,
-    Attack,
-    StrMiddle
-}
-
-public enum PlayerAttackType
-{
-    Default,
-    Dash
-}
-
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator animator;
@@ -34,7 +19,6 @@ public class PlayerAnimation : MonoBehaviour
         animationDictionary.Add(PlayerState.Move, Animator.StringToHash("Move"));
         animationDictionary.Add(PlayerState.Dash, Animator.StringToHash("Dash"));
         animationDictionary.Add(PlayerState.Attack, Animator.StringToHash("Attack"));
-        animationDictionary.Add(PlayerState.StrMiddle, Animator.StringToHash("StrMiddle"));
     }
 
     public void ChangeAnimation(PlayerState state)
@@ -42,11 +26,6 @@ public class PlayerAnimation : MonoBehaviour
         int trueStateHash;
 
         trueStateHash = animationDictionary[state];
-
-        if (animator.GetBool(animationDictionary[PlayerState.Dash]) == true && state == PlayerState.Move)
-        {
-            trueStateHash = animationDictionary[PlayerState.StrMiddle];
-        }
 
         foreach (int hash in animationDictionary.Values)
         {

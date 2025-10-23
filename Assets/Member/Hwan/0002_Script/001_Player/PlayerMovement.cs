@@ -83,8 +83,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void AttackMove(PlayerAttackType type, bool start)
     {
-        if (start == true)
+        if (start == false)
         {
+            rb.linearVelocity = Vector2.zero;
             rb.gravityScale = movementSO.gravityScale;
             CanMove = true;
             rb.linearDamping = movementSO.dashDamping;
