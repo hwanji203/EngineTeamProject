@@ -9,7 +9,8 @@ public class PlayerAnimation : MonoBehaviour
 
     private Dictionary<PlayerState, int> animationDictionary = new();
 
-    public event Action<PlayerAttackType, bool> OnAttackChange;
+    public event Action<PlayerAttackType> OnAttackStart;
+    public event Action OnAttackEnd;
 
     private void Awake()
     {
@@ -18,7 +19,7 @@ public class PlayerAnimation : MonoBehaviour
         animationDictionary.Add(PlayerState.Idle, Animator.StringToHash("Idle"));
         animationDictionary.Add(PlayerState.Move, Animator.StringToHash("Move"));
         animationDictionary.Add(PlayerState.Dash, Animator.StringToHash("Dash"));
-        animationDictionary.Add(PlayerState.Attack, Animator.StringToHash("Attack"));
+        animationDictionary.Add(PlayerState.Flip, Animator.StringToHash("Attack"));
     }
 
     public void ChangeAnimation(PlayerState state)
@@ -40,12 +41,20 @@ public class PlayerAnimation : MonoBehaviour
         }
     }
 
+    public bool CanAttack()
+    {
+        AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
+        return !(info.IsName("PlayerDashLast") == true 
+            || info.IsName("PlayerFlip") == true || info.IsName("PlayerDashFir") == true);
+    }
+
     public void StartAttack(PlayerAttackType type)
     {
-        OnAttackChange?.Invoke(type, true);
+        OnAttackStart?.Invoke(type);
     }
-    public void EndAttack(PlayerAttackType type)
+    public void EndAttack()
     {
-        OnAttackChange?.Invoke(type, false);
+        OnAttackEnd?.Invoke();
+        ChangeAnimation(PlayerState.Idle);
     }
 }

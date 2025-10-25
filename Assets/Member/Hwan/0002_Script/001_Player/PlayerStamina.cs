@@ -7,16 +7,24 @@ public class PlayerStamina : MonoBehaviour
 
     public NotifyValue<float> CurrentStamina { get; private set; } = new(0);
 
+    private Coroutine recoveryCoolCor;
+
     private void Start()
     {
         CurrentStamina.Value = StatSO.maxStamina;
     }
 
+    private void Update()
+    {
+        Debug.Log(CurrentStamina);
+    }
+
     public bool TryMove(PlayerMoveType type)
     {
         float useStamina = GetStamina(type);
+        if (type == PlayerMoveType.Swim) useStamina *= Time.deltaTime;
 
-        if (useStamina >= CurrentStamina.Value)
+        if (useStamina <= CurrentStamina.Value)
         {
             CurrentStamina.Value -= useStamina;
             return true;
@@ -28,10 +36,13 @@ public class PlayerStamina : MonoBehaviour
     {
         switch (type)
         {
-
+            case PlayerMoveType.Dash:
+                return StatSO.dashStamina;
+            case PlayerMoveType.Swim:
+                return StatSO.swimStamina;
+            default:
+                return 0;
         }
-
-        return 1;
     }
 
     public void RecoveryStamina(PlayerMoveType type)
