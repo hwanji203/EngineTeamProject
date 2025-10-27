@@ -41,5 +41,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Hitbox
+    uniqueID: 921707211
+    locked: 0
+  - name: Enemy
+    uniqueID: 398774285
+    locked: 0
   m_RenderingLayers:
   - Default
