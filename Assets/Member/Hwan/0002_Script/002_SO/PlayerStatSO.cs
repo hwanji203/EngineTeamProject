@@ -4,7 +4,8 @@ using UnityEngine;
 public class PlayerStatSO : ScriptableObject
 {
     public float maxStamina;
-    public float decreaseStamina;
+    public float swimStamina;
+    public float dashStamina;
     public float hp;
     public float nomalDmg;
     public float dashDmg;

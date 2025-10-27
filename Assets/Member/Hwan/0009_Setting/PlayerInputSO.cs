@@ -9,7 +9,7 @@ public class PlayerInputSO : ScriptableObject, IPlayerActions
 {
     private Controlls controlls;
 
-    public event Action OnMouseClick;
+    public event Action<bool, PlayerAttackType> OnMouseClickChanged;
     public event Action<bool> OnSpaceBtnChanged;
     public event Action<Vector2> OnMouseMove;
 
@@ -31,10 +31,7 @@ public class PlayerInputSO : ScriptableObject, IPlayerActions
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            OnMouseClick?.Invoke();
-        }
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -45,5 +42,15 @@ public class PlayerInputSO : ScriptableObject, IPlayerActions
     public void OnAim(InputAction.CallbackContext context)
     {
         OnMouseMove?.Invoke(Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()));
+    }
+
+    public void OnFlipAttack(InputAction.CallbackContext context)
+    {
+        OnMouseClickChanged?.Invoke(context.performed, PlayerAttackType.Flip);
+    }
+
+    public void OnDashAttack(InputAction.CallbackContext context)
+    {
+        OnMouseClickChanged?.Invoke(context.performed, PlayerAttackType.Dash);
     }
 }

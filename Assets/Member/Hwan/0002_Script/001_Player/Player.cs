@@ -1,5 +1,5 @@
-using Member.Kimyongmin._02.Code.Enemy;
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerAttack playerAttack;
     private PlayerStamina playerStamina;
+
+    private (bool doing, PlayerAttackType attackType) currentAttackState;
+    private bool DoMove;
 
     private void Awake()
     {
@@ -29,46 +32,61 @@ public class Player : MonoBehaviour
         AnimationInitialize();
     }
 
+    private void Update()
+    {
+        if (playerMovement.CanMove == false) return;
+
+        StateUpdate();
+    }
+
     private void AnimationInitialize()
     {
-        playerMovement.OnMoveChange += playerAnimation.ChangeAnimation;
-        playerAnimation.OnAttackChange += playerMovement.AttackMove;
-        playerAnimation.OnAttackChange += (PlayerAttackType type, bool start) => { if (start == true) playerAttack.Attack(type); };
+        playerAnimation.OnAttackStart += playerMovement.AttackMove;
+        playerAnimation.OnAttackEnd += playerMovement.EndAttack;
+        playerAnimation.OnAttackStart += playerAttack.Attack;
     }
 
     private void InputInitialize()
     {
         inputSO.OnMouseMove += (mousePos) => playerMovement.MousePos = mousePos;
-        inputSO.OnSpaceBtnChanged += playerMovement.ChangeMove;
-        inputSO.OnMouseClick += OnClick;
+        inputSO.OnSpaceBtnChanged += (performed) => DoMove = performed;
+        inputSO.OnMouseClickChanged += (performed, attackType) => currentAttackState = (performed, attackType);
     }
 
-    private void OnClick()
+    private bool TryAttack(PlayerAttackType type)
     {
-        if (playerMovement.CanMove == false) return;
+        switch (type)
+        {
+            case PlayerAttackType.Dash:
+                if (playerStamina.TryMove(PlayerMoveType.Dash) == false) return false;
+
+                playerAnimation.ChangeAnimation(PlayerState.Dash);
+                break;
+            case PlayerAttackType.Flip:
+                playerAnimation.ChangeAnimation(PlayerState.Flip);
+                break;
+        }
 
         playerMovement.StartAttack();
 
-        if (playerMovement.DoMove)
-        {
-            playerAnimation.ChangeAnimation(PlayerState.Dash);
-        }
-        else
-        {
-            playerAnimation.ChangeAnimation(PlayerState.Attack);
-        }
+        return true;
     }
 
-    private void Update()
+    private void StateUpdate()
     {
-        MovementUpdate();
-    }
-
-    private void MovementUpdate()
-    {
-        if (playerMovement.CanMove == false) return;
+        if (currentAttackState.doing == true && playerAnimation.CanAttack())
+        {
+            if (TryAttack(currentAttackState.attackType) == true) return;
+        }
 
         playerMovement.Rotate();
-        playerMovement.Move();
+
+        playerAnimation.ChangeAnimation(PlayerState.Idle);
+
+        if (DoMove == false) return;
+        if (playerStamina.TryMove(PlayerMoveType.Swim) == false) return;
+
+        playerAnimation.ChangeAnimation(PlayerState.Move);
+        playerMovement.GoDirectionMove();
     }
 }

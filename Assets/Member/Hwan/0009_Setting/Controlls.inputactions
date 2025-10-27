@@ -16,7 +16,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "FlipAttack",
                     "type": "Button",
                     "id": "9c55b491-b7a0-4c7d-a617-53aedf71ac0b",
                     "expectedControlType": "",
@@ -32,6 +32,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "DashAttack",
+                    "type": "Button",
+                    "id": "9a6b895c-5ed0-4f21-a139-ed56b93a3f3a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -53,7 +62,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "FlipAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -65,6 +74,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c2899bc-a127-46a3-b84e-2f51de97afcd",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

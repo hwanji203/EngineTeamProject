@@ -3,13 +3,13 @@ public enum PlayerState
     Idle,
     Move,
     Dash,
-    Attack
+    Flip
 }
 
 public enum PlayerAttackType
 {
-    Default,
-    Dash
+    Dash,
+    Flip
 }
 
 public enum PlayerMoveType
