@@ -1,9 +1,10 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class GoldUpdater : MonoBehaviour
 {
-    TMPro.TextMeshProUGUI goldText;
+    TextMeshProUGUI goldText;
 
     private void Awake()
     {
