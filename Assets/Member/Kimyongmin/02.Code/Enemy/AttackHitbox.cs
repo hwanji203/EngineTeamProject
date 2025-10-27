@@ -1,45 +1,23 @@
 using System;
-using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 
-public enum BoxType
-{
-    Box,
-    Sector
-}
 public class AttackHitbox : MonoBehaviour
 {
-    [SerializeField] private BoxType boxType;
-    private LineRenderer _lineRenderer;
 
-    [field: SerializeField] public float Range { get; private set; }
-    [field: SerializeField] public float LinePos {get; private set;}
-    [SerializeField] private float duration;
-    
-    private void Awake()
-    {
-        _lineRenderer = GetComponent<LineRenderer>();
-    }
-    public IEnumerator ShowHitbox(Vector2 targetPos)
-    {
-        _lineRenderer.SetPosition(1, targetPos);
-        _lineRenderer.enabled = true;
-        
-        float timer = 0;
-        
-        float t = 0;
+    [SerializeField] private Transform hitbox;
 
-        while (timer < duration)
+    public void ShowHitbox(Vector2 dir, float duration)
+    {
+        Sequence s = DOTween.Sequence();
+        
+        gameObject.SetActive(true);
+        transform.eulerAngles = new Vector3(0,0,Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg);
+        s.Join(hitbox.DOScaleX(1, duration));
+        s.AppendCallback(() =>
         {
-            timer += Time.deltaTime;
-            
-            t =  timer / duration;
-             
-            float size = Mathf.Lerp(0, Range, Mathf.Clamp01(t));
-            _lineRenderer.SetPosition(1, new Vector3(size,targetPos.y,0));
-            yield return null;
-        }
-        
-        _lineRenderer.enabled = false;
+            gameObject.SetActive(false);
+            hitbox.localScale = new Vector3(0, hitbox.localScale.y, 1);
+        });
     }
 }

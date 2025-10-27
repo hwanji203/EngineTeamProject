@@ -5,14 +5,14 @@ using UnityEngine.U2D.Animation;
 public class Fish : Enemy
 {
     private SpriteLibrary _spriteLibrary;
-    private FishDataSO _fishData;
+    private FishDataSo _fishData;
 
     protected override void Awake()
     {
         base.Awake();
         _spriteLibrary = GetComponentInChildren<SpriteLibrary>();
         
-        _fishData = EnemyDataSo as FishDataSO;
+        _fishData = EnemyDataSo as FishDataSo;
     }
 
     protected override void Start()

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a8e2ffddfc80be4ab3855f5c5cbec17, type: 3}
-  m_Name: TurtleData
+  m_Name: DolphinData
   m_EditorClassIdentifier: 
-  EnemyType: 2
-  attackDelay: 5
-  idleSpeed: 1.5
-  moveSpeed: 2
+  EnemyType: 1
+  attackDelay: 7
+  idleSpeed: 5
+  moveSpeed: 0
   detectDelay: 0

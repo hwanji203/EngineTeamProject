@@ -9,7 +9,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.SO
         Aggressive
     }
 
-    [CreateAssetMenu(fileName = "EnemyData", menuName = "SO/EnemyData")]
+    [CreateAssetMenu(fileName = "EnemyData", menuName = "KimSO/EnemyData")]
     public class EnemyDataSo : ScriptableObject
     {
         public EnemyType EnemyType;
