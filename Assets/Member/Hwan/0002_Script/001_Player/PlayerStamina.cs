@@ -14,6 +14,11 @@ public class PlayerStamina : MonoBehaviour
         CurrentStamina.Value = StatSO.maxStamina;
     }
 
+    private void Update()
+    {
+        Debug.Log(CurrentStamina.Value);
+    }
+
     public bool TryMove(PlayerMoveType type)
     {
         float useStamina = GetStamina(type);

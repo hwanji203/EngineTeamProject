@@ -3,24 +3,25 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerMovementSO", menuName = "HwanSO/PlayerMovementSO")]
 public class PlayerMovementSO : ScriptableObject
 {
-    [Header("DashAttack Setting")]
-    public float dashTime; 
-    public float dashPower;
-    public float dashDamping;
+    [field: Header("DashAttack Setting")]
+    [field: SerializeField] public float dashTime { get; private set; } = 0.35f;
+    [field: SerializeField] public float dashPower { get; private set; } = 1350f;
+    [field: SerializeField] public float dashDamping { get; private set; } = 10f;
 
-    [Header("Rotate Setting")]
-    public float rotateSpeed;
-    public float limitPos;
-    public float moveRotateSpeed;
+    [field: Header("Rotate Setting")]
+    [field: SerializeField] public float rotateSpeed { get; private set; } = 750f;
+    [field: SerializeField] public float limitPos { get; private set; } = 0.5f;
 
-    [Header("Move Setting")]
-    public float acceleration;
-    public float decreaseValue;
-    public float maxSpeed;
+    [field: Header("Move Setting")]
+    [field: SerializeField] public float acceleration { get; private set; } = 600f;
+    [field: SerializeField] public float decreaseValue { get; private set; } = 3f;
+    [field: SerializeField] public float maxSpeed { get; private set; } = 1.65f;
+    [field: SerializeField] public float moveRotSpeed { get; private set; } = 250f;
 
-    [Header("FlipAttack Setting")]
-    public float attackTime;
+    [field: Header("FlipAttack Setting")]
+    [field: SerializeField] public float attackTime { get; private set; } = 0.4f;
+    [field: SerializeField] public float flipRotSpeed { get; private set; } = 375f;
 
     [Header("Others")]
-    public float gravityScale;
+    [field: SerializeField] public float gravityScale { get; private set; } = 0.325f;
 }

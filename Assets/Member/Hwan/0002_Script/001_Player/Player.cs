@@ -34,8 +34,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (playerMovement.CanMove == false) return;
-
         StateUpdate();
     }
 
@@ -43,6 +41,7 @@ public class Player : MonoBehaviour
     {
         playerAnimation.OnAttackStart += playerMovement.AttackMove;
         playerAnimation.OnAttackEnd += playerMovement.EndAttack;
+        playerAnimation.OnAttackEnd += playerAttack.StartAttack;
         playerAnimation.OnAttackStart += playerAttack.Attack;
     }
 
@@ -58,11 +57,12 @@ public class Player : MonoBehaviour
         switch (type)
         {
             case PlayerAttackType.Dash:
+                if (playerAttack.DashCoolCoroutine != null) return false;
                 if (playerStamina.TryMove(PlayerMoveType.Dash) == false) return false;
-
                 playerAnimation.ChangeAnimation(PlayerState.Dash);
                 break;
             case PlayerAttackType.Flip:
+                if (playerAttack.FlipCoolCoroutine != null) return false;
                 playerAnimation.ChangeAnimation(PlayerState.Flip);
                 break;
         }
@@ -74,18 +74,20 @@ public class Player : MonoBehaviour
 
     private void StateUpdate()
     {
-        if (currentAttackState.doing == true && playerAnimation.CanAttack())
+        playerMovement.Rotate();
+        if (playerMovement.CanMove == false) return;
+
+        if (currentAttackState.doing == true && playerAnimation.CanAttack() == true)
         {
             if (TryAttack(currentAttackState.attackType) == true) return;
         }
 
-        playerMovement.Rotate();
-
         playerAnimation.ChangeAnimation(PlayerState.Idle);
+        playerMovement.SetRotateSpeed(PlayerState.Idle);
 
-        if (DoMove == false) return;
-        if (playerStamina.TryMove(PlayerMoveType.Swim) == false) return;
+        if (DoMove == false || playerStamina.TryMove(PlayerMoveType.Swim) == false) return;
 
+        playerMovement.SetRotateSpeed(PlayerState.Move);
         playerAnimation.ChangeAnimation(PlayerState.Move);
         playerMovement.GoDirectionMove();
     }

@@ -9,4 +9,6 @@ public class PlayerStatSO : ScriptableObject
     public float hp;
     public float nomalDmg;
     public float dashDmg;
+    public float flipCool;
+    public float dashCool;
 }

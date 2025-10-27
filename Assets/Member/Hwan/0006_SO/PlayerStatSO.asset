@@ -18,3 +18,5 @@ MonoBehaviour:
   hp: 9
   nomalDmg: 0
   dashDmg: 9
+  flipCool: 3
+  dashCool: 1

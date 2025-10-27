@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11583304a0c125e48ab7b776339658b6, type: 3}
   m_Name: PlayerMovementSO
   m_EditorClassIdentifier: 
-  dashTime: 0.35
-  dashPower: 1350
-  dashDamping: 10
-  rotateSpeed: 750
-  limitPos: 0.5
-  moveRotateSpeed: 200
-  acceleration: 600
-  decreaseValue: 3
-  maxSpeed: 1.65
-  attackTime: 0.45
-  gravityScale: 0.325
+  <dashTime>k__BackingField: 0.35
+  <dashPower>k__BackingField: 1350
+  <dashDamping>k__BackingField: 10
+  <rotateSpeed>k__BackingField: 750
+  <limitPos>k__BackingField: 0.5
+  <moveRotateSpeed>k__BackingField: 200
+  <acceleration>k__BackingField: 600
+  <decreaseValue>k__BackingField: 3
+  <maxSpeed>k__BackingField: 1.65
+  <moveRotSpeed>k__BackingField: 250
+  <attackTime>k__BackingField: 0.4
+  <flipRotSpeed>k__BackingField: 375
+  <gravityScale>k__BackingField: 0.325

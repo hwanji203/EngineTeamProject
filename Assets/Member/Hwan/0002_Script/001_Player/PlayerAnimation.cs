@@ -10,7 +10,7 @@ public class PlayerAnimation : MonoBehaviour
     private Dictionary<PlayerState, int> animationDictionary = new();
 
     public event Action<PlayerAttackType> OnAttackStart;
-    public event Action OnAttackEnd;
+    public event Action<PlayerAttackType> OnAttackEnd;
 
     private void Awake()
     {
@@ -52,9 +52,9 @@ public class PlayerAnimation : MonoBehaviour
     {
         OnAttackStart?.Invoke(type);
     }
-    public void EndAttack()
+    public void EndAttack(PlayerAttackType type)
     {
-        OnAttackEnd?.Invoke();
+        OnAttackEnd?.Invoke(type);
         ChangeAnimation(PlayerState.Idle);
     }
 }

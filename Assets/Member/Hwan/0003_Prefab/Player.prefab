@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7468989052221305353}
   - component: {fileID: 1506811094132817340}
   - component: {fileID: 3995050782960568216}
+  - component: {fileID: 5494613534931477239}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -77,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSO: {fileID: 11400000, guid: 49f46e6aea384b147bac4ecfeb896325, type: 2}
+  visualTrn: {fileID: 840155572245036512}
 --- !u!114 &7468989052221305353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +154,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &5494613534931477239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5430043487290334522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1f3e2babb44c947a4a2ceb339e1782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7210518675144106795
 GameObject:
   m_ObjectHideFlags: 0
