@@ -18,9 +18,9 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Attack()
         {
-            AgentMovemant.IsDashing = true;
-            StartCoroutine(_attackHitbox.ShowHitbox(Target.position));
             
+            AgentMovemant.IsDashing = true;
+            _attackHitbox.ShowHitbox(GetTarget(),1f);
             _dashDir = (Target.position - transform.position).normalized;
             ExpantionAttackRange();
         }
