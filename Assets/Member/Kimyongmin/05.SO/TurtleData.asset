@@ -15,5 +15,5 @@ MonoBehaviour:
   EnemyType: 2
   attackDelay: 5
   idleSpeed: 1.5
-  moveSpeed: 3
+  moveSpeed: 2
   detectDelay: 0

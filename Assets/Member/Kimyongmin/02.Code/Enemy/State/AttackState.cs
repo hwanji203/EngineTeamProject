@@ -23,8 +23,6 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         public override void ExitState()
         {
             base.ExitState();
-            if (!Enemy.AgentMovemant.IsDashing)
-                Enemy.AgentMovemant.RbCompo.AddForce(-Enemy.GetTarget() * 2f, ForceMode2D.Impulse);
         }
     }
 }
