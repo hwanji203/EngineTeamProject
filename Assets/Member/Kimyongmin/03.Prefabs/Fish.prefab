@@ -156,13 +156,14 @@ GameObject:
   - component: {fileID: 9121428009175028109}
   - component: {fileID: 6523668970225945890}
   - component: {fileID: 204917369367878636}
+  - component: {fileID: 5096698553089508479}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2726829630615936860
 Transform:
   m_ObjectHideFlags: 0
@@ -285,3 +286,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0.008119466, y: 0.008119181}
   m_Size: {x: 0.6914744, y: 0.3261114}
   m_Direction: 1
+--- !u!114 &5096698553089508479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6617325858536452346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1f3e2babb44c947a4a2ceb339e1782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

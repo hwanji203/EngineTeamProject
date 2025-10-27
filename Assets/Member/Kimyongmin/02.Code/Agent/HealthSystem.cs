@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Agent
@@ -6,12 +7,24 @@ namespace Member.Kimyongmin._02.Code.Agent
     {
         [SerializeField] public float MaxHealth { get; private set; }
 
-        private float health;
+        private float _health;
+        
+        public event Action OnHealthChanged;
 
         public float Health
         {
-            get => health;
-            set => Mathf.Clamp(value, 0, MaxHealth);
+            get => _health;
+            set
+            {
+                float before = _health;
+                if (value != before)
+                    OnHealthChanged?.Invoke();
+                
+                _health = Mathf.Clamp(value, 0, MaxHealth);
+                
+            }
+                
+            
         }
 
 
@@ -19,5 +32,7 @@ namespace Member.Kimyongmin._02.Code.Agent
         {
             Health -= damage;
         }
+        
+        
     }
 }
