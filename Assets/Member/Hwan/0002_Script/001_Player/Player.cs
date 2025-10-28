@@ -19,12 +19,9 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         playerAnimation = GetComponentInChildren<PlayerAnimation>();
-
         playerMovement = GetComponent<PlayerMovement>();
-
         playerAttack = GetComponent<PlayerAttack>();
         playerAttack.StatSO = statSO;
-
         playerStamina = GetComponent<PlayerStamina>();
         playerStamina.StatSO = statSO;
 
@@ -34,7 +31,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        StateUpdate();
+        UpdateState();
     }
 
     private void AnimationInitialize()
@@ -72,7 +69,7 @@ public class Player : MonoBehaviour
         return true;
     }
 
-    private void StateUpdate()
+    private void UpdateState()
     {
         playerMovement.Rotate();
         if (playerMovement.CanMove == false) return;

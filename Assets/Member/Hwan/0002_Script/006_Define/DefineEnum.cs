@@ -17,3 +17,10 @@ public enum PlayerMoveType
     Swim,
     Dash
 }
+
+public enum PlayerSkillType
+{
+    Dash,
+    Flip,
+    IndiaInk
+}

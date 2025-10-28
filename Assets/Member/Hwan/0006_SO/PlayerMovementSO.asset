@@ -17,11 +17,10 @@ MonoBehaviour:
   <dashDamping>k__BackingField: 10
   <rotateSpeed>k__BackingField: 750
   <limitPos>k__BackingField: 0.5
-  <moveRotateSpeed>k__BackingField: 200
-  <acceleration>k__BackingField: 600
+  <acceleration>k__BackingField: 700
   <decreaseValue>k__BackingField: 3
-  <maxSpeed>k__BackingField: 1.65
+  <maxSpeed>k__BackingField: 2
   <moveRotSpeed>k__BackingField: 250
   <attackTime>k__BackingField: 0.4
-  <flipRotSpeed>k__BackingField: 375
+  <flipRotSpeed>k__BackingField: 275
   <gravityScale>k__BackingField: 0.325
