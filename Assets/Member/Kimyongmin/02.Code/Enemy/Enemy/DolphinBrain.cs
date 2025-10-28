@@ -24,14 +24,6 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         private void Update()
         {
-            if (_enemy.AttackInPlayer())
-            {
-                _enemyStateMachine.ChangeState(StateType.Attack);
-            }
-            else
-            {
-                _enemyStateMachine.ChangeState(StateType.Idle);
-            }
         
             _enemyStateMachine.currentState.UpdateState();
         }

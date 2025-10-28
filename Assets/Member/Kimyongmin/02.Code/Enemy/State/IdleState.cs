@@ -1,3 +1,4 @@
+using Member.Kimyongmin._02.Code.Enemy.SO;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Enemy.State
@@ -29,7 +30,16 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
                 moveDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
                 Enemy.AgentMovemant.SetMoveDir(moveDir);
             }
-        
+
+            if (Enemy.AttackInPlayer() && !Enemy.isAttack)
+            {
+                EnemyStateMachine.ChangeState(StateType.Attack);
+            }
+            else if (Enemy.ChaseInPlayer())
+            {
+                EnemyStateMachine.ChangeState(StateType.Chase);
+            }
+            
             Enemy.FilpX(moveDir.x);
         }
 

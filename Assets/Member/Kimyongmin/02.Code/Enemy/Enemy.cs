@@ -20,6 +20,8 @@ public abstract class Enemy : MonoBehaviour
 
     private float _normalAttackRange;
 
+    public bool isAttack = false;
+
     protected virtual void  Awake()
     {
         AgentMovemant = GetComponent<AgentMovemant>();
@@ -62,7 +64,9 @@ public abstract class Enemy : MonoBehaviour
     public bool AttackInPlayer()
     {
         if (EnemyDataSo.EnemyType != EnemyType.NotAggressive)
+        {
             return Physics2D.OverlapCircle(transform.position, attackRange, playerMask);
+        }
 
         return false;
     }

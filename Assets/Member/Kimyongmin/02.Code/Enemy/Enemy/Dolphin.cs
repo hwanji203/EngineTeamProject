@@ -13,7 +13,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         [SerializeField] private float bulletSpeed = 20f;
         [SerializeField] private float shotAngle = 15f;
         
-        private Vector2 _target = Vector2.right;
+        private Vector3 _target = Vector3.forward;
         protected override void Awake()
         {
             base.Awake();
@@ -26,7 +26,11 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Attack()
         {
+            isAttack = true;
+            
             _target = GetTarget();
+            
+            FilpX(_target.x);
             
             _attackHitbox.ShowHitbox(_target,1f);
             ExpantionAttackRange();
@@ -38,8 +42,11 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             {
                 Projectile bullet = Instantiate(projectile, transform.position, Quaternion.Euler(0,0,shotAngle * i))
                     .GetComponent<Projectile>();
+
+                Vector2 dir = Quaternion.AngleAxis(shotAngle * i, Vector3.forward) * _target;
                 
-                bullet.Shoot(Quaternion.AngleAxis(shotAngle * i, transform.position) * _target, bulletSpeed);
+                bullet.Shoot(dir.normalized, bulletSpeed);
+                isAttack = false;
             }
         }
     }
