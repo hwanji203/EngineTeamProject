@@ -38,7 +38,6 @@ public class StoreItemUI : MonoBehaviour
     {
         purchasedOverlay.SetActive(isPurchased);
         buyButton.interactable = !isPurchased;
-        priceText.text = isPurchased ? "Purchased" : $"{data.price} G";
     }
 
     public void PlayInsufficientFundsFeedback()
