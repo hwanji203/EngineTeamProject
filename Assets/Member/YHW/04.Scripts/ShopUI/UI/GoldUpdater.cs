@@ -8,11 +8,12 @@ public class GoldUpdater : MonoBehaviour
 
     private void Awake()
     {
-        goldText = GetComponent<TMPro.TextMeshProUGUI>();
+        goldText = GetComponent<TextMeshProUGUI>();
     }
     void Start()
     {
         CurrencyManager.Instance.OnGoldChanged += UpdateGoldDisplay;
+        goldText.SetText($"gold : {CurrencyManager.Instance.Gold}");
     }
 
     private void UpdateGoldDisplay(int currentGold)

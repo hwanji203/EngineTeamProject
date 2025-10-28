@@ -5,6 +5,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
     [RequireComponent(typeof(TurtleBrain))]
     public class Turtle : global::Enemy
     {
+        [Header("터틀 설정")]
         [SerializeField] private float dashPower = 10f;
         private AttackHitbox _attackHitbox;
 
@@ -19,10 +20,10 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         public override void Attack()
         {
             
+            ExpantionAttackRange();
             AgentMovemant.IsDashing = true;
             _attackHitbox.ShowHitbox(GetTarget(),1f);
             _dashDir = (Target.position - transform.position).normalized;
-            ExpantionAttackRange();
         }
 
         public void Dash()

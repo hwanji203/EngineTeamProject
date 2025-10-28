@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &646316609
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -9989,11 +9989,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3718727197544379364, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8754
+      value: -5.46
       objectReference: {fileID: 0}
     - target: {fileID: 3718727197544379364, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54879
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 3718727197544379364, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10105,6 +10105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DashParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 4445836774872161466, guid: 3b1a7b641be013549b6b927f63a26e2a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b6c09ac82f44d3429b395bb985c75a4, type: 2}
     - target: {fileID: 7153283987919135997, guid: 3b1a7b641be013549b6b927f63a26e2a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.27
