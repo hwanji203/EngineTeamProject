@@ -442,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5427576897909324830, guid: 6a05b04ba484a654f8616daf69a4125c, type: 3}
       propertyPath: m_text
-      value: 'Gold : 500
+      value: 'Gold : 1000
 
 '
       objectReference: {fileID: 0}
