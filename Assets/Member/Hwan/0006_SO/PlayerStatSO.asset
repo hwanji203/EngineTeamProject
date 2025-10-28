@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c6b577c0a52714997dfa9dd1b88e03, type: 3}
   m_Name: PlayerStatSO
   m_EditorClassIdentifier: 
-  maxStamina: 100
+  maxStamina: 1e+12
   swimStamina: 5
   dashStamina: 20
   hp: 9

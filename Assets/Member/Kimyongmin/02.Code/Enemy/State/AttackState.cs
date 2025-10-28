@@ -17,7 +17,10 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
 
         public override void UpdateState()
         {
-
+            if (!Enemy.AttackInPlayer())
+            {
+                EnemyStateMachine.ChangeState(StateType.Idle);
+            }
         }
 
         public override void ExitState()

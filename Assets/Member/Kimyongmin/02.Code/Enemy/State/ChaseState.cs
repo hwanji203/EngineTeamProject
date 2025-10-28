@@ -40,9 +40,13 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
                 _currentChackTime = 0;
             }
 
-            if (Enemy.AttackInPlayer() && Enemy.CanAttack && (EnemyStateMachine.currentState != EnemyStateMachine.StateDictionary[StateType.Attack]))
+            if (Enemy.AttackInPlayer() && Enemy.CanAttack)
             {
                 EnemyStateMachine.ChangeState(StateType.Attack);
+            }
+            else if (!Enemy.ChaseInPlayer())
+            {
+                EnemyStateMachine.ChangeState(StateType.Idle);
             }
 
             if (Enemy.EnemyDataSo.EnemyType == EnemyType.NotAggressive)

@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6791163971469751700}
+  lifetime: 5
 --- !u!70 &266085821951398427
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
