@@ -120,8 +120,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 921707211
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.50980395}
@@ -160,7 +160,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1261383766792276980}
@@ -241,8 +241,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 398774285
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 4851582136959742820, guid: 87f6645cebc3bb24b98b171c0e8f09c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -299,11 +299,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6534170236908996508}
   - component: {fileID: 68784005458589442}
+  - component: {fileID: 258235150597909843}
   - component: {fileID: 7591698977198904239}
   - component: {fileID: 7746409017741574624}
   - component: {fileID: 3150865719249686302}
   - component: {fileID: 1663942470757077087}
-  - component: {fileID: 258235150597909843}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Untagged
@@ -340,13 +340,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0427ebe6a68d4bf4ba1600efb60d8e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 10
+  attackRange: 8.5
   chaseRange: 999
   playerMask:
     serializedVersion: 2
     m_Bits: 64
   <EnemyDataSo>k__BackingField: {fileID: 11400000, guid: 10d1c171350d6df45b781795e6bb21a3, type: 2}
+  isAttack: 0
   dashPower: 15
+--- !u!114 &258235150597909843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691667978067916852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1f3e2babb44c947a4a2ceb339e1782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 10d1c171350d6df45b781795e6bb21a3, type: 2}
 --- !u!114 &7591698977198904239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,15 +449,3 @@ CapsuleCollider2D:
   m_Offset: {x: -0.002422335, y: -0.016962113}
   m_Size: {x: 1.5864081, y: 0.69469476}
   m_Direction: 1
---- !u!114 &258235150597909843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8691667978067916852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e1f3e2babb44c947a4a2ceb339e1782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

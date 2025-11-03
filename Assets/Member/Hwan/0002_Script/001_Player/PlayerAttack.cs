@@ -2,14 +2,15 @@ using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Member.Hwan._0002_Script._002_SO;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private PlayerSkillDictionarySO skillDictionarySO;
-    public PlayerStatSO StatSO { get; set; }
+    public PlayerStatSo StatSO { get; set; }
 
-    // ½ºÆäÀÌ½º¹Ù°¡ ´­·ÈÀ¸¸é ´ë½Ã, ¾Æ´Ï¸é ±âº» °ø°Ý
-    // °ø°Ý ÀÌº¥Æ® ¹ß»ý
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½Æ´Ï¸ï¿½ ï¿½âº» ï¿½ï¿½ï¿½ï¿½
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ß»ï¿½
     public Coroutine DashCoolCoroutine { get; private set; }
     public Coroutine FlipCoolCoroutine { get; private set; }
 
@@ -17,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        //ÀÓ½Ã (³ªÁß¿¡ jsonÀ¸·Î ºÒ·¯¿Ã²¨)
+        //ï¿½Ó½ï¿½ (ï¿½ï¿½ï¿½ß¿ï¿½ jsonï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½Ã²ï¿½)
         AddSkill(PlayerSkillType.Flip);
     }
 

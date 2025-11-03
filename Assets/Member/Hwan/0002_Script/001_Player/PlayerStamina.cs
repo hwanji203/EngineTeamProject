@@ -1,9 +1,10 @@
 using System;
+using Member.Hwan._0002_Script._002_SO;
 using UnityEngine;
 
 public class PlayerStamina : MonoBehaviour
 {
-    public PlayerStatSO StatSO { get; set; }
+    public PlayerStatSo StatSO { get; set; }
 
     public NotifyValue<float> CurrentStamina { get; private set; } = new(0);
 
