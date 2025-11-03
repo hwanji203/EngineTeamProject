@@ -15,7 +15,6 @@ MonoBehaviour:
   maxStamina: 1e+12
   swimStamina: 5
   dashStamina: 20
-  maxHp: 30
   defaultDmg: 10
   flipCool: 1
   dashCool: 0.35

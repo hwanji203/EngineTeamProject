@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 {
+    [RequireComponent(typeof(DolphinBrain))]
     public class Dolphin : global::Enemy
     {
         private AttackHitbox _attackHitbox;
@@ -26,14 +27,12 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Attack()
         {
-            isAttack = true;
+            ResetCooltime();
+            IsAttack = true;
             
             _target = GetTarget();
             
-            FilpX(_target.x);
-            
             _attackHitbox.ShowHitbox(_target,1f);
-            ExpantionAttackRange();
         }
 
         public void ShootProjectile()
@@ -46,7 +45,6 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
                 Vector2 dir = Quaternion.AngleAxis(shotAngle * i, Vector3.forward) * _target;
                 
                 bullet.Shoot(dir.normalized, bulletSpeed);
-                isAttack = false;
             }
         }
     }

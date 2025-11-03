@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
+using Member.Hwan._0002_Script._002_SO;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private PlayerStatSO statSO;
+    [SerializeField] private PlayerStatSo statSO;
     [SerializeField] private PlayerInputSO inputSO;
 
     private PlayerAnimation playerAnimation;

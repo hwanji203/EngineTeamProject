@@ -15,6 +15,8 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         {
             base.EnterState();
             Enemy.AgentMovemant.SetSpeed(Enemy.EnemyDataSo.idleSpeed,0);
+            Enemy.IsAttack = false;
+            Enemy.AgentMovemant.IsDashing = false;
         }
 
         public override void UpdateState()
@@ -31,7 +33,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
                 Enemy.AgentMovemant.SetMoveDir(moveDir);
             }
 
-            if (Enemy.AttackInPlayer() && !Enemy.isAttack)
+            if (Enemy.AttackInPlayer())
             {
                 EnemyStateMachine.ChangeState(StateType.Attack);
             }

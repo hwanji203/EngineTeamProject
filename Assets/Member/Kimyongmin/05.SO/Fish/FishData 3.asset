@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: FishData 3
   m_EditorClassIdentifier: 
   EnemyType: 0
+  hp: 10
+  attackDelay: 0
   idleSpeed: 1
   moveSpeed: 1
   detectDelay: 0

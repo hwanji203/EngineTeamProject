@@ -5,11 +5,13 @@ namespace Member.Kimyongmin._02.Code.Agent
 {
     public class HealthSystem : MonoBehaviour, IDamageable
     {
-        [SerializeField] public float MaxHealth { get; private set; }
+        private float _maxHealth;
 
         private float _health;
         
         public event Action OnHealthChanged;
+
+        public bool Hit { get; private set; } = false;
 
         public float Health
         {
@@ -18,21 +20,31 @@ namespace Member.Kimyongmin._02.Code.Agent
             {
                 float before = _health;
                 if (value != before)
+                {
                     OnHealthChanged?.Invoke();
+                    Hit = true;
+                }
                 
-                _health = Mathf.Clamp(value, 0, MaxHealth);
-                
+                _health = Mathf.Clamp(value, 0, _maxHealth);
             }
                 
             
         }
 
-
         public void GetDamage(float damage)
         {
             Health -= damage;
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
-        
+
+        public void SetHealth(float health)
+        {
+            _maxHealth = health;
+            _health = _maxHealth;
+        }
         
     }
 }

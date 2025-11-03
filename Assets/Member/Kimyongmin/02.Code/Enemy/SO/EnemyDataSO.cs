@@ -14,6 +14,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.SO
     {
         public EnemyType EnemyType;
 
+        public float hp;
         public float attackDelay;
         public float idleSpeed;
         public float moveSpeed;
