@@ -1,50 +1,32 @@
 using Member.Kimyongmin._02.Code.Enemy.State;
-using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 {
-    public class TurtleBrain : MonoBehaviour, IBrain
+    public class TurtleBrain : EnemyBrain
     {
-        private EnemyStateMachine _enemyStateMachine;
-        private global::Enemy _enemy;
-
-        private void Awake()
+        private new void Awake()
         {
-            _enemy = GetComponent<global::Enemy>();
-        
-            _enemyStateMachine = new EnemyStateMachine(this);
-            _enemyStateMachine.AddState(StateType.Idle, new IdleState(_enemy, _enemyStateMachine, "Idle"));
-            _enemyStateMachine.AddState(StateType.Chase, new ChaseState(_enemy, _enemyStateMachine, "Chase"));
-            _enemyStateMachine.AddState(StateType.Attack, new AttackState(_enemy, _enemyStateMachine, "Attack"));
+            base.Awake();
+            EnemyStateMachine.AddState(StateType.Idle, new IdleState(Enemy, EnemyStateMachine, "Idle"));
+            EnemyStateMachine.AddState(StateType.Chase, new ChaseState(Enemy, EnemyStateMachine, "Chase"));
+            EnemyStateMachine.AddState(StateType.Attack, new AttackState(Enemy, EnemyStateMachine, "Attack"));
         }
 
-        private void Start()
+        private new void Start()
         {
-            _enemyStateMachine.Initialize(StateType.Idle);
+            base.Start();
+            EnemyStateMachine.Initialize(StateType.Idle);
         }
 
         private void Update()
         {
-            if (_enemy.AttackInPlayer())
-            {
-                _enemyStateMachine.ChangeState(StateType.Attack);
-            }
-            else if (_enemy.ChaseInPlayer())
-            {
-                _enemyStateMachine.ChangeState(StateType.Chase);
-            }
-            else
-            {
-                _enemyStateMachine.ChangeState(StateType.Idle);
-            }
-        
-            _enemyStateMachine.currentState.UpdateState();
+            EnemyStateMachine.currentState.UpdateState();
         }
 
         public void ChaseChange()
         {
-            _enemyStateMachine.ChangeState(StateType.Chase);
+            EnemyStateMachine.ChangeState(StateType.Chase);
         }
-        
+
     }
 }

@@ -19,9 +19,9 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Attack()
         {
-            
-            ExpantionAttackRange();
-            AgentMovemant.IsDashing = true;
+            ResetCooltime();
+            AgentMovement.IsDashing = true;
+            IsAttack = true;
             _attackHitbox.ShowHitbox(GetTarget(),1f);
             _dashDir = (Target.position - transform.position).normalized;
         }
@@ -29,15 +29,14 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         public void Dash()
         {
             
-            AgentMovemant.RbCompo.linearVelocity = _dashDir * dashPower;
-            ResetCooltime();
+            AgentMovement.RbCompo.linearVelocity = _dashDir * dashPower;
         }
         
         public void DashEnd()
         {
-            AgentMovemant.IsDashing = false;
+            AgentMovement.IsDashing = false;
             DisbleAttackRange();
-            AgentMovemant.RbCompo.linearVelocity = Vector2.zero;
+            AgentMovement.RbCompo.linearVelocity = Vector2.zero;
         }
     }
 }

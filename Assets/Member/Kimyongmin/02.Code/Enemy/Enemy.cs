@@ -5,52 +5,64 @@ using Member.Kimyongmin._02.Code.Enemy.SO;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [Header("에너미 설1정")] 
-    [SerializeField] private float attackRange = 2f;
+    [Header("에너미 설1정")] [SerializeField] private float attackRange = 2f;
     [SerializeField] private float chaseRange = 10f;
-    [SerializeField] private LayerMask playerMask;
+    private LayerMask _playerMask;
 
-    public Animator Animator { get;private set; }
-    [field:SerializeField] public EnemyDataSo EnemyDataSo { get; private set; }
+    public Animator Animator { get; private set; }
+    [field: SerializeField] public EnemyDataSo EnemyDataSo { get; private set; }
     private float _currentAttackTime;
-    
-    public AgentMovemant AgentMovemant { get; private set; }
+
+    public HealthSystem HealthSystem { get; private set; }
+
+    public AgentMovement AgentMovement { get; private set; }
 
     protected Transform Target;
 
     private float _normalAttackRange;
 
-    protected virtual void  Awake()
+    public bool IsAttack { get; set; } = false;
+
+    protected virtual void Awake()
     {
-        AgentMovemant = GetComponent<AgentMovemant>();
+        AgentMovement = GetComponent<AgentMovement>();
         Animator = GetComponentInChildren<Animator>();
+        HealthSystem = GetComponent<HealthSystem>();
+        HealthSystem.SetHealth(EnemyDataSo.hp);
+        _playerMask = LayerMask.GetMask("Player");
 
         _currentAttackTime = EnemyDataSo.attackDelay;
 
         _normalAttackRange = attackRange;
+
+        Collider2D targetColl = Physics2D.OverlapCircle(transform.position, 999f, _playerMask);
+        Debug.Log(targetColl);
+        if (targetColl != null)
+            Target = targetColl.transform;
+
+        AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
     }
 
     protected virtual void Start()
-    { 
-        Collider2D targetColl = Physics2D.OverlapCircle(transform.position, 519f, playerMask);
-        if (targetColl != null)
-            Target = targetColl.transform;
-        
-        AgentMovemant.SetSpeed(EnemyDataSo.moveSpeed, 0);
+    {
+
     }
-    
+
     public void FilpX(float xDir)
     {
         float duration = 1f / EnemyDataSo.moveSpeed;
-        
+
 
         if (xDir > 0)
         {
-            transform.DORotate(new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z), duration);
+            transform.DORotate(
+                new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z), duration);
         }
         else if (xDir < 0)
         {
-            transform.DORotate(new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z), duration);
+            transform.DORotate(
+                new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z),
+                duration);
         }
     }
 
@@ -62,14 +74,16 @@ public abstract class Enemy : MonoBehaviour
     public bool AttackInPlayer()
     {
         if (EnemyDataSo.EnemyType != EnemyType.NotAggressive)
-            return Physics2D.OverlapCircle(transform.position, attackRange, playerMask);
+        {
+            return Physics2D.OverlapCircle(transform.position, attackRange, _playerMask);
+        }
 
         return false;
     }
 
     public bool ChaseInPlayer()
     {
-        return Physics2D.OverlapCircle(transform.position, chaseRange, playerMask);
+        return Physics2D.OverlapCircle(transform.position, chaseRange, _playerMask);
     }
 
     private void OnDrawGizmos()
@@ -81,12 +95,13 @@ public abstract class Enemy : MonoBehaviour
     }
 
     public bool CanAttack { get; private set; } = true;
+
     private void Update()
     {
         _currentAttackTime += Time.deltaTime;
-        
-        Debug.Log(CanAttack);
-        
+
+        AgentMovement.GetKnockbackDir(-GetTarget());
+
         if (_currentAttackTime > EnemyDataSo.attackDelay)
         {
             CanAttack = true;
@@ -106,13 +121,9 @@ public abstract class Enemy : MonoBehaviour
     {
         attackRange = 0;
     }
+
     public void EnableAttackRange()
     {
         attackRange = _normalAttackRange;
-    }
-    
-    public void ExpantionAttackRange()
-    {
-        attackRange = 999;
     }
 }

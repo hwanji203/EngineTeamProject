@@ -7,18 +7,19 @@ namespace Member.Kimyongmin._02.Code.Enemy
     { 
         Idle,
         Chase,
-        Attack
+        Attack,
+        Hit
     }
     public class EnemyStateMachine
     {
         public Dictionary<StateType, EnemyState> StateDictionary = new();
 
         public EnemyState currentState;
-        private IBrain _stateBrain;
+        private EnemyBrain _stateEnemyBrain;
 
-        public EnemyStateMachine(IBrain brain)
+        public EnemyStateMachine(EnemyBrain enemyBrain)
         {
-            _stateBrain = brain;
+            _stateEnemyBrain = enemyBrain;
         }
 
         public void Initialize(StateType startState)

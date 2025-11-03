@@ -1,3 +1,4 @@
+using Member.Kimyongmin._02.Code.Enemy.SO;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Enemy.State
@@ -13,7 +14,9 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         public override void EnterState()
         {
             base.EnterState();
-            Enemy.AgentMovemant.SetSpeed(Enemy.EnemyDataSo.idleSpeed,0);
+            Enemy.AgentMovement.SetSpeed(Enemy.EnemyDataSo.idleSpeed,Enemy.EnemyDataSo.detectDelay);
+            Enemy.IsAttack = false;
+            Enemy.AgentMovement.IsDashing = false;
         }
 
         public override void UpdateState()
@@ -27,9 +30,18 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
                 _currentTime = 0;
                 _standTime = Random.Range(1f, 3f);
                 moveDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                Enemy.AgentMovemant.SetMoveDir(moveDir);
+                Enemy.AgentMovement.SetMoveDir(moveDir);
             }
-        
+
+            if (Enemy.AttackInPlayer())
+            {
+                EnemyStateMachine.ChangeState(StateType.Attack);
+            }
+            else if (Enemy.ChaseInPlayer())
+            {
+                EnemyStateMachine.ChangeState(StateType.Chase);
+            }
+            
             Enemy.FilpX(moveDir.x);
         }
 

@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 {
+    [RequireComponent(typeof(DolphinBrain))]
     public class Dolphin : global::Enemy
     {
         private AttackHitbox _attackHitbox;
@@ -13,7 +14,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         [SerializeField] private float bulletSpeed = 20f;
         [SerializeField] private float shotAngle = 15f;
         
-        private Vector2 _target = Vector2.right;
+        private Vector3 _target = Vector3.forward;
         protected override void Awake()
         {
             base.Awake();
@@ -26,10 +27,12 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Attack()
         {
+            ResetCooltime();
+            IsAttack = true;
+            
             _target = GetTarget();
             
             _attackHitbox.ShowHitbox(_target,1f);
-            ExpantionAttackRange();
         }
 
         public void ShootProjectile()
@@ -38,8 +41,10 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             {
                 Projectile bullet = Instantiate(projectile, transform.position, Quaternion.Euler(0,0,shotAngle * i))
                     .GetComponent<Projectile>();
+
+                Vector2 dir = Quaternion.AngleAxis(shotAngle * i, Vector3.forward) * _target;
                 
-                bullet.Shoot(Quaternion.AngleAxis(shotAngle * i, transform.position) * _target, bulletSpeed);
+                bullet.Shoot(dir.normalized, bulletSpeed);
             }
         }
     }

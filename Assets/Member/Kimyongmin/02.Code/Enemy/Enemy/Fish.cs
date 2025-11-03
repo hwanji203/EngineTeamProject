@@ -2,33 +2,37 @@ using Member.Kimyongmin._02.Code.Enemy.SO;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
-public class Fish : Enemy
+namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 {
-    private SpriteLibrary _spriteLibrary;
-    private FishDataSo _fishData;
-
-    protected override void Awake()
+    [RequireComponent(typeof(FishBrain))]
+    public class Fish : global::Enemy
     {
-        base.Awake();
-        _spriteLibrary = GetComponentInChildren<SpriteLibrary>();
+        private SpriteLibrary _spriteLibrary;
+        private FishDataSo _fishData;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _spriteLibrary = GetComponentInChildren<SpriteLibrary>();
         
-        _fishData = EnemyDataSo as FishDataSo;
-    }
+            _fishData = EnemyDataSo as FishDataSo;
+        }
 
-    protected override void Start()
-    {
-        base.Start();
-        VisualSetting(_fishData.fishSpriteLibrary);
-    }
+        protected override void Start()
+        {
+            base.Start();
+            VisualSetting(_fishData.fishSpriteLibrary);
+        }
 
-    public override void Attack()
-    {
+        public override void Attack()
+        {
         
-    }
+        }
 
 
-    public void VisualSetting(SpriteLibraryAsset asset)
-    {
-        _spriteLibrary.spriteLibraryAsset = asset;
+        public void VisualSetting(SpriteLibraryAsset asset)
+        {
+            _spriteLibrary.spriteLibraryAsset = asset;
+        }
     }
 }

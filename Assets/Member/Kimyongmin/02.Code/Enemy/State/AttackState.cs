@@ -11,13 +11,16 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         public override void EnterState()
         {
             base.EnterState();
-            Enemy.AgentMovemant.SetSpeed(0, 0);
+            Enemy.AgentMovement.SetSpeed(0, Enemy.EnemyDataSo.detectDelay);
             Enemy.Attack();
         }
 
         public override void UpdateState()
         {
-
+            if (!Enemy.AttackInPlayer() && !Enemy.IsAttack)
+            {
+                EnemyStateMachine.ChangeState(StateType.Idle);
+            }
         }
 
         public override void ExitState()

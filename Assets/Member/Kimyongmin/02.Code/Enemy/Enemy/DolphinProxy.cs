@@ -20,6 +20,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         public void AttackEnd()
         {
             _dolphin.DisbleAttackRange();
+            _dolphin.IsAttack = false;
         }
     }
 }

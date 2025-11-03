@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TurtleData
   m_EditorClassIdentifier: 
   EnemyType: 2
+  hp: 100
   attackDelay: 5
   idleSpeed: 1.5
   moveSpeed: 2

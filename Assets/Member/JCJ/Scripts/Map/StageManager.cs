@@ -9,7 +9,7 @@ public class StageManager : MonoBehaviour
     private bool[] levelClear = new bool[10];
         
     public static event Action<int> OnStageCleared; //호출 예시 : StageManager.Instance.ClearLevel(stageLevel);
-    public static event Action<int> OnStageUnlocked;
+    public static event Action<int> OnStageUnlocked; 
     void Awake()
     {
         if (Instance == null)
@@ -41,7 +41,7 @@ public class StageManager : MonoBehaviour
             
             if (level < 9)//최대 레벨을 넘지 않았는지
             {
-                OnStageUnlocked?.Invoke(level + 1);
+                OnStageUnlocked?.Invoke(level + 1); //다음 스테이지 잠금 해제 처리
             }
             
             Debug.Log($"{level} 레벨");
@@ -79,7 +79,7 @@ public class StageManager : MonoBehaviour
         }
         PlayerPrefs.Save();
     }
-    void Update() //테스트용
+    void Update() //Test
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
@@ -107,7 +107,7 @@ public class StageManager : MonoBehaviour
             Debug.Log("레벨 5 클리어");
         }
         
-        // R키로 전체 리셋
+        // R키로 리셋
         if (Input.GetKeyDown(KeyCode.R))
         {
             ResetAllProgress();
