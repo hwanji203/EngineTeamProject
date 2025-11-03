@@ -2,14 +2,11 @@ using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Member.Hwan._0002_Script._002_SO;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private PlayerSkillDictionarySO skillDictionarySO;
 
-    // �����̽��ٰ� �������� ���, �ƴϸ� �⺻ ����
-    // ���� �̺�Ʈ �߻�
     public Coroutine DashCoolCoroutine { get; private set; }
     public Coroutine FlipCoolCoroutine { get; private set; }
 

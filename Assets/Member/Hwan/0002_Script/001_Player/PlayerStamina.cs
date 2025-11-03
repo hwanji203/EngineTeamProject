@@ -1,5 +1,3 @@
-using System;
-using Member.Hwan._0002_Script._002_SO;
 using UnityEngine;
 
 public class PlayerStamina : MonoBehaviour

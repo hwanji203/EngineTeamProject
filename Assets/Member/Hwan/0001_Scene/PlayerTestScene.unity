@@ -1737,6 +1737,10 @@ PrefabInstance:
       propertyPath: <StatSO>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: ccb79905f5b435247bd9f8c1f7364a88, type: 2}
+    - target: {fileID: 2429704602536568502, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
+      propertyPath: <StastSO>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: ccb79905f5b435247bd9f8c1f7364a88, type: 2}
     - target: {fileID: 3995050782960568216, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
       propertyPath: m_IsTrigger
       value: 0

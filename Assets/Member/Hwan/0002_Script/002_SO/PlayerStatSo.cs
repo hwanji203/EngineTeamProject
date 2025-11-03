@@ -1,16 +1,13 @@
 using UnityEngine;
 
-namespace Member.Hwan._0002_Script._002_SO
+[CreateAssetMenu(fileName = "PlayerStatSO", menuName = "HwanSO/PlayerStatSO")]
+public class PlayerStatSO : ScriptableObject
 {
-    [CreateAssetMenu(fileName = "PlayerStatSo", menuName = "HwanSO/PlayerStatSo")]
-    public class PlayerStatSo : ScriptableObject
-    {
-        public float maxStamina;
-        public float swimStamina;
-        public float dashStamina;
-        public float defaultDmg;
-        public float flipCool;
-        public float dashCool;
-        public int maxSkillCount;
-    }
+    public float maxStamina;
+    public float swimStamina;
+    public float dashStamina;
+    public float defaultDmg;
+    public float flipCool;
+    public float dashCool;
+    public int maxSkillCount;
 }
