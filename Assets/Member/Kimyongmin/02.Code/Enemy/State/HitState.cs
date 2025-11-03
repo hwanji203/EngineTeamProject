@@ -14,7 +14,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         {
             base.EnterState();
             Enemy.HealthSystem.OnHealthChanged += ResetStun;
-            Enemy.AgentMovemant.IsHit = true;
+            Enemy.AgentMovement.IsHit = true;
             ResetStun();
         }
 
@@ -32,7 +32,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         public override void ExitState()
         {
             base.ExitState();
-            Enemy.AgentMovemant.IsHit = false;
+            Enemy.AgentMovement.IsHit = false;
             Enemy.HealthSystem.OnHealthChanged -= ResetStun;
         }
 

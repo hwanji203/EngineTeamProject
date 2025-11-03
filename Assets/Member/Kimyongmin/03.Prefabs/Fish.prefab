@@ -163,7 +163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2726829630615936860
 Transform:
   m_ObjectHideFlags: 0
@@ -193,12 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 0
-  chaseRange: 5
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  chaseRange: 3
   <EnemyDataSo>k__BackingField: {fileID: 11400000, guid: 4b63da7aaac8e2f4c9019ce4d2f39217, type: 2}
-  isAttack: 0
 --- !u!114 &5096698553089508479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1f3e2babb44c947a4a2ceb339e1782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 4b63da7aaac8e2f4c9019ce4d2f39217, type: 2}
 --- !u!114 &1532501537637270092
 MonoBehaviour:
   m_ObjectHideFlags: 0

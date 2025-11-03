@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DolphinData
   m_EditorClassIdentifier: 
   EnemyType: 1
-  hp: 40
+  hp: 80
   attackDelay: 7
   idleSpeed: 5
   moveSpeed: 5

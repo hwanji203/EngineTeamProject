@@ -24,10 +24,10 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         {
             ResetCooltime();
             IsAttack = true;
-            AgentMovemant.IsDashing = true;
+            AgentMovement.IsDashing = true;
             _dashDir = Target.position;
             _hitboxCompo.ShowHitbox(exploDelay,exploRadius);
-            AgentMovemant.RbCompo.linearVelocity = Vector2.zero;
+            AgentMovement.RbCompo.linearVelocity = Vector2.zero;
         }
 
         public void Explo()

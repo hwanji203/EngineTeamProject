@@ -17,7 +17,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         public override void EnterState()
         {
             base.EnterState();
-            Enemy.AgentMovemant.SetSpeed(Enemy.EnemyDataSo.moveSpeed,0);
+            Enemy.AgentMovement.SetSpeed(Enemy.EnemyDataSo.moveSpeed,Enemy.EnemyDataSo.detectDelay);
             if (Enemy is Turtle turtle)
             {
                 turtle.DashEnd();
@@ -31,12 +31,12 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         
             if (_chackDelay < _currentChackTime && Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)
             {
-                Enemy.AgentMovemant.SetMoveDir(Enemy.GetTarget());
+                Enemy.AgentMovement.SetMoveDir(Enemy.GetTarget());
                 _currentChackTime = 0;
             }
             else
             {
-                Enemy.AgentMovemant.SetMoveDir(-Enemy.GetTarget());
+                Enemy.AgentMovement.SetMoveDir(-Enemy.GetTarget());
                 _currentChackTime = 0;
             }
 

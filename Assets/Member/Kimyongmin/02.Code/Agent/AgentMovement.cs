@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Agent
 {
-    public class AgentMovemant : MonoBehaviour
+    public class AgentMovement : MonoBehaviour
     {
         public Rigidbody2D RbCompo { get; private set; }
         

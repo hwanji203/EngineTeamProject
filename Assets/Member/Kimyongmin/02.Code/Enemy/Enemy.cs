@@ -15,7 +15,7 @@ public abstract class Enemy : MonoBehaviour
 
     public HealthSystem HealthSystem { get; private set; }
 
-    public AgentMovemant AgentMovemant { get; private set; }
+    public AgentMovement AgentMovement { get; private set; }
 
     protected Transform Target;
 
@@ -25,7 +25,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
-        AgentMovemant = GetComponent<AgentMovemant>();
+        AgentMovement = GetComponent<AgentMovement>();
         Animator = GetComponentInChildren<Animator>();
         HealthSystem = GetComponent<HealthSystem>();
         HealthSystem.SetHealth(EnemyDataSo.hp);
@@ -40,7 +40,7 @@ public abstract class Enemy : MonoBehaviour
         if (targetColl != null)
             Target = targetColl.transform;
 
-        AgentMovemant.SetSpeed(EnemyDataSo.moveSpeed, 0);
+        AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
     }
 
     protected virtual void Start()
@@ -100,7 +100,7 @@ public abstract class Enemy : MonoBehaviour
     {
         _currentAttackTime += Time.deltaTime;
 
-        AgentMovemant.GetKnockbackDir(-GetTarget());
+        AgentMovement.GetKnockbackDir(-GetTarget());
 
         if (_currentAttackTime > EnemyDataSo.attackDelay)
         {

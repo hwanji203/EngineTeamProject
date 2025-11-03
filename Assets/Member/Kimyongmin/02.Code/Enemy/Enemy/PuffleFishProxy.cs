@@ -20,7 +20,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         public void AttackEnd()
         {
             _puffleFish.IsAttack = false;
-            _puffleFish.AgentMovemant.IsDashing = false;
+            _puffleFish.AgentMovement.IsDashing = false;
             _puffleFish.DisbleAttackRange();
         }
     }

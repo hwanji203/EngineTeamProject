@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerMovementSO : ScriptableObject
 {
     [field: Header("DashAttack Setting")]
-    [field: SerializeField] public float dashTime { get; private set; } = 0.35f;
     [field: SerializeField] public float dashPower { get; private set; } = 1350f;
     [field: SerializeField] public float dashDamping { get; private set; } = 10f;
 

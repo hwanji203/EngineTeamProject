@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 7746409017741574624}
   - component: {fileID: 3150865719249686302}
   - component: {fileID: 1663942470757077087}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turtle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,11 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 8.5
   chaseRange: 999
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
   <EnemyDataSo>k__BackingField: {fileID: 11400000, guid: 10d1c171350d6df45b781795e6bb21a3, type: 2}
-  isAttack: 0
   dashPower: 15
 --- !u!114 &258235150597909843
 MonoBehaviour:
@@ -360,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1f3e2babb44c947a4a2ceb339e1782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 10d1c171350d6df45b781795e6bb21a3, type: 2}
 --- !u!114 &7591698977198904239
 MonoBehaviour:
   m_ObjectHideFlags: 0
