@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 800af2d9ce663e745a73e6ea7f80c634
+guid: 981ac0a85dd49214f870d1738ba0467a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7361955071099520997
-    second: gemibg 1_0
+      213: 5367566946323652583
+    second: DistanceBarBackground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 1, y: 0, z: 1, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gemibg 1_0
+      name: DistanceBarBackground_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 29
         y: 0
-        width: 2000
-        height: 19000
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 7
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b183abe3ed415d990800000000000000
-      internalID: -7361955071099520997
+      spriteID: 7efdfb7f2bd6d7a40800000000000000
+      internalID: 5367566946323652583
       vertices: []
       indices: 
       edges: []
@@ -125,8 +125,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4a694cc2f32781546aa0ce1b21aa44c4
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      gemibg 1_0: -7361955071099520997
+      DistanceBarBackground_0: 5367566946323652583
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,6 +1,10 @@
+using Unity.VisualScripting;
+using UnityEngine;
+
 public interface IUI
 {
-    public void Initialize();
-    public void Open();
-    public void Close();
+    public UIType UIType { get; }
+    public abstract void Initialize();
+    public abstract void Open();
+    public abstract void Close();
 }

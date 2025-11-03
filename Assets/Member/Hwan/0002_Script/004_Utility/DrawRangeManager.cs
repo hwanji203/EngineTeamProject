@@ -12,7 +12,7 @@ public class DrawRangeManager : MonoSingleton<DrawRangeManager>
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-    public void DrawBox(Vector2 size, float angleDeg, Vector3 position)
+    public void DrawBox(Vector2 size, float angleDeg, Vector3 position, Vector3 offset)
     {
         lineRenderer.loop = true;
         lineRenderer.positionCount = 4;
@@ -25,6 +25,11 @@ public class DrawRangeManager : MonoSingleton<DrawRangeManager>
             new(-hx, -hy, 0), new(-hx, hy, 0),
             new(hx,  hy, 0),  new(hx, -hy, 0)
         };
+
+        for(int i = 0; i < v.Length; i++)
+        {
+            v[i] += offset;
+        }
 
         Quaternion rot = Quaternion.Euler(0, 0, angleDeg);
         for (int i = 0; i < v.Length; i++)

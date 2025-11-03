@@ -29,11 +29,6 @@ public class PlayerInputSO : ScriptableObject, IPlayerActions
         controlls.Player.Disable();
     }
 
-    public void OnAttack(InputAction.CallbackContext context)
-    {
-
-    }
-
     public void OnMove(InputAction.CallbackContext context)
     {
         OnSpaceBtnChanged?.Invoke(context.performed);

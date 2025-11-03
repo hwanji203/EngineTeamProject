@@ -24,3 +24,10 @@ public enum PlayerSkillType
     Flip,
     IndiaInk
 }
+
+public enum UIType
+{
+    None,
+    GaugeUI,
+    DistanceBarUI
+}

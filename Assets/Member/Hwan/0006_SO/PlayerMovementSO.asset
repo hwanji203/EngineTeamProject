@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11583304a0c125e48ab7b776339658b6, type: 3}
   m_Name: PlayerMovementSO
   m_EditorClassIdentifier: 
-  <dashTime>k__BackingField: 0.35
-  <dashPower>k__BackingField: 1350
-  <dashDamping>k__BackingField: 10
-  <rotateSpeed>k__BackingField: 750
-  <limitPos>k__BackingField: 0.5
-  <acceleration>k__BackingField: 700
-  <decreaseValue>k__BackingField: 3
-  <maxSpeed>k__BackingField: 2
-  <moveRotSpeed>k__BackingField: 250
-  <attackTime>k__BackingField: 0.4
-  <flipRotSpeed>k__BackingField: 275
-  <gravityScale>k__BackingField: 0.325
+  <skillDictionarySO>k__BackingField: {fileID: 11400000, guid: 729acdec5a8938c4889134d7361c0198, type: 2}
+  <DashTime>k__BackingField: 0.35
+  <DashPower>k__BackingField: 1350
+  <DashDamping>k__BackingField: 10
+  <RotateSpeed>k__BackingField: 750
+  <LimitPos>k__BackingField: 0.5
+  <Acceleration>k__BackingField: 700
+  <DecreaseValue>k__BackingField: 3
+  <MaxSpeed>k__BackingField: 2
+  <MoveRotSpeed>k__BackingField: 250
+  <FlipRotSpeed>k__BackingField: 275
+  <GravityScale>k__BackingField: 0.325

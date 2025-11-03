@@ -3,15 +3,13 @@ using UnityEngine;
 
 public class PlayerStamina : MonoBehaviour
 {
-    public PlayerStatSO StatSO { get; set; }
+    private PlayerStatSO statSO;
 
     public NotifyValue<float> CurrentStamina { get; private set; } = new(0);
 
-    private Coroutine recoveryCoolCor;
-
     private void Start()
     {
-        CurrentStamina.Value = StatSO.maxStamina;
+        CurrentStamina.Value = statSO.maxStamina;
     }
 
     public bool TryMove(PlayerMoveType type)
@@ -32,9 +30,9 @@ public class PlayerStamina : MonoBehaviour
         switch (type)
         {
             case PlayerMoveType.Dash:
-                return StatSO.dashStamina;
+                return statSO.dashStamina;
             case PlayerMoveType.Swim:
-                return StatSO.swimStamina;
+                return statSO.swimStamina;
             default:
                 return 0;
         }
@@ -44,6 +42,11 @@ public class PlayerStamina : MonoBehaviour
     {
         float useStamina = GetStamina(type);
 
-        CurrentStamina.Value = Mathf.Clamp(CurrentStamina.Value + useStamina, 0, StatSO.maxStamina);
+        CurrentStamina.Value = Mathf.Clamp(CurrentStamina.Value + useStamina, 0, statSO.maxStamina);
+    }
+
+    public void SetStatSO(PlayerStatSO statSO)
+    {
+        this.statSO = statSO;
     }
 }

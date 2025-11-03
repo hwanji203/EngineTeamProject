@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public bool DoMove { get; private set; }
     public bool CanMove { get; private set; }
     public Vector2 MoveDir { get; private set; }
+    public NotifyValue<float> PlayerYValue { get; private set; } = new();
 
     private bool isFlipping;
     private float rotateSpeed;
@@ -20,27 +21,29 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-        rb.linearDamping = movementSO.decreaseValue;
-        rb.gravityScale = movementSO.gravityScale;
+        rb.linearDamping = movementSO.DecreaseValue;
+        rb.gravityScale = movementSO.GravityScale;
 
         CanMove = true;
         DoMove = false;
 
-        rotateSpeed = movementSO.rotateSpeed;
+        rotateSpeed = movementSO.RotateSpeed;
     }
+
+    public void UpdateYValue() { PlayerYValue.Value = transform.position.y; }
 
     public void SetRotateSpeed(PlayerState stateType)
     {
         switch(stateType)
         {
             case PlayerState.Flip:
-                rotateSpeed = movementSO.flipRotSpeed;
+                rotateSpeed = movementSO.FlipRotSpeed;
                 break;
             case PlayerState.Idle:
-                rotateSpeed = movementSO.rotateSpeed;
+                rotateSpeed = movementSO.RotateSpeed;
                 break;
             case PlayerState.Move:
-                rotateSpeed = movementSO.moveRotSpeed;
+                rotateSpeed = movementSO.MoveRotSpeed;
                 break;
         }
     }
@@ -54,14 +57,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void GoDirectionMove()
     {
-        rb.AddForce(MoveDir * Time.deltaTime * movementSO.acceleration, ForceMode2D.Force);
-        rb.linearVelocity = rb.linearVelocity.normalized * Mathf.Clamp(rb.linearVelocity.magnitude, 0, movementSO.maxSpeed);
+        rb.AddForce(MoveDir * Time.deltaTime * movementSO.Acceleration, ForceMode2D.Force);
+        rb.linearVelocity = rb.linearVelocity.normalized * Mathf.Clamp(rb.linearVelocity.magnitude, 0, movementSO.MaxSpeed);
     }
     
     public void Rotate()
     {
         if (!(isFlipping == true || CanMove == true)) return;
-        if ((MousePos - (Vector2)transform.position).magnitude < movementSO.limitPos) return;
+        if ((MousePos - (Vector2)transform.position).magnitude < movementSO.LimitPos) return;
 
         float targetRad = Mathf.Atan2(MousePos.y - transform.position.y, MousePos.x - transform.position.x);
         float targetDeg = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetRad * Mathf.Rad2Deg, rotateSpeed * Time.deltaTime);
@@ -76,13 +79,13 @@ public class PlayerMovement : MonoBehaviour
         switch (type)
         {
             case PlayerAttackType.Dash:
-                rb.AddForce(MoveDir * movementSO.dashPower, ForceMode2D.Force);
-                rb.linearDamping = movementSO.dashDamping;
+                rb.AddForce(MoveDir * movementSO.DashPower, ForceMode2D.Force);
+                rb.linearDamping = movementSO.DashDamping;
                 break;
             case PlayerAttackType.Flip:
                 isFlipping = true;
                 SetRotateSpeed(PlayerState.Flip);
-                visualTrn.DOBlendableRotateBy(new Vector3(0, 0, 360f), movementSO.attackTime, RotateMode.FastBeyond360)
+                visualTrn.DOBlendableRotateBy(new Vector3(0, 0, 360f), movementSO.skillDictionarySO.Dictionary[PlayerSkillType.Flip].AttackTime, RotateMode.FastBeyond360)
                     .SetEase(Ease.OutCirc);
                 break;
         }
@@ -93,8 +96,8 @@ public class PlayerMovement : MonoBehaviour
         isFlipping = false;
         SetRotateSpeed(PlayerState.Idle);
         rb.linearVelocity = Vector2.zero;
-        rb.gravityScale = movementSO.gravityScale;
-        rb.linearDamping = movementSO.dashDamping;
+        rb.gravityScale = movementSO.GravityScale;
+        rb.linearDamping = movementSO.DashDamping;
         CanMove = true;
     }
 }

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private PlayerSkillDictionarySO skillDictionarySO;
-    public PlayerStatSO StatSO { get; set; }
 
     // 스페이스바가 눌렸으면 대시, 아니면 기본 공격
     // 공격 이벤트 발생
@@ -14,6 +13,11 @@ public class PlayerAttack : MonoBehaviour
     public Coroutine FlipCoolCoroutine { get; private set; }
 
     private List<PlayerSkillType> currentEquippedSkills = new();
+    private PlayerStatSO statSO;
+
+    private Dictionary<PlayerSkillType, Coroutine> attackCoroutineDictionary = new();
+
+    [SerializeField] private PlayerSkillType seeSkill;
 
     private void Start()
     {
@@ -23,18 +27,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        foreach (PlayerSkillType skillType in Enum.GetValues(typeof(PlayerSkillType)))
-        {
-            if (skillDictionarySO.Dictionary.TryGetValue(skillType, out PlayerSkillSO skillSO))
-            {
-                DrawRangeManager.Instance.DrawBox(skillSO.Range, transform.eulerAngles.z, transform.position);
-            }
-        }
+        PlayerSkillSO skill = skillDictionarySO.Dictionary[seeSkill];
+
+        DrawRangeManager.Instance.DrawBox(skill.Range, transform.eulerAngles.z, transform.position, skill.RealOffSet);
     }
 
     public void AddSkill(PlayerSkillType skillType)
     {
-        if (currentEquippedSkills.Count >= StatSO.maxSkillCount) return;
+        if (currentEquippedSkills.Count >= statSO.maxSkillCount) return;
         currentEquippedSkills.Add(skillType);
     }
 
@@ -42,13 +42,13 @@ public class PlayerAttack : MonoBehaviour
     {
         if (type == PlayerAttackType.Dash)
         {
-            skillDictionarySO.Dictionary[PlayerSkillType.Dash].AttackStart(transform, StatSO.defaultDmg);
+            attackCoroutineDictionary[PlayerSkillType.Dash] = StartCoroutine(skillDictionarySO.Dictionary[PlayerSkillType.Dash].AttackStart(transform, statSO.defaultDmg));
         }
         else
         {
             foreach (PlayerSkillType skillType in currentEquippedSkills)
             {
-                skillDictionarySO.Dictionary[skillType].AttackStart(transform, StatSO.defaultDmg);
+                attackCoroutineDictionary[skillType] = StartCoroutine(skillDictionarySO.Dictionary[skillType].AttackStart(transform, statSO.defaultDmg));
             }
         }
     }
@@ -71,13 +71,26 @@ public class PlayerAttack : MonoBehaviour
         switch (attackType)
         {
             case PlayerAttackType.Dash:
-                yield return new WaitForSeconds(StatSO.dashCool);
+                yield return new WaitForSeconds(statSO.dashCool);
                 DashCoolCoroutine = null;
                 break;
             case PlayerAttackType.Flip:
-                yield return new WaitForSeconds(StatSO.flipCool);
+                yield return new WaitForSeconds(statSO.flipCool);
                 FlipCoolCoroutine = null;
                 break;
         }
+    }
+
+    public void AttackCancel()
+    {
+        foreach (Coroutine coroutine in attackCoroutineDictionary.Values)
+        {
+            StopCoroutine(coroutine);
+        }
+    }
+
+    public void SetStatSO(PlayerStatSO statSO)
+    {
+        this.statSO = statSO;
     }
 }

@@ -1,29 +1,29 @@
 using System;
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private PlayerStatSO statSO;
+    [field: SerializeField] public PlayerStatSO StatSO { get; private set; }
     [SerializeField] private PlayerInputSO inputSO;
 
     private PlayerAnimation playerAnimation;
-    private PlayerMovement playerMovement;
-    private PlayerAttack playerAttack;
-    private PlayerStamina playerStamina;
+    public PlayerMovement PlayerMovementCompo { get; private set; }
+    private PlayerAttack playerAttackCompo;
+    public PlayerStamina PlayerStaminaCompo { get; private set; }
 
     private (bool doing, PlayerAttackType attackType) currentAttackState;
     private bool DoMove;
 
     private void Awake()
     {
+        transform.position = new Vector2(0, GameManager.Instance.StageSO.StartY);
+
         playerAnimation = GetComponentInChildren<PlayerAnimation>();
-        playerMovement = GetComponent<PlayerMovement>();
-        playerAttack = GetComponent<PlayerAttack>();
-        playerAttack.StatSO = statSO;
-        playerStamina = GetComponent<PlayerStamina>();
-        playerStamina.StatSO = statSO;
+        PlayerMovementCompo = GetComponent<PlayerMovement>();
+        playerAttackCompo = GetComponent<PlayerAttack>();
+        playerAttackCompo.SetStatSO(StatSO);
+        PlayerStaminaCompo = GetComponent<PlayerStamina>();
+        PlayerStaminaCompo.SetStatSO(StatSO);
 
         InputInitialize();
         AnimationInitialize();
@@ -32,19 +32,21 @@ public class Player : MonoBehaviour
     private void Update()
     {
         UpdateState();
+
+        PlayerMovementCompo.UpdateYValue();
     }
 
     private void AnimationInitialize()
     {
-        playerAnimation.OnAttackStart += playerMovement.AttackMove;
-        playerAnimation.OnAttackEnd += playerMovement.EndAttack;
-        playerAnimation.OnAttackEnd += playerAttack.StartAttack;
-        playerAnimation.OnAttackStart += playerAttack.Attack;
+        playerAnimation.OnAttackStart += PlayerMovementCompo.AttackMove;
+        playerAnimation.OnAttackEnd += PlayerMovementCompo.EndAttack;
+        playerAnimation.OnAttackEnd += playerAttackCompo.StartAttack;
+        playerAnimation.OnAttackStart += playerAttackCompo.Attack;
     }
 
     private void InputInitialize()
     {
-        inputSO.OnMouseMove += (mousePos) => playerMovement.MousePos = mousePos;
+        inputSO.OnMouseMove += (mousePos) => PlayerMovementCompo.MousePos = mousePos;
         inputSO.OnSpaceBtnChanged += (performed) => DoMove = performed;
         inputSO.OnMouseClickChanged += (performed, attackType) => currentAttackState = (performed, attackType);
     }
@@ -54,25 +56,25 @@ public class Player : MonoBehaviour
         switch (type)
         {
             case PlayerAttackType.Dash:
-                if (playerAttack.DashCoolCoroutine != null) return false;
-                if (playerStamina.TryMove(PlayerMoveType.Dash) == false) return false;
+                if (playerAttackCompo.DashCoolCoroutine != null) return false;
+                if (PlayerStaminaCompo.TryMove(PlayerMoveType.Dash) == false) return false;
                 playerAnimation.ChangeAnimation(PlayerState.Dash);
                 break;
             case PlayerAttackType.Flip:
-                if (playerAttack.FlipCoolCoroutine != null) return false;
+                if (playerAttackCompo.FlipCoolCoroutine != null) return false;
                 playerAnimation.ChangeAnimation(PlayerState.Flip);
                 break;
         }
 
-        playerMovement.StartAttack();
+        PlayerMovementCompo.StartAttack();
 
         return true;
     }
 
     private void UpdateState()
     {
-        playerMovement.Rotate();
-        if (playerMovement.CanMove == false) return;
+        PlayerMovementCompo.Rotate();
+        if (PlayerMovementCompo.CanMove == false) return;
 
         if (currentAttackState.doing == true && playerAnimation.CanAttack() == true)
         {
@@ -80,12 +82,12 @@ public class Player : MonoBehaviour
         }
 
         playerAnimation.ChangeAnimation(PlayerState.Idle);
-        playerMovement.SetRotateSpeed(PlayerState.Idle);
+        PlayerMovementCompo.SetRotateSpeed(PlayerState.Idle);
 
-        if (DoMove == false || playerStamina.TryMove(PlayerMoveType.Swim) == false) return;
+        if (DoMove == false || PlayerStaminaCompo.TryMove(PlayerMoveType.Swim) == false) return;
 
-        playerMovement.SetRotateSpeed(PlayerState.Move);
+        PlayerMovementCompo.SetRotateSpeed(PlayerState.Move);
         playerAnimation.ChangeAnimation(PlayerState.Move);
-        playerMovement.GoDirectionMove();
+        PlayerMovementCompo.GoDirectionMove();
     }
 }
