@@ -8,14 +8,11 @@ public class DistanceBarUI : MonoBehaviour, IUI
 
     public UIType UIType => UIType.DistanceBarUI;
 
+    [field: SerializeField] public GameObject UIObject { get; private set; }
+
     private StageInfoSO stageSO;
     private float maxValue;
     private float minValue;
-
-    public void Close()
-    {
-        gameObject.SetActive(false);
-    }
 
     public void Initialize()
     {
@@ -24,15 +21,21 @@ public class DistanceBarUI : MonoBehaviour, IUI
         minValue = stageSO.StartY;
         maxValue = stageSO.EndY;
         distanceBar.value = minValue;
-    }
-
-    public void Open()
-    {
-        gameObject.SetActive(false);
+        Open();
     }
 
     private void ChangeSlider(float value)
     {
         distanceBar.value = Mathf.Lerp(0, 1, (value - minValue) / (maxValue - minValue));
+    }
+
+    public void Open()
+    {
+        UIObject.SetActive(true);
+    }
+
+    public void Close()
+    {
+        UIObject.SetActive(false);
     }
 }

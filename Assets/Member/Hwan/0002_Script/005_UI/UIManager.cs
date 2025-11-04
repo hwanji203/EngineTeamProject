@@ -18,6 +18,7 @@ public class UIManager : MonoSingleton<UIManager>
                 if (!uiDictionary.ContainsKey(ui.UIType))
                 {
                     uiDictionary.Add(ui.UIType, ui);
+                    ui.UIObject.SetActive(false);
                     ui.Initialize();
                 }
             }

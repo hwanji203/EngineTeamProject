@@ -3,8 +3,9 @@ using UnityEngine;
 
 public interface IUI
 {
+    public GameObject UIObject { get; }
     public UIType UIType { get; }
-    public abstract void Initialize();
-    public abstract void Open();
-    public abstract void Close();
+    public void Initialize();
+    public void Open();
+    public void Close();
 }

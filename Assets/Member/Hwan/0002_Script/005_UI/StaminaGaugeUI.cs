@@ -6,21 +6,18 @@ public class StaminaGaugeUI : MonoBehaviour, IUI
 {
     [SerializeField] private float maxSize;
     [SerializeField] private RectTransform gaugeTrn;
+    [field: SerializeField] public GameObject UIObject { get; private set; }
 
     public UIType UIType { get => UIType.GaugeUI; }
 
     private float maxValue;
-
-    public void Close()
-    {
-        gameObject.SetActive(false);
-    }
 
     public void Initialize()
     {
         GameManager.Instance.Player.Stamina.CurrentStamina.OnValueChange += SetGauge;
         maxValue = GameManager.Instance.Player.StatSO.maxStamina;
         SetGauge(maxValue);
+        Open();
     }
 
     private void SetGauge(float value)
@@ -31,6 +28,11 @@ public class StaminaGaugeUI : MonoBehaviour, IUI
 
     public void Open()
     {
-        gameObject.SetActive(true);
+        UIObject.SetActive(true);
+    }
+
+    public void Close()
+    {
+        UIObject.SetActive(false);
     }
 }
