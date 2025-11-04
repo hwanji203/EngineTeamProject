@@ -3,13 +3,12 @@ using UnityEngine;
 using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Enemy.SO;
-using UnityEditor;
 
 public abstract class Enemy : MonoBehaviour
 {
     [Header("에너미 설1정")] [SerializeField] private float attackRange = 2f;
     [SerializeField] private float chaseRange = 10f;
-    private LayerMask _playerMask;
+    [SerializeField] private LayerMask layerMask;
 
     public Animator Animator { get; private set; }
     [field: SerializeField] public EnemyDataSo EnemyDataSo { get; private set; }
@@ -20,6 +19,7 @@ public abstract class Enemy : MonoBehaviour
     public AgentMovement AgentMovement { get; private set; }
 
     protected Transform Target;
+    private Transform[] _jells;
 
     private float _normalAttackRange;
 
@@ -40,14 +40,20 @@ public abstract class Enemy : MonoBehaviour
         Animator = GetComponentInChildren<Animator>();
         HealthSystem = GetComponent<HealthSystem>();
         HealthSystem.SetHealth(EnemyDataSo.hp);
-        _playerMask = LayerMask.GetMask("Player");
 
         _normalAttackRange = attackRange;
 
-        Collider2D targetColl = Physics2D.OverlapCircle(transform.position, 999f, _playerMask);
-        Debug.Log(targetColl);
+        Collider2D[] targetColl = Physics2D.OverlapCircleAll(transform.position, 999f, layerMask);
         if (targetColl != null)
-            Target = targetColl.transform;
+        {
+            foreach (Collider2D col in targetColl)
+            {
+                if (col.gameObject.layer == 7)
+                {
+                    Target = col.transform;
+                }
+            }
+        }
 
         AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
     }
@@ -80,11 +86,16 @@ public abstract class Enemy : MonoBehaviour
         return (Target.transform.position - transform.position).normalized;
     }
 
+    public Vector3 TargetPos()
+    {
+        return Target.transform.position;
+    }
+
     public bool AttackInPlayer()
     {
         if (EnemyDataSo.EnemyType != EnemyType.NotAggressive)
         {
-            return Physics2D.OverlapCircle(transform.position, attackRange, _playerMask);
+            return Physics2D.OverlapCircle(transform.position, attackRange, layerMask);
         }
 
         return false;
@@ -92,7 +103,7 @@ public abstract class Enemy : MonoBehaviour
 
     public bool ChaseInPlayer()
     {
-        return Physics2D.OverlapCircle(transform.position, chaseRange, _playerMask);
+        return Physics2D.OverlapCircle(transform.position, chaseRange, layerMask);
     }
 
     private void OnDrawGizmos()
