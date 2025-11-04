@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Enemy.SO;
+using UnityEditor;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -25,13 +27,20 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
+        try
+        {
+            _currentAttackTime = EnemyDataSo.attackDelay;
+        }
+        catch (NullReferenceException)
+        {
+            Debug.LogError($"{gameObject.name}이 친구 에너미 데이터 안 넣음!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        }
+        
         AgentMovement = GetComponent<AgentMovement>();
         Animator = GetComponentInChildren<Animator>();
         HealthSystem = GetComponent<HealthSystem>();
         HealthSystem.SetHealth(EnemyDataSo.hp);
         _playerMask = LayerMask.GetMask("Player");
-
-        _currentAttackTime = EnemyDataSo.attackDelay;
 
         _normalAttackRange = attackRange;
 
