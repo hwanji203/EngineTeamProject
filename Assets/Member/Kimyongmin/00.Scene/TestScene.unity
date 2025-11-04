@@ -1503,6 +1503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 68784005458589442, guid: 7480d7d3ba7342346bed19c49006bc16, type: 3}
+      propertyPath: <EnemyDataSo>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 10d1c171350d6df45b781795e6bb21a3, type: 2}
     - target: {fileID: 6534170236908996508, guid: 7480d7d3ba7342346bed19c49006bc16, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.716768
