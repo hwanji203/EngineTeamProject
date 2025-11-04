@@ -18,7 +18,7 @@ public class StaminaGaugeUI : MonoBehaviour, IUI
 
     public void Initialize()
     {
-        GameManager.Instance.Player.PlayerStaminaCompo.CurrentStamina.OnValueChange += SetGauge;
+        GameManager.Instance.Player.Stamina.CurrentStamina.OnValueChange += SetGauge;
         maxValue = GameManager.Instance.Player.StatSO.maxStamina;
         SetGauge(maxValue);
     }

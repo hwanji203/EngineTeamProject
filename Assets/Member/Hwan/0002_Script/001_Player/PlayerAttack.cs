@@ -19,7 +19,6 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        //�ӽ� (���߿� json���� �ҷ��ò�)
         AddSkill(PlayerSkillType.Flip);
     }
 
@@ -27,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
     {
         PlayerSkillSO skill = skillDictionarySO.Dictionary[seeSkill];
 
-        DrawRangeManager.Instance.DrawBox(skill.Range, transform.eulerAngles.z, transform.position, skill.RealOffSet);
+        DrawRangeManager.Instance.DrawBox(skill.RealRange, transform.eulerAngles.z, transform.position, skill.RealOffSet);
     }
 
     public void AddSkill(PlayerSkillType skillType)

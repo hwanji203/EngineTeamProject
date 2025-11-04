@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public class PlayerStamina : MonoBehaviour
+public class PlayerStamina
 {
     private PlayerStatSO statSO;
 
-    public NotifyValue<float> CurrentStamina { get; private set; } = new(0);
+    public NotifyValue<float> CurrentStamina { get; private set; }
 
-    private void Start()
+    public void Initialize()
     {
+        CurrentStamina = new(0);
         CurrentStamina.Value = statSO.maxStamina;
     }
 
@@ -37,11 +38,15 @@ public class PlayerStamina : MonoBehaviour
         }
     }
 
-    public void RecoveryStamina(PlayerMoveType type)
+    public void LostStamina(float damage)
     {
-        float useStamina = GetStamina(type);
+        if (CurrentStamina.Value <= damage)
+        {
+            CurrentStamina.Value = 0;
+            return;
+        }
 
-        CurrentStamina.Value = Mathf.Clamp(CurrentStamina.Value + useStamina, 0, statSO.maxStamina);
+        CurrentStamina.Value -= damage;
     }
 
     public void SetStatSO(PlayerStatSO statSO)

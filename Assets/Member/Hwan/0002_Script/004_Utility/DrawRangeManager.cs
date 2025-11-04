@@ -12,30 +12,23 @@ public class DrawRangeManager : MonoSingleton<DrawRangeManager>
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-    public void DrawBox(Vector2 size, float angleDeg, Vector3 position, Vector3 offset)
+    public void DrawBox(Vector2 size, float angle, Vector3 position, Vector3 offset)
     {
         lineRenderer.loop = true;
         lineRenderer.positionCount = 4;
 
-        // 로컬 정점(원점 기준)
-        var hx = size.x * 0.5f;
-        var hy = size.y * 0.5f;
-        Vector3[] v = new Vector3[]
-        {
-            new(-hx, -hy, 0), new(-hx, hy, 0),
-            new(hx,  hy, 0),  new(hx, -hy, 0)
-        };
+        float halfX = size.x / 2;
+        float halfY = size.y / 2;
 
-        for(int i = 0; i < v.Length; i++)
+        Vector3[] points = { new Vector2(-halfX, -halfY), new Vector2(-halfX, halfY),
+        new Vector2(halfX, halfY), new Vector2(halfX, -halfY)};
+
+        for (int i = 0; i < points.Length; i++)
         {
-            v[i] += offset;
+            points[i] = Quaternion.Euler(0, 0, angle) * (points[i] + offset) + position;
         }
 
-        Quaternion rot = Quaternion.Euler(0, 0, angleDeg);
-        for (int i = 0; i < v.Length; i++)
-            v[i] = rot * v[i] + position;
-
-        lineRenderer.SetPositions(v);
+        lineRenderer.SetPositions(points);
     }
 
 }

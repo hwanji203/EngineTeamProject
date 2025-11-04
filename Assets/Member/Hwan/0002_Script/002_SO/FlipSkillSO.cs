@@ -8,12 +8,13 @@ public class FlipSkillSO : PlayerSkillSO
     {
         detectedCollider.Clear();
 
-        for (int i = 0; i < attackCount; i++)
-        {
-            CheckBox(playerTrn, defaultDamage);
+        CheckBox(playerTrn, defaultDamage);
 
-            if (i + 1 == attackCount) break;
-            yield return new WaitForSeconds(AttackTime / attackCount);
+        for (int i = 0; i < attackCount - 1; i++)
+        {
+            yield return new WaitForSeconds(AttackTime / attackCount - 1);
+
+            CheckBox(playerTrn, defaultDamage);
         }
     }
 }

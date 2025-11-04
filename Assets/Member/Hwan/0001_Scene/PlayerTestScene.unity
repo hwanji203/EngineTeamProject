@@ -452,7 +452,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.2820511
+        value: 0.26153564
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1789,7 +1789,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7468989052221305353, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

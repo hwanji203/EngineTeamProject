@@ -16,12 +16,12 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  offset: {x: 0, y: 1.75, z: 0}
-  attackCount: 3
+  attackCount: 5
   effects:
   - <isParticle>k__BackingField: 0
     <effectPrefab>k__BackingField: {fileID: 6973282780006548037, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
   - <isParticle>k__BackingField: 1
     <effectPrefab>k__BackingField: {fileID: 210698327997300742, guid: 3b1a7b641be013549b6b927f63a26e2a, type: 3}
-  <Range>k__BackingField: {x: 3.25, y: 1}
   <AttackTime>k__BackingField: 0.35
+  range: {x: 1, y: 1}
+  offset: {x: 0, y: 0.75, z: 0}

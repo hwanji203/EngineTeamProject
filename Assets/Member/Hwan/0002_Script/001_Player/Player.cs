@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private PlayerAnimation playerAnimation;
     public PlayerMovement PlayerMovementCompo { get; private set; }
     private PlayerAttack playerAttackCompo;
-    public PlayerStamina PlayerStaminaCompo { get; private set; }
+    public PlayerStamina Stamina { get; private set; } = new PlayerStamina();
 
     private (bool doing, PlayerAttackType attackType) currentAttackState;
     private bool DoMove;
@@ -22,8 +22,9 @@ public class Player : MonoBehaviour
         PlayerMovementCompo = GetComponent<PlayerMovement>();
         playerAttackCompo = GetComponent<PlayerAttack>();
         playerAttackCompo.SetStatSO(StatSO);
-        PlayerStaminaCompo = GetComponent<PlayerStamina>();
-        PlayerStaminaCompo.SetStatSO(StatSO);
+
+        Stamina.SetStatSO(StatSO);
+        Stamina.Initialize();
 
         InputInitialize();
         AnimationInitialize();
@@ -40,7 +41,6 @@ public class Player : MonoBehaviour
     {
         playerAnimation.OnAttackStart += PlayerMovementCompo.AttackMove;
         playerAnimation.OnAttackEnd += PlayerMovementCompo.EndAttack;
-        playerAnimation.OnAttackEnd += playerAttackCompo.StartAttack;
         playerAnimation.OnAttackStart += playerAttackCompo.Attack;
     }
 
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         {
             case PlayerAttackType.Dash:
                 if (playerAttackCompo.DashCoolCoroutine != null) return false;
-                if (PlayerStaminaCompo.TryMove(PlayerMoveType.Dash) == false) return false;
+                if (Stamina.TryMove(PlayerMoveType.Dash) == false) return false;
                 playerAnimation.ChangeAnimation(PlayerState.Dash);
                 break;
             case PlayerAttackType.Flip:
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
         playerAnimation.ChangeAnimation(PlayerState.Idle);
         PlayerMovementCompo.SetRotateSpeed(PlayerState.Idle);
 
-        if (DoMove == false || PlayerStaminaCompo.TryMove(PlayerMoveType.Swim) == false) return;
+        if (DoMove == false || Stamina.TryMove(PlayerMoveType.Swim) == false) return;
 
         PlayerMovementCompo.SetRotateSpeed(PlayerState.Move);
         playerAnimation.ChangeAnimation(PlayerState.Move);

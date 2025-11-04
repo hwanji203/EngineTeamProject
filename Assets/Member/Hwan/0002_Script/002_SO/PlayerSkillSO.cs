@@ -8,13 +8,14 @@ public abstract class PlayerSkillSO : ScriptableObject
 {
     [SerializeField] protected float damagePercent;
     [SerializeField] protected LayerMask enemyLayer;
-    [SerializeField] private Vector3 offset;
     [SerializeField] protected int attackCount;
     [SerializeField] private SkillEffect[] effects;
-
-    [field: SerializeField] public Vector2 Range { get; private set; }
     [field: SerializeField] public float AttackTime { get; private set; }
+    [SerializeField] private Vector2 range;
+    [SerializeField] private Vector3 offset;
+
     public Vector3 RealOffSet { get => new Vector3(offset.y, offset.x);}
+    public Vector3 RealRange { get => new Vector3(range.y, range.x);}
 
     protected List<Collider2D> detectedCollider;
 
@@ -23,7 +24,7 @@ public abstract class PlayerSkillSO : ScriptableObject
     protected void CheckBox(Transform playerTrn, float defaultDamage)
     {
         Vector2 attackPoint = playerTrn.position + Quaternion.Euler(0, 0, playerTrn.eulerAngles.z) * RealOffSet;
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(attackPoint, Range, playerTrn.eulerAngles.z);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(attackPoint, RealRange, playerTrn.eulerAngles.z);
 
         foreach (Collider2D collider in colliders)
         {
