@@ -19,7 +19,6 @@ public abstract class Enemy : MonoBehaviour
     public AgentMovement AgentMovement { get; private set; }
 
     protected Transform Target;
-    private Transform[] _jells;
 
     private float _normalAttackRange;
 
@@ -43,19 +42,14 @@ public abstract class Enemy : MonoBehaviour
 
         _normalAttackRange = attackRange;
 
-        Collider2D[] targetColl = Physics2D.OverlapCircleAll(transform.position, 999f, layerMask);
+        Collider2D targetColl = Physics2D.OverlapCircle(transform.position, 999f, layerMask);
+        Debug.Log(targetColl);
         if (targetColl != null)
-        {
-            foreach (Collider2D col in targetColl)
-            {
-                if (col.gameObject.layer == 7)
-                {
-                    Target = col.transform;
-                }
-            }
-        }
+            Target = targetColl.transform;
 
         AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
+
+        HealthSystem.OnDeath += Death;
     }
 
     protected virtual void Start()
@@ -84,11 +78,6 @@ public abstract class Enemy : MonoBehaviour
     public Vector2 GetTarget()
     {
         return (Target.transform.position - transform.position).normalized;
-    }
-
-    public Vector3 TargetPos()
-    {
-        return Target.transform.position;
     }
 
     public bool AttackInPlayer()
@@ -137,6 +126,8 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void Attack();
 
+    public abstract void Death();
+
     public void DisbleAttackRange()
     {
         attackRange = 0;
@@ -145,5 +136,10 @@ public abstract class Enemy : MonoBehaviour
     public void EnableAttackRange()
     {
         attackRange = _normalAttackRange;
+    }
+
+    private void OnDestroy()
+    {
+        HealthSystem.OnDeath -= Death;
     }
 }

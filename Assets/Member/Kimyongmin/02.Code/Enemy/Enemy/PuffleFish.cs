@@ -30,6 +30,11 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             AgentMovement.RbCompo.linearVelocity = Vector2.zero;
         }
 
+        public override void Death()
+        {
+            Destroy(gameObject);
+        }
+
         public void Explo()
         {
             Sequence s = DOTween.Sequence();

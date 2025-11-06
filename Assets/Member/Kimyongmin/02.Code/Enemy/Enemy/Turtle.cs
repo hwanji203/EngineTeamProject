@@ -26,6 +26,11 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             _dashDir = (Target.position - transform.position).normalized;
         }
 
+        public override void Death()
+        {
+            Destroy(gameObject);
+        }
+
         public void Dash()
         {
             
