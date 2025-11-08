@@ -17,6 +17,8 @@ namespace Member.Kimyongmin._02.Code
         private float _currentTime = 0;
         private Rigidbody2D _rb;
 
+        private bool _rotate = false;
+
         private void Awake()
         {
             _rb = gameObject.GetComponent<Rigidbody2D>();
@@ -29,10 +31,7 @@ namespace Member.Kimyongmin._02.Code
             _rb.linearVelocity = transform.right.normalized * speed;
             if (bulletType == BulletType.Rotate)
             {
-                while (true)
-                {
-                    transform.Rotate(new Vector3(0,0,spinSpeed));
-                }
+                _rotate = true;
             }
         }
 
@@ -43,6 +42,8 @@ namespace Member.Kimyongmin._02.Code
             {
                 Destroy(gameObject);
             }
+            if (_rotate)
+                transform.Rotate(new Vector3(0,0,spinSpeed));
         }
     }
 }
