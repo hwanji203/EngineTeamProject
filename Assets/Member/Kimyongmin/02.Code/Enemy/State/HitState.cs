@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Member.Kimyongmin._02.Code.Enemy.Enemy;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Enemy.State
@@ -23,7 +24,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
             base.UpdateState();
             _currentTime += Time.deltaTime;
             
-            if (_currentTime > 1f)
+            if (_currentTime > 1f && !(Enemy is Jellyfish))
             {
                 EnemyStateMachine.ChangeState(StateType.Idle);
             }

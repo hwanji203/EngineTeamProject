@@ -7,7 +7,31 @@
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Attack4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Death.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Hurt.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Idle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Special.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/3/Walk.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/HealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/HealthSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Dolphin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Dolphin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Fish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Fish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Jellyfish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Jellyfish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/JellyfishBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/JellyfishBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/PuffleFish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/PuffleFish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Turtle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Turtle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/AttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/HitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/HitState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/DolphinBullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/DolphinBullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Jellyfish/Jellyfish_Japock.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Jellyfish/Jellyfish_Japock.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Jellyfish/Visual.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Jellyfish/Visual.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/08.Material/Glow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/08.Material/Glow.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +55,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/ActivityRangeSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/AttackHitbox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/DolphinBrain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/FishBrain.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Jellyfish.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/TurtleBrain.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/EnemyAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/EnemyStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
@@ -184,7 +210,14 @@
       <workItem from="1762081133681" duration="10662000" />
       <workItem from="1762127304617" duration="4339000" />
       <workItem from="1762140682461" duration="2668000" />
-      <workItem from="1762219120777" duration="141000" />
+      <workItem from="1762219120864" duration="8863000" />
+      <workItem from="1762244419642" duration="5044000" />
+      <workItem from="1762310292182" duration="2000" />
+      <workItem from="1762310301669" duration="611000" />
+      <workItem from="1762400031854" duration="621000" />
+      <workItem from="1762401626387" duration="2000" />
+      <workItem from="1762401654307" duration="11592000" />
+      <workItem from="1762440067483" duration="1541000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,4 @@
 using Member.Kimyongmin._02.Code.Enemy.State;
-using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 {
@@ -9,7 +8,6 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         {
             base.Awake();
             EnemyStateMachine.AddState(StateType.Idle, new IdleState(Enemy, EnemyStateMachine, "Idle"));
-            EnemyStateMachine.AddState(StateType.Attack, new AttackState(Enemy, EnemyStateMachine, "Attack"));
         }
 
         private new void Start()

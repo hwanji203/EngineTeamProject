@@ -1,3 +1,6 @@
+using Member.Kimyongmin._02.Code.Enemy.Enemy;
+using Member.Kimyongmin._02.Code.Enemy.SO;
+using Unity.Cinemachine;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Enemy.State

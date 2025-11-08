@@ -3,13 +3,12 @@ using UnityEngine;
 using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Enemy.SO;
-using UnityEditor;
 
 public abstract class Enemy : MonoBehaviour
 {
     [Header("에너미 설1정")] [SerializeField] private float attackRange = 2f;
     [SerializeField] private float chaseRange = 10f;
-    private LayerMask _playerMask;
+    [SerializeField] private LayerMask layerMask;
 
     public Animator Animator { get; private set; }
     [field: SerializeField] public EnemyDataSo EnemyDataSo { get; private set; }
@@ -40,16 +39,17 @@ public abstract class Enemy : MonoBehaviour
         Animator = GetComponentInChildren<Animator>();
         HealthSystem = GetComponent<HealthSystem>();
         HealthSystem.SetHealth(EnemyDataSo.hp);
-        _playerMask = LayerMask.GetMask("Player");
 
         _normalAttackRange = attackRange;
 
-        Collider2D targetColl = Physics2D.OverlapCircle(transform.position, 999f, _playerMask);
+        Collider2D targetColl = Physics2D.OverlapCircle(transform.position, 999f, layerMask);
         Debug.Log(targetColl);
         if (targetColl != null)
             Target = targetColl.transform;
 
         AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
+
+        HealthSystem.OnDeath += Death;
     }
 
     protected virtual void Start()
@@ -84,7 +84,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (EnemyDataSo.EnemyType != EnemyType.NotAggressive)
         {
-            return Physics2D.OverlapCircle(transform.position, attackRange, _playerMask);
+            return Physics2D.OverlapCircle(transform.position, attackRange, layerMask);
         }
 
         return false;
@@ -92,7 +92,7 @@ public abstract class Enemy : MonoBehaviour
 
     public bool ChaseInPlayer()
     {
-        return Physics2D.OverlapCircle(transform.position, chaseRange, _playerMask);
+        return Physics2D.OverlapCircle(transform.position, chaseRange, layerMask);
     }
 
     private void OnDrawGizmos()
@@ -126,6 +126,8 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void Attack();
 
+    public abstract void Death();
+
     public void DisbleAttackRange()
     {
         attackRange = 0;
@@ -134,5 +136,10 @@ public abstract class Enemy : MonoBehaviour
     public void EnableAttackRange()
     {
         attackRange = _normalAttackRange;
+    }
+
+    private void OnDestroy()
+    {
+        HealthSystem.OnDeath -= Death;
     }
 }

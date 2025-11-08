@@ -10,6 +10,7 @@ namespace Member.Kimyongmin._02.Code.Agent
         private float _health;
         
         public event Action OnHealthChanged;
+        public event Action OnDeath;
 
         public bool Hit { get; private set; } = false;
 
@@ -36,7 +37,7 @@ namespace Member.Kimyongmin._02.Code.Agent
             Health -= damage;
             if (Health <= 0)
             {
-                Destroy(gameObject);
+                OnDeath?.Invoke();
             }
         }
 
