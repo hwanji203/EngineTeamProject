@@ -105,7 +105,7 @@ public abstract class Enemy : MonoBehaviour
 
     public bool CanAttack { get; private set; } = true;
 
-    private void Update()
+    protected void Update()
     {
         _currentAttackTime += Time.deltaTime;
 
