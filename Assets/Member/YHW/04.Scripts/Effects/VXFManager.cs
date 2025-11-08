@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public enum VFXType
 {
@@ -121,7 +121,7 @@ public class VFXManager : MonoBehaviour
                 var obj = Instantiate(pool.prefab, parent);
 
                 var vfxObj = obj.GetComponent<VFXObject>();
-               
+
 
                 obj.SetActive(false);
                 vfxObj.OnDeactivate += ReturnToPool;
