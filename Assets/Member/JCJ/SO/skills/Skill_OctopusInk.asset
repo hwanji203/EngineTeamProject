@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Skill_OctopusInk
   m_EditorClassIdentifier: 
   skillName: "\uBB38\uC5B4 \uBA39\uBB3C"
-  skillIcon: {fileID: 1409549213185883415, guid: ae962132e91279f4cbc4042d7be718cd, type: 3}
+  skillIcon: {fileID: -7957278214813060823, guid: a23179b322dd80e47a803439c98c5f3a, type: 3}
   cooldown: 3
   manaCost: 25
   explosionRadius: 6
   damageInExplosion: 40
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   slowDuration: 2
   slowPercent: 0.5
   inkSound: {fileID: 0}

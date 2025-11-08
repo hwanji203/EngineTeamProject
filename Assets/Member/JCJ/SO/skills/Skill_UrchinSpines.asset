@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skill_UrchinSpines
   m_EditorClassIdentifier: 
   skillName: "\uC131\uAC8C \uAC00\uC2DC"
-  skillIcon: {fileID: 6934013284892070054, guid: a23179b322dd80e47a803439c98c5f3a, type: 3}
+  skillIcon: {fileID: 8288915215451595207, guid: a187be05a9c190e4d80a80b5aa1de107, type: 3}
   cooldown: 1
   manaCost: 10
   spineCount: 3
@@ -23,6 +23,6 @@ MonoBehaviour:
   spineLifetime: 3
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   spinePrefab: {fileID: 670700469469312730, guid: 4a409a866813b9e4cbfc5b7038ebda9b, type: 3}
   shootSound: {fileID: 0}

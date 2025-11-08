@@ -37,11 +37,11 @@ public class SkillSlotUI : MonoBehaviour
             skillSlots[slotIndex].skillIcon.sprite = skill.SkillIcon;
             skillSlots[slotIndex].skillIcon.color = Color.white;
         }
-        else
-        {
-            skillSlots[slotIndex].skillIcon.sprite = emptySkillSprite;
-            skillSlots[slotIndex].skillIcon.color = new Color(1f, 1f, 1f, 0.3f);
-        }
+        // else
+        // {
+        //     skillSlots[slotIndex].skillIcon.sprite = emptySkillSprite;
+        //     skillSlots[slotIndex].skillIcon.color = new Color(1f, 1f, 1f, 0.3f);
+        // }
     }
     
     private void UpdateAllSlots()
