@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public bool DoMove { get; private set; }
     public bool CanMove { get; private set; }
     public Vector2 MoveDir { get; private set; }
-    public NotifyValue<float> PlayerYValue { get; private set; } = new();
+    public NotifyValue<float> PlayerRotYValue { get; private set; } = new();
 
     private bool isFlipping;
     private float rotateSpeed;
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         rotateSpeed = movementSO.RotateSpeed;
     }
 
-    public void UpdateYValue() { PlayerYValue.Value = transform.position.y; }
+    public void UpdateRotYValue() { PlayerRotYValue.Value = transform.position.y; }
 
     public void SetRotateSpeed(PlayerState stateType)
     {

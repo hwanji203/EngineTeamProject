@@ -13,11 +13,10 @@ public class Player : MonoBehaviour
 
     private (bool doing, PlayerAttackType attackType) currentAttackState;
     private bool DoMove;
+    private Vector2 MouseScreenPos => inputSO.MousePos;
 
     private void Awake()
     {
-        transform.position = new Vector2(0, GameManager.Instance.StageSO.StartY);
-
         playerAnimation = GetComponentInChildren<PlayerAnimation>();
         PlayerMovementCompo = GetComponent<PlayerMovement>();
         playerAttackCompo = GetComponent<PlayerAttack>();
@@ -32,9 +31,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        PlayerMovementCompo.MousePos = Camera.main.ScreenToWorldPoint(MouseScreenPos);
         UpdateState();
-
-        PlayerMovementCompo.UpdateYValue();
+        PlayerMovementCompo.UpdateRotYValue();
     }
 
     private void AnimationInitialize()
@@ -46,7 +45,6 @@ public class Player : MonoBehaviour
 
     private void InputInitialize()
     {
-        inputSO.OnMouseMove += (mousePos) => PlayerMovementCompo.MousePos = mousePos;
         inputSO.OnSpaceBtnChanged += (performed) => DoMove = performed;
         inputSO.OnMouseClickChanged += (performed, attackType) => currentAttackState = (performed, attackType);
     }

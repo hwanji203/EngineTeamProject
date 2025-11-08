@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 public class PlayerStamina
 {
     private PlayerStatSO statSO;
-
+    public event Action OnDamaged;
     public NotifyValue<float> CurrentStamina { get; private set; }
 
     public void Initialize()
@@ -47,6 +48,7 @@ public class PlayerStamina
         }
 
         CurrentStamina.Value -= damage;
+        OnDamaged?.Invoke();
     }
 
     public void SetStatSO(PlayerStatSO statSO)

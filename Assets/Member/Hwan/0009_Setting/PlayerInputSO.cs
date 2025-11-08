@@ -10,7 +10,7 @@ public class PlayerInputSO : ScriptableObject, IPlayerActions
 
     public event Action<bool, PlayerAttackType> OnMouseClickChanged;
     public event Action<bool> OnSpaceBtnChanged;
-    public event Action<Vector2> OnMouseMove;
+    public Vector2 MousePos { get; private set; }
 
     private void OnEnable()
     {
@@ -35,7 +35,7 @@ public class PlayerInputSO : ScriptableObject, IPlayerActions
 
     public void OnAim(InputAction.CallbackContext context)
     {
-        OnMouseMove?.Invoke(Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()));
+        MousePos = context.ReadValue<Vector2>();
     }
 
     public void OnFlipAttack(InputAction.CallbackContext context)

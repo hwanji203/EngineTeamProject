@@ -30,5 +30,4 @@ public class DrawRangeManager : MonoSingleton<DrawRangeManager>
 
         lineRenderer.SetPositions(points);
     }
-
 }
