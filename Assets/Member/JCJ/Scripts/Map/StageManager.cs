@@ -108,7 +108,7 @@ public class StageManager : MonoBehaviour
         }
         
         // R키로 리셋
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             ResetAllProgress();
             Debug.Log("리셋");
