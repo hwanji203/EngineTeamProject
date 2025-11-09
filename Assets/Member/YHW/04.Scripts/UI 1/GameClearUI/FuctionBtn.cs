@@ -16,7 +16,7 @@ public class FuctionBtn : MonoBehaviour
 
     private void Update()
     {
-        if(Keyboard.current.aKey.wasPressedThisFrame)
+        if(Keyboard.current.eKey.wasPressedThisFrame)
         {
             MoveIn();
 

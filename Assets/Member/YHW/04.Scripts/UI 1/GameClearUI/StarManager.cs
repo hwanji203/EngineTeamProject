@@ -3,16 +3,18 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 
 public class StarManager : MonoBehaviour
 {
-    static StarManager instance;
+    public static StarManager Instance;
 
     [SerializeField]private List<GameObject> starList = new List<GameObject>();
 
     [SerializeField]private Image fadePanel;
+    [SerializeField]private Sprite filledStarSprite;
 
     private int clearHash = Animator.StringToHash("Clear");
 
@@ -20,9 +22,9 @@ public class StarManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if(Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -39,10 +41,10 @@ public class StarManager : MonoBehaviour
         FadeIn();
     }
 
-
+    
     private void FadeIn()
-    {
-        fadePanel.DOFade(0, 1f);
+    {   
+        fadePanel.DOFade(0.5f, 1f);
     }
 
     private void OnDisable()
@@ -55,7 +57,15 @@ public class StarManager : MonoBehaviour
         starCount++;
     }
 
-
-
+    public void ChangeState()
+    {
+        for (int i = 0; i <starCount ; i++)
+        {
+            starList[i].GetComponent<Animator>().enabled = false;
+            starList[i].GetComponent<SpriteRenderer>().sprite = filledStarSprite;
+        }
+    }
     
+
+
 }
