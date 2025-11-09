@@ -1,16 +1,35 @@
+using DG.Tweening;
+using Unity.Cinemachine;
 using UnityEngine;
 
-public class CameraShaker : MonoBehaviour
+public class CameraShaker : MonoSingleton<CameraShaker>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float shakePower;
+    private CinemachineImpulseSource impulseSource;
+
+    protected override void Awake()
     {
-        
+        base.Awake();
+
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RandomShake(float power = 0)
     {
-        
+        if (power == 0) power = shakePower;
+
+        impulseSource.GenerateImpulse(Random.insideUnitCircle.normalized * power);
+    }
+
+    public void DirShake(Vector3 dir, float power)
+    {
+        if (power == 0) power = shakePower;
+
+        impulseSource.GenerateImpulse(dir * shakePower);
+    }
+
+    public void SetPositionZero()
+    {
+        CinemachineImpulseManager.Instance.Clear();
     }
 }

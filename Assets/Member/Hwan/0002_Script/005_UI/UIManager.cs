@@ -7,8 +7,6 @@ public class UIManager : MonoSingleton<UIManager>
 
     private void Start()
     {
-        base.Awake();
-
         MonoBehaviour[] allComponents = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
 
         foreach (MonoBehaviour comp in allComponents)

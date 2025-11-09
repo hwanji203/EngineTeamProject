@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void AddSkill(PlayerSkillType skillType)
     {
-        if (currentEquippedSkills.Count >= statSO.maxSkillCount) return;
+        if (currentEquippedSkills.Count >= statSO.MaxSkillCount) return;
         currentEquippedSkills.Add(skillType);
     }
 
@@ -39,13 +39,13 @@ public class PlayerAttack : MonoBehaviour
     {
         if (type == PlayerAttackType.Dash)
         {
-            attackCoroutineDictionary[PlayerSkillType.Dash] = StartCoroutine(skillDictionarySO.Dictionary[PlayerSkillType.Dash].AttackStart(transform, statSO.defaultDmg));
+            attackCoroutineDictionary[PlayerSkillType.Dash] = StartCoroutine(skillDictionarySO.Dictionary[PlayerSkillType.Dash].AttackStart(transform, statSO.DefaultDmg));
         }
         else
         {
             foreach (PlayerSkillType skillType in currentEquippedSkills)
             {
-                attackCoroutineDictionary[skillType] = StartCoroutine(skillDictionarySO.Dictionary[skillType].AttackStart(transform, statSO.defaultDmg));
+                attackCoroutineDictionary[skillType] = StartCoroutine(skillDictionarySO.Dictionary[skillType].AttackStart(transform, statSO.DefaultDmg));
             }
         }
     }
@@ -68,11 +68,11 @@ public class PlayerAttack : MonoBehaviour
         switch (attackType)
         {
             case PlayerAttackType.Dash:
-                yield return new WaitForSeconds(statSO.dashCool);
+                yield return new WaitForSeconds(statSO.DashCool);
                 DashCoolCoroutine = null;
                 break;
             case PlayerAttackType.Flip:
-                yield return new WaitForSeconds(statSO.flipCool);
+                yield return new WaitForSeconds(statSO.FlipCool);
                 FlipCoolCoroutine = null;
                 break;
         }
@@ -86,7 +86,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    public void SetStatSO(PlayerStatSO statSO)
+    public void Initialize(PlayerStatSO statSO)
     {
         this.statSO = statSO;
     }
