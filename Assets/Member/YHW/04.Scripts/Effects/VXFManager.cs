@@ -4,11 +4,9 @@ using UnityEngine;
 public enum VFXType
 {
     Hit,
-    Explosion,
-    Heal,
-    Buff,
-    Debuff,
-    Custom
+    Swing,
+    Dash
+    
 }
 
 public class VFXObject : MonoBehaviour
