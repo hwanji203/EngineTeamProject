@@ -1,8 +1,20 @@
+using NUnit.Framework.Constraints;
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerMovementSO", menuName = "HwanSO/PlayerMovementSO")]
 public class PlayerMovementSO : ScriptableObject
 {
+    [field: SerializeField]
+    public ValueByState[] ValueByStates { get; private set; } =
+    {
+        new ValueByState(PlayerState.Idle, 0.325f, 750f),
+        new ValueByState(PlayerState.Move, 0.325f, 250f),
+        new ValueByState(PlayerState.Dash, 0f, 0f),
+        new ValueByState(PlayerState.Flip, 0.325f, 275f),
+        new ValueByState(PlayerState.ZeroStamina, 1f, 0f),
+        new ValueByState(PlayerState.WaitForAttack, 0f, 0f),
+    };
     [field: SerializeField] public PlayerSkillDictionarySO skillDictionarySO { get; private set; }
 
     [field: Header("DashAttack Setting")]
@@ -11,19 +23,24 @@ public class PlayerMovementSO : ScriptableObject
     [field: SerializeField] public float DashDamping { get; private set; } = 10f;
 
     [field: Header("Rotate Setting")]
-    [field: SerializeField] public float RotateSpeed { get; private set; } = 750f;
     [field: SerializeField] public float LimitPos { get; private set; } = 0.5f;
 
     [field: Header("Move Setting")]
     [field: SerializeField] public float Acceleration { get; private set; } = 700f;
     [field: SerializeField] public float DecreaseValue { get; private set; } = 3f;
     [field: SerializeField] public float MaxSpeed { get; private set; } = 2f;
-    [field: SerializeField] public float MoveRotSpeed { get; private set; } = 250f;
+}
 
-    [field: Header("FlipAttack Setting")]
-    //[field: SerializeField] public float attackTime { get; private set; } = 0.4f;
-    [field: SerializeField] public float FlipRotSpeed { get; private set; } = 275;
-
-    [Header("Others")]
-    [field: SerializeField] public float GravityScale { get; private set; } = 0.325f;
+[Serializable]
+public class ValueByState
+{
+    public ValueByState(PlayerState state, float gravity, float rotateSpeed)
+    {
+        State = state;
+        Gravity = gravity;
+        RotateSpeed = rotateSpeed;
+    }
+    [field: SerializeField] public PlayerState State { get; private set; }
+    [field: SerializeField] public float Gravity { get; private set; }
+    [field: SerializeField] public float RotateSpeed { get; private set; }
 }

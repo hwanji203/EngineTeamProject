@@ -1,91 +1,64 @@
-using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [field: SerializeField] public PlayerStatSO StatSO { get; private set; }
     [SerializeField] private PlayerInputSO inputSO;
+    public PlayerStamina StaminaCompo { get; private set; }
+    public PlayerMovement MovementCompo { get; private set; }
 
-    private PlayerAnimation playerAnimation;
-    public PlayerMovement PlayerMovementCompo { get; private set; }
-    private PlayerAttack playerAttackCompo;
-    public PlayerStamina Stamina { get; private set; } = new PlayerStamina();
+    private PlayerMoveController moveController = new PlayerMoveController();
+    private PlayerAttack AttackCompo;
+    private PlayerAnimation AnimationCompo;
 
-    private (bool doing, PlayerAttackType attackType) currentAttackState;
-    private bool DoMove;
     private Vector2 MouseScreenPos => inputSO.MousePos;
 
     private void Awake()
     {
-        playerAnimation = GetComponentInChildren<PlayerAnimation>();
-        PlayerMovementCompo = GetComponent<PlayerMovement>();
-        playerAttackCompo = GetComponent<PlayerAttack>();
-        playerAttackCompo.SetStatSO(StatSO);
+        GetComponents();
 
-        Stamina.SetStatSO(StatSO);
-        Stamina.Initialize();
+        ComponentInitialize();
 
-        InputInitialize();
-        AnimationInitialize();
+        ActionInitialize();
     }
-
     private void Update()
     {
-        PlayerMovementCompo.MousePos = Camera.main.ScreenToWorldPoint(MouseScreenPos);
-        UpdateState();
-        PlayerMovementCompo.UpdateRotYValue();
+        MovementCompo.MousePos = Camera.main.ScreenToWorldPoint(MouseScreenPos);
+        moveController.UpdateState();
+        MovementCompo.UpdateRotYValue();
     }
 
-    private void AnimationInitialize()
+    private void GetComponents()
     {
-        playerAnimation.OnAttackStart += PlayerMovementCompo.AttackMove;
-        playerAnimation.OnAttackEnd += PlayerMovementCompo.EndAttack;
-        playerAnimation.OnAttackStart += playerAttackCompo.Attack;
+        AnimationCompo = GetComponentInChildren<PlayerAnimation>();
+        MovementCompo = GetComponent<PlayerMovement>();
+        AttackCompo = GetComponent<PlayerAttack>();
+        StaminaCompo = GetComponent<PlayerStamina>();
     }
 
-    private void InputInitialize()
+    private void ComponentInitialize()
     {
-        inputSO.OnSpaceBtnChanged += (performed) => DoMove = performed;
-        inputSO.OnMouseClickChanged += (performed, attackType) => currentAttackState = (performed, attackType);
+        moveController.Initialize(AttackCompo, StaminaCompo, AnimationCompo, MovementCompo);
+        AttackCompo.Initialize(StatSO);
+        StaminaCompo.Initialize(StatSO);
     }
 
-    private bool TryAttack(PlayerAttackType type)
+    private void ActionInitialize()
     {
-        switch (type)
-        {
-            case PlayerAttackType.Dash:
-                if (playerAttackCompo.DashCoolCoroutine != null) return false;
-                if (Stamina.TryMove(PlayerMoveType.Dash) == false) return false;
-                playerAnimation.ChangeAnimation(PlayerState.Dash);
-                break;
-            case PlayerAttackType.Flip:
-                if (playerAttackCompo.FlipCoolCoroutine != null) return false;
-                playerAnimation.ChangeAnimation(PlayerState.Flip);
-                break;
-        }
+        inputSO.OnSpaceBtnChanged += moveController.SetDoMove;
+        inputSO.OnMouseClickChanged += moveController.SetState;
 
-        PlayerMovementCompo.StartAttack();
+        AnimationCompo.OnAttackStart += MovementCompo.AttackMove;
+        AnimationCompo.OnAttackEnd += MovementCompo.EndAttack;
+        AnimationCompo.OnAttackStart += AttackCompo.Attack;
 
-        return true;
+        StaminaCompo.CurrentStamina.OnValueChange += MovementCompo.GetStaminaIsZero;
     }
 
-    private void UpdateState()
+    public void GetDamage(float value)
     {
-        PlayerMovementCompo.Rotate();
-        if (PlayerMovementCompo.CanMove == false) return;
-
-        if (currentAttackState.doing == true && playerAnimation.CanAttack() == true)
-        {
-            if (TryAttack(currentAttackState.attackType) == true) return;
-        }
-
-        playerAnimation.ChangeAnimation(PlayerState.Idle);
-        PlayerMovementCompo.SetRotateSpeed(PlayerState.Idle);
-
-        if (DoMove == false || Stamina.TryMove(PlayerMoveType.Swim) == false) return;
-
-        PlayerMovementCompo.SetRotateSpeed(PlayerState.Move);
-        playerAnimation.ChangeAnimation(PlayerState.Move);
-        PlayerMovementCompo.GoDirectionMove();
+        StaminaCompo.LostStamina(value);
+        CameraShaker.Instance.RandomShake(value);
     }
 }

@@ -12,15 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11583304a0c125e48ab7b776339658b6, type: 3}
   m_Name: PlayerMovementSO
   m_EditorClassIdentifier: 
+  <ValueByStates>k__BackingField:
+  - <State>k__BackingField: 0
+    <Gravity>k__BackingField: 0.325
+    <RotateSpeed>k__BackingField: 750
+  - <State>k__BackingField: 1
+    <Gravity>k__BackingField: 0.325
+    <RotateSpeed>k__BackingField: 250
+  - <State>k__BackingField: 2
+    <Gravity>k__BackingField: 0
+    <RotateSpeed>k__BackingField: 0
+  - <State>k__BackingField: 3
+    <Gravity>k__BackingField: 0.325
+    <RotateSpeed>k__BackingField: 275
+  - <State>k__BackingField: 4
+    <Gravity>k__BackingField: 1.5
+    <RotateSpeed>k__BackingField: 100
+  - <State>k__BackingField: 5
+    <Gravity>k__BackingField: 0
+    <RotateSpeed>k__BackingField: 0
   <skillDictionarySO>k__BackingField: {fileID: 11400000, guid: 729acdec5a8938c4889134d7361c0198, type: 2}
   <DashTime>k__BackingField: 0.35
   <DashPower>k__BackingField: 1350
   <DashDamping>k__BackingField: 10
-  <RotateSpeed>k__BackingField: 750
   <LimitPos>k__BackingField: 0.5
   <Acceleration>k__BackingField: 700
   <DecreaseValue>k__BackingField: 3
   <MaxSpeed>k__BackingField: 2
-  <MoveRotSpeed>k__BackingField: 250
-  <FlipRotSpeed>k__BackingField: 275
-  <GravityScale>k__BackingField: 0.325

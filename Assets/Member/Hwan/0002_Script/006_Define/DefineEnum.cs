@@ -3,7 +3,9 @@ public enum PlayerState
     Idle,
     Move,
     Dash,
-    Flip
+    Flip,
+    ZeroStamina,
+    WaitForAttack
 }
 
 public enum PlayerAttackType
