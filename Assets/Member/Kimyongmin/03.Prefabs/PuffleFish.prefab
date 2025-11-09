@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1469039796575757483
 Transform:
   m_ObjectHideFlags: 0
@@ -53,6 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 2.5
   chaseRange: 999
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   <EnemyDataSo>k__BackingField: {fileID: 11400000, guid: a90f703dfbeac67439322ea0b7677b67, type: 2}
   exploDelay: 1
   exploRadius: 5

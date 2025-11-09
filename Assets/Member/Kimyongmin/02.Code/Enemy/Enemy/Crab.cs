@@ -13,12 +13,13 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         private readonly float _attackDelay = 1f;
         private float _currentDelay = 0f;
 
-        private Vector2 _shotPos;
+        [SerializeField] private Transform shotPos;
+
+        [SerializeField] private float shotSpeed = 9f;
 
         protected override void Awake()
         {
             base.Awake();
-            _shotPos = transform.position - new Vector3(0, 1.25f, 0);
             
             _crabAnimation = GetComponentInChildren<CrabAnimation>();
             _attackHitbox = GetComponentInChildren<AttackHitbox>();
@@ -42,9 +43,12 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
                 }
             }
         }
+        
+        private Vector2 targerDir = Vector2.zero;
 
         public override void Attack()
         {
+            targerDir = GetTarget();
             _attackHitbox.ShowHitbox(GetTarget(),1.5f);
             _crabAnimation.PlayerAttackAnim();
             StartCoroutine(ShootStoneCor(1.5f));
@@ -52,14 +56,14 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Death()
         {
-            
+            Destroy(gameObject);
         }
 
         private IEnumerator ShootStoneCor(float delay)
         {
             yield return new WaitForSeconds(delay);
-            GameObject bullet = Instantiate(stone, _shotPos, Quaternion.identity);
-            bullet.GetComponent<Projectile>().Shoot(GetTarget(),5);
+            GameObject bullet = Instantiate(stone, shotPos.position, Quaternion.identity);
+            bullet.GetComponent<Projectile>().Shoot(targerDir,shotSpeed);
         }
 
         

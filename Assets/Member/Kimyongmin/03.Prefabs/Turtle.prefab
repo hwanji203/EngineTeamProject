@@ -342,8 +342,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 8.5
   chaseRange: 999
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   <EnemyDataSo>k__BackingField: {fileID: 11400000, guid: 10d1c171350d6df45b781795e6bb21a3, type: 2}
   dashPower: 15
+  attackVec: {x: 1.75, y: 1}
 --- !u!114 &258235150597909843
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
@@ -6,9 +7,10 @@ using Member.Kimyongmin._02.Code.Enemy.SO;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [Header("에너미 설1정")] [SerializeField] private float attackRange = 2f;
+    [Header("에너미 설1정")]
+    [SerializeField] private float attackRange = 2f;
     [SerializeField] private float chaseRange = 10f;
-    [SerializeField] private LayerMask layerMask;
+    [SerializeField] protected LayerMask layerMask;
 
     public Animator Animator { get; private set; }
     [field: SerializeField] public EnemyDataSo EnemyDataSo { get; private set; }
@@ -95,7 +97,7 @@ public abstract class Enemy : MonoBehaviour
         return Physics2D.OverlapCircle(transform.position, chaseRange, layerMask);
     }
 
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
