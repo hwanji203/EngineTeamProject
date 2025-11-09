@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         AnimationCompo.OnAttackEnd += MovementCompo.EndAttack;
         AnimationCompo.OnAttackStart += AttackCompo.Attack;
 
-        StaminaCompo.CurrentStamina.OnValueChange += MovementCompo.StaminaZeroMove;
+        StaminaCompo.CurrentStamina.OnValueChange += MovementCompo.GetStaminaIsZero;
     }
 
     public void GetDamage(float value)

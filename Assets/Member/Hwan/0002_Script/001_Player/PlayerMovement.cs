@@ -18,8 +18,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Dictionary<PlayerState, ValueByState> valueByStateDictionary = new();
     private float rotateSpeed;
-    private bool isFlipping;
-    private bool isStaminaZero;
+    private bool isFlipping = false;
+    private bool isStaminaZero = false;
+    private bool isDashing = false;
 
     private void Awake()
     {
@@ -45,13 +46,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeState(PlayerState state)
     {
+        Debug.Log(state);
         ValueByState currentState = valueByStateDictionary[state];
+        if (isStaminaZero == true && isDashing == false)
+        {
+            currentState = valueByStateDictionary[PlayerState.ZeroStamina];
+        }
         rb.gravityScale =  currentState.Gravity;
-        rotateSpeed = currentState.RotateState;
+        rotateSpeed = currentState.RotateSpeed;
     }
 
-    public void StartAttack()
+    public void StartAttack(PlayerAttackType type)
     {
+        if (type == PlayerAttackType.Dash) isDashing = true;
         rb.linearVelocity = Vector2.zero;
         ChangeState(PlayerState.WaitForAttack);
         CanMove = false;
@@ -105,16 +112,14 @@ public class PlayerMovement : MonoBehaviour
     public void EndAttack(PlayerAttackType type)
     {
         isFlipping = false;
+        isDashing = false;
         rb.linearVelocity = Vector2.zero;
-        rb.linearDamping = movementSO.DashDamping;
+        rb.linearDamping = movementSO.DecreaseValue;
         CanMove = true;
     }
 
-    public void StaminaZeroMove(float value)
+    public void GetStaminaIsZero(float value)
     {
-        if (value == 0)
-        {
-            ChangeState(PlayerState.ZeroStamina);
-        }
+        isStaminaZero = value == 0;
     }
 }

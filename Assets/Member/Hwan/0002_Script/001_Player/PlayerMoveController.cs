@@ -63,8 +63,7 @@ public class PlayerMoveController
                 break;
         }
 
-        playerMovement.StartAttack();
-
+        playerMovement.StartAttack(type);
         return true;
     }
 }
