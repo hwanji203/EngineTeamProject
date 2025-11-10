@@ -39,6 +39,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         public void Dash()
         {
             AgentMovement.RbCompo.linearVelocity = _dashDir * dashPower;
+            StartCoroutine(HitPanJeong());
         }
         
         public void DashEnd()
