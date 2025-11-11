@@ -29,7 +29,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         {
             _currentChackTime += Time.deltaTime;
         
-            if (_chackDelay < _currentChackTime && Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)
+            if (_chackDelay < _currentChackTime && Enemy.EnemyDataSo.enemyType != EnemyType.NotAggressive)
             {
                 Enemy.AgentMovement.SetMoveDir(Enemy.GetTarget());
                 _currentChackTime = 0;
@@ -49,7 +49,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
                 EnemyStateMachine.ChangeState(StateType.Idle);
             }
 
-            if (Enemy.EnemyDataSo.EnemyType == EnemyType.NotAggressive)
+            if (Enemy.EnemyDataSo.enemyType == EnemyType.NotAggressive)
                 Enemy.FilpX(-Enemy.GetTarget().x);
             else
                 Enemy.FilpX(Enemy.GetTarget().x);

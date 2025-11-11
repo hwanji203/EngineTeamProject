@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8e2ffddfc80be4ab3855f5c5cbec17, type: 3}
   m_Name: CrabData
   m_EditorClassIdentifier: 
-  EnemyType: 1
+  enemyType: 1
   hp: 10
   attackDelay: 5
   idleSpeed: 0
   moveSpeed: 0
+  damage: 30
   detectDelay: 0

@@ -11,6 +11,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float chaseRange = 10f;
     [SerializeField] protected LayerMask layerMask;
+    [SerializeField] protected Vector2 attackVec;
 
     public Animator Animator { get; private set; }
     [field: SerializeField] public EnemyDataSo EnemyDataSo { get; private set; }
@@ -84,7 +85,7 @@ public abstract class Enemy : MonoBehaviour
 
     public bool AttackInPlayer()
     {
-        if (EnemyDataSo.EnemyType != EnemyType.NotAggressive)
+        if (EnemyDataSo.enemyType != EnemyType.NotAggressive)
         {
             return Physics2D.OverlapCircle(transform.position, attackRange, layerMask);
         }

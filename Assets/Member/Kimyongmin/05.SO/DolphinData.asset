@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8e2ffddfc80be4ab3855f5c5cbec17, type: 3}
   m_Name: DolphinData
   m_EditorClassIdentifier: 
-  EnemyType: 1
+  enemyType: 1
   hp: 80
   attackDelay: 7
   idleSpeed: 5
   moveSpeed: 5
+  damage: 5
   detectDelay: 0
