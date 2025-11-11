@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+ 
 namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 {
     public class Jellyfish : global::Enemy

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using Member.Kimyongmin._02.Code.Agent; // ✨ 기존 네임스페이스 사용
+using Member.Kimyongmin._02.Code.Agent;
 
 /// 테스트용 적 (기존 IDamageable 사용)
 public class TestEnemy : MonoBehaviour, IDamageable, ISlowable

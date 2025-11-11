@@ -68,7 +68,7 @@ public class PullableEnemy : MonoBehaviour, IDamageable, ISlowable
         }
     }
     
-    /// ✨ 끌려가기
+    // 끌려가기
     public void PullTowards(Vector2 targetPosition, float speed)
     {
         if (rb == null || rb.bodyType != RigidbodyType2D.Dynamic) return;
