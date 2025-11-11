@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8e2ffddfc80be4ab3855f5c5cbec17, type: 3}
   m_Name: AnlgerfishData
   m_EditorClassIdentifier: 
-  EnemyType: 2
+  enemyType: 2
   hp: 50
-  attackDelay: 2
+  attackDelay: 3
   idleSpeed: 2
   moveSpeed: 3.5
+  damage: 10
   detectDelay: 0
