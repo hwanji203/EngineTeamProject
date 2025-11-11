@@ -1,5 +1,5 @@
 using UnityEngine;
-using Member.Kimyongmin._02.Code.Agent; // ✨ 네임스페이스 추가
+using Member.Kimyongmin._02.Code.Agent;
 
 public class Projectile : MonoBehaviour
 {
@@ -57,7 +57,6 @@ public class Projectile : MonoBehaviour
             Collider[] hits = Physics.OverlapSphere(hitPos, explosionRadius, enemyLayer);
             foreach (Collider hit in hits)
             {
-                // ✨ GetDamage 사용
                 IDamageable damageable = hit.GetComponent<IDamageable>();
                 if (damageable != null)
                 {

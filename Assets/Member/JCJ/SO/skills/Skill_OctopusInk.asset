@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02015b2bcb0196f4c9c5f8f658de9f45, type: 3}
   m_Name: Skill_OctopusInk
   m_EditorClassIdentifier: 
-  skillName: "\uBB38\uC5B4 \uBA39\uBB3C"
+  skillName: OctopusSpray
   skillIcon: {fileID: -7957278214813060823, guid: a23179b322dd80e47a803439c98c5f3a, type: 3}
   cooldown: 3
   manaCost: 25
@@ -23,4 +23,4 @@ MonoBehaviour:
     m_Bits: 128
   slowDuration: 2
   slowPercent: 0.5
-  inkSound: {fileID: 0}
+  inkSound: {fileID: 8300000, guid: dea2731d7c6ea314f95a7ed3fa6a96c2, type: 3}

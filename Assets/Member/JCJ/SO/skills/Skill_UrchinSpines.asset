@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8107b755eb676fb4ea58c855683a7e44, type: 3}
   m_Name: Skill_UrchinSpines
   m_EditorClassIdentifier: 
-  skillName: "\uC131\uAC8C \uAC00\uC2DC"
+  skillName: tripleAttack
   skillIcon: {fileID: 8288915215451595207, guid: a187be05a9c190e4d80a80b5aa1de107, type: 3}
   cooldown: 1
   manaCost: 10
@@ -25,4 +25,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spinePrefab: {fileID: 670700469469312730, guid: 4a409a866813b9e4cbfc5b7038ebda9b, type: 3}
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: dea2731d7c6ea314f95a7ed3fa6a96c2, type: 3}

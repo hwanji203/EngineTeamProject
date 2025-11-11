@@ -1,6 +1,6 @@
 using UnityEngine;
 
-/// 플레이어 스탯을 계산하고 관리
+//플레이어 스탯을 계산하고 관리
 public class PlayerStats : MonoBehaviour, ISkillCaster
 {
     [Header("기본 능력치")]
@@ -24,7 +24,7 @@ public class PlayerStats : MonoBehaviour, ISkillCaster
     public float CurrentMana => currentMana;
     public int CurrentHealth => currentHealth;
     
-    /// ✨ 최종 공격력 계산 (기본 + 고정 + %)
+    // 최종 공격력 계산 (기본 + 고정 + %)
     public int GetTotalAttack()
     {
         float baseWithFixed = baseAttack + totalAttackBonus;
@@ -32,7 +32,7 @@ public class PlayerStats : MonoBehaviour, ISkillCaster
         return Mathf.RoundToInt(finalAttack);
     }
     
-    /// ✨ 최종 방어력 계산 (기본 + 고정 + %)
+    // 최종 방어력 계산 (기본 + 고정 + %)
     public int GetTotalDefense()
     {
         float baseWithFixed = baseDefense + totalDefenseBonus;
@@ -57,13 +57,13 @@ public class PlayerStats : MonoBehaviour, ISkillCaster
         RegenerateMana();
     }
     
-    /// ✨ 장비 변경 시 스탯 재계산
+    // 장비 변경 시 스탯 재계산
     private void OnEquipmentChanged(int slotIndex, EquipmentSO equipment)
     {
         UpdateStats();
     }
     
-    /// ✨ 모든 장비의 능력치를 합산
+    // 모든 장비의 능력치를 합산
     private void UpdateStats()
     {
         totalAttackBonus = 0;

@@ -13,10 +13,8 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
     
     [Header("빈 슬롯 설정")]
     [SerializeField] private Sprite emptySlotSprite;
-    [SerializeField] private Color emptyColor = new Color(1f, 1f, 1f, 0.3f);
     
     private EquipmentManager equipmentManager;
-    private Color originalBackgroundColor;
     
     private void Start()
     {
@@ -32,8 +30,6 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         {
             equipmentManager.OnEquipmentChanged += OnEquipmentChanged;
         }
-        
-        originalBackgroundColor = backgroundImage.color;
         
         // 버튼 설정
         if (removeButton != null)
@@ -142,16 +138,14 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
     private void UpdateUI()
     {
         EquipmentSO currentEquipment = equipmentManager.GetEquippedItem(slotIndex);
-        
+    
         if (currentEquipment != null)
         {
             iconImage.sprite = currentEquipment.ItemIcon;
-            iconImage.color = Color.white;
         }
         else
         {
             iconImage.sprite = emptySlotSprite;
-            iconImage.color = emptyColor;
         }
     }
     
