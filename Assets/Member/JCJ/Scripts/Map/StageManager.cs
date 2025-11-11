@@ -107,7 +107,7 @@ public class StageManager : MonoBehaviour
             Debug.Log("레벨 5 클리어");
         }
         
-        // R키로 리셋
+        // ESC키로 리셋
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ResetAllProgress();
