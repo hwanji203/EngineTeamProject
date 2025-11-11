@@ -1,12 +1,12 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public enum VFXType
 {
-    Hit,
     Swing,
-    Dash
-    
+    DashBoost,
+    Hit,
+    DashAttack
 }
 
 public class VFXObject : MonoBehaviour
@@ -119,7 +119,8 @@ public class VFXManager : MonoBehaviour
                 var obj = Instantiate(pool.prefab, parent);
 
                 var vfxObj = obj.GetComponent<VFXObject>();
-
+                if (vfxObj == null)
+                    vfxObj = obj.AddComponent<VFXObject>();
 
                 obj.SetActive(false);
                 vfxObj.OnDeactivate += ReturnToPool;
@@ -171,6 +172,6 @@ public class VFXManager : MonoBehaviour
             }
         }
 
-        Destroy(obj.gameObject);
+        Destroy(obj.gameObject); 
     }
 }
