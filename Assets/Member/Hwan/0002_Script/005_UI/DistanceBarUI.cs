@@ -16,7 +16,7 @@ public class DistanceBarUI : MonoBehaviour, IUI
 
     public void Initialize()
     {
-        GameManager.Instance.Player.MovementCompo.PlayerRotYValue.OnValueChange += ChangeSlider;
+        //GameManager.Instance.Player.MovementCompo.PlayerYPos.OnValueChange += ChangeSlider;
         stageSO = GameManager.Instance.StageSO;
         minValue = stageSO.StartY;
         maxValue = stageSO.EndY;

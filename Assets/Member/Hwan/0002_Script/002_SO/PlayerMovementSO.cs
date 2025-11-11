@@ -29,6 +29,9 @@ public class PlayerMovementSO : ScriptableObject
     [field: SerializeField] public float Acceleration { get; private set; } = 700f;
     [field: SerializeField] public float DecreaseValue { get; private set; } = 3f;
     [field: SerializeField] public float MaxSpeed { get; private set; } = 2f;
+
+    [field: Header("Other")]
+    [field: SerializeField] public float StunTime { get; private set; }
 }
 
 [Serializable]

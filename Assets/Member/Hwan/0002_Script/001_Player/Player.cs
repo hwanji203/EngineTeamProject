@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
@@ -7,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerInputSO inputSO;
     public PlayerStamina StaminaCompo { get; private set; }
     public PlayerMovement MovementCompo { get; private set; }
+    public event Action<float, Vector2> OnDamage;
 
     private PlayerMoveController moveController = new PlayerMoveController();
     private PlayerAttack AttackCompo;
@@ -24,9 +26,12 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        MovementCompo.MousePos = Camera.main.ScreenToWorldPoint(MouseScreenPos);
+        MovementCompo.CurrentValue.MousePos = Camera.main.ScreenToWorldPoint(MouseScreenPos);
         moveController.UpdateState();
-        MovementCompo.UpdateRotYValue();
+        if (Keyboard.current.gKey.wasReleasedThisFrame)
+        {
+            GetDamage(UnityEngine.Random.Range(0, 10), UnityEngine.Random.insideUnitCircle.normalized * UnityEngine.Random.Range(0, 10));
+        }
     }
 
     private void GetComponents()
@@ -49,16 +54,24 @@ public class Player : MonoBehaviour
         inputSO.OnSpaceBtnChanged += moveController.SetDoMove;
         inputSO.OnMouseClickChanged += moveController.SetState;
 
-        AnimationCompo.OnAttackStart += MovementCompo.AttackMove;
+        AnimationCompo.OnAttackStart += (type) => MovementCompo.Move(type switch {
+            PlayerAttackType.Dash => PlayerMovementType.Dash,
+            _ => PlayerMovementType.Flip
+            }
+        );
         AnimationCompo.OnAttackEnd += MovementCompo.EndAttack;
-        AnimationCompo.OnAttackStart += AttackCompo.Attack;
+        AnimationCompo.OnAttackStart += AttackCompo.StartAttack;
 
         StaminaCompo.CurrentStamina.OnValueChange += MovementCompo.GetStaminaIsZero;
+
+        OnDamage += (damage, vector) => AnimationCompo.ChangeAnimation(PlayerState.Hit);
+        OnDamage += (damage, vector) => StaminaCompo.LostStamina(damage);
+        OnDamage += (damage, vector) => CameraShaker.Instance.RandomShake(damage);
+        OnDamage += (damage, vector) => MovementCompo.Damaged(vector);
     }
 
-    public void GetDamage(float value)
+    public void GetDamage(float value, Vector2 enemyPos)
     {
-        StaminaCompo.LostStamina(value);
-        CameraShaker.Instance.RandomShake(value);
+        OnDamage?.Invoke(value, enemyPos);
     }
 }

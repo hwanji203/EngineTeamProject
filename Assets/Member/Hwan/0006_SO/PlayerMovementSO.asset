@@ -39,3 +39,4 @@ MonoBehaviour:
   <Acceleration>k__BackingField: 700
   <DecreaseValue>k__BackingField: 3
   <MaxSpeed>k__BackingField: 2
+  <StunTime>k__BackingField: 0.75

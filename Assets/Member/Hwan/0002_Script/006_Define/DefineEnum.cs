@@ -5,7 +5,16 @@ public enum PlayerState
     Dash,
     Flip,
     ZeroStamina,
-    WaitForAttack
+    WaitForAttack,
+    Hit
+}
+
+public enum PlayerMovementType
+{
+    Swim,
+    Dash,
+    Flip,
+    Rotate
 }
 
 public enum PlayerAttackType

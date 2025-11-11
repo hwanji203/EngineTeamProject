@@ -30,7 +30,6 @@ public class PlayerMoveController
 
     public void UpdateState()
     {
-        playerMovement.Rotate();
         if (playerMovement.CanMove == false) return;
 
         if (currentAttackState.doing == true && playerAnimation.CanAttack() == true)
@@ -38,14 +37,19 @@ public class PlayerMoveController
             if (TryAttack(currentAttackState.attackType) == true) return;
         }
 
-        playerAnimation.ChangeAnimation(PlayerState.Idle);
-        playerMovement.ChangeState(PlayerState.Idle);
+        playerMovement.Move(PlayerMovementType.Rotate);
 
-        if (doMove == false || playerStamina.TryMove(PlayerMoveType.Swim) == false) return;
+        if (doMove == false || playerStamina.TryMove(PlayerMoveType.Swim) == false)
+        {
+            playerAnimation.ChangeAnimation(PlayerState.Idle);
+            playerMovement.ChangeState(PlayerState.Idle);
+
+            return;
+        }
 
         playerMovement.ChangeState(PlayerState.Move);
         playerAnimation.ChangeAnimation(PlayerState.Move);
-        playerMovement.GoDirectionMove();
+        playerMovement.Move(PlayerMovementType.Swim);
     }
 
     private bool TryAttack(PlayerAttackType type)

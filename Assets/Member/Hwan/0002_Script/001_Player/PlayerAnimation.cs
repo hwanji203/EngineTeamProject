@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
@@ -20,13 +19,12 @@ public class PlayerAnimation : MonoBehaviour
         animationDictionary.Add(PlayerState.Move, Animator.StringToHash("Move"));
         animationDictionary.Add(PlayerState.Dash, Animator.StringToHash("Dash"));
         animationDictionary.Add(PlayerState.Flip, Animator.StringToHash("Attack"));
+        animationDictionary.Add(PlayerState.Hit, Animator.StringToHash("Hit"));
     }
 
     public void ChangeAnimation(PlayerState state)
     {
-        int trueStateHash;
-
-        trueStateHash = animationDictionary[state];
+        int trueStateHash = animationDictionary[state];
 
         foreach (int hash in animationDictionary.Values)
         {
@@ -52,6 +50,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         OnAttackStart?.Invoke(type);
     }
+
     public void EndAttack(PlayerAttackType type)
     {
         OnAttackEnd?.Invoke(type);
