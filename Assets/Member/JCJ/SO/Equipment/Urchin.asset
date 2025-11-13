@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cc72754a2817d44a9dbca1dc30fb168, type: 3}
-  m_Name: shield
+  m_Name: Urchin
   m_EditorClassIdentifier: 
-  itemID: 1
-  itemName: Octopus
-  itemIcon: {fileID: 6934013284892070054, guid: a23179b322dd80e47a803439c98c5f3a, type: 3}
-  attackBonus: 0
+  itemID: 2
+  itemName: Urchin
+  itemIcon: {fileID: 6198854383759627596, guid: f2529277cdbb7f44da7b97d8d29c1a63, type: 3}
+  attackBonus: 10
   attackBonusPercent: 0
-  defenseBonus: 19
+  defenseBonus: 0
   defenseBonusPercent: 0
   tier: 0
   price: 0
   basicAttackSkill: {fileID: 0}
-  linkedSkill: {fileID: 11400000, guid: e19575369959d904d918e18641c0c7af, type: 2}
+  linkedSkill: {fileID: 11400000, guid: c4fd94f6742b5714eb2afe20dbd42814, type: 2}

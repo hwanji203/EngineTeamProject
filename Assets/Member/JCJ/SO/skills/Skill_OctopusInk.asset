@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skill_OctopusInk
   m_EditorClassIdentifier: 
   skillName: OctopusSpray
-  skillIcon: {fileID: -7957278214813060823, guid: a23179b322dd80e47a803439c98c5f3a, type: 3}
+  skillIcon: {fileID: -6802297114824509235, guid: 8425e6e46886ac64895a9aedf2ad4554, type: 3}
   cooldown: 3
   manaCost: 25
   explosionRadius: 6
