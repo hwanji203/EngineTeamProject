@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cc72754a2817d44a9dbca1dc30fb168, type: 3}
-  m_Name: arrow
+  m_Name: Octopus
   m_EditorClassIdentifier: 
-  itemID: 0
-  itemName: Conc
-  itemIcon: {fileID: 6934013284892070054, guid: b817295dc5694ec46801cc2e2ac639ba, type: 3}
-  attackBonus: 1
+  itemID: 1
+  itemName: Octopus
+  itemIcon: {fileID: -6802297114824509235, guid: 8425e6e46886ac64895a9aedf2ad4554, type: 3}
+  attackBonus: 0
   attackBonusPercent: 0
-  defenseBonus: 0
+  defenseBonus: 19
   defenseBonusPercent: 0
   tier: 0
   price: 0
   basicAttackSkill: {fileID: 0}
-  linkedSkill: {fileID: 11400000, guid: 6a82c8ec9248f6a4ca1b03855902ade1, type: 2}
+  linkedSkill: {fileID: 11400000, guid: e19575369959d904d918e18641c0c7af, type: 2}

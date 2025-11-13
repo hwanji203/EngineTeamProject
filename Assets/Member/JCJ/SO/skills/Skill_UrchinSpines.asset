@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skill_UrchinSpines
   m_EditorClassIdentifier: 
   skillName: tripleAttack
-  skillIcon: {fileID: 8288915215451595207, guid: a187be05a9c190e4d80a80b5aa1de107, type: 3}
+  skillIcon: {fileID: 6198854383759627596, guid: f2529277cdbb7f44da7b97d8d29c1a63, type: 3}
   cooldown: 1
   manaCost: 10
   spineCount: 3
