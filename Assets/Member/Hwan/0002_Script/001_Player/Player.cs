@@ -8,13 +8,14 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerInputSO inputSO;
     public PlayerStamina StaminaCompo { get; private set; }
     public PlayerMovement MovementCompo { get; private set; }
-    public event Action<float, Vector2> OnDamage;
-
     private PlayerMoveController moveController = new PlayerMoveController();
     private PlayerAttack AttackCompo;
     private PlayerAnimation AnimationCompo;
+    private PlayerEyeAnimation eyeAnimation;
+    private PlayerBlackEyeMove blackEyeMove;
 
     private Vector2 MouseScreenPos => inputSO.MousePos;
+    public event Action<float, Vector2> OnDamage;
 
     private void Awake()
     {
@@ -26,8 +27,10 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        MovementCompo.MousePos = Camera.main.ScreenToWorldPoint(MouseScreenPos);
+        Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(MouseScreenPos);
+        MovementCompo.MousePos = mouseWorldPos;
         moveController.UpdateState();
+        blackEyeMove.Move(mouseWorldPos);
         if (Keyboard.current.gKey.wasReleasedThisFrame)
         {
             GetDamage(UnityEngine.Random.Range(0, 10), UnityEngine.Random.insideUnitCircle.normalized * UnityEngine.Random.Range(0, 10));
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour
         MovementCompo = GetComponent<PlayerMovement>();
         AttackCompo = GetComponent<PlayerAttack>();
         StaminaCompo = GetComponent<PlayerStamina>();
+        eyeAnimation = GetComponentInChildren<PlayerEyeAnimation>();
+        blackEyeMove = GetComponentInChildren<PlayerBlackEyeMove>();
     }
 
     private void ComponentInitialize()
@@ -47,6 +52,7 @@ public class Player : MonoBehaviour
         moveController.Initialize(AttackCompo, StaminaCompo, AnimationCompo, MovementCompo);
         AttackCompo.Initialize(StatSO);
         StaminaCompo.Initialize(StatSO);
+        eyeAnimation.Initialize();
     }
 
     private void ActionInitialize()
@@ -68,6 +74,9 @@ public class Player : MonoBehaviour
         OnDamage += (damage, vector) => StaminaCompo.LostStamina(damage);
         OnDamage += (damage, vector) => CameraShaker.Instance.RandomShake(damage);
         OnDamage += (damage, vector) => MovementCompo.Damaged(vector);
+        OnDamage += (damage, vector) => MovementCompo.ChangeState(PlayerState.Hit);
+
+        MovementCompo.OnStateChange += eyeAnimation.ChangeAnimation;
     }
 
     public void GetDamage(float value, Vector2 enemyPos)

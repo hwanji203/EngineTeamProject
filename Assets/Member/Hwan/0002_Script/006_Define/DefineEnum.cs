@@ -9,6 +9,16 @@ public enum PlayerState
     Hit
 }
 
+public enum PlayerEyeState
+{
+    None,
+    Idle,
+    Attack,
+    Dead,
+    Blink,
+    Hit
+}
+
 public enum PlayerMovementType
 {
     Swim,

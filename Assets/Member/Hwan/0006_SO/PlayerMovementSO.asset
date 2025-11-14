@@ -31,6 +31,9 @@ MonoBehaviour:
   - <State>k__BackingField: 5
     <Gravity>k__BackingField: 0
     <RotateSpeed>k__BackingField: 0
+  - <State>k__BackingField: 6
+    <Gravity>k__BackingField: 0.4
+    <RotateSpeed>k__BackingField: 0
   <skillDictionarySO>k__BackingField: {fileID: 11400000, guid: 729acdec5a8938c4889134d7361c0198, type: 2}
   <DashTime>k__BackingField: 0.35
   <DashPower>k__BackingField: 1350

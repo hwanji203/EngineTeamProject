@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 MousePos { get; set; }
     public Vector2 MoveDir { get; private set; }
     public NotifyValue<float> PlayerYPos = new NotifyValue<float>();
+    public event Action<PlayerState> OnStateChange;
 
     private Dictionary<PlayerState, MoveValue> moveValueDictionary = new();
     private Dictionary<PlayerMovementType, Movement> movementDictionary = new();
@@ -53,7 +55,9 @@ public class PlayerMovement : MonoBehaviour
         {
             tempState = PlayerState.ZeroStamina;
         }
+        if (tempState == CurrentState) return;
         CurrentState = tempState;
+        OnStateChange?.Invoke(CurrentState);
     }
 
     public void EndAttack(PlayerAttackType type)
