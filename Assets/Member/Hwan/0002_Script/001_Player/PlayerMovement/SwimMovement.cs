@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class SwimMovement : IMovement
+public class SwimMovement : Movement
 {
-    public void Move(MoveValue moveValue)
+    public override void Move(MoveValue moveValue, Vector2 mousePos)
     {
-        moveValue.Rb.AddForce(moveValue.GetMoveDir() * Time.deltaTime * moveValue.MovementSO.Acceleration, ForceMode2D.Force);
+        moveValue.Rb.AddForce(GetMoveDir(moveValue.Trn) * Time.deltaTime * moveValue.MovementSO.Acceleration, ForceMode2D.Force);
         moveValue.Rb.linearVelocity = moveValue.Rb.linearVelocity.normalized * Mathf.Clamp(moveValue.Rb.linearVelocity.magnitude, 0, moveValue.MovementSO.MaxSpeed);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public enum VFXType
 {
+    None,
     Swing,
     DashBoost,
     Hit,

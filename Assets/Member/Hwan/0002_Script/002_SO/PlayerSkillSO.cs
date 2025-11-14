@@ -36,25 +36,6 @@ public abstract class PlayerSkillSO : ScriptableObject
             }
         }
     }
-
-    private void PrintEffect(Transform playerTrn)
-    {
-        foreach (SkillEffect skillEffect in effects)
-        {
-            GameObject effect = Instantiate(skillEffect.effectPrefab);
-            effect.transform.position = playerTrn.position;
-            effect.transform.rotation = playerTrn.rotation;
-
-            if (skillEffect.isParticle == true)
-            {
-                effect.GetComponent<ParticleSystem>().Play();
-            }
-            else
-            {
-                effect.GetComponent<Animator>().SetTrigger("Start");
-            }
-        }
-    }
 }
 
 [Serializable]

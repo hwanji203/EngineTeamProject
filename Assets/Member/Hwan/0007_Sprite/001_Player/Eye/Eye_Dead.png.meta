@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 302a84ab816b0fd4ba6aa7365133918a
+guid: a56eccd61bf40794e9c95cf50e61f903
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4035959289877228764
-    second: Walk_0
+      213: 49417335881396728
+    second: Eye_0
   - first:
-      213: -982904232830982447
-    second: Walk_1
+      213: 4041264543391295679
+    second: Eye_1
   - first:
-      213: -350908408369970039
-    second: Walk_2
+      213: 5399526322897337148
+    second: Eye_2
   - first:
-      213: -5409570386352685021
-    second: Walk_3
+      213: 2081685935062547032
+    second: Eye_3
   - first:
-      213: 1553940418269799609
-    second: Walk_4
-  - first:
-      213: 2416434504916517810
-    second: Walk_5
+      213: -8677159380823684731
+    second: Eye_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,67 +112,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hit_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 96
-        height: 96
-      alignment: 9
-      pivot: {x: 0.435, y: 0.485}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d6a1e1dec50c52f0800000000000000
-      internalID: -982904232830982447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hit_2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 96
-        height: 96
-      alignment: 9
-      pivot: {x: 0.435, y: 0.485}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 984096a69a2512bf0800000000000000
-      internalID: -350908408369970039
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hit_5
+      name: Eye_Dead_5
       rect:
         serializedVersion: 2
         x: 480
         y: 0
         width: 96
         height: 96
-      alignment: 9
-      pivot: {x: 0.435, y: 0.485}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2b3cb802166e88120800000000000000
-      internalID: 2416434504916517810
+      spriteID: aaed93910fe877c489d44d4c28155293
+      internalID: -42986872
       vertices: []
       indices: 
       edges: []
@@ -184,7 +137,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 17bb5b3ba6930b64b805fda94f1d001c
+    spriteID: a24fc3ff4757de34d857c23c859da796
     internalID: 0
     vertices: []
     indices: 
@@ -194,12 +147,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hit_1: -982904232830982447
-      Hit_2: -350908408369970039
-      Hit_5: 2416434504916517810
-      Walk_0: 4035959289877228764
-      Walk_3: -5409570386352685021
-      Walk_4: 1553940418269799609
+      Eye_0: 49417335881396728
+      Eye_1: 4041264543391295679
+      Eye_2: 5399526322897337148
+      Eye_3: 2081685935062547032
+      Eye_4: -8677159380823684731
+      Eye_Dead_0: -1603698021
+      Eye_Dead_1: -1689278209
+      Eye_Dead_2: 1387427114
+      Eye_Dead_3: 308719333
+      Eye_Dead_4: 1556794566
+      Eye_Dead_5: -42986872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

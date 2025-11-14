@@ -10,30 +10,32 @@ public class PlayerMovement : MonoBehaviour
 
     public bool DoMove { get; private set; } = false;
     public bool CanMove { get; private set; } = true;
+    public Vector2 MousePos { get; set; }
     public Vector2 MoveDir { get; private set; }
     public NotifyValue<float> PlayerYPos = new NotifyValue<float>();
 
-    private Dictionary<PlayerState, ValueByState> valueByStateDictionary = new();
-    private Dictionary<PlayerMovementType, IMovement> movementDictionary = new();
+    private Dictionary<PlayerState, MoveValue> moveValueDictionary = new();
+    private Dictionary<PlayerMovementType, Movement> movementDictionary = new();
 
     private bool isStaminaZero = false;
     private bool isDashing = false;
-    public MoveValue CurrentValue { get; private set; }
+    public PlayerState CurrentState { get; private set; }
 
     private void Awake()
     {
-        foreach (ValueByState value in movementSO.ValueByStates)
-        {
-            valueByStateDictionary.Add(value.State, value);
-        }
         AddDictionary();
 
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         rb.linearDamping = movementSO.DecreaseValue;
 
-        CurrentValue = new MoveValue(transform, rb, movementSO);
+        CurrentState = PlayerState.Idle;
         ChangeState(PlayerState.Idle);
+
+        foreach (ValueByState value in movementSO.ValueByStates)
+        {
+            moveValueDictionary.Add(value.State, new MoveValue(transform, rb, movementSO, value));
+        }
     }
 
     private void AddDictionary()
@@ -46,12 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeState(PlayerState state)
     {
-        ValueByState value = valueByStateDictionary[state];
+        PlayerState tempState = state;
         if (isStaminaZero == true && isDashing == false)
         {
-            value = valueByStateDictionary[PlayerState.ZeroStamina];
+            tempState = PlayerState.ZeroStamina;
         }
-        CurrentValue.RotateSpeed = value.RotateSpeed;
+        CurrentState = tempState;
     }
 
     public void EndAttack(PlayerAttackType type)
@@ -72,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(PlayerMovementType type)
     {
-        movementDictionary[type].Move(CurrentValue);
+        movementDictionary[type].Move(moveValueDictionary[CurrentState], MousePos);
         switch (type)
         {
             case PlayerMovementType.Dash:

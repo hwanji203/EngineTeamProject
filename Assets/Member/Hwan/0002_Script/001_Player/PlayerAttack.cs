@@ -48,6 +48,7 @@ public class PlayerAttack : MonoBehaviour
                 attackCoroutineDictionary[skillType] = StartCoroutine(skillDictionarySO.Dictionary[skillType].AttackStart(transform, statSO.DefaultDmg));
             }
         }
+        StartAttack(type);
     }
 
     public void StartAttack(PlayerAttackType attackType)

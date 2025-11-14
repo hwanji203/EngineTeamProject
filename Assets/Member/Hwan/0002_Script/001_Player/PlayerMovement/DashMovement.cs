@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class DashMovement : IMovement
+public class DashMovement : Movement
 {
-    public void Move(MoveValue moveValue)
+    public override void Move(MoveValue moveValue, Vector2 mousePos)
     {
-        moveValue.Rb.AddForce(moveValue.GetMoveDir() * moveValue.MovementSO.DashPower, ForceMode2D.Force);
+        moveValue.Rb.AddForce(GetMoveDir(moveValue.Trn) * moveValue.MovementSO.DashPower, ForceMode2D.Force);
         moveValue.Rb.linearDamping = moveValue.MovementSO.DashDamping;
     }
 }

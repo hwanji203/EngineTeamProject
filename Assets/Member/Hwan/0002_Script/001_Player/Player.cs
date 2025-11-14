@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        MovementCompo.CurrentValue.MousePos = Camera.main.ScreenToWorldPoint(MouseScreenPos);
+        MovementCompo.MousePos = Camera.main.ScreenToWorldPoint(MouseScreenPos);
         moveController.UpdateState();
         if (Keyboard.current.gKey.wasReleasedThisFrame)
         {
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             }
         );
         AnimationCompo.OnAttackEnd += MovementCompo.EndAttack;
-        AnimationCompo.OnAttackStart += AttackCompo.StartAttack;
+        AnimationCompo.OnAttackStart += AttackCompo.Attack;
 
         StaminaCompo.CurrentStamina.OnValueChange += MovementCompo.GetStaminaIsZero;
 
