@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cc72754a2817d44a9dbca1dc30fb168, type: 3}
-  m_Name: sword
+  m_Name: Conc
   m_EditorClassIdentifier: 
-  itemID: 2
-  itemName: Urchin
-  itemIcon: {fileID: 6934013284892070054, guid: ae962132e91279f4cbc4042d7be718cd, type: 3}
-  attackBonus: 10
+  itemID: 0
+  itemName: Conc
+  itemIcon: {fileID: 8572796740028704663, guid: f423a81650847974fb2b9b727a81c851, type: 3}
+  attackBonus: 1
   attackBonusPercent: 0
   defenseBonus: 0
   defenseBonusPercent: 0
   tier: 0
   price: 0
   basicAttackSkill: {fileID: 0}
-  linkedSkill: {fileID: 11400000, guid: c4fd94f6742b5714eb2afe20dbd42814, type: 2}
+  linkedSkill: {fileID: 11400000, guid: 6a82c8ec9248f6a4ca1b03855902ade1, type: 2}

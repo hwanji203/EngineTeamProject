@@ -14,7 +14,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         private Vector2 _dashDir = Vector2.right;
 
-        [SerializeField] private Vector2 attackVec;
+        private float _dashAnlge;
 
         protected override void Awake()
         {
@@ -39,6 +39,8 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         public void Dash()
         {
             AgentMovement.RbCompo.linearVelocity = _dashDir * dashPower;
+            _dashAnlge = Mathf.Atan2(_dashDir.y, _dashDir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, _dashAnlge);
             StartCoroutine(HitPanJeong());
         }
         
@@ -47,6 +49,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             AgentMovement.IsDashing = false;
             DisbleAttackRange();
             AgentMovement.RbCompo.linearVelocity = Vector2.zero;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         private new void OnDrawGizmos()
@@ -56,29 +59,38 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             Gizmos.DrawWireCube(transform.position, attackVec);
         }
 
-        public float panjeongTime { get; set; } = 0;
-        public float panjeongDuration { get; set; } = 0.5f;
+        public float PanjeongTime { get; set; }
+        public float PanjeongDuration { get; set; } = 0.5f;
 
 
-        private Collider2D[] hitArr;
+        private Collider2D[] _hitArr;
         public IEnumerator HitPanJeong()
         {
-            while (panjeongTime < panjeongDuration)
+            while (PanjeongTime <= PanjeongDuration && IsAttack)
             {
-                panjeongTime += Time.deltaTime;
-                hitArr = Physics2D.OverlapBoxAll(transform.position, attackVec, 0, layerMask);
-                if (hitArr.Length > 0)
+                PanjeongTime += Time.deltaTime;
+                _hitArr = Physics2D.OverlapBoxAll(transform.position, attackVec, _dashAnlge, layerMask);
+                if (_hitArr.Length > 0)
                 {
-                    foreach (var item in hitArr)
+                    foreach (var item in _hitArr)
                     {
-                        if (item.TryGetComponent<PlayerStamina>(out var playerStamina))
+                        if (item.TryGetcomponentInParent(out Player player))
                         {
-                            //playerStamina.LostStamina();
+                            DealStamina(player, EnemyDataSo.damage);
+                            IsAttack = false;
+                            PanjeongTime = 0;
+                            Array.Clear(_hitArr, 0, _hitArr.Length);
+                            break;
                         }
                     }
                 }
                 yield return null;
             }
+        }
+
+        public void DealStamina(Player player, float damage)
+        {
+            player.GetDamage(damage, transform.position);
         }
     }
 }

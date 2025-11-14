@@ -12,12 +12,13 @@ namespace Member.Kimyongmin._02.Code.Enemy.SO
     [CreateAssetMenu(fileName = "EnemyData", menuName = "KimSO/EnemyData")]
     public class EnemyDataSo : ScriptableObject
     {
-        public EnemyType EnemyType;
+        public EnemyType enemyType;
 
         public float hp;
         public float attackDelay;
         public float idleSpeed;
         public float moveSpeed;
+        public float damage;
         public float detectDelay;
     }
 }

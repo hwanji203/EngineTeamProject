@@ -16,7 +16,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         }
         public virtual void EnterState()
         {
-            if (Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)
+            if (Enemy.EnemyDataSo.enemyType != EnemyType.NotAggressive)
                 Enemy.Animator.SetBool(AnimBoolName,true);
         }
 
@@ -27,7 +27,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
     
         public virtual void ExitState()
         {
-            if (Enemy.EnemyDataSo.EnemyType != EnemyType.NotAggressive)
+            if (Enemy.EnemyDataSo.enemyType != EnemyType.NotAggressive)
                 Enemy.Animator.SetBool(AnimBoolName, false);
         }
     }
