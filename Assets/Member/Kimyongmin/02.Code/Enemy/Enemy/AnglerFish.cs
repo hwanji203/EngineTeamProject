@@ -57,7 +57,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public void DealStamina(Player player, float damage)
         {
-            player.GetDamage(damage);
+            player.GetDamage(damage, transform.position);
             IsAttack = false;
             AgentMovement.IsDashing = false;
             transform.rotation = Quaternion.Euler(transform.rotation.x,transform.rotation.y,0);
