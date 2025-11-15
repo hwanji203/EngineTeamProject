@@ -62,7 +62,7 @@ public class PlayerEyeAnimation : MonoBehaviour
             trueStateHash = animationDictionary[eyeState];
         }
 
-        blackEye.SetActive(eyeState == PlayerEyeState.Idle);
+        blackEye.SetActive(eyeState == PlayerEyeState.Idle && blinking == false);
 
         foreach (int hash in animationDictionary.Values)
         {
