@@ -1,20 +1,15 @@
 using UnityEngine;
 using System;
 
-public class CurrencyManager : MonoBehaviour
+public class CurrencyManager : MonoSingleton<CurrencyManager>
 {
-    public static CurrencyManager Instance { get; private set; }
 
     [SerializeField] private int gold = 5000;
     public int Gold => gold;
 
     public event Action<int> OnGoldChanged;
 
-    private void Awake()
-    {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
-    }
+    
 
     public bool SpendGold(int amount)
     {

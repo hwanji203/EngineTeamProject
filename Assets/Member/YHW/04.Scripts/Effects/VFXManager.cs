@@ -6,7 +6,7 @@ public enum VFXType
     Swing,
     DashBoost,
     Hit,
-    DashAttack
+    DashAttack,
 }
 
 public class VFXObject : MonoBehaviour
@@ -87,25 +87,19 @@ public class VFXPool
     [HideInInspector] public Queue<VFXObject> poolQueue = new();
 }
 
-public class VFXManager : MonoBehaviour
+public class VFXManager : MonoSingleton<VFXManager>
 {
-    public static VFXManager Instance { get; private set; }
 
     [SerializeField] private List<VFXPool> vfxPools = new();
     private Dictionary<VFXType, VFXPool> vfxDict = new();
 
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
 
+    protected override void Awake()
+    {
+        base.Awake();
         InitializePools();
     }
+
 
     private void InitializePools()
     {
