@@ -2,27 +2,25 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class ComboSystem : MonoBehaviour
 {
-    [Header("Settings")]
     [SerializeField] private float comboDuration = 1.5f;  
     [SerializeField] private float scaleUpSize = 1.3f;  
     [SerializeField] private float scaleDuration = 0.2f; 
 
-    [Header("References")]
     [SerializeField] private GameObject comboPrefab;  
     [SerializeField] private Transform spawnParent;
 
-    private string comboAnimStateName;
 
     private GameObject currentComboObj; 
-    private Animator comboAnimator;
-    private TextMeshPro comboText;
+    private TextMeshProUGUI comboText;
     private Vector3 originalScale;
-    private float baseAnimLength = 1f;
     private int currentCombo = 0;
     private Coroutine comboCoroutine;
+    private RectTransform comboRectTransform;
+    private Image comboImage;
 
     private void Update()
     {
@@ -38,11 +36,10 @@ public class ComboSystem : MonoBehaviour
         if (currentComboObj == null)
         {
             currentComboObj = Instantiate(comboPrefab, spawnParent);
-            comboAnimator = currentComboObj.GetComponent<Animator>();
-            comboText = currentComboObj.GetComponentInChildren<TextMeshPro>(true);
+            comboText = currentComboObj.GetComponentInChildren<TextMeshProUGUI>(true);
             originalScale = currentComboObj.transform.localScale;
-
-            GetBaseAnimationLength();
+            comboRectTransform = currentComboObj.GetComponentInChildren<RectTransform>();
+            comboImage = currentComboObj.GetComponentInChildren<Image>();
         }
 
         currentCombo++;
@@ -50,7 +47,7 @@ public class ComboSystem : MonoBehaviour
 
         currentComboObj.transform.DOKill();
 
-        currentComboObj.transform
+        comboRectTransform
             .DOScale(originalScale * scaleUpSize, scaleDuration)
             .SetEase(Ease.OutBack)
             .OnComplete(() =>
@@ -58,26 +55,31 @@ public class ComboSystem : MonoBehaviour
                 currentComboObj.transform.DOScale(originalScale, scaleDuration).SetEase(Ease.InBack);
             });
 
-        if (comboAnimator != null)
-        {
-            comboAnimator.speed = baseAnimLength / comboDuration;
-            if (!string.IsNullOrEmpty(comboAnimStateName))
-            {
-                comboAnimator.Play(comboAnimStateName, 0, 0f);
-            }
-        }
-
         if (comboCoroutine != null)
             StopCoroutine(comboCoroutine);
-        comboCoroutine = StartCoroutine(ComboTimeout());
+        comboCoroutine = StartCoroutine(FillRoutine());
+
+       
     }
 
-    private IEnumerator ComboTimeout()
+    
+
+
+    IEnumerator FillRoutine()
     {
-        yield return new WaitForSeconds(comboDuration);
+        float timer = 0f;
+        comboImage.fillAmount = 1f;
+
+        while (timer < comboDuration)
+        {
+            timer += Time.deltaTime;
+            comboImage.fillAmount = 1f - (timer / comboDuration);
+            yield return null;
+        }
+
+
         EndCombo();
     }
-
     private void EndCombo()
     {
         currentCombo = 0;
@@ -91,16 +93,5 @@ public class ComboSystem : MonoBehaviour
         }
     }
 
-    private void GetBaseAnimationLength()
-    {
-        if (comboAnimator.runtimeAnimatorController != null)
-        {
-            var clips = comboAnimator.runtimeAnimatorController.animationClips;
-            if (clips != null && clips.Length > 0)
-            {
-                baseAnimLength = clips[0].length;
-                comboAnimStateName = clips[0].name;
-            }
-        }
-    }
+    
 }
