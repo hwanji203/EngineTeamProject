@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8107b755eb676fb4ea58c855683a7e44, type: 3}
   m_Name: Skill_UrchinSpines
   m_EditorClassIdentifier: 
-  skillName: tripleAttack
+  skillName: Urchin
   skillIcon: {fileID: 6198854383759627596, guid: f2529277cdbb7f44da7b97d8d29c1a63, type: 3}
   cooldown: 1
-  manaCost: 10
+  cost: 300
+  equipmentData: {fileID: 11400000, guid: aee49934e3d204c4ea8d727731d3ff92, type: 2}
   spineCount: 3
   damagePerSpine: 25
   shootAngle: 60
