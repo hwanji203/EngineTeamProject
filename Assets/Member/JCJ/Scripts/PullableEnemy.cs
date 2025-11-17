@@ -10,7 +10,6 @@ public class PullableEnemy : MonoBehaviour, IDamageable, ISlowable
     
     [Header("끌려갈 때")]
     [SerializeField] private float pullStopDistance = 1.5f;  // 이 거리 내로 오면 멈춤
-    [SerializeField] private float pullDuration = 0.5f;      // 끌려가는 시간
     
     [Header("이펙트")]
     [SerializeField] private GameObject hitEffectPrefab;
@@ -18,7 +17,7 @@ public class PullableEnemy : MonoBehaviour, IDamageable, ISlowable
     
     private Rigidbody2D rb;
     private Vector2 targetPos;
-    private bool isPulling = false;
+    private bool isPulling;
     
     private void Awake()
     {
@@ -42,7 +41,7 @@ public class PullableEnemy : MonoBehaviour, IDamageable, ISlowable
                 // 가까워지면 멈춤
                 rb.linearVelocity = Vector2.zero;
                 isPulling = false;
-                Debug.Log($"[{gameObject.name}] 끌어당기기 완료!");
+                Debug.Log($"[{gameObject.name}] pull");
             }
         }
     }
@@ -50,7 +49,7 @@ public class PullableEnemy : MonoBehaviour, IDamageable, ISlowable
     public void GetDamage(float damage)
     {
         currentHealth -= damage;
-        Debug.Log($"[{gameObject.name}] 데미지: {damage}, 남은 체력: {currentHealth}");
+        Debug.Log($"[{gameObject.name}] damage : {damage}, current Health : {currentHealth}");
         
         if (hitEffectPrefab != null)
         {
@@ -79,23 +78,23 @@ public class PullableEnemy : MonoBehaviour, IDamageable, ISlowable
         Vector2 direction = (targetPosition - rb.position).normalized;
         rb.linearVelocity = direction * speed;
         
-        Debug.Log($"[{gameObject.name}] 끌려감! 목표: {targetPosition}");
+        Debug.Log($"[{gameObject.name}] pull, target : {targetPosition}");
     }
     
     public void ApplySlow(float slowPercent, float duration)
     {
-        StartCoroutine(SlowCoroutine(slowPercent, duration));
+        StartCoroutine(SlowCoroutine(duration));
     }
     
-    private IEnumerator SlowCoroutine(float slowPercent, float duration)
+    private IEnumerator SlowCoroutine(float duration)
     {
-        Debug.Log($"[{gameObject.name}] 슬로우!");
+        Debug.Log($"[{gameObject.name}] slowed");
         yield return new WaitForSeconds(duration);
     }
     
     private void Die()
     {
-        Debug.Log($"[{gameObject.name}] 사망!");
+        Debug.Log($"[{gameObject.name}] Dead");
         Destroy(gameObject);
     }
 }

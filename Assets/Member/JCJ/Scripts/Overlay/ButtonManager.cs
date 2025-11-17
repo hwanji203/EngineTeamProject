@@ -1,19 +1,19 @@
-using System;
-using UnityEngine;
+    using System;
+    using UnityEngine;
 
-public class ButtonManager : MonoBehaviour
-{
-    [SerializeField]private Overlay_Button[] buttons;
-
-    public void ClickButon(Overlay_Button overlayButton)
+    public class ButtonManager : MonoBehaviour
     {
-        for (int i = 0; i < buttons.Length; i++)
+        [SerializeField]private Overlay_Button[] buttons;
+
+        public void ClickButon(Overlay_Button overlayButton)
         {
-            if (buttons[i] != overlayButton)
+            for (int i = 0; i < buttons.Length; i++)
             {
-                buttons[i].OutButton();
+                if (buttons[i] != overlayButton)
+                {
+                    buttons[i].OutButton();
+                }
             }
         }
+        
     }
-    
-}

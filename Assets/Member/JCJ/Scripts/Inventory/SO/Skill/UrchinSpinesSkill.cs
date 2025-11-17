@@ -20,8 +20,7 @@ public class UrchinSpinesSkill : SkillSO
     
     public override void Execute(ISkillCaster caster)
     {
-        caster.ConsumeMana(ManaCost);
-        Debug.Log($"성게 가시 발사! x{spineCount}");
+        Debug.Log($"Urchin x{spineCount}");
         
         if (shootSound != null)
         {
@@ -36,7 +35,7 @@ public class UrchinSpinesSkill : SkillSO
             float angle = startAngle + (angleStep * i);
             
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward) * caster.Transform.rotation;
-            Vector3 direction = rotation * Vector3.right; //일단 오른쪽으로 발사
+            Vector3 direction = rotation * Vector3.right; //오른쪽으로 발사
             
             if (spinePrefab != null)
             {
