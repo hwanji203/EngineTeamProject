@@ -15,11 +15,13 @@ namespace Member.Kimyongmin._02.Code.Enemy
             EnemyStateMachine = new EnemyStateMachine(this);
             
             EnemyStateMachine.AddState(StateType.Hit, new HitState(Enemy, EnemyStateMachine, "Hit"));
+            EnemyStateMachine.AddState(StateType.Dead, new DeadState(Enemy, EnemyStateMachine, "Dead"));
         }
 
         protected void Start()
         {
             Enemy.HealthSystem.OnHealthChanged += Hit;
+            Enemy.HealthSystem.OnDeath += Dead;
         }
 
         public void Hit()
@@ -30,6 +32,12 @@ namespace Member.Kimyongmin._02.Code.Enemy
         protected void OnDestroy()
         {
             Enemy.HealthSystem.OnHealthChanged -= Hit;
+            Enemy.HealthSystem.OnDeath -= Dead;
+        }
+
+        public void Dead()
+        {
+            EnemyStateMachine.ChangeState(StateType.Dead);
         }
     }
 }

@@ -9,5 +9,18 @@ namespace Member.Kimyongmin._02.Code
             result = component.GetComponentInParent<T>();
             return result != null;
         }
+        
+        public static T GetComponentInDirectChildren<T>(this Transform parent) where T : Component
+        {
+            foreach (Transform child in parent)
+            {
+                if (child.TryGetComponent<T>(out T component))
+                {
+                    return component;
+                }
+            }
+
+            return null;
+        }
     }
 }

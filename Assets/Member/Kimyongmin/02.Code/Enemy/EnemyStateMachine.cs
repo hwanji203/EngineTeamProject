@@ -8,7 +8,8 @@ namespace Member.Kimyongmin._02.Code.Enemy
         Idle,
         Chase,
         Attack,
-        Hit
+        Hit,
+        Dead
     }
     public class EnemyStateMachine
     {

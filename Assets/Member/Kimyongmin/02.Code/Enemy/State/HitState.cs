@@ -16,6 +16,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
             base.EnterState();
             Enemy.HealthSystem.OnHealthChanged += ResetStun;
             Enemy.AgentMovement.IsHit = true;
+            Enemy.transform.rotation = Quaternion.Euler(Enemy.transform.rotation.x,Enemy.transform.rotation.y,0);
             ResetStun();
         }
 

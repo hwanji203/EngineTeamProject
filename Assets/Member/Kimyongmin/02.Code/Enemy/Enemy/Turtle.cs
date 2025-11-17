@@ -33,7 +33,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Death()
         {
-            Destroy(gameObject);
+            
         }
 
         public void Dash()
@@ -77,20 +77,22 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
                         if (item.TryGetcomponentInParent(out Player player))
                         {
                             DealStamina(player, EnemyDataSo.damage);
-                            IsAttack = false;
-                            PanjeongTime = 0;
-                            Array.Clear(_hitArr, 0, _hitArr.Length);
                             break;
                         }
                     }
                 }
                 yield return null;
             }
+            IsAttack = false;
+            PanjeongTime = 0;
         }
 
         public void DealStamina(Player player, float damage)
         {
             player.GetDamage(damage, transform.position);
+            IsAttack = false;
+            PanjeongTime = 0;
+            Array.Clear(_hitArr, 0, _hitArr.Length);
         }
     }
 }
