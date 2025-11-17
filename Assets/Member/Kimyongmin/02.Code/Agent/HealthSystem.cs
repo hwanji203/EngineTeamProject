@@ -34,6 +34,7 @@ namespace Member.Kimyongmin._02.Code.Agent
 
         public void GetDamage(float damage)
         {
+            Debug.Log("sdfd");
             Health -= damage;
             if (Health <= 0)
             {

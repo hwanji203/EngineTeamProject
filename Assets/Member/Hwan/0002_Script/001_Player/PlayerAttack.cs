@@ -26,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
     {
         PlayerSkillSO skill = skillDictionarySO.Dictionary[seeSkill];
 
-        // DrawRangeManager.Instance.DrawBox(skill.RealRange, transform.eulerAngles.z, transform.position, skill.RealOffSet);
+        DrawRangeManager.Instance.DrawBox(skill.RealRange, transform.eulerAngles.z, transform.position, skill.RealOffSet);
     }
 
     public void AddSkill(PlayerSkillType skillType)

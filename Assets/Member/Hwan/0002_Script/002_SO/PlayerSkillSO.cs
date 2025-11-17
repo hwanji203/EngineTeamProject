@@ -25,7 +25,6 @@ public abstract class PlayerSkillSO : ScriptableObject
     {
         Vector2 attackPoint = playerTrn.position + Quaternion.Euler(0, 0, playerTrn.eulerAngles.z) * RealOffSet;
         Collider2D[] colliders = Physics2D.OverlapBoxAll(attackPoint, RealRange, playerTrn.eulerAngles.z);
-
         foreach (Collider2D collider in colliders)
         {
             if (detectedCollider.Contains(collider) == true) continue;

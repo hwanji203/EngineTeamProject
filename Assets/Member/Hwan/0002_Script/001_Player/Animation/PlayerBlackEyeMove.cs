@@ -23,4 +23,9 @@ public class PlayerBlackEyeMove : MonoBehaviour
                  .SetLink(gameObject, LinkBehaviour.KillOnDestroy);
     }
 
+    public void OnEnable()
+    {
+        transform.localPosition = Vector3.zero;
+    }
+
 }
