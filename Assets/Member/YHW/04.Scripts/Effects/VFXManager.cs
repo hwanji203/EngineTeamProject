@@ -94,7 +94,6 @@ public class VFXManager : MonoSingleton<VFXManager>
     [SerializeField] private List<VFXPool> vfxPools = new();
     private Dictionary<VFXType, VFXPool> vfxDict = new();
 
-
     protected override void Awake()
     {
         base.Awake();
@@ -126,7 +125,7 @@ public class VFXManager : MonoSingleton<VFXManager>
         }
     }
 
-    public GameObject Play(VFXType type, Vector3 position, Quaternion rotation)
+    public GameObject Play(VFXType type, Vector3 position, Quaternion rotation, Transform parent)
     {
         if (!vfxDict.ContainsKey(type))
         {
@@ -140,10 +139,12 @@ public class VFXManager : MonoSingleton<VFXManager>
         if (pool.poolQueue.Count > 0)
         {
             obj = pool.poolQueue.Dequeue();
+            obj.transform.SetParent(parent);
         }
         else
         {
-            var newObj = Instantiate(pool.prefab, transform);
+            if (parent == null) parent = transform;
+            var newObj = Instantiate(pool.prefab, parent);
             obj = newObj.GetComponent<VFXObject>();
             if (obj == null)
                 obj = newObj.AddComponent<VFXObject>();

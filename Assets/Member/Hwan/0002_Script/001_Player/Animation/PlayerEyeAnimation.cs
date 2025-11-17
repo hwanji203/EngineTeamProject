@@ -81,4 +81,9 @@ public class PlayerEyeAnimation : MonoBehaviour
     {
         blinking = false;
     }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.right, 0.4f);
+    }
 }
