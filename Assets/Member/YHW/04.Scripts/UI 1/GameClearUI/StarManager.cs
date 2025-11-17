@@ -19,7 +19,8 @@ public class StarManager : MonoSingleton<StarManager>
 
     private int starCount = 0;
 
-    
+    public int acquiredMoney { get; set; }
+
 
     private void OnEnable()
     {
@@ -41,9 +42,14 @@ public class StarManager : MonoSingleton<StarManager>
         starCount = 0;
     }
 
-    public void Clear()
+    public void AddStar()
     {
         starCount++;
+    }
+
+    public void AddGold(int howmuch)
+    {
+        acquiredMoney += howmuch;
     }
 
     public void ChangeState()
