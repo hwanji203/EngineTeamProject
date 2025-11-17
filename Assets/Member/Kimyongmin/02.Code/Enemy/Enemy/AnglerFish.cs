@@ -9,22 +9,33 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
     {
         private float _dashAngle;
         [SerializeField] private Vector3 offset;
-        
+        [SerializeField] private float attackDelay = 0.75f;
+
+        private AttackHitbox attackHitbox;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            attackHitbox = GetComponentInChildren<AttackHitbox>();
+        }
+
         public override void Attack()
         {
+            Vector2 dashDir = GetTarget();
+           _dashAngle = Mathf.Atan2(GetTarget().y, GetTarget().x) * Mathf.Rad2Deg;
+            
             IsAttack = true;
             AgentMovement.IsDashing = true;
             ResetCooltime();
-            AgentMovement.RbCompo.linearVelocity = GetTarget() * 1.25f;
-            _dashAngle = Mathf.Atan2(GetTarget().y, GetTarget().x) * Mathf.Rad2Deg;
+            AgentMovement.RbCompo.linearVelocity = dashDir * 1.25f;
             transform.rotation = Quaternion.Euler(0,0,_dashAngle);
-            StartCoroutine(HitPanJeong());
+            attackHitbox.ShowHitbox(dashDir, attackDelay);
             DisbleAttackRange();
         }
 
         public override void Death()
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         
         public float PanjeongTime { get; set; }
@@ -34,7 +45,6 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public IEnumerator HitPanJeong()
         {
-            yield return new WaitForSeconds(0.5f);
             while (PanjeongTime < PanjeongDuration && IsAttack)
             {
                 PanjeongTime += Time.deltaTime;
@@ -52,16 +62,14 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
                 }   
                 yield return null;
             }
-            EnableAttackRange();
+            //프록시에서 해줌
         }
 
         public void DealStamina(Player player, float damage)
         {
             player.GetDamage(damage, transform.position);
-            IsAttack = false;
-            AgentMovement.IsDashing = false;
-            transform.rotation = Quaternion.Euler(transform.rotation.x,transform.rotation.y,0);
             PanjeongTime = 0;
+            IsAttack = false;
             Array.Clear(_hitArr, 0, _hitArr.Length);
         }
         

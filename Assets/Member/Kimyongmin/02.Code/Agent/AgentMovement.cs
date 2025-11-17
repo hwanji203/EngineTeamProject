@@ -16,6 +16,8 @@ namespace Member.Kimyongmin._02.Code.Agent
 
         public bool IsDashing { get; set; } = false;
         public bool IsHit { get; set; } = false;
+        
+        private bool _isDead = false;
 
         private void Awake()
         {
@@ -23,6 +25,7 @@ namespace Member.Kimyongmin._02.Code.Agent
             _healthSystem = GetComponent<HealthSystem>();
 
             _healthSystem.OnHealthChanged += Knockback;
+            _healthSystem.OnDeath += KnockbackTwo;
         }
 
         public void SetMoveDir(Vector2 moveDir)
@@ -38,6 +41,7 @@ namespace Member.Kimyongmin._02.Code.Agent
 
         private float _smooth = 4;
         private Vector2 _targetVel;
+        private float _fallSpeed = 1;
     
         private void FixedUpdate()
         {
@@ -48,9 +52,15 @@ namespace Member.Kimyongmin._02.Code.Agent
             
             Vector2 newDir = Vector2.Lerp(currentDir, _moveDir, _smooth * Time.fixedDeltaTime).normalized;
 
-            if (!IsDashing && !IsHit)
+            if (!IsDashing && !IsHit && !_isDead)
             {
                 RbCompo.linearVelocity = newDir * _speed;
+            }
+
+            if (_isDead)
+            {
+                _fallSpeed += Time.deltaTime;
+                RbCompo.gravityScale = _fallSpeed;
             }
         }
 
@@ -65,9 +75,14 @@ namespace Member.Kimyongmin._02.Code.Agent
 
         private void Knockback()
         {
-            StartCoroutine(KnockbackCor());
+            StartCoroutine(KnockbackCor(5));
         }
-        private IEnumerator KnockbackCor()
+        
+        private void KnockbackTwo()
+        {
+            StartCoroutine(KnockbackCor(25));
+        }
+        private IEnumerator KnockbackCor(float a)
         {
             RbCompo.linearVelocity = Vector2.zero;
             _currentTime = 0;
@@ -77,7 +92,7 @@ namespace Member.Kimyongmin._02.Code.Agent
             {
                 _currentTime += Time.deltaTime;
                 
-                _knockPower = Mathf.Lerp(5, 0, _currentTime);
+                _knockPower = Mathf.Lerp(a, 0, _currentTime);
                 RbCompo.linearVelocity = _knockDir * _knockPower;
                 yield return null;
             }
@@ -86,6 +101,12 @@ namespace Member.Kimyongmin._02.Code.Agent
         private void OnDestroy()
         {
             _healthSystem.OnHealthChanged -= Knockback;
+            _healthSystem.OnDeath -= KnockbackTwo;
+        }
+
+        public void DeadBool()
+        {
+            _isDead = true;
         }
     }
 }
