@@ -6,9 +6,9 @@ public class StoreManager : MonoBehaviour
     [Header("Store Settings")]
     [SerializeField] private GameObject storeItemPrefab;
     [SerializeField] private Transform[] itemSlots; 
-    [SerializeField] private StoreItemData[] allItemDatabase;
+    [SerializeField] private SkillSO[] allItemDatabase;
 
-    private List<StoreItemData> activeItems = new List<StoreItemData>();
+    private List<SkillSO> activeItems = new List<SkillSO>();
 
     private void Start()
     {
@@ -33,10 +33,10 @@ public class StoreManager : MonoBehaviour
         }
     }
 
-    private List<StoreItemData> GetRandomItems(int count)
+    private List<SkillSO> GetRandomItems(int count)
     {
-        List<StoreItemData> tempList = new List<StoreItemData>(allItemDatabase);
-        List<StoreItemData> result = new List<StoreItemData>();
+        List<SkillSO> tempList = new List<SkillSO>(allItemDatabase);
+        List<SkillSO> result = new List<SkillSO>();
 
         for (int i = 0; i < count && tempList.Count > 0; i++)
         {
@@ -47,18 +47,18 @@ public class StoreManager : MonoBehaviour
         return result;
     }
 
-    public void TryPurchaseItem(StoreItemData itemData, StoreItemUI itemUI)
+    public void TryPurchaseItem(SkillSO itemData, StoreItemUI itemUI)
     {
-        if (CurrencyManager.Instance.SpendGold(itemData.price))
+        if (CurrencyManager.Instance.SpendGold(itemData.Cost))
         {
             itemUI.SetPurchased();
-            Debug.Log($"±¸¸Å¼º°ø");
+            Debug.Log($"ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ï¿½");
             AfterBuying();
         }
         else
         {
             itemUI.PlayInsufficientFundsFeedback();
-            Debug.Log($"±¸¸Å ½ÇÆÐ");
+            Debug.Log($"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         }
     }
 

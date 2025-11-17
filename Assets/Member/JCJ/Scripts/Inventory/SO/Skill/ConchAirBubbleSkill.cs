@@ -15,8 +15,7 @@ public class ConchAirBubbleSkill : SkillSO
     
     public override void Execute(ISkillCaster caster)
     {
-        caster.ConsumeMana(ManaCost);
-        Debug.Log($"공기 방울 끌어당기기!");
+        Debug.Log($"ConchSkill");
         
         if (pullSound != null)
         {

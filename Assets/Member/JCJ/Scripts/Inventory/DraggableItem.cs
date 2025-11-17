@@ -33,7 +33,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log($"인벤토리 드래그 시작: {equipmentData?.ItemName}");
+        Debug.Log($"Start Drag : {equipmentData?.ItemName}");
         
         originalParent = transform.parent;
         originalPosition = rectTransform.anchoredPosition;
@@ -51,7 +51,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log($"인벤토리 드래그 끝: {equipmentData?.ItemName}");
+        Debug.Log($"End Drag : {equipmentData?.ItemName}");
         
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
