@@ -9,18 +9,11 @@ public class FuctionBtn : MonoBehaviour
     [SerializeField]private Ease moveEase = Ease.OutQuad;
     [SerializeField]private float moveDistance = 100f;
 
-    void Start()
-    {
-        
-    }
 
-    private void Update()
-    {
-        if(Keyboard.current.eKey.wasPressedThisFrame)
-        {
-            MoveIn();
 
-        }
+    private void OnEnable()
+    {
+        MoveIn();
     }
 
     private void MoveIn()
