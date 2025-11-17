@@ -18,8 +18,7 @@ public class OctopusInkSkill : SkillSO
     
     public override void Execute(ISkillCaster caster)
     {
-        caster.ConsumeMana(ManaCost);
-        Debug.Log($"먹물 뿜기!");
+        Debug.Log($"Octopus Skill");
         
         if (inkSound != null)
         {
@@ -40,7 +39,7 @@ public class OctopusInkSkill : SkillSO
             if (damageable != null)
             {
                 damageable.GetDamage(damageInExplosion);
-                Debug.Log($"[{hit.name}] {damageInExplosion} 데미지!");
+                Debug.Log($"[{hit.name}] {damageInExplosion} damage");
             }
             
             // 슬로우

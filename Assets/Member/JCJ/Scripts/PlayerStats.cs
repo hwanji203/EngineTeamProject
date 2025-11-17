@@ -85,7 +85,7 @@ public class PlayerStats : MonoBehaviour, ISkillCaster
             }
         }
         
-        Debug.Log($"최종 공격력: {GetTotalAttack()}, 최종 방어력: {GetTotalDefense()}");
+        Debug.Log($"Attack Value : {GetTotalAttack()}, Defense Value : {GetTotalDefense()}");
     }
     
     private void RegenerateMana()
@@ -116,12 +116,12 @@ public class PlayerStats : MonoBehaviour, ISkillCaster
             Die();
         }
         
-        Debug.Log($"데미지: {actualDamage}, 남은 체력: {currentHealth}");
+        Debug.Log($"damage : {actualDamage}, currentHealth : {currentHealth}");
     }
     
     private void Die()
     {
-        Debug.Log("플레이어 사망!");
+        Debug.Log("Player Is Dead");
         // 게임 오버 처리
     }
     

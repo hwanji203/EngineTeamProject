@@ -36,7 +36,7 @@ public class SkillManager : MonoBehaviour
         // 없으면 에러 로그 (필수 컴포넌트)
         if (caster == null)
         {
-            Debug.LogError("ISkillCaster가 필요합니다! PlayerController를 추가하세요.");
+            Debug.LogError("Need ISkillCaster,Add PlayerController");
         }
     }
     
@@ -58,7 +58,7 @@ public class SkillManager : MonoBehaviour
         // 쿨타임 감소 처리
         UpdateCooldowns(Time.deltaTime);
     }
-    /// 장비 변경 이벤트 핸들러 (EquipmentManager에서 호출)
+    // 장비 변경 이벤트 핸들러 (EquipmentManager에서 호출)
     private void OnEquipmentChanged(int slotIndex, EquipmentSO newEquipment)
     {
         // 유효한 슬롯 인덱스인지 확인
@@ -70,7 +70,7 @@ public class SkillManager : MonoBehaviour
         }
     }
     
-    /// 게임 시작 시 현재 장착된 장비와 스킬 동기화
+    // 게임 시작 시 현재 장착된 장비와 스킬 동기화
     private void SyncSkillsWithEquipment()
     {
         // 모든 슬롯 순회
@@ -84,7 +84,7 @@ public class SkillManager : MonoBehaviour
         }
     }
     
-    /// 스킬 실행 시도 (키 입력 시 호출)
+    // 스킬 실행 시도 (키 입력 시 호출)
     public bool TryExecuteSkill(int slotIndex)
     {
         // 유효성 검사 1: 슬롯 인덱스가 올바른지
@@ -99,13 +99,6 @@ public class SkillManager : MonoBehaviour
         // 실행할 스킬 참조 가져오기
         SkillSO skill = activeSkills[slotIndex];
         
-        // 유효성 검사 4: 스킬 사용 가능 여부 (마나 등)
-        if (!skill.CanExecute(caster))
-        {
-            Debug.LogWarning($"{skill.SkillName} 사용 불가 (마나 부족 등)");
-            return false; // 사용 불가
-        }
-        
         // 스킬 실행
         skill.Execute(caster);
         
@@ -115,7 +108,7 @@ public class SkillManager : MonoBehaviour
         
         return true; // 실행 성공
     }
-    /// 쿨타임 업데이트 (매 프레임 호출)
+    // 쿨타임 업데이트 (매 프레임 호출)
     private void UpdateCooldowns(float deltaTime)
     {
         // 모든 스킬 슬롯 순회
@@ -130,19 +123,19 @@ public class SkillManager : MonoBehaviour
     }
     
     
-    /// 특정 슬롯의 활성 스킬 가져오기
+    // 특정 슬롯의 활성 스킬 가져오기
     public SkillSO GetActiveSkill(int slotIndex) => 
         IsValidSlot(slotIndex) ? activeSkills[slotIndex] : null;
     
-    /// 특정 슬롯의 쿨타임 진행도 가져오기 (UI 표시용)
+    // 특정 슬롯의 쿨타임 진행도 가져오기 (UI 표시용)
     public float GetCooldownProgress(int slotIndex) =>
         IsValidSlot(slotIndex) ? cooldowns[slotIndex].Progress : 1f;
     
-    /// 특정 슬롯의 스킬이 사용 가능한지 확인
+    // 특정 슬롯의 스킬이 사용 가능한지 확인
     public bool IsSkillReady(int slotIndex) =>
         IsValidSlot(slotIndex) && cooldowns[slotIndex].IsReady;
     
-    /// 슬롯 인덱스 유효성 검사 헬퍼 함수
+    // 슬롯 인덱스 유효성 검사 헬퍼 함수
     private bool IsValidSlot(int index) => index >= 0 && index < SKILL_COUNT;
     
     private void OnDestroy()

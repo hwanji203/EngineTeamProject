@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cb82bf91484d342a425a27f76d105b, type: 3}
   m_Name: test' 3
   m_EditorClassIdentifier: 
-  itemName: c
+  itemName: Sunge
   itemIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  price: 300
-  description: cc
+  price: 200
+  description: Sunge shot some gashi

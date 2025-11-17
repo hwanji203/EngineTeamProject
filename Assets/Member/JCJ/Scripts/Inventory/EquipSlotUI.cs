@@ -56,18 +56,18 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         
         if (currentItem != null)
         {
-            Debug.Log($"슬롯 {slotIndex}의 '{currentItem.ItemName}' 제거됨");
+            Debug.Log($"Slot {slotIndex} in '{currentItem.ItemName}'is UnEquipped");
             equipmentManager.UnequipItem(slotIndex);
         }
         else
         {
-            Debug.Log($"슬롯 {slotIndex}에 장착된 아이템이 없습니다.");
+            Debug.Log($"Slot {slotIndex} is null");
         }
     }
     
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log($"슬롯 {slotIndex}에 드롭");
+        Debug.Log($"Slot {slotIndex} In Drop");
         
         EquipSlotUI sourceSlot = eventData.pointerDrag?.GetComponent<EquipSlotUI>();
         if (sourceSlot != null)
@@ -83,7 +83,7 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
             return;
         }
         
-        Debug.LogWarning("드래그된 아이템이 없습니다.");
+        Debug.LogWarning("DraggableItem is null");
     }
     
     private void HandleSlotToSlotDrop(EquipSlotUI sourceSlot)
@@ -93,7 +93,7 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         
         if (fromSlot == toSlot)
         {
-            Debug.Log("같은 슬롯입니다.");
+            Debug.Log("Same Slot");
             return;
         }
         
@@ -104,12 +104,12 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         {
             equipmentManager.EquipItem(toSlot, fromItem);
             equipmentManager.EquipItem(fromSlot, null);
-            Debug.Log($"아이템 이동: 슬롯 {fromSlot} → 슬롯 {toSlot}");
+            Debug.Log($"Item Move: Slot {fromSlot} → Slot {toSlot}");
             return;
         }
         
         equipmentManager.SwapItems(fromSlot, toSlot);
-        Debug.Log($"아이템 교환: 슬롯 {fromSlot} ↔ 슬롯 {toSlot}");
+        Debug.Log($"Item Trade: Slot {fromSlot} ↔ Slot {toSlot}");
     }
     
     private void HandleInventoryToDrop(EquipmentSO equipment)
@@ -119,12 +119,12 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         if (currentItem == null)
         {
             equipmentManager.EquipItem(slotIndex, equipment);
-            Debug.Log($"아이템 장착: 슬롯 {slotIndex}에 {equipment.ItemName}");
+            Debug.Log($"Item Equiped : Slot {slotIndex} In {equipment.ItemName}");
             return;
         }
         
         equipmentManager.EquipItem(slotIndex, equipment);
-        Debug.Log($"아이템 교체: 슬롯 {slotIndex}에 {equipment.ItemName}");
+        Debug.Log($"Item Trade : Slot {slotIndex} In {equipment.ItemName}");
     }
 
     private void OnEquipmentChanged(int changedSlot, EquipmentSO newEquipment)

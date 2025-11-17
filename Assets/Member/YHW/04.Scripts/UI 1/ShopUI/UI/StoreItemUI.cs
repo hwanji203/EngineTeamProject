@@ -11,18 +11,18 @@ public class StoreItemUI : MonoBehaviour
     [SerializeField] private Button buyButton;
     [SerializeField] private GameObject purchasedOverlay;
 
-    private StoreItemData data;
+    private SkillSO data;
     private StoreManager manager;
     private bool isPurchased = false;
 
-    public void Setup(StoreItemData itemData, StoreManager storeManager)
+    public void Setup(SkillSO itemData, StoreManager storeManager)
     {
         data = itemData;
         manager = storeManager;
 
-        icon.sprite = data.itemIcon;
-        nameText.text = data.itemName;
-        priceText.text = $"{data.price} G";
+        icon.sprite = data.SkillIcon;
+        nameText.text = data.SkillName;
+        priceText.text = $"{data.Cost} G";
 
         buyButton.onClick.AddListener(() => manager.TryPurchaseItem(data, this));
         UpdateUI();

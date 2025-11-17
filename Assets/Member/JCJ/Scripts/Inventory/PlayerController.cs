@@ -3,10 +3,6 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour, ISkillCaster
 {
-    [Header("플레이어 스탯")]
-    [SerializeField] private float maxMana = 100f;
-    [SerializeField] private float currentMana = 100f;
-    [SerializeField] private float manaRegenRate = 5f;
     
     [Header("스킬 키 설정")]
     [SerializeField] private KeyCode skill1Key = KeyCode.E;
@@ -18,7 +14,6 @@ public class PlayerController : MonoBehaviour, ISkillCaster
     private BasicAttackManager basicAttackManager;
     
     public Transform Transform => transform;
-    public float CurrentMana => currentMana;
         
     private void Awake()
     {
@@ -29,7 +24,6 @@ public class PlayerController : MonoBehaviour, ISkillCaster
     private void Update()
     {
         HandleInput();
-        RegenerateMana();
     }
     
     private void HandleInput()
@@ -51,25 +45,12 @@ public class PlayerController : MonoBehaviour, ISkillCaster
             skillManager.TryExecuteSkill(2);
     }
     
-    private void RegenerateMana()
+    public void ApplyDefenseBuff(float duration)
     {
-        if (currentMana < maxMana)
-        {
-            currentMana = Mathf.Min(currentMana + manaRegenRate * Time.deltaTime, maxMana);
-        }
+        StartCoroutine(DefenseBuffCoroutine(duration));
     }
     
-    public void ConsumeMana(float amount)
-    {
-        currentMana = Mathf.Max(currentMana - amount, 0f);
-    }
-    
-    public void ApplyDefenseBuff(float multiplier, float duration)
-    {
-        StartCoroutine(DefenseBuffCoroutine(multiplier, duration));
-    }
-    
-    private IEnumerator DefenseBuffCoroutine(float multiplier, float duration)
+    private IEnumerator DefenseBuffCoroutine( float duration)
     {
         yield return new WaitForSeconds(duration);
     }

@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using Member.Kimyongmin._02.Code.Agent;
 
@@ -51,7 +50,7 @@ public class UrchinSpine : MonoBehaviour
             if (damageable != null)
             {
                 damageable.GetDamage(damage);
-                Debug.Log($"가시가 [{other.name}]에 {damage} 데미지!");
+                Debug.Log($"[{other.name}] {damage}damage");
             }
             
             Destroy(gameObject);

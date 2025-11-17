@@ -5,8 +5,8 @@ public class EquipmentManager : MonoBehaviour, IEquipmentReader
 {
     public static EquipmentManager Instance { get; private set; }
     
-    private const int SLOT_COUNT = 3;
-    private EquipmentSO[] equippedItems = new EquipmentSO[SLOT_COUNT];
+    private const int slotCount = 3;
+    private EquipmentSO[] equippedItems = new EquipmentSO[slotCount];
     public event Action<int, EquipmentSO> OnEquipmentChanged;
     
     private void Awake()
@@ -27,7 +27,7 @@ public class EquipmentManager : MonoBehaviour, IEquipmentReader
     {
         if (!IsValidSlotIndex(slotIndex))
         {
-            Debug.LogWarning($"잘못된 슬롯 인덱스: {slotIndex}");
+            Debug.LogWarning($"Index Error : {slotIndex}");
             return;
         }
         
@@ -45,14 +45,14 @@ public class EquipmentManager : MonoBehaviour, IEquipmentReader
             // 다른 슬롯에 이미 있음
             if (existingSlot != -1 && existingSlot != slotIndex)
             {
-                Debug.LogWarning($"'{equipment.ItemName}'은 이미 슬롯 {existingSlot}에 장착되어 있습니다!");
+                Debug.LogWarning($"'{equipment.ItemName}'is In the {existingSlot} Slot");
                 return;
             }
         }
         
         // 장착 성공
         equippedItems[slotIndex] = equipment;
-        Debug.Log($"장비 장착: 슬롯 {slotIndex}, 장비 {equipment?.ItemName ?? "해제"}");
+        Debug.Log($"Item Equip : Slot {slotIndex}, Item {equipment?.ItemName ?? "UnEquipped"}");
         OnEquipmentChanged?.Invoke(slotIndex, equipment);
     }
     
@@ -61,7 +61,7 @@ public class EquipmentManager : MonoBehaviour, IEquipmentReader
     {
         if (!IsValidSlotIndex(fromSlot) || !IsValidSlotIndex(toSlot))
         {
-            Debug.LogWarning("잘못된 슬롯 인덱스");
+            Debug.LogWarning("Index Error");
             return;
         }
         
@@ -72,7 +72,7 @@ public class EquipmentManager : MonoBehaviour, IEquipmentReader
         equippedItems[fromSlot] = equippedItems[toSlot];
         equippedItems[toSlot] = temp;
         
-        Debug.Log($"아이템 교환: 슬롯 {fromSlot} ↔ 슬롯 {toSlot}");
+        Debug.Log($"Item Trade: Slot {fromSlot} ↔ Slot {toSlot}");
         
         // 두 슬롯 모두 업데이트 알림
         OnEquipmentChanged?.Invoke(fromSlot, equippedItems[fromSlot]);
@@ -88,7 +88,7 @@ public class EquipmentManager : MonoBehaviour, IEquipmentReader
     // 특정 아이템 ID가 어느 슬롯에 있는지 찾기
     private int FindItemSlot(int itemID)
     {
-        for (int i = 0; i < SLOT_COUNT; i++)
+        for (int i = 0; i < slotCount; i++)
         {
             if (equippedItems[i] != null && equippedItems[i].ItemID == itemID)
             {
@@ -111,7 +111,7 @@ public class EquipmentManager : MonoBehaviour, IEquipmentReader
     public int GetTotalAttackBonus()
     {
         int total = 0;
-        for (int i = 0; i < SLOT_COUNT; i++)
+        for (int i = 0; i < slotCount; i++)
         {
             if (equippedItems[i] != null)
                 total += equippedItems[i].AttackBonus;
@@ -122,7 +122,7 @@ public class EquipmentManager : MonoBehaviour, IEquipmentReader
     public int GetTotalDefenseBonus()
     {
         int total = 0;
-        for (int i = 0; i < SLOT_COUNT; i++)
+        for (int i = 0; i < slotCount; i++)
         {
             if (equippedItems[i] != null)
                 total += equippedItems[i].DefenseBonus;
@@ -132,6 +132,6 @@ public class EquipmentManager : MonoBehaviour, IEquipmentReader
     
     private bool IsValidSlotIndex(int index)
     {
-        return index >= 0 && index < SLOT_COUNT;
+        return index >= 0 && index < slotCount;
     }
 }

@@ -33,12 +33,12 @@ public class BasicAttackManager : MonoBehaviour
         if (equipment != null && equipment.BasicAttackSkill != null)
         {
             currentBasicAttack = equipment.BasicAttackSkill;
-            Debug.Log($"기본 공격 변경: {currentBasicAttack.SkillName}");
+            Debug.Log($"Basic Attack Changed : {currentBasicAttack.SkillName}");
         }
         else
         {
             currentBasicAttack = null;
-            Debug.Log("기본 공격 없음");
+            Debug.Log("BasicAttack is null");
         }
     }
     
