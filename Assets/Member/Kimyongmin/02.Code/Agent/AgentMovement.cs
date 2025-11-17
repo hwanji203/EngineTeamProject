@@ -80,7 +80,7 @@ namespace Member.Kimyongmin._02.Code.Agent
         
         private void KnockbackTwo()
         {
-            StartCoroutine(KnockbackCor(50));
+            StartCoroutine(KnockbackCor(25));
         }
         private IEnumerator KnockbackCor(float a)
         {
