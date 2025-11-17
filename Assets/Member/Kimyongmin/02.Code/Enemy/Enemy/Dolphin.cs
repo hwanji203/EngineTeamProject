@@ -37,7 +37,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Death()
         {
-            Destroy(gameObject);
+            
         }
 
         public void ShootProjectile()
