@@ -8,8 +8,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [Header("아이템 데이터")]
     [SerializeField] private EquipmentSO equipmentData;
     
-    [Header("UI 참조")]
-    [SerializeField] private Image iconImage;
+    private Image iconImage;
     
     public EquipmentSO EquipmentData => equipmentData;
     
@@ -21,11 +20,22 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     private void Awake()
     {
+        iconImage = GetComponent<Image>();
         canvasGroup = GetComponent<CanvasGroup>();
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         
         if (equipmentData != null && iconImage != null)
+        {
+            iconImage.sprite = equipmentData.ItemIcon;
+        }
+    }
+
+    public void Init(EquipmentSO data)
+    {
+        equipmentData = data;
+
+        if (iconImage != null && equipmentData != null)
         {
             iconImage.sprite = equipmentData.ItemIcon;
         }
