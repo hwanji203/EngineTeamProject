@@ -7,9 +7,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 
-public class StarManager : MonoBehaviour
+public class StarManager : MonoSingleton<StarManager>
 {
-    public static StarManager Instance;
 
     [SerializeField]private List<GameObject> starList = new List<GameObject>();
 
@@ -20,17 +19,7 @@ public class StarManager : MonoBehaviour
 
     private int starCount = 0;
 
-    private void Awake()
-    {
-        if(Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    
 
     private void OnEnable()
     {
