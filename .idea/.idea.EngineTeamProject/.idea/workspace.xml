@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="" />
+    <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0003_Prefab/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0003_Prefab/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/25 Pixel Sprite effects/Blue/Textures/Ef_5_SpriteSheet_blue_p.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/25 Pixel Sprite effects/Blue/Textures/Ef_5_SpriteSheet_blue_p.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/AgentMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/AgentMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/HealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/HealthSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/DeadState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/State/DeadState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Crab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Crab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Fish.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Fish.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Jellyfish.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Jellyfish.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/PuffleFish.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/PuffleFish.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Turtle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Turtle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Dolphin/Visual.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Dolphin/Visual.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Jellyfish/Visual.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Jellyfish/Visual.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +49,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/CrabAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/DolphinBrain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/FishBrain.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/JellyFishLaserPan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/Jellyfish.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/TurtleBrain.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/EnemyAnimation.cs" root0="FORCE_HIGHLIGHTING" />

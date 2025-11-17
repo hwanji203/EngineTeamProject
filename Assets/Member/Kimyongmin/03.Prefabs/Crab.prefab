@@ -264,6 +264,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  attackVec: {x: 0, y: 0}
   <EnemyDataSo>k__BackingField: {fileID: 11400000, guid: 81380d1df5972c345aa3d137c2882792, type: 2}
   stone: {fileID: 238008654429293222, guid: cc12f6b8270b2ac4d951a326d5ac5ae8, type: 3}
   shotPos: {fileID: 5904402753145293069}

@@ -16,8 +16,6 @@ namespace Member.Kimyongmin._02.Code.Agent
 
         public bool IsDashing { get; set; } = false;
         public bool IsHit { get; set; } = false;
-        
-        private bool _isDead = false;
 
         private void Awake()
         {
@@ -52,12 +50,12 @@ namespace Member.Kimyongmin._02.Code.Agent
             
             Vector2 newDir = Vector2.Lerp(currentDir, _moveDir, _smooth * Time.fixedDeltaTime).normalized;
 
-            if (!IsDashing && !IsHit && !_isDead)
+            if (!IsDashing && !IsHit && !_healthSystem.IsDead)
             {
                 RbCompo.linearVelocity = newDir * _speed;
             }
 
-            if (_isDead)
+            if (_healthSystem.IsDead)
             {
                 _fallSpeed += Time.deltaTime;
                 RbCompo.gravityScale = _fallSpeed;
@@ -102,11 +100,6 @@ namespace Member.Kimyongmin._02.Code.Agent
         {
             _healthSystem.OnHealthChanged -= Knockback;
             _healthSystem.OnDeath -= KnockbackTwo;
-        }
-
-        public void DeadBool()
-        {
-            _isDead = true;
         }
     }
 }
