@@ -13,6 +13,7 @@ namespace Member.Kimyongmin._02.Code.Agent
         public event Action OnDeath;
 
         public bool Hit { get; private set; } = false;
+        public bool IsDead { get; private set; } = false;
 
         public float Health
         {
@@ -20,7 +21,7 @@ namespace Member.Kimyongmin._02.Code.Agent
             set
             {
                 float before = _health;
-                if (value != before)
+                if (value != before && !IsDead)
                 {
                     OnHealthChanged?.Invoke();
                     Hit = true;
@@ -35,9 +36,10 @@ namespace Member.Kimyongmin._02.Code.Agent
         public void GetDamage(float damage)
         {
             Health -= damage;
-            if (Health <= 0)
+            if (Health <= 0 && !IsDead)
             {
                 OnDeath?.Invoke();
+                IsDead = true;
             }
         }
 
