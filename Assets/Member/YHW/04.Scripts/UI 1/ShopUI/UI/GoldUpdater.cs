@@ -13,8 +13,11 @@ public class GoldUpdater : MonoBehaviour
     void Start()
     {
         CurrencyManager.Instance.OnGoldChanged += UpdateGoldDisplay;
-        goldText.SetText($"gold : {CurrencyManager.Instance.Gold}");
+        UpdateGoldDisplay(CurrencyManager.Instance.Gold);
+
     }
+   
+
 
     private void UpdateGoldDisplay(int currentGold)
     {
