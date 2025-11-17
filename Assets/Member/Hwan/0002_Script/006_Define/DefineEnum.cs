@@ -50,5 +50,6 @@ public enum UIType
 {
     None,
     GaugeUI,
-    DistanceBarUI
+    DistanceBarUI,
+    TutorialUI
 }

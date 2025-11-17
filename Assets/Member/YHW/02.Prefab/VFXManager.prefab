@@ -45,15 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vfxPools:
-  - type: 0
+  - type: 1
     prefab: {fileID: 6522697337523420337, guid: c7a6ac3a2291ec34a8d674aedb5f7c33, type: 3}
     initialCount: 3
-  - type: 1
+  - type: 2
     prefab: {fileID: 210698327997300742, guid: 3b1a7b641be013549b6b927f63a26e2a, type: 3}
     initialCount: 3
-  - type: 2
+  - type: 3
     prefab: {fileID: 6564098926474886585, guid: f47b284c4a7c9af47b523d32680d8b77, type: 3}
     initialCount: 3
-  - type: 3
+  - type: 4
     prefab: {fileID: 6973282780006548037, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
     initialCount: 3
