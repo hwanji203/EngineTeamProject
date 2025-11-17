@@ -8,6 +8,10 @@ public class StoreManager : MonoBehaviour
     [SerializeField] private Transform[] itemSlots; 
     [SerializeField] private SkillSO[] allItemDatabase;
 
+    [Header("드래그 아이템 소환 설정")]
+    [SerializeField] private GameObject draggableItemPrefab;
+    [SerializeField] private Transform draggableItemParent;
+
     private List<SkillSO> activeItems = new List<SkillSO>();
 
     private void Start()
@@ -52,13 +56,21 @@ public class StoreManager : MonoBehaviour
         if (CurrencyManager.Instance.SpendGold(itemData.Cost))
         {
             itemUI.SetPurchased();
-            Debug.Log($"���ż���");
+            Debug.Log("구매 완료");
+
+            GameObject obj = Instantiate(draggableItemPrefab, draggableItemParent);
+            var draggable = obj.GetComponent<DraggableItem>();
+            if (draggable != null)
+            {
+                draggable.Init(itemData.EquipmentData);
+            }
+
             AfterBuying();
         }
         else
         {
             itemUI.PlayInsufficientFundsFeedback();
-            Debug.Log($"���� ����");
+            Debug.Log("골드 부족");
         }
     }
 

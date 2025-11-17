@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Collections;
 
 public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
 {
@@ -31,7 +30,6 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
             equipmentManager.OnEquipmentChanged += OnEquipmentChanged;
         }
         
-        // 버튼 설정
         if (removeButton != null)
         {
             removeButton.onClick.AddListener(RemoveEquipment);
@@ -40,7 +38,6 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         UpdateUI();
     }
     
-    /// 우클릭 감지
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right)
@@ -49,7 +46,6 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         }
     }
     
-    /// 장착해제 함수
     public void RemoveEquipment()
     {
         EquipmentSO currentItem = equipmentManager.GetEquippedItem(slotIndex);
@@ -126,7 +122,7 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         equipmentManager.EquipItem(slotIndex, equipment);
         Debug.Log($"Item Trade : Slot {slotIndex} In {equipment.ItemName}");
     }
-
+    
     private void OnEquipmentChanged(int changedSlot, EquipmentSO newEquipment)
     {
         if (changedSlot == slotIndex)

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8363f66284d94d146b8433674980fd07, type: 3}
   m_Name: Skill_ConcPull
   m_EditorClassIdentifier: 
-  skillName: ComeOnTralalero
+  skillName: Corch
   skillIcon: {fileID: 8572796740028704663, guid: f423a81650847974fb2b9b727a81c851, type: 3}
   cooldown: 2
-  manaCost: 15
+  cost: 100
+  equipmentData: {fileID: 11400000, guid: b9e81d0d7f22df643a097bd8eaff77b2, type: 2}
   pullRadius: 8
   pullSpeed: 8
   damageOnHit: 20
