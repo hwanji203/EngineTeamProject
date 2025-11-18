@@ -5,8 +5,10 @@ public class UIManager : MonoSingleton<UIManager>
 {
     private Dictionary<UIType, IUI> uiDictionary = new Dictionary<UIType, IUI>();
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
+
         MonoBehaviour[] allComponents = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
 
         foreach (MonoBehaviour comp in allComponents)
@@ -20,6 +22,14 @@ public class UIManager : MonoSingleton<UIManager>
                     ui.Initialize();
                 }
             }
+        }
+    }
+
+    private void Start()
+    {
+        foreach (IUI ui in uiDictionary.Values)
+        {
+            ui.LateInitialize();
         }
     }
 

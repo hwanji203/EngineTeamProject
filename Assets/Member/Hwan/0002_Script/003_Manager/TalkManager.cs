@@ -64,7 +64,7 @@ public class TalkManager : MonoSingleton<TalkManager>
 
     public void StartTyping(string message)
     {
-        //textBar.SetActive(true);
+        textMeshPro.gameObject.SetActive(true);
 
         if (typingCoroutine != null)
         {
@@ -84,20 +84,29 @@ public class TalkManager : MonoSingleton<TalkManager>
 
         foreach (char c in message)
         {
+            if (c == '\\')
+            {
+                textMeshPro.text += c;
+                textMeshPro.text += 'n';
+                continue;
+            }
+            else if (c == 'n')
+            {
+                continue;
+            }
+
+
             textMeshPro.text += c;
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
 
-        // 글자 다 나온 뒤 1.5초 기다리기
         yield return new WaitForSecondsRealtime(1.5f);
 
         typingCoroutine = null;
-
-        //★ 여기 StopFloating() 삭제
-        //StopFloating();
-
         OnTypingEnd?.Invoke();
     }
+
+
 
     public void CompleteTyping(string message)
     {
@@ -144,6 +153,8 @@ public class TalkManager : MonoSingleton<TalkManager>
     {
         // 흔들리던 것 멈춤
         StopFloating();
+
+        textMeshPro.gameObject.SetActive(true);
 
         // 텍스트 완전히 초기화
         textMeshPro.text = "";

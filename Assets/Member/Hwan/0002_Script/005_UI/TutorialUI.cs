@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,16 +10,20 @@ public class TutorialUI : MonoBehaviour, IUI
     [SerializeField] private RectTransform fadeRectTrn;
     [SerializeField] private TutorialInfoSO tutoInfoSO;
     [SerializeField] private RectTransform messageTrn;
-    [SerializeField] private float waitTime;
+
+    private TutorialMove tutoMove;
+
     public UIType UIType => UIType.TutorialUI;
 
     private TalkManager talkManager;
     private Button checkButton;
     private int currentTutorialNumber;
+    private PlayerInputSO inputSO;
 
     public void Close()
     {
         SettingUIs();
+        Time.timeScale = 1;
 
         talkManager.ActiveFalse();
 
@@ -30,51 +33,74 @@ public class TutorialUI : MonoBehaviour, IUI
     private void SettingUIs()
     {
         checkButton.interactable = false;
-        checkButton.gameObject.SetActive(false);
+        messageTrn.gameObject.SetActive(false);
 
         for (int i = 0; i < fadeUIs.Length; i++)
         {
             fadeUIs[i].SetAlpha(0);
         }
+
+        switch (currentTutorialNumber)
+        {
+            case 1:
+                //처음꺼 끝났을 때
+                inputSO.LookInput(InputType.Aim, true);
+                break;
+            case 2:
+                inputSO.LookInput(InputType.Move, true);
+                break;
+            case 3:
+                inputSO.LookInput(InputType.Flip, true);
+                break;
+            case 4:
+                inputSO.LookInput(InputType.Dash, true);
+                break;
+        }
     }
 
     public void Initialize()
     {
+        inputSO = GameManager.Instance.Player.InputSO;
+
         talkManager = TalkManager.Instance;
         checkButton = GetComponentInChildren<Button>(true);
-        checkButton.onClick.AddListener(Skip);
+        try
+        {
+            checkButton.onClick.AddListener(Skip);
+            checkButton.interactable = false;
+        }
+        catch (NullReferenceException)
+        {
+            Debug.Log("버튼이 없습니다.");
+        }
 
+        tutoMove = GetComponent<TutorialMove>();
+  
         currentTutorialNumber = 0;
 
         fadeUIs[0].Initialize();
         fadeUIs[1].Initialize();
 
         SettingUIs();
-        UIObject.SetActive(false);
-
     }
 
     public void Open()
     {
-        StartTutorial(currentTutorialNumber);
+        StartTutorial();
     }
 
-    private void StartTutorial(int currentTutoNumber)
+    private void StartTutorial()
     {
+        if (tutoInfoSO.TutorialInfos.Length - 1 < currentTutorialNumber) return;
+
         Time.timeScale = 0;
+        checkButton.interactable = false;
 
-        if (tutoInfoSO.StageInfos.Length < currentTutoNumber)
-        {
-            Close();
-        }
-        StageInfo currentInfo = tutoInfoSO.StageInfos[currentTutoNumber];
+        TutorialInfo currentInfo = tutoInfoSO.TutorialInfos[currentTutorialNumber];
 
-        //밑작업
-        fadeRectTrn.anchoredPosition = currentInfo.FadePosOffset;
-        fadeRectTrn.sizeDelta = currentInfo.FadeScale;
-        messageTrn.anchoredPosition = currentInfo.MessagePosOffset;
+        tutoMove.Move2Target(currentInfo);
+        messageTrn.anchoredPosition += currentInfo.MessagePosOffset;
 
-        //눈에 보이게 하기
         UIObject.SetActive(true);
         fadeUIs[0].FadeOut(1);
         fadeUIs[1].FadeOut(1);
@@ -88,21 +114,21 @@ public class TutorialUI : MonoBehaviour, IUI
     private void CanSkip()
     {
         talkManager.OnTypingEnd -= CanSkip;
-        checkButton.gameObject.SetActive(true);
+        StartCoroutine(WaitSkip());
+    }
+
+    private IEnumerator WaitSkip()
+    {
+        checkButton.interactable = false;
+        yield return new WaitForSecondsRealtime(0.5f);
         checkButton.interactable = true;
     }
 
     private void Skip()
     {
-        Time.timeScale = 1;
         currentTutorialNumber++;
         Close();
-        StartCoroutine(WaitForNextTuto());
     }
 
-    private IEnumerator WaitForNextTuto()
-    {
-        yield return new WaitForSeconds(waitTime);
-        Open();
-    }
+    public void LateInitialize() { }
 }

@@ -54,3 +54,20 @@ public enum UIType
     TutorialUI,
     FadeUI
 }
+
+public enum TutorialTarget
+{
+    None,
+    Player,
+    Slider,
+    Enemy,
+    Stamina
+}
+
+public enum InputType
+{
+    Move,
+    Aim,
+    Flip,
+    Dash
+}

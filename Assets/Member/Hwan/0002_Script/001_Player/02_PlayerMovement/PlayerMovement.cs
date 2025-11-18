@@ -39,12 +39,6 @@ public class PlayerMovement : MonoBehaviour
         ChangeState(PlayerState.Idle);
     }
 
-    private void Update()
-    {
-        Debug.Log(CurrentState);
-        Debug.Log(rb.gravityScale);
-    }
-
     private void AddDictionary()
     {
         movementDictionary.Add(PlayerMovementType.Dash, new DashMovement());

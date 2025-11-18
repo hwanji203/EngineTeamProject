@@ -12,13 +12,7 @@ public class StaminaGaugeUI : MonoBehaviour, IUI
 
     private float maxValue;
 
-    public void Initialize()
-    {
-        GameManager.Instance.Player.StaminaCompo.CurrentStamina.OnValueChange += SetGauge;
-        maxValue = GameManager.Instance.Player.StatSO.MaxStamina;
-        SetGauge(maxValue);
-        Open();
-    }
+    public void Initialize() { }
 
     private void SetGauge(float value)
     {
@@ -34,5 +28,13 @@ public class StaminaGaugeUI : MonoBehaviour, IUI
     public void Close()
     {
         UIObject.SetActive(false);
+    }
+
+    public void LateInitialize()
+    {
+        GameManager.Instance.Player.StaminaCompo.CurrentStamina.OnValueChange += SetGauge;
+        maxValue = GameManager.Instance.Player.StatSO.MaxStamina;
+        SetGauge(maxValue);
+        Open();
     }
 }

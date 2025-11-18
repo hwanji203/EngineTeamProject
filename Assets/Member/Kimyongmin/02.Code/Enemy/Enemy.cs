@@ -24,8 +24,10 @@ public abstract class Enemy : MonoBehaviour
     protected Transform Target;
 
     private float _normalAttackRange;
+    public bool IsInvincibility { get; set; }
 
     public bool IsAttack { get; set; } = false;
+
 
     protected virtual void Awake()
     {
@@ -157,5 +159,17 @@ public abstract class Enemy : MonoBehaviour
     public void DeadGameobject()
     {
         Destroy(gameObject);
+    }
+
+    public void GetDamage(float damage, PlayerAttackType attackType)
+    {
+        if (IsAttack == true && attackType == PlayerAttackType.Dash)
+        {
+            HealthSystem.GetDamage(damage * 3);
+        }
+        else
+        {
+            HealthSystem.GetDamage(IsInvincibility == false ? damage : damage / 1000);
+        }
     }
 }

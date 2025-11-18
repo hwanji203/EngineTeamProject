@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 200505673605007795}
   - component: {fileID: 8200901797310648222}
   - component: {fileID: 2152841030291985959}
+  - component: {fileID: 8929489535219684499}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -295,6 +296,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4491d0be4993c1469cdc8648df3f832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8929489535219684499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710571760065879274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433e49eca2c0244e9a6bcfa02a86a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderRect: {fileID: 3732735285670471495}
+  stamina: {fileID: 3796241091594324166}
+  enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &2454359795538189663
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +780,7 @@ MonoBehaviour:
   fadeRectTrn: {fileID: 5129218376115124801}
   tutoInfoSO: {fileID: 11400000, guid: 7823f039fcaf69047acc1adb4db3a437, type: 2}
   messageTrn: {fileID: 5436906890400571309}
-  waitTime: 0
+  waitTime: 1
 --- !u!1 &6867530756124048960
 GameObject:
   m_ObjectHideFlags: 0

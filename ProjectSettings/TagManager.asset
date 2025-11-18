@@ -14,7 +14,7 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
+  - Wall
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 329516165
+    locked: 0
+  - name: Effect
+    uniqueID: 2662589355
     locked: 0
   m_RenderingLayers:
   - Default
