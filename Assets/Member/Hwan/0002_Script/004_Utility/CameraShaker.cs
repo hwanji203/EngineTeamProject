@@ -16,16 +16,12 @@ public class CameraShaker : MonoSingleton<CameraShaker>
 
     public void RandomShake(float power = 0)
     {
-        if (power == 0) power = shakePower;
-
-        impulseSource.GenerateImpulse(Random.insideUnitCircle.normalized * power);
+        impulseSource.GenerateImpulse(Random.insideUnitCircle.normalized * power * shakePower);
     }
 
     public void DirShake(float power, Vector2 dir)
     {
-        if (power == 0) power = shakePower;
-
-        impulseSource.GenerateImpulse(dir * shakePower);
+        impulseSource.GenerateImpulse(dir * shakePower * power );
     }
 
     public void SetPositionZero()
