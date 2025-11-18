@@ -1,12 +1,14 @@
+using System;
 using Unity.Behavior;
 
-namespace Member.Kimyongmin._02.Code.Boss.Shark
+[BlackboardEnum]
+public enum SharkState
 {
-	[BlackboardEnum]
-	public enum SharkState
-	{
-		Idle,
-		Chase,
-		Attack
-	}
+    Chase,
+	ChargeAttack,
+	BiteAttack,
+	Attack,
+	LaserAttack,
+	Stun,
+	Dead
 }
