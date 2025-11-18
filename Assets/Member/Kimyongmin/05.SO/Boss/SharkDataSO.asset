@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f22f192bf6cc24686979248028fb85, type: 3}
   m_Name: SharkDataSO
   m_EditorClassIdentifier: 
-  HP: 1000
+  hp: 1000
+  speed: 5
+  normalAttackDamage: 10
+  chargeDamage: 15
+  laserTickDamage: 2
