@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,13 +29,13 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         {
             _points.Clear();
             
-            int count = _lineRenderer.positionCount;
-            if (count < 2) return;
-            
-            for (int i = 0; i < count; i++)
+            Transform currentTransform = transform;
+    
+            for (int i = 0; i < _lineRenderer.positionCount; i++)
             {
                 Vector3 worldPos = _lineRenderer.GetPosition(i);
-                _points.Add(transform.InverseTransformPoint(worldPos));
+                Vector2 localPos = currentTransform.InverseTransformPoint(worldPos); 
+                _points.Add(localPos);
             }
 
             _edgeCollider2D.SetPoints(_points);
@@ -49,6 +50,11 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
                     player.GetDamage(1, Vector2.zero);
                 }
             }
+        }
+
+        private void OnDestroy()
+        {
+            _edgeCollider2D.enabled = false;
         }
     }
 }

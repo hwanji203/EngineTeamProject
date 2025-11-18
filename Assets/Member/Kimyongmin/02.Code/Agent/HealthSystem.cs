@@ -24,6 +24,7 @@ namespace Member.Kimyongmin._02.Code.Agent
                 if (value != before && !IsDead)
                 {
                     OnHealthChanged?.Invoke();
+                    CameraShaker.Instance.RandomShake(value);
                     Hit = true;
                 }
                 
