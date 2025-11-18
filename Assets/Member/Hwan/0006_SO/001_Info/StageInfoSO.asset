@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39215d9a76ca17a42a613630e82af25f, type: 3}
   m_Name: StageInfoSO
   m_EditorClassIdentifier: 
-  StartY: 0
-  EndY: 30
-  enemyLevel: 0
+  <StartY>k__BackingField: 0
+  <EndY>k__BackingField: 0
+  EnemyList: []

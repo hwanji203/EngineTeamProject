@@ -1,0 +1,159 @@
+using DG.Tweening;
+using System;
+using System.Collections;
+using TMPro;
+using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
+
+public class TalkManager : MonoSingleton<TalkManager>
+{
+    [SerializeField] private float typingSpeed = 0.05f; // 글자당 출력 속도
+    //[SerializeField] private GameObject textBar;
+    [SerializeField] private TextMeshProUGUI textMeshPro;
+
+    public event Action OnTypingEnd;
+
+    private Coroutine typingCoroutine;
+
+    private bool isFloatingChars = false;
+    private Mesh mesh;
+    private Vector3[] vertices;
+    private string currentMessage;
+    
+    private void Update()
+    {
+        // ★ 1) 클릭으로 타이핑 스킵
+        if (typingCoroutine != null && Input.GetMouseButtonDown(0))
+        {
+            CompleteTyping();   // 현재 문장으로 즉시 완성
+            return;             // 그 프레임은 흔들기 업데이트 안 해도 됨
+        }
+
+        // ★ 2) 이하 기존 흔들기 코드
+        if (!isFloatingChars) return;
+        if (textMeshPro.textInfo == null) return;
+
+        textMeshPro.ForceMeshUpdate();
+        var textInfo = textMeshPro.textInfo;
+
+        for (int i = 0; i < textInfo.characterCount; i++)
+        {
+            var charInfo = textInfo.characterInfo[i];
+            if (!charInfo.isVisible) continue;
+
+            int vertexIndex = charInfo.vertexIndex;
+            int meshIndex = charInfo.materialReferenceIndex;
+
+            mesh = textInfo.meshInfo[meshIndex].mesh;
+            vertices = mesh.vertices;
+
+            float offset = Mathf.Sin(Time.unscaledTime * 3f + i * 0.3f);
+            float yMove = offset * 5f;
+
+            Vector3 move = new Vector3(0, yMove, 0);
+            vertices[vertexIndex + 0] += move;
+            vertices[vertexIndex + 1] += move;
+            vertices[vertexIndex + 2] += move;
+            vertices[vertexIndex + 3] += move;
+
+            textInfo.meshInfo[meshIndex].mesh.vertices = vertices;
+            textMeshPro.UpdateGeometry(textInfo.meshInfo[meshIndex].mesh, meshIndex);
+        }
+    }
+
+
+    public void StartTyping(string message)
+    {
+        //textBar.SetActive(true);
+
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+
+        currentMessage = message;   // ★ 여기서 저장
+
+        StartFloating();  // ← 텍스트 표시 동안 위아래로 둥실둥실
+        typingCoroutine = StartCoroutine(TypeText(message));
+    }
+
+
+    private IEnumerator TypeText(string message)
+    {
+        textMeshPro.text = "";
+
+        foreach (char c in message)
+        {
+            textMeshPro.text += c;
+            yield return new WaitForSecondsRealtime(typingSpeed);
+        }
+
+        // 글자 다 나온 뒤 1.5초 기다리기
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        typingCoroutine = null;
+
+        //★ 여기 StopFloating() 삭제
+        //StopFloating();
+
+        OnTypingEnd?.Invoke();
+    }
+
+    public void CompleteTyping(string message)
+    {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
+
+        textMeshPro.text = message;
+
+        OnTypingEnd?.Invoke();
+    }
+    public void CompleteTyping()
+    {
+        if (string.IsNullOrEmpty(currentMessage))
+            return;
+
+        CompleteTyping(currentMessage);
+    }
+
+    private void StartFloating()
+    {
+        isFloatingChars = true;
+        textMeshPro.ForceMeshUpdate();
+    }
+
+
+    private void StopFloating()
+    {
+        isFloatingChars = false;
+
+        textMeshPro.ForceMeshUpdate();
+        mesh = textMeshPro.mesh;
+        vertices = mesh.vertices;
+
+        for (int i = 0; i < vertices.Length; i++)
+            vertices[i] = Vector3.zero;
+
+        textMeshPro.canvasRenderer.SetMesh(mesh);
+    }
+
+    public void ActiveFalse()
+    {
+        // 흔들리던 것 멈춤
+        StopFloating();
+
+        // 텍스트 완전히 초기화
+        textMeshPro.text = "";
+
+        // 혹시 이전 타이핑 코루틴이 남아 있다면 정리
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
+    }
+
+}

@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ac6244a5387e148b47cf30695d6d8c, type: 3}
   m_Name: FishData 8
   m_EditorClassIdentifier: 
-  EnemyType: 0
+  enemyType: 0
   hp: 10
   attackDelay: 0
   idleSpeed: 1
   moveSpeed: 1
+  damage: 0
   detectDelay: 0
+  deadStamina: 5
   fishSpriteLibrary: {fileID: 7108339969198208228, guid: c2eecb784662647499cba059a326b33f, type: 3}

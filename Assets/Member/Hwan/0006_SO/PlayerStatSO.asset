@@ -21,7 +21,7 @@ MonoBehaviour:
     <UseStamina>k__BackingField: 15
     <UseTime>k__BackingField: 0
     <IsOneShot>k__BackingField: 1
-  <MaxStamina>k__BackingField: 584.3
+  <MaxStamina>k__BackingField: 15
   <DefaultDmg>k__BackingField: 10
   <FlipCool>k__BackingField: 1
   <DashCool>k__BackingField: 0.35

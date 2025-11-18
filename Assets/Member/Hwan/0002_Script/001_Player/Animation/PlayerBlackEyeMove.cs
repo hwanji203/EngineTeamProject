@@ -19,13 +19,13 @@ public class PlayerBlackEyeMove : MonoBehaviour
 
         transform.DOKill();
         transform.DOLocalMove(targetLocal, speed)
-                 .SetEase(Ease.OutQuad)
-                 .SetLink(gameObject, LinkBehaviour.KillOnDestroy);
+            .SetEase(Ease.OutQuad)
+            .SetUpdate(true) // ★ timeScale 0에서도 작동!
+            .SetLink(gameObject, LinkBehaviour.KillOnDestroy);
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         transform.localPosition = Vector3.zero;
     }
-
 }
