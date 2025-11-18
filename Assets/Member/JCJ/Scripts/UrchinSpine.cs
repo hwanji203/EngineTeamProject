@@ -9,7 +9,7 @@ public class UrchinSpine : MonoBehaviour
     private Vector3 direction;
     private LayerMask enemyLayer;
     private Rigidbody2D rb;
-    private bool hasHit = false;
+    private bool hasHit;
     
     private void Awake()
     {
