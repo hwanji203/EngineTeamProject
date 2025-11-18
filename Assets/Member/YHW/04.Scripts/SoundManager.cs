@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : MonoSingleton<SoundManager>
 {
-    public static SoundManager instance;
+    
 
     public enum BGM
     {
@@ -23,17 +23,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField]private AudioSource sfxAS;
 
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+   
 
     public void PlayBgm(BGM bgmidx)
     {

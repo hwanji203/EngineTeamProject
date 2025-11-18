@@ -8,7 +8,7 @@ public class StoreManager : MonoBehaviour
     [SerializeField] private Transform[] itemSlots; 
     [SerializeField] private SkillSO[] allItemDatabase;
 
-    [Header("드래그 아이템 소환 설정")]
+    [Header("draggable items Settings")]
     [SerializeField] private GameObject draggableItemPrefab;
     [SerializeField] private Transform draggableItemParent;
 

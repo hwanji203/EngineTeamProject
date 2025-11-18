@@ -1,5 +1,4 @@
 using UnityEngine;
-using Member.Kimyongmin._02.Code.Agent;
 
 [CreateAssetMenu(fileName = "Skill_UrchinSpines2D", menuName = "Skills/Urchin Spines 2D")]
 public class UrchinSpinesSkill : SkillSO
@@ -41,7 +40,7 @@ public class UrchinSpinesSkill : SkillSO
             {
                 GameObject spine = Instantiate(
                     spinePrefab,
-                    caster.Transform.position + (Vector3)direction * 0.5f,
+                    caster.Transform.position + direction * 0.5f,
                     rotation
                 );
                 

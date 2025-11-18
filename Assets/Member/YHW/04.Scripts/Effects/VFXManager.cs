@@ -122,7 +122,14 @@ public class VFXManager : MonoSingleton<VFXManager>
                 pool.poolQueue.Enqueue(vfxObj);
             }
 
-            vfxDict[pool.type] = pool;
+            try
+            {
+                vfxDict.Add(pool.type, pool);
+            }
+            catch (System.ArgumentException)
+            {
+                Debug.LogWarning("중복 등록");
+            }
         }
     }
 

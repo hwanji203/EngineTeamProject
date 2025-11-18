@@ -17,12 +17,6 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
     
     private void Start()
     {
-        CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-        if (canvasGroup == null)
-        {
-            canvasGroup = gameObject.AddComponent<CanvasGroup>();
-        }
-        
         equipmentManager = EquipmentManager.Instance;
         
         if (equipmentManager != null)
@@ -46,7 +40,7 @@ public class EquipSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         }
     }
     
-    public void RemoveEquipment()
+    private void RemoveEquipment()
     {
         EquipmentSO currentItem = equipmentManager.GetEquippedItem(slotIndex);
         

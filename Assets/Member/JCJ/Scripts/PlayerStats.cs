@@ -15,17 +15,17 @@ public class PlayerStats : MonoBehaviour, ISkillCaster
     [SerializeField] private float manaRegenRate = 5f;
     
     private EquipmentManager equipmentManager;
-    private int totalAttackBonus = 0;           // 고정 공격력 증가
-    private float totalAttackBonusPercent = 0;  // % 공격력 증가
-    private int totalDefenseBonus = 0;          // 고정 방어력 증가
-    private float totalDefenseBonusPercent = 0; // % 방어력 증가
+    private int totalAttackBonus;           // 고정 공격력 증가
+    private float totalAttackBonusPercent;  // % 공격력 증가
+    private int totalDefenseBonus;          // 고정 방어력 증가
+    private float totalDefenseBonusPercent; // % 방어력 증가
     
     public Transform Transform => transform;
     public float CurrentMana => currentMana;
     public int CurrentHealth => currentHealth;
     
     // 최종 공격력 계산 (기본 + 고정 + %)
-    public int GetTotalAttack()
+    private int GetTotalAttack()
     {
         float baseWithFixed = baseAttack + totalAttackBonus;
         float finalAttack = baseWithFixed * (1f + totalAttackBonusPercent / 100f);
@@ -33,7 +33,7 @@ public class PlayerStats : MonoBehaviour, ISkillCaster
     }
     
     // 최종 방어력 계산 (기본 + 고정 + %)
-    public int GetTotalDefense()
+    private int GetTotalDefense()
     {
         float baseWithFixed = baseDefense + totalDefenseBonus;
         float finalDefense = baseWithFixed * (1f + totalDefenseBonusPercent / 100f);

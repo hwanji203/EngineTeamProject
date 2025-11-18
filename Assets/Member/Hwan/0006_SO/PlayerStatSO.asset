@@ -18,7 +18,7 @@ MonoBehaviour:
     <UseTime>k__BackingField: 1
     <IsOneShot>k__BackingField: 0
   - <MoveType>k__BackingField: 1
-    <UseStamina>k__BackingField: 15
+    <UseStamina>k__BackingField: 10
     <UseTime>k__BackingField: 0
     <IsOneShot>k__BackingField: 1
   <MaxStamina>k__BackingField: 100
