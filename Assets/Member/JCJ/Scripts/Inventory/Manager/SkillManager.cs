@@ -3,13 +3,13 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     // 스킬 슬롯 개수 상수
-    private const int SKILL_COUNT = 3;
+    private const int SkillCount = 3;
     
     // 현재 활성화된 스킬 배열 (EquipmentSO의 LinkedSkill을 참조)
-    private SkillSO[] activeSkills = new SkillSO[SKILL_COUNT];
+    private SkillSO[] activeSkills = new SkillSO[SkillCount];
     
     // 쿨타임 데이터 배열 (struct 배열로 메모리 효율적)
-    private CooldownData[] cooldowns = new CooldownData[SKILL_COUNT];
+    private CooldownData[] cooldowns = new CooldownData[SkillCount];
     
     // 스킬을 시전할 캐릭터 (ISkillCaster 인터페이스 참조)
     private ISkillCaster caster;
@@ -18,8 +18,8 @@ public class SkillManager : MonoBehaviour
     // 쿨타임 데이터 구조체
     private struct CooldownData
     {
-        public float remainingTime;  // 남은 쿨타임 (초)
-        public float totalTime;      // 전체 쿨타임 (초)
+        public float remainingTime;  // 남은 쿨타임
+        public float totalTime;      // 전체 쿨타임
         
         // 쿨타임이 끝났는지 확인하는 프로퍼티
         public bool IsReady => remainingTime <= 0f;
@@ -62,7 +62,7 @@ public class SkillManager : MonoBehaviour
     private void OnEquipmentChanged(int slotIndex, EquipmentSO newEquipment)
     {
         // 유효한 슬롯 인덱스인지 확인
-        if (slotIndex >= 0 && slotIndex < SKILL_COUNT)
+        if (slotIndex >= 0 && slotIndex < SkillCount)
         {
             // 새 장비의 스킬로 교체 (null이면 스킬 비활성화)
             // ?. 연산자: newEquipment가 null이 아닐 때만 LinkedSkill 접근
@@ -74,7 +74,7 @@ public class SkillManager : MonoBehaviour
     private void SyncSkillsWithEquipment()
     {
         // 모든 슬롯 순회
-        for (int i = 0; i < SKILL_COUNT; i++)
+        for (int i = 0; i < SkillCount; i++)
         {
             // EquipmentManager에서 장착된 장비 가져오기
             EquipmentSO equipment = EquipmentManager.Instance.GetEquippedItem(i);
@@ -112,7 +112,7 @@ public class SkillManager : MonoBehaviour
     private void UpdateCooldowns(float deltaTime)
     {
         // 모든 스킬 슬롯 순회
-        for (int i = 0; i < SKILL_COUNT; i++)
+        for (int i = 0; i < SkillCount; i++)
         {
             // 쿨타임이 남아있으면 감소
             if (cooldowns[i].remainingTime > 0)
@@ -136,7 +136,7 @@ public class SkillManager : MonoBehaviour
         IsValidSlot(slotIndex) && cooldowns[slotIndex].IsReady;
     
     // 슬롯 인덱스 유효성 검사 헬퍼 함수
-    private bool IsValidSlot(int index) => index >= 0 && index < SKILL_COUNT;
+    private bool IsValidSlot(int index) => index >= 0 && index < SkillCount;
     
     private void OnDestroy()
     {
