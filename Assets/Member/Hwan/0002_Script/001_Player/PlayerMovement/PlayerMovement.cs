@@ -31,13 +31,18 @@ public class PlayerMovement : MonoBehaviour
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         rb.linearDamping = movementSO.DecreaseValue;
 
-        CurrentState = PlayerState.Idle;
-        ChangeState(PlayerState.Idle);
-
         foreach (ValueByState value in movementSO.ValueByStates)
         {
             moveValueDictionary.Add(value.State, new MoveValue(transform, rb, movementSO, value));
         }
+
+        ChangeState(PlayerState.Idle);
+    }
+
+    private void Update()
+    {
+        Debug.Log(CurrentState);
+        Debug.Log(rb.gravityScale);
     }
 
     private void AddDictionary()
@@ -57,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (tempState == CurrentState) return;
         CurrentState = tempState;
+        rb.gravityScale = moveValueDictionary[CurrentState].GravityScale;
         OnStateChange?.Invoke(CurrentState);
     }
 
@@ -78,7 +84,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(PlayerMovementType type)
     {
-        movementDictionary[type].Move(moveValueDictionary[CurrentState], MousePos);
+        movementDictionary[type].Move(moveValueDictionary[CurrentState],
+            CurrentState == PlayerState.ZeroStamina ? transform.position + Vector3.down : MousePos);
         switch (type)
         {
             case PlayerMovementType.Dash:

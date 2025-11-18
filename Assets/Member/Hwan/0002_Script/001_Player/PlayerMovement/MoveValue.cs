@@ -8,10 +8,12 @@ public class MoveValue
         Rb = rb;
         MovementSO = so;
         RotateSpeed = valueByState.RotateSpeed;
+        GravityScale = valueByState.Gravity;
     }
 
     public Transform Trn { get; private set; }
     public Rigidbody2D Rb { get; private set; }
     public PlayerMovementSO MovementSO { get; private set; }
-    public float RotateSpeed { get; set; }
+    public float RotateSpeed { get; private set; }
+    public float GravityScale { get; private set; }
 }
