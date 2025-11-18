@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -35,7 +36,20 @@ public class GameClearUI : MonoBehaviour
         if(Keyboard.current.eKey.wasPressedThisFrame)
         {
             StarManager.Instance.gameObject.SetActive(true);
-            acMoneyT.SetText("AcquiredGold : " + StarManager.Instance.acquiredMoney.ToString());
+            ShowScore(StarManager.Instance.acquiredMoney, 2f);
         }
+    }
+
+    public void ShowScore(int finalScore, float duration = 1f)
+    {
+        int current = 0;
+
+        DOTween.To(() => current, x =>
+        {
+            current = x;
+            acMoneyT.text = "AcquiredGold : " + current.ToString();
+        },
+        finalScore,
+        duration).SetEase(Ease.OutCubic);
     }
 }

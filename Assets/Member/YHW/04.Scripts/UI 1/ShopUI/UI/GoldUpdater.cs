@@ -22,5 +22,6 @@ public class GoldUpdater : MonoBehaviour
     private void UpdateGoldDisplay(int currentGold)
     {
         goldText.SetText($"gold : {currentGold}");
+        PlayerPrefs.SetInt("Gold", currentGold);
     }
 }

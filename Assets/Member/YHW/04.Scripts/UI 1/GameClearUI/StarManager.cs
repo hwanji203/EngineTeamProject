@@ -1,6 +1,7 @@
 using DG.Tweening;
 using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,11 +25,9 @@ public class StarManager : MonoSingleton<StarManager>
 
     private void OnEnable()
     {
-        for (int i = 0; i < starCount; i++)
-        {
-            starList[i].GetComponent<Animator>().SetTrigger(clearHash);
-        }
         FadeIn();
+
+        StartCoroutine(Clear());
     }
 
     
@@ -50,6 +49,7 @@ public class StarManager : MonoSingleton<StarManager>
     public void AddGold(int howmuch)
     {
         acquiredMoney += howmuch;
+        CurrencyManager.Instance.AddGold(howmuch);
     }
 
     public void ChangeState()
@@ -62,5 +62,12 @@ public class StarManager : MonoSingleton<StarManager>
     }
     
 
-
+    IEnumerator Clear()
+    {
+        yield return new WaitForSeconds(0.7f);
+        for (int i = 0; i < starCount; i++)
+        {
+            starList[i].GetComponent<Animator>().SetTrigger(clearHash);
+        }
+    }
 }

@@ -1,12 +1,9 @@
 using UnityEngine;
 
-public class forAniEvents : MonoBehaviour
+public class ForAniEvents : MonoBehaviour
 {
-    public void ChangeState()
+    public void FillStar()
     {
         StarManager.Instance.ChangeState();
     }
-
-
-
 }
