@@ -1,10 +1,28 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "StageInfoSO", menuName = "HwanSO/Info/StageInfoSO")]
+public enum EnemyName
+{
+    Fish,
+    Anglerfish,
+    Turtle,
+    Pufflefish,
+    Dolphin,
+    JellyFish,
+    Crab
+}
+
+[CreateAssetMenu(fileName = "StageInfoSO", menuName = "HwanSO/StageInfoSO")]
 public class StageInfoSO : ScriptableObject
 {
-    [field: SerializeField] public float StartY;
-    [field: SerializeField] public float EndY;
+    [field: SerializeField] public float StartY { get; set; }
+    [field: SerializeField] public float EndY { get; set; }
 
-    [field: SerializeField] public float enemyLevel;
+    public Enemys[] EnemyList;
+    
+    [System.Serializable]
+    public struct Enemys
+    {
+        public EnemyName name;
+        public GameObject enemyPrefab;
+    }
 }

@@ -119,7 +119,15 @@ public abstract class Enemy : MonoBehaviour
             CanAttack = true;
             EnableAttackRange();
         }
+
+        if (HealthSystem.IsDead && !d)
+        {
+            d = true;
+            GameManager.Instance.Player.GetDamage(-EnemyDataSo.deadStamina, Vector2.zero);
+        }
     }
+
+    private bool d = false;
 
     public void ResetCooltime()
     {
@@ -144,5 +152,10 @@ public abstract class Enemy : MonoBehaviour
     private void OnDestroy()
     {
         HealthSystem.OnDeath -= Death;
+    }
+
+    public void DeadGameobject()
+    {
+        Destroy(gameObject);
     }
 }

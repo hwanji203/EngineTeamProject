@@ -8,6 +8,7 @@ public enum VFXType
     DashBoost,
     Hit,
     DashAttack,
+    EnemyDead,
 }
 
 public class VFXObject : MonoBehaviour

@@ -42,8 +42,9 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             _attackHitbox.ShowHitbox(Vector2.zero, 1.2f);
         }
 
-        void LateUpdate()
+        new void Update()
         {
+            base.Update();
             transform.rotation = Quaternion.Euler(_angle);
             
             SettingLine();
