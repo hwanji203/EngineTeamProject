@@ -20,5 +20,6 @@ namespace Member.Kimyongmin._02.Code.Enemy.SO
         public float moveSpeed;
         public float damage;
         public float detectDelay;
+        public float deadStamina;
     }
 }
