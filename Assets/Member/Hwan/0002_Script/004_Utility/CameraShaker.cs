@@ -21,7 +21,7 @@ public class CameraShaker : MonoSingleton<CameraShaker>
         impulseSource.GenerateImpulse(Random.insideUnitCircle.normalized * power);
     }
 
-    public void DirShake(Vector3 dir, float power)
+    public void DirShake(float power, Vector2 dir)
     {
         if (power == 0) power = shakePower;
 
