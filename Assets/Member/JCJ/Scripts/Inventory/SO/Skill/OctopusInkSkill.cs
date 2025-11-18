@@ -43,10 +43,10 @@ public class OctopusInkSkill : SkillSO
             }
             
             // 슬로우
-            ISlowable slowable = hit.GetComponent<ISlowable>();
-            if (slowable != null)
+            ISlowable slowble = hit.GetComponent<ISlowable>();
+            if (slowble != null)
             {
-                slowable.ApplySlow(slowPercent, slowDuration);
+                slowble.ApplySlow(slowPercent, slowDuration);
             }
         }
     }

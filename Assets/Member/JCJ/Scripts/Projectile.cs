@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     private float explosionRadius;
     private float lifetime;
     private Rigidbody rb;
-    private bool hasHit = false;
+    private bool hasHit;
     
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private GameObject impactEffectPrefab;
