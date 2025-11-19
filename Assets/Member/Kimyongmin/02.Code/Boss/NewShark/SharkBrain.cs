@@ -20,7 +20,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             
             SharkStateMachine.AddState(SharkStateType.Chase, new SharkChaseState(Shark, SharkStateMachine,"Chase"));
             SharkStateMachine.AddState(SharkStateType.Attack, new SharkAttackState(Shark, SharkStateMachine,"Attack"));
-            SharkStateMachine.AddState(SharkStateType.BiteSkill, new SharkBiteSkillState(Shark, SharkStateMachine,"Bite"));
+            SharkStateMachine.AddState(SharkStateType.BiteSkill, new SharkBiteSkillState(Shark, SharkStateMachine,null));
             SharkStateMachine.AddState(SharkStateType.ChargeSkill, new SharkChargeState(Shark, SharkStateMachine,"Charge"));
             SharkStateMachine.AddState(SharkStateType.RoarSkill, new SharkRoarState(Shark, SharkStateMachine,"Roar"));
             SharkStateMachine.AddState(SharkStateType.LaserSkill, new SharkLaserSkillState(Shark, SharkStateMachine,"Laser"));

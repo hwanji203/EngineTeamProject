@@ -25,9 +25,9 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         public float SkillCooltime { get; private set; }
         public float CurrentCooltime { get; private set; }
         
+        public bool IsAttack { get; private set; } = false;
+        
         public Animator Animator { get; private set; }
-
-        public bool IsAttaking => throw new NotImplementedException();
 
         private void Awake()
         {
@@ -45,7 +45,18 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         private void FixedUpdate()
         {
-            SharkMovement.RbMove(SharkData.Speed);
+            if (!IsAttack)
+            {
+                SharkMovement.SetSpeed(SharkData.Speed);
+            }
+            SharkMovement.RbMove();
+            
+        }
+
+        private void Update()
+        {
+            if (!IsAttack)
+                FilpX(GetTargetDir().x);
         }
 
         public Vector3 GetTargetDir()
@@ -96,15 +107,13 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackRange);
         }
-
-        void IAgentable.CounterDamage(float damage)
+        
+        public void AttackBool(bool value)
         {
-            _healthSystem.GetDamage(damage * 1.5f);
+            IsAttack = value;
+            if (value)
+                SharkMovement.SetSpeed(0);
         }
-
-        void IAgentable.DefaultDamage(float damage)
-        {
-            _healthSystem.GetDamage(damage);
-        }
+        
     }
 }

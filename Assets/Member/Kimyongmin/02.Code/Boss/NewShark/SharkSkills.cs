@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using Member.Kimyongmin._02.Code.Boss.SO;
 using Member.Kimyongmin._02.Code.Enemy;
-using Member.Kimyongmin._02.Code.Interface;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Boss.NewShark
