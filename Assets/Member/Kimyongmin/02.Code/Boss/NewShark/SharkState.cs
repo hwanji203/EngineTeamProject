@@ -16,6 +16,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         }
         public virtual void EnterState()
         {
+            Shark.Animator.SetBool(AnimBoolName, true);
         }
 
         public virtual void UpdateState()
@@ -25,6 +26,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
     
         public virtual void ExitState()
         {
+            Shark.Animator.SetBool(AnimBoolName, false);
         }
     }
 }

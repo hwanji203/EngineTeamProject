@@ -17,12 +17,45 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         {
             base.UpdateState();
             Debug.Log("Chase");
-            Shark.SetMoveDir(Shark.GetTargetDir());
+            Shark.SharkMovement.SetMoveDir(Shark.GetTargetDir());
+            
+            Shark.SkillTick();
+
+            if (Shark.AttackInPlayer())
+            {
+                SharkStateMachine.ChangeState(SharkStateType.Attack);
+            }
+
+            if (Shark.CurrentCooltime > Shark.SkillCooltime)
+            {
+                if (Shark.ChargeStack > 2)
+                    SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
+                
+                switch (Random.Range(0,3))
+                {
+                    case 0:
+                        SharkStateMachine.ChangeState(SharkStateType.BiteSkill);
+                        Shark.Charging();
+                        break;
+                    case 1:
+                        SharkStateMachine.ChangeState(SharkStateType.LaserSkill);
+                        Shark.Charging();
+                        break;
+                    case 2:
+                        SharkStateMachine.ChangeState(SharkStateType.RoarSkill);
+                        Shark.Charging();
+                        break;
+                    default:
+                        SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
+                        break;
+                }
+            }
         }
 
         public override void ExitState()
         {
             base.ExitState();
+            Shark.ResetCooltime();
         }
     }
 }

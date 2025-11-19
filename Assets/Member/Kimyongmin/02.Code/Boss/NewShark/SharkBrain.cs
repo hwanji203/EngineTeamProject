@@ -33,5 +33,10 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             SharkStateMachine.currentState.UpdateState();
         }
+
+        private void SkillState(int skillNumber)
+        {
+            
+        }
     }
 }

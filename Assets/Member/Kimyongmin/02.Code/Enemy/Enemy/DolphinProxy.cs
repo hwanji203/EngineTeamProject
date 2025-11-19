@@ -6,6 +6,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
     public class DolphinProxy : MonoBehaviour
     {
         private Dolphin _dolphin;
+        [SerializeField] private Animator effectAnimator;
 
         private void Awake()
         {
@@ -15,11 +16,13 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         public void ProjectileAttack()
         {
             _dolphin.ShootProjectile();
+            effectAnimator.gameObject.SetActive(true);
         }
 
         public void AttackEnd()
         {
             _dolphin.DisbleAttackRange();
+            effectAnimator.gameObject.SetActive(false);
             _dolphin.IsAttack = false;
         }
     }

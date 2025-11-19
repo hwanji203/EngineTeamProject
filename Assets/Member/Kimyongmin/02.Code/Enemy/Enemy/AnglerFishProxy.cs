@@ -6,6 +6,9 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
     public class AnglerFishProxy : MonoBehaviour
     {
         private AnglerFish _anglerFish;
+        [SerializeField] private Animator biteAnimator;
+        
+        private readonly int _biteHash =  Animator.StringToHash("Bite");
 
         private void Awake()
         {
@@ -15,6 +18,8 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         public void HitPan()
         {
             StartCoroutine(_anglerFish.HitPanJeong());
+            biteAnimator.gameObject.SetActive(true);
+            biteAnimator.SetTrigger(_biteHash);
         }
 
         public void AttackEnd()

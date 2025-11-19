@@ -11,6 +11,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
+            Debug.Log("포효");
         }
 
         public override void UpdateState()

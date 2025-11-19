@@ -37,7 +37,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         {
             //Destroy(gameObject);
         }
-        
+
         public float PanjeongTime { get; set; }
         public float PanjeongDuration { get; set; } = 0.1f;
 
@@ -45,7 +45,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public IEnumerator HitPanJeong()
         {
-            while (PanjeongTime < PanjeongDuration && IsAttack)
+            while (PanjeongTime <= PanjeongDuration && IsAttack)
             {
                 PanjeongTime += Time.deltaTime;
                 _hitArr = Physics2D.OverlapBoxAll(transform.position + offset, attackVec, _dashAngle, layerMask);
