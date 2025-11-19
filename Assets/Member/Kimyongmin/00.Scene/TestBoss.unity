@@ -370,6 +370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3b92046b038a14081e52c9fa42fddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <SharkData>k__BackingField: {fileID: 11400000, guid: d067433d9a7d4ae43b5a33a293eb85d5, type: 2}
+  target: {fileID: 902677222}
 --- !u!114 &799401056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +489,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d212fdc5a07306498f0362993de523f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &902677222 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 868099284106409586, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
+  m_PrefabInstance: {fileID: 902677220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1195577108
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,9 +864,9 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 799401049}
   - {fileID: 2032043028}
   - {fileID: 1198631873}
   - {fileID: 451953915}
   - {fileID: 2020815138}
   - {fileID: 902677220}
+  - {fileID: 799401049}

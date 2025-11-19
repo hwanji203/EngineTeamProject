@@ -6,32 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0001_Scene/PlayerTestScene/Nomal Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0001_Scene/PlayerTestScene/Nomal Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Attack4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Death.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Hurt.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Idle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Special.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/01.Asset/Sprite/Water-Monsters-Pixel-Art-Sprite-Sheet-Pack/1/Walk.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/Shark.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/Shark.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkAI.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkAI.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkAction.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkAction/AttackAction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkAction/AttackAction.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkAction/ChaseAction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkAction/ChaseAction.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/Shark/SharkState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Visual.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Visual.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +234,7 @@
       <workItem from="1763346021208" duration="14816000" />
       <workItem from="1763423488206" duration="7088000" />
       <workItem from="1763474333161" duration="215000" />
-      <workItem from="1763474582463" duration="492000" />
+      <workItem from="1763474582463" duration="2976000" />
     </task>
     <servers />
   </component>

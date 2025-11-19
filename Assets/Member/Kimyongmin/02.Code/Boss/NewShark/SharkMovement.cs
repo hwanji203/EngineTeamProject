@@ -1,13 +1,21 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class SharkMovement : MonoBehaviour
+namespace Member.Kimyongmin._02.Code.Boss.NewShark
 {
-    public Rigidbody2D RbCompo { get; private set; }
-
-    private void Awake()
+    public class SharkMovement : MonoBehaviour
     {
-        RbCompo = GetComponent<Rigidbody2D>();
+        public Rigidbody2D RbCompo { get; private set; }
+
+        private void Awake()
+        {
+            RbCompo = GetComponent<Rigidbody2D>();
+        }
+
+        public void RbMove(Vector3 moveDir, float speed)
+        {
+            RbCompo.linearVelocity = moveDir * speed;
+        }
+    
     }
 }

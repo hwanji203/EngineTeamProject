@@ -16,6 +16,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void UpdateState()
         {
             base.UpdateState();
+            Debug.Log("Chase");
+            Shark.SetMoveDir(Shark.GetTargetDir());
         }
 
         public override void ExitState()
