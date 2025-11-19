@@ -1,12 +1,14 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using Member.Kimyongmin._02.Code.Agent;
 
 public class TestEnemy : MonoBehaviour, IDamageable, ISlowable
 {
+    public static event Action OnEnemyDied;
     [Header("체력")]
     [SerializeField] private float maxHealth = 30f;
-    private float currentHealth;
+    [SerializeField] private float currentHealth;
     
     private void Start()
     {
@@ -22,7 +24,12 @@ public class TestEnemy : MonoBehaviour, IDamageable, ISlowable
             Die();
         }
     }
-    
+
+    private void FixedUpdate()
+    {
+        GetDamage(0f);
+    }
+
     public void ApplySlow(float slowPercent, float duration)
     {
         StartCoroutine(SlowCoroutine(slowPercent, duration));
@@ -38,6 +45,7 @@ public class TestEnemy : MonoBehaviour, IDamageable, ISlowable
     private void Die()
     {
         Debug.Log($"[{gameObject.name}] Enemy Is Dead");
+        OnEnemyDied?.Invoke();
         Destroy(gameObject);
     }
 }
