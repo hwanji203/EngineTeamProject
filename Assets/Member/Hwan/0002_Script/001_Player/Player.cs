@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [field: SerializeField] public PlayerStatSO StatSO { get; private set; }
-    [SerializeField] private PlayerInputSO inputSO;
+    [field: SerializeField] public PlayerInputSO InputSO { get; private set; }
     public PlayerStamina StaminaCompo { get; private set; }
     public PlayerMovement MovementCompo { get; private set; }
     private PlayerMoveController moveController = new PlayerMoveController();
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private PlayerEyeAnimation eyeAnimation;
     private PlayerBlackEyeMove blackEyeMove;
 
-    private Vector2 MouseScreenPos => inputSO.MousePos;
+    private Vector2 MouseScreenPos => InputSO.MousePos;
     public event Action<float, Vector2> OnDamage;
 
     private void Awake()
@@ -57,8 +57,8 @@ public class Player : MonoBehaviour
 
     private void ActionInitialize()
     {
-        inputSO.OnSpaceBtnChanged += moveController.SetDoMove;
-        inputSO.OnMouseClickChanged += moveController.SetState;
+        InputSO.OnSpaceBtnChanged += moveController.SetDoMove;
+        InputSO.OnMouseClickChanged += moveController.SetState;
 
         AnimationCompo.OnAttackStart += (type) => MovementCompo.Move(type switch {
             PlayerAttackType.Dash => PlayerMovementType.Dash,
@@ -70,11 +70,11 @@ public class Player : MonoBehaviour
 
         StaminaCompo.CurrentStamina.OnValueChange += MovementCompo.GetStaminaIsZero;
 
-        OnDamage += (damage, enemyPos) => AnimationCompo.ChangeAnimation(PlayerState.Hit);
-        OnDamage += (damage, enemyPos) => StaminaCompo.LostStamina(damage);
-        OnDamage += CameraShaker.Instance.DirShake;
-        OnDamage += (damage, enemyPos) => MovementCompo.Damaged(enemyPos);
-        OnDamage += (damage, enemyPos) => MovementCompo.ChangeState(PlayerState.Hit);
+        OnDamage += (_, _) => AnimationCompo.ChangeAnimation(PlayerState.Hit);
+        OnDamage += (damage, _) => StaminaCompo.LostStamina(damage);
+        OnDamage += (_, enemyPos) => MovementCompo.Damaged(enemyPos);
+        OnDamage += (_, _) => MovementCompo.ChangeState(PlayerState.Hit);
+        OnDamage += (_, _) => Debug.Log("sdf");
 
         MovementCompo.OnStateChange += eyeAnimation.ChangeAnimation;
     }
@@ -82,5 +82,10 @@ public class Player : MonoBehaviour
     public void GetDamage(float value, Vector2 enemyPos)
     {
         OnDamage?.Invoke(value, enemyPos);
+    }
+
+    public void RecoveryStamina(float value)
+    {
+        StaminaCompo.RecoveryStamina(value);
     }
 }

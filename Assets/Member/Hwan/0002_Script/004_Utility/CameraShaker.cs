@@ -11,7 +11,12 @@ public class CameraShaker : MonoSingleton<CameraShaker>
     {
         base.Awake();
 
-        impulseSource = GetComponent<CinemachineImpulseSource>();
+        impulseSource = GetComponent<CinemachineImpulseSource>(); 
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.Player.OnDamage += DirShake;
     }
 
     public void RandomShake(float power = 0)

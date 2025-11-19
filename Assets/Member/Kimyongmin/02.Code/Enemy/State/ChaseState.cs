@@ -17,6 +17,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         public override void EnterState()
         {
             base.EnterState();
+            Enemy.transform.rotation = Quaternion.Euler(Enemy.transform.rotation.x,Enemy.transform.rotation.y,0);
             Enemy.AgentMovement.SetSpeed(Enemy.EnemyDataSo.moveSpeed,Enemy.EnemyDataSo.detectDelay);
             if (Enemy is Turtle turtle)
             {

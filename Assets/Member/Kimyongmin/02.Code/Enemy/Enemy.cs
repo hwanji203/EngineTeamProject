@@ -3,9 +3,10 @@ using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
+using Member.Kimyongmin._02.Code.Enemy;
 using Member.Kimyongmin._02.Code.Enemy.SO;
 
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour, IAgentable
 {
     [Header("에너미 설1정")]
     [SerializeField] private float attackRange = 2f;
@@ -24,8 +25,10 @@ public abstract class Enemy : MonoBehaviour
     protected Transform Target;
 
     private float _normalAttackRange;
+    public bool IsInvincibility { get; set; }
 
     public bool IsAttack { get; set; } = false;
+
 
     protected virtual void Awake()
     {
@@ -51,13 +54,12 @@ public abstract class Enemy : MonoBehaviour
             Target = targetColl.transform;
 
         AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
-
-        HealthSystem.OnDeath += Death;
+        
     }
 
     protected virtual void Start()
     {
-
+        HealthSystem.OnDeath += Death;
     }
 
     public void FilpX(float xDir)
@@ -107,6 +109,7 @@ public abstract class Enemy : MonoBehaviour
     }
 
     public bool CanAttack { get; private set; } = true;
+    public bool IsAttaking => IsAttack;
 
     protected void Update()
     {
@@ -123,7 +126,7 @@ public abstract class Enemy : MonoBehaviour
         if (HealthSystem.IsDead && !d)
         {
             d = true;
-            GameManager.Instance.Player.GetDamage(-EnemyDataSo.deadStamina, Vector2.zero);
+            GameManager.Instance.Player.RecoveryStamina(EnemyDataSo.deadStamina);
         }
     }
 
@@ -157,5 +160,21 @@ public abstract class Enemy : MonoBehaviour
     public void DeadGameobject()
     {
         Destroy(gameObject);
+    }
+
+    void IAgentable.CounterDamage(float damage)
+    {
+        HealthSystem.GetDamage(damage * 1.5f);
+    }
+
+    void IAgentable.DefaultDamage(float damage)
+    {
+        if (IsInvincibility == true)
+        {
+            Debug.Log("sf");
+            return;
+        }
+
+        HealthSystem.GetDamage(damage);
     }
 }

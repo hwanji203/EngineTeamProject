@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using Member.Kimyongmin._02.Code.Enemy;
 
 public abstract class PlayerSkillSO : ScriptableObject
 {
@@ -21,16 +22,16 @@ public abstract class PlayerSkillSO : ScriptableObject
 
     public abstract IEnumerator AttackStart(Transform playerTrn, float defaultDamage);
 
-    protected void CheckBox(Transform playerTrn, float defaultDamage)
+    protected void CheckBox(Transform playerTrn, float defaultDamage, PlayerAttackType attackType)
     {
         Vector2 attackPoint = playerTrn.position + Quaternion.Euler(0, 0, playerTrn.eulerAngles.z) * RealOffSet;
         Collider2D[] colliders = Physics2D.OverlapBoxAll(attackPoint, RealRange, playerTrn.eulerAngles.z);
         foreach (Collider2D collider in colliders)
         {
             if (detectedCollider.Contains(collider) == true) continue;
-            if (collider.TryGetComponent(out HealthSystem healthSystem))
+            if (collider.TryGetComponent(out IAgentable enemy))
             {
-                healthSystem.GetDamage(defaultDamage * damagePercent);
+                enemy.GetDamage(defaultDamage * damagePercent, attackType);
                 detectedCollider.Add(collider);
             }
         }

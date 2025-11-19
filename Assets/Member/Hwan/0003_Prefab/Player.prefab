@@ -460,9 +460,9 @@ GameObject:
   - component: {fileID: 5572059713375022218}
   - component: {fileID: 3983385784078373091}
   - component: {fileID: 5437001875341611566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <StatSO>k__BackingField: {fileID: 11400000, guid: ccb79905f5b435247bd9f8c1f7364a88, type: 2}
-  inputSO: {fileID: 11400000, guid: 1226fff4c0c395440a1b62937901e600, type: 2}
+  <InputSO>k__BackingField: {fileID: 11400000, guid: 1226fff4c0c395440a1b62937901e600, type: 2}
 --- !u!114 &7004240208347281518
 MonoBehaviour:
   m_ObjectHideFlags: 0

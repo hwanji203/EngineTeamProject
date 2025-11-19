@@ -38,4 +38,6 @@ public class DistanceBarUI : MonoBehaviour, IUI
     {
         UIObject.SetActive(false);
     }
+
+    public void LateInitialize() { }
 }

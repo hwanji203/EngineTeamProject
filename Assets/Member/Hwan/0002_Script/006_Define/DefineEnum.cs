@@ -52,6 +52,31 @@ public enum UIType
     GaugeUI,
     DistanceBarUI,
     TutorialUI,
-    FadeUI,
-    CounterUI
+    FadeUI
+}
+
+public enum TutorialTarget
+{
+    None,
+    Player,
+    Slider,
+    Enemy,
+    Stamina
+}
+
+public enum InputType
+{
+    Move,
+    Aim,
+    Flip,
+    Dash
+}
+
+public enum VolumeType
+{
+    None,
+    Normal,
+    Hit,
+    NoAir,
+    EndOfCam
 }

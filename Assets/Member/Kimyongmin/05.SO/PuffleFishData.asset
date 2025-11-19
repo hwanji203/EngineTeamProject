@@ -19,4 +19,4 @@ MonoBehaviour:
   moveSpeed: 1.5
   damage: 10
   detectDelay: 0
-  deadStamina: 20
+  deadStamina: 40

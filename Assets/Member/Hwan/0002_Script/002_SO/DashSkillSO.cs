@@ -11,11 +11,11 @@ public class DashSkillSO : PlayerSkillSO
         VFXManager.Instance.Play(VFXType.DashAttack, playerTrn.position + playerTrn.right * 1.15f, playerTrn.rotation, playerTrn);
 
         detectedCollider.Clear();
-        CheckBox(playerTrn, defaultDamage);
+        CheckBox(playerTrn, defaultDamage, PlayerAttackType.Dash);
         for (int i = 0; i < attackCount - 1; i++)
         {
             yield return new WaitForSeconds(AttackTime / (attackCount - 1));
-            CheckBox(playerTrn, defaultDamage);
+            CheckBox(playerTrn, defaultDamage, PlayerAttackType.Dash);
         }
     }
 }

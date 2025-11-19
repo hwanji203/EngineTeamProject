@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Member.Kimyongmin._02.Code.Agent
 {
@@ -30,8 +31,6 @@ namespace Member.Kimyongmin._02.Code.Agent
                 
                 _health = Mathf.Clamp(value, 0, _maxHealth);
             }
-                
-            
         }
 
         public void GetDamage(float damage)
@@ -50,5 +49,9 @@ namespace Member.Kimyongmin._02.Code.Agent
             _health = _maxHealth;
         }
         
+        public float GetHealthPercent()
+        {
+            return Health / _maxHealth;
+        }
     }
 }
