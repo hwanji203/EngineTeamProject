@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using Member.Kimyongmin._02.Code.Enemy;
 
 public abstract class PlayerSkillSO : ScriptableObject
 {
@@ -28,7 +29,7 @@ public abstract class PlayerSkillSO : ScriptableObject
         foreach (Collider2D collider in colliders)
         {
             if (detectedCollider.Contains(collider) == true) continue;
-            if (collider.TryGetComponent(out Enemy enemy))
+            if (collider.TryGetComponent(out IAgentable enemy))
             {
                 enemy.GetDamage(defaultDamage * damagePercent, attackType);
                 detectedCollider.Add(collider);
