@@ -10,7 +10,6 @@ using UnityEngine.UI;
 
 public class StarManager : MonoSingleton<StarManager>
 {
-
     [SerializeField]private List<GameObject> starList = new List<GameObject>();
 
     [SerializeField]private Image fadePanel;

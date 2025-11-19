@@ -2,7 +2,7 @@ using Member.Kimyongmin._02.Code.Agent;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TestMoneyGettor : MonoBehaviour
+public class Testor : MonoBehaviour
 {
     HealthSystem healthSystem;
     private void Awake()
@@ -16,15 +16,16 @@ public class TestMoneyGettor : MonoBehaviour
     }
     void Update()
     {
-        if(healthSystem == null)
-        {
-            Debug.Log("HealthSystem is null");
-        }
+        
         if (Keyboard.current.mKey.wasPressedThisFrame)
         {
             healthSystem.GetDamage(10f);
             Debug.Log(healthSystem.Health);
 
+        }
+        if (Keyboard.current.nKey.wasPressedThisFrame)
+        {
+            UIManager.Instance.OpenUI(UIType.CounterUI);
         }
     }
 }

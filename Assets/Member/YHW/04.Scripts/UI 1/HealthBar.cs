@@ -8,8 +8,9 @@ public class HealthBar : MonoBehaviour
     Image healthBarImage;
 
     HealthSystem healthSystem;
-
     Coroutine barAnimationCoroutine;
+
+    float maxHealth = 100f;
 
     private void Awake()
     {
@@ -19,46 +20,50 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-       
-
+        UpdateBar();
         healthSystem.OnHealthChanged += UpdateBar;
     }
 
     private void UpdateBar()
     {
-        StartCoroutine(UpdateAndAnimateBar());
+        StartCoroutine(FirstCoroutine());
     }
 
-    private IEnumerator UpdateAndAnimateBar()
+    private IEnumerator FirstCoroutine()
     {
         yield return null;
-
-        float targetFill = healthSystem.Health / 100f;
 
         if (barAnimationCoroutine != null)
         {
             StopCoroutine(barAnimationCoroutine);
         }
-        barAnimationCoroutine = StartCoroutine(AnimateHealthBar(targetFill));
+
+        barAnimationCoroutine = StartCoroutine(BarAnimation());
     }
-    private IEnumerator AnimateHealthBar(float targetFill)
+
+    private IEnumerator BarAnimation()
     {
-        float startFill = healthBarImage.fillAmount; 
+        float targetFill = healthSystem.Health / maxHealth;
+
+        float initialFill = healthBarImage.fillAmount;
         float elapsedTime = 0f;
+        float duration = 0.5f;
 
-        while (elapsedTime < 0.1f)
+        while (elapsedTime < duration)
         {
-            float t = elapsedTime / 0.1f;
-
-            healthBarImage.fillAmount = Mathf.Lerp(startFill, targetFill, t);
-
             elapsedTime += Time.deltaTime;
-            yield return null; 
+
+            float newFill = Mathf.Lerp(initialFill, targetFill, elapsedTime / duration);
+
+            healthBarImage.fillAmount = newFill;
+
+            yield return null;
         }
-        Debug.Log(healthBarImage.fillAmount);
 
         healthBarImage.fillAmount = targetFill;
+        barAnimationCoroutine = null;
     }
+
     private void OnDestroy()
     {
         if (healthSystem != null)

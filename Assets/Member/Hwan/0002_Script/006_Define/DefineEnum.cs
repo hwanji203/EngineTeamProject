@@ -52,5 +52,6 @@ public enum UIType
     GaugeUI,
     DistanceBarUI,
     TutorialUI,
-    FadeUI
+    FadeUI,
+    CounterUI
 }
