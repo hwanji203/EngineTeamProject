@@ -71,3 +71,12 @@ public enum InputType
     Flip,
     Dash
 }
+
+public enum VolumeType
+{
+    None,
+    Normal,
+    Hit,
+    NoAir,
+    EndOfCam
+}

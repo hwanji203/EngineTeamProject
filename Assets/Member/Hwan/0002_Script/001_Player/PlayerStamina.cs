@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class PlayerStamina : MonoBehaviour
 {
+    [SerializeField] private float noAirBenchmark = 0.4f;
+
     private PlayerStatSO statSO;
     public NotifyValue<float> CurrentStamina;
+    public Action<float> OnNoAir;
 
     private Dictionary<PlayerMoveType, StaminaValue> staminaDictionary = new();
     private WaitForSeconds waitForSec;
@@ -17,6 +20,12 @@ public class PlayerStamina : MonoBehaviour
         this.statSO = statSO;
         CurrentStamina = new(0);
         CurrentStamina.Value = statSO.MaxStamina;
+
+        float noAirValue = statSO.MaxStamina * noAirBenchmark;
+        CurrentStamina.OnValueChange += (value) =>
+        {
+            if (value < noAirValue) OnNoAir?.Invoke(1 - value / noAirValue);
+        };
 
         waitForSec = new WaitForSeconds(statSO.FlipCool);
 

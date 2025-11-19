@@ -70,11 +70,10 @@ public class Player : MonoBehaviour
 
         StaminaCompo.CurrentStamina.OnValueChange += MovementCompo.GetStaminaIsZero;
 
-        OnDamage += (damage, enemyPos) => AnimationCompo.ChangeAnimation(PlayerState.Hit);
-        OnDamage += (damage, enemyPos) => StaminaCompo.LostStamina(damage);
-        OnDamage += CameraShaker.Instance.DirShake;
-        OnDamage += (damage, enemyPos) => MovementCompo.Damaged(enemyPos);
-        OnDamage += (damage, enemyPos) => MovementCompo.ChangeState(PlayerState.Hit);
+        OnDamage += (_, _) => AnimationCompo.ChangeAnimation(PlayerState.Hit);
+        OnDamage += (damage, _) => StaminaCompo.LostStamina(damage);
+        OnDamage += (_, enemyPos) => MovementCompo.Damaged(enemyPos);
+        OnDamage += (_, _) => MovementCompo.ChangeState(PlayerState.Hit);
 
         MovementCompo.OnStateChange += eyeAnimation.ChangeAnimation;
     }

@@ -2,7 +2,18 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    [field: SerializeField] public Player Player { get; private set; }
+    private Player player;
+    public Player Player
+    {
+        get
+        {
+            if (player == null)
+            {
+                player = GameObject.Find("Player").GetComponent<Player>();
+            }
+            return player;
+        }
+    }
     [field: SerializeField] public StageInfoSO StageSO { get; private set; }
 
     protected override void Awake()

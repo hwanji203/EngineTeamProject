@@ -21,6 +21,12 @@ public class TutorialManager : MonoSingleton<TutorialManager>
         GameManager.Instance.Player.InputSO.LookInput(false);
         GameManager.Instance.Player.InputSO.LookInput(InputType.Aim, true);
         yield return new WaitForSeconds(2);
+        TutorialTriggerOn();
+    }
+
+    public void TutorialTriggerOn()
+    {
+        if (doTuto == false) return;
         UIManager.Instance.OpenUI(UIType.TutorialUI);
     }
 }
