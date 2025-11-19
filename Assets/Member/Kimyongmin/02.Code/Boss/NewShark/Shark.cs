@@ -114,6 +114,16 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             if (value)
                 SharkMovement.SetSpeed(0);
         }
-        
+
+        public bool IsAttaking { get; }
+        void IAgentable.CounterDamage(float damage)
+        {
+            _healthSystem.GetDamage(damage * 1.5f);
+        }
+
+        void IAgentable.DefaultDamage(float damage)
+        {
+            _healthSystem.GetDamage(damage);
+        }
     }
 }

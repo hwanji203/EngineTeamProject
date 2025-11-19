@@ -428,7 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SharkData>k__BackingField: {fileID: 11400000, guid: d067433d9a7d4ae43b5a33a293eb85d5, type: 2}
   target: {fileID: 902677222}
-  attackRange: 5
+  attackRange: 3
 --- !u!114 &799401056
 MonoBehaviour:
   m_ObjectHideFlags: 0

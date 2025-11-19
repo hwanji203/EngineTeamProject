@@ -23,38 +23,38 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
 
             if (Shark.AttackInPlayer())
             {
-                SharkStateMachine.ChangeState(SharkStateType.Attack);
                 Shark.AttackBool(true);
+                SharkStateMachine.ChangeState(SharkStateType.Attack);
             }
 
             if (Shark.CurrentCooltime > Shark.SkillCooltime)
             {
                 if (Shark.ChargeStack > 2)
                 {
-                    SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
                     Shark.AttackBool(true);
+                    SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
                 }
                 
                 switch (Random.Range(0,3))
                 {
                     case 0:
-                        SharkStateMachine.ChangeState(SharkStateType.BiteSkill);
                         Shark.AttackBool(true);
+                        SharkStateMachine.ChangeState(SharkStateType.BiteSkill);
                         Shark.Charging();
                         break;
                     case 1:
-                        SharkStateMachine.ChangeState(SharkStateType.LaserSkill);
                         Shark.AttackBool(true);
+                        SharkStateMachine.ChangeState(SharkStateType.LaserSkill);
                         Shark.Charging();
                         break;
                     case 2:
-                        SharkStateMachine.ChangeState(SharkStateType.RoarSkill);
                         Shark.AttackBool(true);
+                        SharkStateMachine.ChangeState(SharkStateType.RoarSkill);
                         Shark.Charging();
                         break;
                     default:
-                        SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
                         Shark.AttackBool(true);
+                        SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
                         break;
                 }
             }

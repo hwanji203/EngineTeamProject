@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Enemy.Enemy
@@ -10,6 +11,8 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         private void Awake()
         {
             _turtle = GetComponentInParent<Turtle>();
+
+            _turtle.HealthSystem.OnHealthChanged += AttackEnd;
         }
 
         public void ProxyDash()
@@ -23,6 +26,11 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             _turtle.DashEnd();
             animators.SetActive(false);
             _turtle.IsAttack = false;
+        }
+
+        private void OnDestroy()
+        {
+            _turtle.HealthSystem.OnHealthChanged -= AttackEnd;
         }
     }
 }

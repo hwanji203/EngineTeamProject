@@ -11,6 +11,8 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         private void Awake()
         {
             _dolphin = GetComponentInParent<Dolphin>();
+
+            _dolphin.HealthSystem.OnHealthChanged += AttackEnd;
         }
 
         public void ProjectileAttack()
@@ -24,6 +26,11 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             _dolphin.DisbleAttackRange();
             effectAnimator.gameObject.SetActive(false);
             _dolphin.IsAttack = false;
+        }
+
+        private void OnDestroy()
+        {
+            _dolphin.HealthSystem.OnHealthChanged -= AttackEnd;
         }
     }
 }

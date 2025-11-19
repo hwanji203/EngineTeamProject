@@ -19,5 +19,5 @@ MonoBehaviour:
   moveSpeed: 1
   damage: 0
   detectDelay: 0
-  deadStamina: 5
+  deadStamina: 15
   fishSpriteLibrary: {fileID: 7108339969198208228, guid: 482111b82cb2b834092e9a4464b7b663, type: 3}

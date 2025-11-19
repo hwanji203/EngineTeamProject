@@ -7,12 +7,29 @@
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkBrain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkSkills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkSkills.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/AnglerFish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/AnglerFish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/AnglerFishProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/AnglerFishProxy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/DolphinProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/DolphinProxy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/TurtleProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/TurtleProxy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/AnlgerfishData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/AnlgerfishData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/CrabData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/CrabData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/DolphinData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/DolphinData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 6.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 7.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 7.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 8.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 8.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData 9.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Fish/FishData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/JellyfishData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/JellyfishData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/PuffleFishData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/PuffleFishData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/TurtleData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/TurtleData.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +250,7 @@
       <workItem from="1763423488206" duration="7088000" />
       <workItem from="1763474333161" duration="215000" />
       <workItem from="1763474582463" duration="2976000" />
-      <workItem from="1763514746505" duration="18593000" />
+      <workItem from="1763514746505" duration="20766000" />
     </task>
     <servers />
   </component>

@@ -26,7 +26,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             
             _attackHitbox.ShowHitbox(dir, delay);
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            transform.rotation = Quaternion.Euler(transform.position.x, transform.rotation.y, angle);
             yield return new WaitForSeconds(0.5f);
             StartCoroutine(HitPanJeong(angle, layerMask, sharkData));
         }
