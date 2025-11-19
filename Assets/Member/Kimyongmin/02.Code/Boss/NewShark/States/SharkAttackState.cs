@@ -11,6 +11,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
+            Shark.SharkSkills.Bite(Shark.GetTargetDir(),0.75f, Shark.LayerMask, Shark.SharkData);
         }
 
         public override void UpdateState()

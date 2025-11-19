@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
 {
     public class SharkLaserSkillState : SharkState
@@ -9,6 +11,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
+            
         }
 
         public override void UpdateState()

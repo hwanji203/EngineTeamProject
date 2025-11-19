@@ -1,33 +1,98 @@
 using System;
+using DG.Tweening;
+using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Boss.SO;
+using Member.Kimyongmin._02.Code.Enemy;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Member.Kimyongmin._02.Code.Boss.NewShark
 {
-    public class Shark : MonoBehaviour
+    public class Shark : MonoBehaviour, IAgentable
     {
         [field:SerializeField] public SharkDataSO SharkData { get; private set; }
         [SerializeField] private Transform target;
+        [Header("상어 설정")]
+        [SerializeField] private float attackRange;
         public SharkMovement SharkMovement { get; private set; }
-        private Vector3 _moveDir;
+        public SharkSkills SharkSkills { get; private set; }
+        private HealthSystem _healthSystem;
+
+        public LayerMask LayerMask { get; private set; }
+
+        public int ChargeStack { get; private set; }
+
+        public float SkillCooltime { get; private set; }
+        public float CurrentCooltime { get; private set; }
+        
+        public Animator Animator { get; private set; }
 
         private void Awake()
         {
             SharkMovement = GetComponent<SharkMovement>();
+            _healthSystem = GetComponent<HealthSystem>();
+            SharkSkills = GetComponent<SharkSkills>();
+            Animator = GetComponentInChildren<Animator>();
+                
+            _healthSystem.SetHealth(SharkData.Hp);
+            
+            LayerMask = LayerMask.GetMask("Player");
+            
+            ResetCooltime();
         }
 
         private void FixedUpdate()
         {
-            SharkMovement.RbMove(_moveDir, SharkData.speed);
+            SharkMovement.RbMove(SharkData.Speed);
         }
 
-        public void SetMoveDir(Vector3 dir)
-        {
-            _moveDir = dir;
-        }
         public Vector3 GetTargetDir()
         {
             return (target.position - transform.position).normalized;
+        }
+        
+        public void FilpX(float xDir)
+        {
+            float duration = 1f / SharkData.Speed;
+
+
+            if (xDir > 0)
+            {
+                transform.DORotate(
+                    new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z), duration);
+            }
+            else if (xDir < 0)
+            {
+                transform.DORotate(
+                    new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z),
+                    duration);
+            }
+        }
+
+        public bool AttackInPlayer()
+        {
+            return Physics2D.OverlapCircle(transform.position, attackRange, LayerMask);
+        }
+
+        public void Charging()
+        {
+            ChargeStack++;
+        }
+
+        public void ResetCooltime()
+        {
+            CurrentCooltime = 0;
+            SkillCooltime = Random.Range(SharkData.MinSkillCool, SharkData.MaxSkillCool);
+        }
+
+        public void SkillTick()
+        {
+            CurrentCooltime += Time.deltaTime;
+        }
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
         }
     }
 }

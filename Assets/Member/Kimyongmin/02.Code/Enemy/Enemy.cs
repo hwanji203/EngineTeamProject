@@ -3,9 +3,10 @@ using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
+using Member.Kimyongmin._02.Code.Enemy;
 using Member.Kimyongmin._02.Code.Enemy.SO;
 
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour, IAgentable
 {
     [Header("에너미 설1정")]
     [SerializeField] private float attackRange = 2f;
