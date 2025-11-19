@@ -54,13 +54,12 @@ public abstract class Enemy : MonoBehaviour, IAgentable
             Target = targetColl.transform;
 
         AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
-
-        HealthSystem.OnDeath += Death;
+        
     }
 
     protected virtual void Start()
     {
-
+        HealthSystem.OnDeath += Death;
     }
 
     public void FilpX(float xDir)

@@ -8,7 +8,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         private Turtle _turtle;
         [SerializeField] private GameObject animators;
 
-        private void Awake()
+        private void Start()
         {
             _turtle = GetComponentInParent<Turtle>();
 
