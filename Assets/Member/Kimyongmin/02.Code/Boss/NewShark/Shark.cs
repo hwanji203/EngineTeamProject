@@ -27,6 +27,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         
         public Animator Animator { get; private set; }
 
+        public bool IsAttaking => throw new NotImplementedException();
+
         private void Awake()
         {
             SharkMovement = GetComponent<SharkMovement>();
@@ -93,6 +95,16 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackRange);
+        }
+
+        void IAgentable.CounterDamage(float damage)
+        {
+            _healthSystem.GetDamage(damage * 1.5f);
+        }
+
+        void IAgentable.DefaultDamage(float damage)
+        {
+            _healthSystem.GetDamage(damage);
         }
     }
 }

@@ -110,6 +110,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     }
 
     public bool CanAttack { get; private set; } = true;
+    public bool IsAttaking => IsAttack;
 
     protected void Update()
     {
@@ -162,15 +163,15 @@ public abstract class Enemy : MonoBehaviour, IAgentable
         Destroy(gameObject);
     }
 
-    public void GetDamage(float damage, PlayerAttackType attackType)
+    void IAgentable.CounterDamage(float damage)
     {
-        if (IsAttack == true && attackType == PlayerAttackType.Dash)
-        {
-            HealthSystem.GetDamage(damage * 3);
-        }
-        else
-        {
-            HealthSystem.GetDamage(IsInvincibility == false ? damage : damage / 1000);
-        }
+        HealthSystem.GetDamage(damage * 1.5f);
+    }
+
+    void IAgentable.DefaultDamage(float damage)
+    {
+        if (IsInvincibility == true) return;
+
+        HealthSystem.GetDamage(damage);
     }
 }
