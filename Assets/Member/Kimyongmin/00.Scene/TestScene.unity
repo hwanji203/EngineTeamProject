@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 405488386}
   - component: {fileID: 405488385}
   - component: {fileID: 405488384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8399,6 +8399,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5085110327277341901, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
+      propertyPath: <InputSO>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 1226fff4c0c395440a1b62937901e600, type: 2}
     - target: {fileID: 5787300782477870990, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
       propertyPath: m_Name
       value: Player
