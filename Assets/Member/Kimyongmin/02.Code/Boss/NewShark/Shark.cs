@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 namespace Member.Kimyongmin._02.Code.Boss.NewShark
 {
-    public class Shark : MonoBehaviour
+    public class Shark : MonoBehaviour, IAgentable
     {
         [field:SerializeField] public SharkDataSO SharkData { get; private set; }
         [SerializeField] private Transform target;
