@@ -1,7 +1,6 @@
 using Member.Kimyongmin._02.Code.Agent;
 using UnityEngine;
 using System.Collections;
-using System;
 
 public class TutorialEnemy : MonoBehaviour
 {
@@ -20,12 +19,14 @@ public class TutorialEnemy : MonoBehaviour
         tutorialManager =  TutorialManager.Instance;
         playerTrn = GameManager.Instance.Player.transform;
         healthSystem = GetComponent<HealthSystem>();
+        if (tutorialManager.DoTuto == false) return;
         healthSystem.OnHealthChanged += Damaged;
-        healthSystem.OnDeath += () => tutorialManager.TutorialTriggerOn(); // 튜토 끝
+        healthSystem.OnDeath += tutorialManager.TutorialTriggerOn;
     }
 
     private void Update()
     {
+        Debug.Log("sfdsdfs");
         if (distanceTriggered == false && triggerDis > (playerTrn.position - transform.position).magnitude)
         {
             tutorialManager.TutorialTriggerOn(); // 움직일 수 있음

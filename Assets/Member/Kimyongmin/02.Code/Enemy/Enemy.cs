@@ -127,7 +127,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
         if (HealthSystem.IsDead && !d)
         {
             d = true;
-            GameManager.Instance.Player.GetDamage(-EnemyDataSo.deadStamina, Vector2.zero);
+            GameManager.Instance.Player.RecoveryStamina(EnemyDataSo.deadStamina);
         }
     }
 
@@ -170,7 +170,11 @@ public abstract class Enemy : MonoBehaviour, IAgentable
 
     void IAgentable.DefaultDamage(float damage)
     {
-        if (IsInvincibility == true) return;
+        if (IsInvincibility == true)
+        {
+            Debug.Log("sf");
+            return;
+        }
 
         HealthSystem.GetDamage(damage);
     }

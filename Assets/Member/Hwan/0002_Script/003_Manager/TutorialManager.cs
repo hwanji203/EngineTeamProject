@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class TutorialManager : MonoSingleton<TutorialManager>
 {
-    [SerializeField] private bool doTuto;
+    [field: SerializeField] public bool DoTuto { get; private set; }
 
     private void Start()
     {
-        if (doTuto) SaveManager.Instance.SaveValue("Tutorial", 0);
+        if (DoTuto) SaveManager.Instance.SaveValue("Tutorial", 0);
         else SaveManager.Instance.SaveValue("Tutorial", 1);
 
         if (PlayerPrefs.GetInt("Tutorial", 0) == 0)
@@ -26,7 +26,7 @@ public class TutorialManager : MonoSingleton<TutorialManager>
 
     public void TutorialTriggerOn()
     {
-        if (doTuto == false) return;
+        if (DoTuto == false) return;
         UIManager.Instance.OpenUI(UIType.TutorialUI);
     }
 }
