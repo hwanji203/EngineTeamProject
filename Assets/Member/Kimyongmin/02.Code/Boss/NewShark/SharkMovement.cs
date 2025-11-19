@@ -9,12 +9,14 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         private Vector3 _moveDir;
         private float _smooth = 4f;
 
+        private float _speed;
+
         private void Awake()
         {
             RbCompo = GetComponent<Rigidbody2D>();
         }
 
-        public void RbMove(float speed)
+        public void RbMove()
         {
             Vector2 currentDir = RbCompo.linearVelocity.normalized;
         
@@ -23,12 +25,17 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             
             Vector2 newDir = Vector2.Lerp(currentDir, _moveDir, _smooth * Time.fixedDeltaTime).normalized;
             
-            RbCompo.linearVelocity = newDir * speed;
+            RbCompo.linearVelocity = newDir * _speed;
         }
 
         public void SetMoveDir(Vector3 moveDir)
         {
             _moveDir = moveDir;
+        }
+
+        public void SetSpeed(float speed)
+        {
+            _speed = speed;
         }
     
     }
