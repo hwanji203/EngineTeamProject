@@ -54,6 +54,7 @@ public enum UIType
     TutorialUI,
     FadeUI,
     SettingUI,
+    ClearUI
 }
 
 public enum TutorialTarget
@@ -79,5 +80,6 @@ public enum VolumeType
     Normal,
     Hit,
     NoAir,
-    EndOfCam
+    EndOfCam,
+    EndOfClear
 }

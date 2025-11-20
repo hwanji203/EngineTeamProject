@@ -40,6 +40,6 @@ public class DistanceBarUI : MonoBehaviour, IUI
 
     public void LateInitialize()
     {
-        GameManager.Instance.Player.GroundCheckerCompo.PlayerYPos.OnValueChange += ChangeSlider;
+        GameManager.Instance.Player.PositionCheckerCompo.PlayerYPos.OnValueChange += ChangeSlider;
     }
 }

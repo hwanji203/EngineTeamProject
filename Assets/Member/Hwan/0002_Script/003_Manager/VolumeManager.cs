@@ -28,7 +28,8 @@ public class VolumeManager : MonoSingleton<VolumeManager>
         Player player = GameManager.Instance.Player;
         player.OnDamage += (_, _) => DefAfterInc(VolumeType.Hit, 0.35f);
         player.StaminaCompo.SubOnNoAir((value) => SetVolume(VolumeType.NoAir, value));
-        player.GroundCheckerCompo.SubOnNoAir((value) => SetVolume(VolumeType.EndOfCam, value));
+        player.PositionCheckerCompo.SubNearGround((value) => SetVolume(VolumeType.EndOfCam, value));
+        player.PositionCheckerCompo.SubNearClear((value) => SetVolume(VolumeType.EndOfClear, value));
     }
 
     public void IncreaseVolume(VolumeType type, float time)

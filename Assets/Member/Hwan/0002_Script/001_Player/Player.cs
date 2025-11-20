@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private PlayerAnimation AnimationCompo;
     private PlayerEyeAnimation eyeAnimation;
     private PlayerBlackEyeMove blackEyeMove;
-    public GroundChecker GroundCheckerCompo { get; private set; }
+    public PositionChecker PositionCheckerCompo { get; private set; }
 
     private Vector2 MouseScreenPos => InputSO.MousePos;
     public event Action<float, Vector2> OnDamage;
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         StaminaCompo = GetComponent<PlayerStamina>();
         eyeAnimation = GetComponentInChildren<PlayerEyeAnimation>();
         blackEyeMove = GetComponentInChildren<PlayerBlackEyeMove>();
-        GroundCheckerCompo = GetComponent<GroundChecker>();
+        PositionCheckerCompo = GetComponent<PositionChecker>();
     }
 
     private void ComponentInitialize()

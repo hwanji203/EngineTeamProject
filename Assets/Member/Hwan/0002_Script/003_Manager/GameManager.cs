@@ -22,4 +22,13 @@ public class GameManager : MonoSingleton<GameManager>
 
         Player.transform.position = new Vector2(0, StageSO.StartY);
     }
+
+    private void Start()
+    {
+        Player.PositionCheckerCompo.OnNearClear += (value) =>
+        {
+            Debug.Log("Clear!");
+            if (value == 1) UIManager.Instance.OpenUI(UIType.ClearUI);
+        };
+    }
 }
