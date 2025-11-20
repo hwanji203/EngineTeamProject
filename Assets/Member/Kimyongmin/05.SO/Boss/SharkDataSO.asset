@@ -17,5 +17,5 @@ MonoBehaviour:
   <NormalAttackDamage>k__BackingField: 10
   <ChargeDamage>k__BackingField: 15
   <LaserTickDamage>k__BackingField: 2
-  <MinSkillCool>k__BackingField: 1
-  <MaxSkillCool>k__BackingField: 10
+  <MinSkillCool>k__BackingField: 999
+  <MaxSkillCool>k__BackingField: 999
