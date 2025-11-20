@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 
 public class VolumeManager : MonoSingleton<VolumeManager>
@@ -20,11 +19,16 @@ public class VolumeManager : MonoSingleton<VolumeManager>
 
     private void Start()
     {
+        foreach (VolumeValueChanger volume in volumeDictionary.Values)
+        {
+            volume.SetWeight(0);
+        }
         volumeDictionary[VolumeType.Normal].SetWeight(1);
 
         Player player = GameManager.Instance.Player;
         player.OnDamage += (_, _) => DefAfterInc(VolumeType.Hit, 0.35f);
-        SubAction(VolumeType.NoAir, ref player.StaminaCompo.OnNoAir);
+        player.StaminaCompo.SubOnNoAir((value) => SetVolume(VolumeType.NoAir, value));
+        player.GroundCheckerCompo.SubOnNoAir((value) => SetVolume(VolumeType.EndOfCam, value));
     }
 
     public void IncreaseVolume(VolumeType type, float time)
@@ -42,14 +46,9 @@ public class VolumeManager : MonoSingleton<VolumeManager>
         StartCoroutine(volumeDictionary[type].DecAfterInc(time));   
     }
 
-    public void SubAction(VolumeType type, ref Action<float> action)
+    public void SetVolume(VolumeType type, float value)
     {
-        action += volumeDictionary[type].SetWeight;
-    }
-
-    public void UnSubAction(VolumeType type, ref Action<float> action)
-    {
-        action -= volumeDictionary[type].SetWeight;
+        volumeDictionary[type].SetWeight(value);
     }
 }
 
