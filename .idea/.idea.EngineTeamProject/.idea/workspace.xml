@@ -6,17 +6,64 @@
   <component name="ChangeListManager">
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkBrain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkHitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkHitState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Crab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/Crab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Effect/Bite.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Effect/Bite.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Shark_Attack1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Shark_Attack1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Visual.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Visual.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/SkillCooldownSlot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/SkillCooldownSlot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/item.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/item.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/skills.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/skills/Skill_ConcPull.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/skills/Skill_ConcPull.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/skills/Skill_OctopusInk.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/skills/Skill_OctopusInk.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/skills/Skill_UrchinSpines.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/skills/Skill_UrchinSpines.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/JCJ.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/JCJ.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/DraggableItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/DraggableItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/EquipSlotUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/EquipSlotUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/InGame.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/InGame/SkillSlotUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/InGame/SkillSlotUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Interface.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Interface/IEquipmentReader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Interface/IEquipmentReader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Interface/ISkillCaster.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Interface/ISkillCaster.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Interface/ISlowable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Interface/ISlowable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/BasicAttackManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/BasicAttackManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/EquipmentManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/EquipmentManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/SkillManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/SkillManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/PlayerController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/EquipmentSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/EquipmentSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/Skill.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/Skill/ConchAirBubbleSkill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/Skill/ConchAirBubbleSkill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/Skill/OctopusInkSkill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/Skill/OctopusInkSkill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/Skill/UrchinSpinesSkill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/Skill/UrchinSpinesSkill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/SkillSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/SO/SkillSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/PlayerStats.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/PlayerStats.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Projectile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Projectile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/PullableEnemy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/PullableEnemy.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/TestEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/TestEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/UrchinSpine.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/UrchinSpine.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/UI 1/ShopUI/Manager/StoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/UI 1/ShopUI/Manager/StoreManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/UI 1/ShopUI/Manager/StoreManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/UI 1/ShopUI/Manager/StoreManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/UI 1/ShopUI/UI/StoreItemUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/UI 1/ShopUI/UI/StoreItemUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,15 +74,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2431722e3e3e41d78b6718bb39ab91111df400/32/f88f2c8c/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/10/a2a6461a/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/52/0ddd64af/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/9b/15941dad/Component.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41be6feeab6c4531be9c4de02d5acaa92f400/49/b6bb16ce/Rigidbody2D.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41be6feeab6c4531be9c4de02d5acaa92f400/5d/992e8472/Physics2D.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/b8/d3b9e340/IEnumerable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cca89918937e838503d883f1aa1784c57493a1cacd61b1f5fe1ebf5a1e3567a/System.Numerics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Data/SkinItemSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Data/SkinSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Item/DraggableSkinItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/SkinManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/SkinStoreManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/UI/SkillSlotUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/HealthSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Ang.cs" root0="FORCE_HIGHLIGHTING" />
@@ -65,12 +109,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Interface/IHitface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Interface/IcamShake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/KimComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/UI 1/ShopUI/Manager/StoreManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Authoring/Asset/BehaviorAuthoringGraph.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Authoring/ErrorMessages.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Runtime/Execution/Nodes/Action.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Runtime/Execution/Nodes/Decorators/Aborts/AbortModifier.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Runtime/Execution/RuntimeBlackboardAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Tools/Graph/Asset/GraphNodeModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/10/a2a6461a/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -87,7 +133,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Kimyongmin&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;jcj&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -238,6 +284,8 @@
       <workItem from="1763474333161" duration="215000" />
       <workItem from="1763474582463" duration="2976000" />
       <workItem from="1763514746505" duration="16209000" />
+      <workItem from="1763559823593" duration="3495000" />
+      <workItem from="1763599678193" duration="5348000" />
     </task>
     <servers />
   </component>

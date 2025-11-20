@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using Member.Kimyongmin._02.Code.Agent;
 
-public class TestEnemy : MonoBehaviour, IDamageable, ISlowable
+public class TestEnemy : MonoBehaviour, IDamageable
 {
     public static event Action OnEnemyDied;
     [Header("체력")]
