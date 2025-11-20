@@ -16,7 +16,6 @@ public class DistanceBarUI : MonoBehaviour, IUI
 
     public void Initialize()
     {
-        GameManager.Instance.Player.GroundCheckerCompo.PlayerYPos.OnValueChange += ChangeSlider;
         stageSO = GameManager.Instance.StageSO;
         minValue = stageSO.StartY;
         maxValue = stageSO.EndY;
@@ -39,5 +38,8 @@ public class DistanceBarUI : MonoBehaviour, IUI
         UIObject.SetActive(false);
     }
 
-    public void LateInitialize() { }
+    public void LateInitialize()
+    {
+        GameManager.Instance.Player.GroundCheckerCompo.PlayerYPos.OnValueChange += ChangeSlider;
+    }
 }

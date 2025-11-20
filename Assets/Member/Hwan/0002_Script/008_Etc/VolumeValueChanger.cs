@@ -6,7 +6,6 @@ using UnityEngine.Rendering;
 public class VolumeValueChanger: MonoBehaviour
 {
     private Volume myVolume;
-    private Action OnChangeEnd;
 
     private void Awake()
     {
@@ -23,7 +22,6 @@ public class VolumeValueChanger: MonoBehaviour
             yield return null;
         }
         myVolume.weight = 1f;
-        OnChangeEnd?.Invoke();
     }
 
     public IEnumerator DecreaseWeight(float time)
@@ -36,7 +34,6 @@ public class VolumeValueChanger: MonoBehaviour
             yield return null;
         }
         myVolume.weight = 0f;
-        OnChangeEnd?.Invoke();
     }
 
     public IEnumerator DecAfterInc(float time)
@@ -55,8 +52,6 @@ public class VolumeValueChanger: MonoBehaviour
             yield return null;
         }
         myVolume.weight = 0f;
-
-        OnChangeEnd?.Invoke();
     }
 
     public void SetWeight(float value)

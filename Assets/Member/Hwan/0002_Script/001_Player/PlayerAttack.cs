@@ -16,10 +16,16 @@ public class PlayerAttack : MonoBehaviour
     private Dictionary<PlayerSkillType, Coroutine> attackCoroutineDictionary = new();
 
     [SerializeField] private PlayerSkillType seeSkill;
+    public event Action<bool> OnAttack;
 
     private void Start()
     {
         AddSkill(PlayerSkillType.Flip);
+
+        foreach (PlayerSkillSO skillSO in skillDictionarySO.Dictionary.Values)
+        {
+            skillSO.OnAttack += OnAttack;
+        }
     }
 
     private void Update()

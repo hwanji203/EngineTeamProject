@@ -460,6 +460,7 @@ GameObject:
   - component: {fileID: 5572059713375022218}
   - component: {fileID: 3983385784078373091}
   - component: {fileID: 5437001875341611566}
+  - component: {fileID: 2743769363320274013}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -537,6 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f209190d8e4427048a2881820e244bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noStaminaPercent: 0.4
 --- !u!50 &5437001875341611566
 Rigidbody2D:
   serializedVersion: 5
@@ -564,3 +566,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2743769363320274013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787300782477870990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774bbc74a8877e44ba39b998446e5975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearGroundYValuePercent: 0.225
+  camTrn: {fileID: 0}

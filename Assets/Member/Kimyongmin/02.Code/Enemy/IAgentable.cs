@@ -4,15 +4,17 @@ namespace Member.Kimyongmin._02.Code.Enemy
     {
         public bool IsAttaking { get; }
 
-        public void GetDamage(float damage, PlayerAttackType attackType)
+        public bool GetDamage(float damage, PlayerAttackType attackType)
         {
             if (IsAttaking == true && attackType == PlayerAttackType.Dash)
             {
                 CounterDamage(damage);
+                return true;
             }
             else
             {
                 DefaultDamage(damage);
+                return false;
             }
         }
 

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public PlayerStamina StaminaCompo { get; private set; }
     public PlayerMovement MovementCompo { get; private set; }
     private PlayerMoveController moveController = new PlayerMoveController();
-    private PlayerAttack AttackCompo;
+    public PlayerAttack AttackCompo { get; private set; }
     private PlayerAnimation AnimationCompo;
     private PlayerEyeAnimation eyeAnimation;
     private PlayerBlackEyeMove blackEyeMove;

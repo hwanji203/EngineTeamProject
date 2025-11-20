@@ -172,7 +172,6 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     {
         if (IsInvincibility == true)
         {
-            Debug.Log("sf");
             return;
         }
 
