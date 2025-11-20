@@ -1,18 +1,14 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class StoreManager : MonoBehaviour
 {
     [Header("Store Settings")]
     [SerializeField] private GameObject storeItemPrefab;
     [SerializeField] private Transform[] itemSlots; 
-    [SerializeField] private SkillSO[] allItemDatabase;
+    [SerializeField] private SkinSO[] allItemDatabase;
 
-    [Header("draggable items Settings")]
-    [SerializeField] private GameObject draggableItemPrefab;
-    [SerializeField] private Transform draggableItemParent;
-
-    private List<SkillSO> activeItems = new List<SkillSO>();
+    private List<SkinSO> activeItems = new List<SkinSO>();
 
     private void Start()
     {
@@ -37,10 +33,10 @@ public class StoreManager : MonoBehaviour
         }
     }
 
-    private List<SkillSO> GetRandomItems(int count)
+    private List<SkinSO> GetRandomItems(int count)
     {
-        List<SkillSO> tempList = new List<SkillSO>(allItemDatabase);
-        List<SkillSO> result = new List<SkillSO>();
+        List<SkinSO> tempList = new List<SkinSO>(allItemDatabase);
+        List<SkinSO> result = new List<SkinSO>();
 
         for (int i = 0; i < count && tempList.Count > 0; i++)
         {
@@ -51,19 +47,14 @@ public class StoreManager : MonoBehaviour
         return result;
     }
 
-    public void TryPurchaseItem(SkillSO itemData, StoreItemUI itemUI)
+    public void TryPurchaseItem(SkinSO itemData, StoreItemUI itemUI)
     {
         if (CurrencyManager.Instance.SpendGold(itemData.Cost))
         {
             itemUI.SetPurchased();
             Debug.Log("구매 완료");
-
-            GameObject obj = Instantiate(draggableItemPrefab, draggableItemParent);
-            var draggable = obj.GetComponent<DraggableItem>();
-            if (draggable != null)
-            {
-                draggable.Init(itemData.EquipmentData);
-            }
+            SkinItemSO skinItem = CreateSkinItemFromSkin(itemData);
+            InventoryManager.Instance?.AddSkin(skinItem);
 
             AfterBuying();
         }
@@ -72,6 +63,13 @@ public class StoreManager : MonoBehaviour
             itemUI.PlayInsufficientFundsFeedback();
             Debug.Log("골드 부족");
         }
+    }
+
+    private SkinItemSO CreateSkinItemFromSkin(SkinSO skinData)
+    {
+        SkinItemSO skinItem = ScriptableObject.CreateInstance<SkinItemSO>();
+        skinItem.InitFromSkin(skinData);
+        return skinItem;
     }
 
     private void AfterBuying()

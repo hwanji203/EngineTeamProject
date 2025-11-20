@@ -76,9 +76,9 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         public bool AttackInPlayer()
         {
-            Collider2D[] arr = Physics2D.OverlapBoxAll(transform.position, attackRange, LayerMask);
+            Collider2D[] arr = Physics2D.OverlapBoxAll(transform.position, attackRange,0, LayerMask);
 
-            if (arr.Length > 1)
+            if (arr.Length > 0)
                 return true;
             
             return false;

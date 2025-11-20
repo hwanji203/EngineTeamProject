@@ -25,7 +25,7 @@ public class Testor : MonoBehaviour
         }
         if (Keyboard.current.nKey.wasPressedThisFrame)
         {
-            UIManager.Instance.OpenUI(UIType.CounterUI);
+            //UIManager.Instance.OpenUI(UIType.CounterUI);
         }
     }
 }
