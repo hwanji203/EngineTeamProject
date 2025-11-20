@@ -16,12 +16,13 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void UpdateState()
         {
             base.UpdateState();
-            Debug.Log("Chase");
             Shark.SharkMovement.SetMoveDir(Shark.GetTargetDir());
             
             Shark.SkillTick();
+            
+            Shark.FilpX(Shark.GetTargetDir().x);
 
-            if (Shark.AttackInPlayer())
+            if (Shark.AttackInPlayer() && !Shark.IsAttack)
             {
                 Shark.AttackBool(true);
                 SharkStateMachine.ChangeState(SharkStateType.Attack);

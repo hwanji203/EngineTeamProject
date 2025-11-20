@@ -354,7 +354,7 @@ Transform:
   m_GameObject: {fileID: 799401048}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.71, y: -0.12, z: -0.6960273}
+  m_LocalPosition: {x: 6.622805, y: 2.8929129, z: -0.6960273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -413,7 +413,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &799401055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,7 +428,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SharkData>k__BackingField: {fileID: 11400000, guid: d067433d9a7d4ae43b5a33a293eb85d5, type: 2}
   target: {fileID: 902677222}
-  attackRange: 3
+  attackRange: {x: 6, y: 2}
+  <LayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &799401056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,11 +503,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 868099284106409586, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.73
+      value: -6.80875
       objectReference: {fileID: 0}
     - target: {fileID: 868099284106409586, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.12
+      value: 2.0459375
       objectReference: {fileID: 0}
     - target: {fileID: 868099284106409586, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
       propertyPath: m_LocalPosition.z

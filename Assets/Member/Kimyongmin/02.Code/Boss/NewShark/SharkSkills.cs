@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using Member.Kimyongmin._02.Code.Boss.SO;
 using Member.Kimyongmin._02.Code.Enemy;
 using UnityEngine;
@@ -7,13 +8,13 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 {
     public class SharkSkills : MonoBehaviour
     {
-        private AttackHitbox _attackHitbox;
+        public AttackHitbox AttackHitbox { get; private set; }
         
         private Collider2D[] _hitArr;
 
         private void Awake()
         {
-            _attackHitbox = GetComponentInChildren<AttackHitbox>();
+            AttackHitbox = GetComponentInChildren<AttackHitbox>();
         }
 
         public void Bite(Vector2 dir, float delay, LayerMask layerMask, SharkDataSO sharkData)
@@ -23,10 +24,11 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         private IEnumerator BiteCor(Vector2 dir, float delay, LayerMask layerMask, SharkDataSO sharkData)
         {
+            transform.DOKill(true);
+            
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             
-            _attackHitbox.ShowHitbox(dir, delay);
-            transform.rotation = Quaternion.Euler(transform.position.x, transform.rotation.y, angle);
+            AttackHitbox.ShowHitbox(transform.right, delay);
             yield return new WaitForSeconds(0.5f);
             StartCoroutine(HitPanJeong(angle, layerMask, sharkData));
         }
@@ -38,7 +40,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             while (_panjeongTime < _panjeongDuration)
             {
                 _panjeongTime += Time.deltaTime;
-                _hitArr = Physics2D.OverlapBoxAll(_attackHitbox.transform.position, new Vector2(3.5f,2.5f), angle, layerMask);
+                _hitArr = Physics2D.OverlapBoxAll(AttackHitbox.transform.position, new Vector2(3.5f,2.5f), angle, layerMask);
                 if (_hitArr.Length > 0)
                 {
                     foreach (var item in _hitArr)
