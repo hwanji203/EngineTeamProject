@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Boss.NewShark
@@ -6,6 +7,21 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
     {
         [SerializeField] private Animator biteEffectAnimator;
         private readonly int _biteHash = Animator.StringToHash("Bite");
+
+        private SharkBrain _sharkBrain;
+        private Shark _shark;
+
+        private void Awake()
+        {
+            _sharkBrain = GetComponentInParent<SharkBrain>();
+            _shark = GetComponentInParent<Shark>();
+        }
+
+        public void NormalBiteAnd()
+        {
+            _sharkBrain.SharkStateMachine.ChangeState(SharkStateType.Chase);
+            _shark.AttackBool(false);
+        }
 
         public void OnBiteEffect()
         {

@@ -50,7 +50,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
                 EnemyStateMachine.ChangeState(StateType.Idle);
             }
 
-            if (Enemy.EnemyDataSo.enemyType == EnemyType.NotAggressive)
+            if (Enemy.EnemyDataSo.enemyType == EnemyType.NotAggressive && !Enemy.IsAttack)
                 Enemy.FilpX(-Enemy.GetTarget().x);
             else
                 Enemy.FilpX(Enemy.GetTarget().x);

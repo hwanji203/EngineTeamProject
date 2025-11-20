@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Enemy;
+using Member.Kimyongmin._02.Code.Enemy.Enemy;
 using Member.Kimyongmin._02.Code.Enemy.SO;
 
 public abstract class Enemy : MonoBehaviour, IAgentable

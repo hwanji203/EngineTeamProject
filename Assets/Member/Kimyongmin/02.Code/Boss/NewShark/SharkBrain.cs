@@ -7,7 +7,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 {
     public class SharkBrain : MonoBehaviour
     {
-        protected SharkStateMachine SharkStateMachine;
+        public SharkStateMachine SharkStateMachine { get; private set; }
         protected Shark Shark;
         
         private HealthSystem _healthSystem;
