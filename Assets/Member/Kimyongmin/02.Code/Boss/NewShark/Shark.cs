@@ -14,6 +14,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         [SerializeField] private Transform target;
         [Header("상어 설정")]
         [SerializeField] private Vector2 attackRange;
+        [SerializeField] private SharkLaserD sharkLaserD;
         public SharkMovement SharkMovement { get; private set; }
         public SharkSkills SharkSkills { get; private set; }
         private HealthSystem _healthSystem;
@@ -24,7 +25,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         public float SkillCooltime { get; private set; }
         public float CurrentCooltime { get; private set; }
-        
+        public float CurrentAttackCool {get; private set; }
+
         public bool IsAttack { get; private set; } = false;
         
         public Animator Animator { get; private set; }
@@ -37,6 +39,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             Animator = GetComponentInChildren<Animator>();
                 
             _healthSystem.SetHealth(SharkData.Hp);
+            sharkLaserD.LaserSetting(SharkData.LaserTickDamage, transform.position);
             
             ResetCooltime();
         }
@@ -95,9 +98,19 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             SkillCooltime = Random.Range(SharkData.MinSkillCool, SharkData.MaxSkillCool);
         }
 
-        public void SkillTick()
+        public void ResetAttackCooltime()
+        {
+            CurrentAttackCool = 0;
+        }
+
+        public void SkillCoolPlus(float value)
+        {
+            CurrentCooltime += value;
+        }
+        public void CooltimeTick()
         {
             CurrentCooltime += Time.deltaTime;
+            CurrentAttackCool += Time.deltaTime;
         }
         private void OnDrawGizmos()
         {
@@ -124,5 +137,6 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             _healthSystem.GetDamage(damage);
         }
+        
     }
 }

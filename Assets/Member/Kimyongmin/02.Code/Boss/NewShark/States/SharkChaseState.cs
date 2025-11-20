@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
@@ -11,6 +12,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
+            Shark.transform.DORotate(new Vector3(0, 0, 0), 0);
         }
 
         public override void UpdateState()
@@ -18,16 +20,19 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
             base.UpdateState();
             Shark.SharkMovement.SetMoveDir(Shark.GetTargetDir());
             
-            Shark.SkillTick();
+            Shark.CooltimeTick();
             
             if (!Shark.IsAttack)
                 Shark.FilpX(Shark.GetTargetDir().x);
             
-            Debug.Log(Shark.AttackInPlayer());
 
-            if (Shark.AttackInPlayer() && !Shark.IsAttack)
+            if (Shark.AttackInPlayer() && Shark.CurrentAttackCool > Shark.SharkData.AttackDelay)
             {
                 Shark.AttackBool(true);
+                Shark.ResetAttackCooltime();
+                Shark.SkillCoolPlus(2);
+                SharkAttackState attackState = (SharkAttackState)SharkStateMachine.StateDictionary[SharkStateType.Attack];
+                attackState.SetPower(10);
                 SharkStateMachine.ChangeState(SharkStateType.Attack);
             }
 
@@ -39,11 +44,11 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
                     SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
                 }
                 
-                switch (Random.Range(0,3))
+                switch (1)
                 {
                     case 0:
                         Shark.AttackBool(true);
-                        SharkStateMachine.ChangeState(SharkStateType.BiteSkill);
+                        SharkStateMachine.StateSharkBrain.BiteAttack();
                         Shark.Charging();
                         break;
                     case 1:

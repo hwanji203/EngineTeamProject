@@ -1,12 +1,12 @@
+using System.Collections;
 using System.Collections.Generic;
 using Member.Kimyongmin._02.Code.Boss.NewShark;
+using UnityEngine;
 
 public enum SharkStateType
 { 
-    Idle,
     Chase,
     Attack,
-    BiteSkill,
     LaserSkill,
     RoarSkill,
     ChargeSkill,
@@ -19,11 +19,11 @@ public class SharkStateMachine
     public Dictionary<SharkStateType, SharkState> StateDictionary = new();
 
     public SharkState currentState;
-    private SharkBrain _stateSharkBrain;
+    public SharkBrain StateSharkBrain {get; private set;}
 
     public SharkStateMachine(SharkBrain sharkBrain)
     {
-        _stateSharkBrain = sharkBrain;
+        StateSharkBrain = sharkBrain;
     }
 
     public void Initialize(SharkStateType startState)
