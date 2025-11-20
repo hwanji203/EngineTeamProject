@@ -11,17 +11,17 @@ public class StoreItemUI : MonoBehaviour
     [SerializeField] private Button buyButton;
     [SerializeField] private GameObject purchasedOverlay;
 
-    private SkillSO data;
+    private SkinSO data;
     private StoreManager manager;
     private bool isPurchased = false;
 
-    public void Setup(SkillSO itemData, StoreManager storeManager)
+    public void Setup(SkinSO skinData, StoreManager storeManager)
     {
-        data = itemData;
+        data = skinData;
         manager = storeManager;
 
-        icon.sprite = data.SkillIcon;
-        nameText.text = data.SkillName;
+        icon.sprite = data.SkinIcon;
+        nameText.text = data.SkinName;
         priceText.text = $"{data.Cost} G";
 
         buyButton.onClick.AddListener(() => manager.TryPurchaseItem(data, this));
@@ -48,6 +48,6 @@ public class StoreItemUI : MonoBehaviour
 
     private void ResetPriceColor()
     {
-        priceText.color = Color.black;
+        priceText.color = Color.white;
     }
 }
