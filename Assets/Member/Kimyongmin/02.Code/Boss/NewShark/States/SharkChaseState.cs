@@ -20,7 +20,10 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
             
             Shark.SkillTick();
             
-            Shark.FilpX(Shark.GetTargetDir().x);
+            if (!Shark.IsAttack)
+                Shark.FilpX(Shark.GetTargetDir().x);
+            
+            Debug.Log(Shark.AttackInPlayer());
 
             if (Shark.AttackInPlayer() && !Shark.IsAttack)
             {

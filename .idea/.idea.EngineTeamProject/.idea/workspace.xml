@@ -8,15 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkBrain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkProxy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkSkills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkSkills.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/AnglerFish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Enemy/Enemy/AnglerFish.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/AnglerFish.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/03.Prefabs/AnglerFish.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Shark_Attack1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Shark_Attack1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/02.Prefab/Effects/ComboCoolCircle .prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/Testor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/Testor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +60,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Interface/IHitface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Interface/IcamShake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/KimComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/Testor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Authoring/Asset/BehaviorAuthoringGraph.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Authoring/ErrorMessages.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Runtime/Execution/Nodes/Action.cs" root0="SKIP_HIGHLIGHTING" />
