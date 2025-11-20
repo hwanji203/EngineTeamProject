@@ -36,10 +36,10 @@ MonoBehaviour:
     <RotateSpeed>k__BackingField: 0
   <skillDictionarySO>k__BackingField: {fileID: 11400000, guid: 729acdec5a8938c4889134d7361c0198, type: 2}
   <DashTime>k__BackingField: 0.35
-  <DashPower>k__BackingField: 1350
+  <DashPower>k__BackingField: 1550
   <DashDamping>k__BackingField: 10
   <LimitPos>k__BackingField: 0.5
-  <Acceleration>k__BackingField: 700
+  <Acceleration>k__BackingField: 924
   <DecreaseValue>k__BackingField: 3
-  <MaxSpeed>k__BackingField: 2
+  <MaxSpeed>k__BackingField: 2.45
   <StunTime>k__BackingField: 0.75

@@ -74,7 +74,6 @@ public class Player : MonoBehaviour
         OnDamage += (damage, _) => StaminaCompo.LostStamina(damage);
         OnDamage += (_, enemyPos) => MovementCompo.Damaged(enemyPos);
         OnDamage += (_, _) => MovementCompo.ChangeState(PlayerState.Hit);
-        OnDamage += (_, _) => Debug.Log("sdf");
 
         MovementCompo.OnStateChange += eyeAnimation.ChangeAnimation;
     }

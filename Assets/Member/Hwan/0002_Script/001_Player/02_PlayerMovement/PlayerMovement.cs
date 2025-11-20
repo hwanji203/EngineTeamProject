@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     public bool CanMove { get; private set; } = true;
     public Vector2 MousePos { get; set; }
     public Vector2 MoveDir { get; private set; }
-    public NotifyValue<float> PlayerYPos = new NotifyValue<float>();
     public event Action<PlayerState> OnStateChange;
 
     private Dictionary<PlayerState, MoveValue> moveValueDictionary = new();

@@ -6,12 +6,17 @@ public class TutorialMove : MonoBehaviour
     [SerializeField] private RectTransform messageRectTrn;
     [SerializeField] private RectTransform sliderRect;
     [SerializeField] private RectTransform stamina;
-    [SerializeField] private Transform enemy;
     [SerializeField] private Transform player;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private RectTransform _canvasRect;
     [SerializeField] private Vector2 endPosition;
+    public Transform Enemy { get; set; }
 
+    private void Start()
+    {
+        messageRectTrn.anchoredPosition = Vector2.zero;
+
+    }
     public void Move2Target(TutorialInfo currentInfo)
     {
         Vector2 targetPos = new();
@@ -28,7 +33,7 @@ public class TutorialMove : MonoBehaviour
                 targetPos = sliderRect.anchoredPosition;
                 break;
             case TutorialTarget.Enemy:
-                targetPos = WorldToCanvasPos(enemy.position);
+                targetPos = WorldToCanvasPos(Enemy.position);
                 break;
             case TutorialTarget.Stamina:
                 targetPos = stamina.anchoredPosition;
@@ -50,10 +55,8 @@ public class TutorialMove : MonoBehaviour
         // ★ 여기서만 Clamp 적용
         messagePos.x = Mathf.Clamp(messagePos.x, -endPosition.x, endPosition.x);
         messagePos.y = Mathf.Clamp(messagePos.y, -endPosition.y, endPosition.y);
-
         messageRectTrn.anchoredPosition = messagePos;
     }
-
 
     private Vector2 WorldToCanvasPos(Vector3 worldPos)
     {

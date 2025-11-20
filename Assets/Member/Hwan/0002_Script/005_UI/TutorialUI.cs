@@ -45,6 +45,7 @@ public class TutorialUI : MonoBehaviour, IUI
             case 1:
                 //Ã³À½²¨ ³¡³µÀ» ¶§
                 inputSO.LookInput(InputType.Aim, true);
+                tutoMove.Enemy = TutorialManager.Instance.SpawnTutorialEnemy();
                 break;
             case 2:
                 inputSO.LookInput(InputType.Move, true);
@@ -99,7 +100,6 @@ public class TutorialUI : MonoBehaviour, IUI
         TutorialInfo currentInfo = tutoInfoSO.TutorialInfos[currentTutorialNumber];
 
         tutoMove.Move2Target(currentInfo);
-        messageTrn.anchoredPosition += currentInfo.MessagePosOffset;
 
         UIObject.SetActive(true);
         fadeUIs[0].FadeOut(1);

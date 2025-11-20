@@ -21,12 +21,11 @@ public class TutorialEnemy : MonoBehaviour
         healthSystem = GetComponent<HealthSystem>();
         if (tutorialManager.DoTuto == false) return;
         healthSystem.OnHealthChanged += Damaged;
-        healthSystem.OnDeath += tutorialManager.TutorialTriggerOn;
+        healthSystem.OnDeath += () => StartCoroutine(WaitAndOnTrigger());
     }
 
     private void Update()
     {
-        Debug.Log("sfdsdfs");
         if (distanceTriggered == false && triggerDis > (playerTrn.position - transform.position).magnitude)
         {
             tutorialManager.TutorialTriggerOn(); // 움직일 수 있음
@@ -45,8 +44,14 @@ public class TutorialEnemy : MonoBehaviour
     {
         if (healthSystem.GetHealthPercent() < 0.55f && enemy.IsInvincibility == false)
         {
-            tutorialManager.TutorialTriggerOn(); // 대시할 수 있지만 카운터 아니면 데미지 입힐 수 없음
+            StartCoroutine(WaitAndOnTrigger()); // 대시할 수 있지만 카운터 아니면 데미지 입힐 수 없음
             enemy.IsInvincibility = true;
         }
+    }
+
+    private IEnumerator WaitAndOnTrigger()
+    {
+        yield return new WaitForSeconds(1);
+        tutorialManager.TutorialTriggerOn();
     }
 }
