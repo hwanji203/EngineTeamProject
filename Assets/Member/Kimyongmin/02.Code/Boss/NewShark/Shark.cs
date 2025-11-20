@@ -13,12 +13,12 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         [field:SerializeField] public SharkDataSO SharkData { get; private set; }
         [SerializeField] private Transform target;
         [Header("상어 설정")]
-        [SerializeField] private float attackRange;
+        [SerializeField] private Vector2 attackRange;
         public SharkMovement SharkMovement { get; private set; }
         public SharkSkills SharkSkills { get; private set; }
         private HealthSystem _healthSystem;
 
-        public LayerMask LayerMask { get; private set; }
+        [field:SerializeField] public LayerMask LayerMask { get; private set; }
 
         public int ChargeStack { get; private set; }
 
@@ -38,8 +38,6 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
                 
             _healthSystem.SetHealth(SharkData.Hp);
             
-            LayerMask = LayerMask.GetMask("Player");
-            
             ResetCooltime();
         }
 
@@ -51,12 +49,6 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             }
             SharkMovement.RbMove();
             
-        }
-
-        private void Update()
-        {
-            if (!IsAttack)
-                FilpX(GetTargetDir().x);
         }
 
         public Vector3 GetTargetDir()
@@ -84,7 +76,12 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         public bool AttackInPlayer()
         {
-            return Physics2D.OverlapCircle(transform.position, attackRange, LayerMask);
+            Collider2D[] arr = Physics2D.OverlapBoxAll(transform.position, attackRange, LayerMask);
+
+            if (arr.Length > 1)
+                return true;
+            
+            return false;
         }
 
         public void Charging()
@@ -105,7 +102,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, attackRange);
+            Gizmos.DrawWireCube(transform.position, attackRange);
         }
         
         public void AttackBool(bool value)
@@ -113,6 +110,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             IsAttack = value;
             if (value)
                 SharkMovement.SetSpeed(0);
+            else
+                SharkMovement.SetSpeed(SharkData.Speed);
         }
 
         public bool IsAttaking { get; }

@@ -21,7 +21,7 @@ public class GameClearUI : MonoBehaviour
     public void NextStage()
     {
     }
-
+    
     private void Start()
     {
         StarManager.Instance.gameObject.SetActive(false);

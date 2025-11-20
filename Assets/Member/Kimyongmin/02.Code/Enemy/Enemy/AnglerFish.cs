@@ -28,8 +28,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             AgentMovement.IsDashing = true;
             ResetCooltime();
             AgentMovement.RbCompo.linearVelocity = dashDir * 1.25f;
-            transform.rotation = Quaternion.Euler(transform.position.x, transform.rotation.y, _dashAngle);
-            attackHitbox.ShowHitbox(dashDir, attackDelay);
+            attackHitbox.ShowHitbox(transform.right, attackDelay);
             DisbleAttackRange();
         }
 
@@ -48,7 +47,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             while (PanjeongTime <= PanjeongDuration && IsAttack)
             {
                 PanjeongTime += Time.deltaTime;
-                _hitArr = Physics2D.OverlapBoxAll(transform.position + offset, attackVec, _dashAngle, layerMask);
+                _hitArr = Physics2D.OverlapBoxAll(attackHitbox.transform.position, attackVec, _dashAngle, layerMask);
                 if (_hitArr.Length > 0)
                 {
                     foreach (var item in _hitArr)

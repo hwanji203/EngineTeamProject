@@ -8,7 +8,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         private Dolphin _dolphin;
         [SerializeField] private Animator effectAnimator;
 
-        private void Awake()
+        private void Start()
         {
             _dolphin = GetComponentInParent<Dolphin>();
 

@@ -43,7 +43,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log($"Start Drag : {equipmentData?.ItemName}");
+        Debug.Log($"Counter Drag : {equipmentData?.ItemName}");
         
         originalParent = transform.parent;
         originalPosition = rectTransform.anchoredPosition;

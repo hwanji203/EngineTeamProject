@@ -3,8 +3,9 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
-public class ComboSystem : MonoBehaviour
+public class ComboSystem : MonoSingleton<ComboSystem>
 {
     [SerializeField] private float comboDuration = 1.5f;  
     [SerializeField] private float scaleUpSize = 1.3f;  
@@ -13,9 +14,11 @@ public class ComboSystem : MonoBehaviour
     [SerializeField] private GameObject comboPrefab;  
     [SerializeField] private Transform spawnParent;
 
+    public bool isCounter { get; set; } = false;
 
     private GameObject currentComboObj; 
     private TextMeshProUGUI comboText;
+    private TextMeshProUGUI counterText;
     private Vector3 originalScale;
     private int currentCombo = 0;
     private Coroutine comboCoroutine;
@@ -24,22 +27,28 @@ public class ComboSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            AddCombo();
+            DoCombo();
+        }
+        if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            Counter();
         }
     }
 
-    public void AddCombo()
+    public void DoCombo()
     {
 
         if (currentComboObj == null)
         {
             currentComboObj = Instantiate(comboPrefab, spawnParent);
-            comboText = currentComboObj.GetComponentInChildren<TextMeshProUGUI>(true);
             originalScale = currentComboObj.transform.localScale;
             comboRectTransform = currentComboObj.GetComponentInChildren<RectTransform>();
             comboImage = currentComboObj.GetComponentInChildren<Image>();
+            TextMeshProUGUI[] texts = currentComboObj.GetComponentsInChildren<TextMeshProUGUI>(true);
+            comboText = texts[0];
+            counterText = texts[1];
         }
 
         currentCombo++;
@@ -59,11 +68,23 @@ public class ComboSystem : MonoBehaviour
             StopCoroutine(comboCoroutine);
         comboCoroutine = StartCoroutine(FillRoutine());
 
-       
+        if (isCounter)
+        {
+            counterText.gameObject.SetActive(true);
+            isCounter = false;
+
+        }
+        else
+        {
+            counterText.gameObject.SetActive(false);
+        }
     }
 
     
-
+    public void Counter()
+    {
+        isCounter = true;
+    }
 
     IEnumerator FillRoutine()
     {

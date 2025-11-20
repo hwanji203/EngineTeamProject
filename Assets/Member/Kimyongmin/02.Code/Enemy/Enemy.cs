@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Enemy;
+using Member.Kimyongmin._02.Code.Enemy.Enemy;
 using Member.Kimyongmin._02.Code.Enemy.SO;
 
 public abstract class Enemy : MonoBehaviour, IAgentable
@@ -54,13 +55,12 @@ public abstract class Enemy : MonoBehaviour, IAgentable
             Target = targetColl.transform;
 
         AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
-
-        HealthSystem.OnDeath += Death;
+        
     }
 
     protected virtual void Start()
     {
-
+        HealthSystem.OnDeath += Death;
     }
 
     public void FilpX(float xDir)

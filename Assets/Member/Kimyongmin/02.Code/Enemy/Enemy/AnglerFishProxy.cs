@@ -10,7 +10,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         
         private readonly int _biteHash =  Animator.StringToHash("Bite");
 
-        private void Awake()
+        private void Start()
         {
             _anglerFish = GetComponentInParent<AnglerFish>();
 

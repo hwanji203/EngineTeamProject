@@ -368,10 +368,10 @@ TextureImporter:
       name: BlueStoneUI_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 116
-        y: 523
-        width: 57
-        height: 6
+        x: 117
+        y: 524
+        width: 54
+        height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
