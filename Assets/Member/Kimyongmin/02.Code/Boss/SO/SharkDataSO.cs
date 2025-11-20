@@ -7,6 +7,7 @@ namespace Member.Kimyongmin._02.Code.Boss.SO
     {
         [field:SerializeField] public float Hp {get; private set;}
         [field:SerializeField] public float Speed {get; private set;}
+        [field:SerializeField] public float AttackDelay {get; private set;}
         [field:SerializeField] public float NormalAttackDamage {get; private set;}
         [field:SerializeField] public float ChargeDamage {get; private set;}
         [field:SerializeField] public float LaserTickDamage {get; private set;}
