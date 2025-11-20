@@ -21,11 +21,7 @@ public class Testor : MonoBehaviour
         {
             healthSystem.GetDamage(10f);
             Debug.Log(healthSystem.Health);
-
         }
-        if (Keyboard.current.nKey.wasPressedThisFrame)
-        {
-            UIManager.Instance.OpenUI(UIType.CounterUI);
-        }
+        
     }
 }

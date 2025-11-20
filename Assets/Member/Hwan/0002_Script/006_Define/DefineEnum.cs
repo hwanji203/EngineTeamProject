@@ -52,7 +52,8 @@ public enum UIType
     GaugeUI,
     DistanceBarUI,
     TutorialUI,
-    FadeUI
+    FadeUI,
+    SettingUI,
 }
 
 public enum TutorialTarget
