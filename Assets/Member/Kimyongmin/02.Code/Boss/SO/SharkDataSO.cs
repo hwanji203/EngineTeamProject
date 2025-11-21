@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Member.Kimyongmin._02.Code.Boss.SO
 {
     [CreateAssetMenu(fileName = "SharkDataSO", menuName = "KimSO/SharkDataSO")]
-    public class SharkDataSO : ScriptableObject
+    public class SharkDataSo : ScriptableObject
     {
         [field:SerializeField] public float Hp {get; private set;}
         [field:SerializeField] public float Speed {get; private set;}
