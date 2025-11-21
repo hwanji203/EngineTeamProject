@@ -28,7 +28,6 @@ public class SoundManager : MonoSingleton<SoundManager>
     {
         base.Awake();
         DontDestroyOnLoad(this.gameObject);
-        PlayBgm(BGM.test);
     }
 
 
