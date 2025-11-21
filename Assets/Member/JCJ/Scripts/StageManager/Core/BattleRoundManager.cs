@@ -50,10 +50,7 @@ public class BattleRoundManager : MonoBehaviour
             GameObject prefab = enemyDatabase.GetPrefab(spawnInfo.enemyType);
             for (int i = 0; i < spawnInfo.spawnCount; i++)
             {
-                if (spawnIndex >= wave.spawnPoints.Length)
-                    spawnIndex = 0;
-
-                Enemy enemy = Instantiate(prefab, wave.spawnPoints[spawnIndex].position, Quaternion.identity, transform).GetComponent<Enemy>();
+                Enemy enemy = Instantiate(prefab, EnemySpawnManager.Instance.GetRandomSpawnPosition(), Quaternion.identity, transform).GetComponent<Enemy>();
                 enemy.OnDead += HandleEnemyDied;
                 spawnIndex++;
             }

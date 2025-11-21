@@ -30,7 +30,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void Start()
     {
         Player.PositionCheckerCompo.OnNearClear += CheckGameOver;
-        Player.PositionCheckerCompo.OnNearGround += CheckGameClear;
+        Player.PositionCheckerCompo.OnNearOutOfCam += CheckGameClear;
     }
     private void CheckGameOver(float value)
     {
@@ -46,7 +46,7 @@ public class GameManager : MonoSingleton<GameManager>
         if (value == 1)
         {
             UIManager.Instance.OpenUI(UIType.GameOverUI);
-            Player.PositionCheckerCompo.OnNearGround -= CheckGameClear;
+            Player.PositionCheckerCompo.OnNearOutOfCam -= CheckGameClear;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class EnemySpawnManager : MonoBehaviour
+public class EnemySpawnManager : MonoSingleton<EnemySpawnManager>
 {
     [SerializeField] private float defaultSpawnCool;
     [SerializeField] private float errorSpawnCool;
@@ -71,7 +71,7 @@ public class EnemySpawnManager : MonoBehaviour
         Instantiate(enemyDicionary[selectedEnemy], spawnPos, Quaternion.identity, transform);
     }
 
-    private Vector2 GetRandomSpawnPosition()
+    public Vector2 GetRandomSpawnPosition()
     {
         int spawnSide = UnityEngine.Random.Range(0, 2);
         if (spawnSide == 0) spawnSide = -1;

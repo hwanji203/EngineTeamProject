@@ -6,9 +6,6 @@ public class BattleWaveData
     [Header("Enemy Spawn Infos")]
     public EnemySpawnInfo[] enemySpawnInfos;
 
-    [Header("Spawn Points")]
-    public Transform[] spawnPoints;
-
     public int GetTotalEnemyCount()
     {
         int total = 0;

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PositionChecker : MonoBehaviour
 {
-    [SerializeField] private float nearGroundYValuePercent;
+    [SerializeField] private float outOfCamYValuePercent;
     private float camHalfSize;
-    private float nearGroundYValue;
+    private float nearOutOfCamYValue;
 
     [SerializeField] private float startClearYOffset;
     private float startClearY;
@@ -14,7 +14,7 @@ public class PositionChecker : MonoBehaviour
 
     private CinemachineCamera camTrn;
 
-    public event Action<float> OnNearGround;
+    public event Action<float> OnNearOutOfCam;
     public event Action<float> OnNearClear;
     public NotifyValue<float> PlayerYPos = new NotifyValue<float>();
 
@@ -24,14 +24,14 @@ public class PositionChecker : MonoBehaviour
         startClearY = stageSO.EndY - startClearYOffset;
 
         camHalfSize = Camera.main.orthographicSize;
-        nearGroundYValue = 2 * camHalfSize * nearGroundYValuePercent - camHalfSize;
+        nearOutOfCamYValue = Mathf.Abs(2 * camHalfSize * outOfCamYValuePercent - camHalfSize);
 
         camTrn = GameManager.Instance.CinemachineCam;
     }
 
     private void Start()
     {
-        PlayerYPos.OnValueChange += CheckGround;
+        PlayerYPos.OnValueChange += CheckOutOfCam;
         PlayerYPos.OnValueChange += CheckClear;
     }
 
@@ -40,18 +40,19 @@ public class PositionChecker : MonoBehaviour
         PlayerYPos.Value = transform.position.y;
     }
 
-    private void CheckGround(float playerYPos)
+    private void CheckOutOfCam(float value)
     {
-        float currentNearGroundYValue = nearGroundYValue + camTrn.State.RawPosition.y;
-        float currentGroundYValue = -1 * camHalfSize + camTrn.State.RawPosition.y;
+        float currentNearOutOfCamYValue = nearOutOfCamYValue + camTrn.State.RawPosition.y;
+        float currentOutOfCamYValue = camHalfSize + camTrn.State.RawPosition.y;
+        float playerYPos = Mathf.Abs(camTrn.State.RawPosition.y - value);
 
-        if (playerYPos <= currentNearGroundYValue)
+        if (playerYPos >= currentNearOutOfCamYValue)
         {
-            float currentPercent = 1 - (playerYPos - currentGroundYValue) / (currentNearGroundYValue - currentGroundYValue);
-            if (currentPercent < 0.05f) currentPercent = 0;
-            else if (currentPercent > 0.95f) currentPercent = 1;
+            float currentPercent = 1 - (playerYPos - currentOutOfCamYValue) / (currentNearOutOfCamYValue - currentOutOfCamYValue);
+            if (currentPercent < 0.1f) currentPercent = 0;
+            else if (currentPercent > 0.9f) currentPercent = 1;
 
-            OnNearGround?.Invoke(currentPercent);
+            OnNearOutOfCam?.Invoke(currentPercent);
         }
     }
 
@@ -69,7 +70,7 @@ public class PositionChecker : MonoBehaviour
     
     public void SubNearGround(Action<float> method)
     {
-        OnNearGround += method;
+        OnNearOutOfCam += method;
     }
 
     public void SubNearClear(Action<float> method)

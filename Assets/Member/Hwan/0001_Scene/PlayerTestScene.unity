@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[0].spawnCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8143252025913781757, guid: d78a367fb2c2e144bbfc376b6af40e8d, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[0].spawnCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -882,6 +886,10 @@ PrefabInstance:
       propertyPath: camTrn
       value: 
       objectReference: {fileID: 1748796849}
+    - target: {fileID: 3691045956710459228, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
+      propertyPath: outOfCamYValuePercent
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4656095703679394688, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
       propertyPath: m_TagString
       value: Player

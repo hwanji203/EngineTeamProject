@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 7469203742990827136}
   - component: {fileID: 7204723709955601018}
   - component: {fileID: 7262866934070151320}
+  - component: {fileID: -1019708415722852696}
   m_Layer: 7
   m_Name: AnglerFish
   m_TagString: Untagged
@@ -404,6 +405,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-1019708415722852696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036001933743822104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f6068c621dc924d99de6ff03bcefc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  currentHealth: 0
 --- !u!1 &2463949358022092918
 GameObject:
   m_ObjectHideFlags: 0
