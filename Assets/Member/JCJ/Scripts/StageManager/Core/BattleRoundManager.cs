@@ -14,17 +14,6 @@ public class BattleRoundManager : MonoBehaviour
     private int remainingEnemiesInWave;
     private bool isRoundActive = false;
     
-
-    void Start()
-    {
-        TestEnemy.OnEnemyDied += HandleEnemyDied;
-    }
-
-    void OnDestroy()
-    {
-        TestEnemy.OnEnemyDied -= HandleEnemyDied;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isRoundActive)
@@ -64,7 +53,8 @@ public class BattleRoundManager : MonoBehaviour
                 if (spawnIndex >= wave.spawnPoints.Length)
                     spawnIndex = 0;
 
-                Instantiate(prefab, wave.spawnPoints[spawnIndex].position, Quaternion.identity, transform);
+                Enemy enemy = Instantiate(prefab, wave.spawnPoints[spawnIndex].position, Quaternion.identity, transform).GetComponent<Enemy>();
+                enemy.OnDead += HandleEnemyDied;
                 spawnIndex++;
             }
         }
@@ -72,6 +62,7 @@ public class BattleRoundManager : MonoBehaviour
 
     private void HandleEnemyDied()
     {
+        Debug.Log("dfsf");
         if (!isRoundActive) return;
 
         remainingEnemiesInWave--;

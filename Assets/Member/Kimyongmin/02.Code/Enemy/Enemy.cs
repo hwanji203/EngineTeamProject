@@ -29,7 +29,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     public bool IsInvincibility { get; set; }
 
     public bool IsAttack { get; set; } = false;
-
+    public event Action OnDead;
 
     protected virtual void Awake()
     {
@@ -55,7 +55,8 @@ public abstract class Enemy : MonoBehaviour, IAgentable
             Target = targetColl.transform;
 
         AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
-        
+
+        HealthSystem.OnDeath += () => OnDead?.Invoke();
     }
 
     protected virtual void Start()
