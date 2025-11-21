@@ -58,6 +58,8 @@ MonoBehaviour:
     <VolumeChanger>k__BackingField: {fileID: 2501227458721324352}
   - <VolumeType>k__BackingField: 4
     <VolumeChanger>k__BackingField: {fileID: 351626055176933586}
+  - <VolumeType>k__BackingField: 5
+    <VolumeChanger>k__BackingField: {fileID: 2138135687779919168}
 --- !u!1 &603084265105092288
 GameObject:
   m_ObjectHideFlags: 0

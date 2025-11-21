@@ -3,18 +3,21 @@ namespace Member.Kimyongmin._02.Code.Enemy
     public interface IAgentable
     {
         public bool IsAttaking { get; }
+        public bool IsInvincibility { get; }
 
-        public bool GetDamage(float damage, PlayerAttackType attackType)
+        public AttackReturnType GetDamage(float damage, PlayerAttackType attackType)
         {
             if (IsAttaking == true && attackType == PlayerAttackType.Dash)
             {
                 CounterDamage(damage);
-                return true;
+                return AttackReturnType.Counter;
             }
             else
             {
+                if (IsInvincibility == true) return AttackReturnType.None;
+
                 DefaultDamage(damage);
-                return false;
+                return AttackReturnType.Default;
             }
         }
 

@@ -1,8 +1,10 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
     private Player player;
+    [SerializeField] private CinemachineCamera cinemachineCam;
     public Player Player
     {
         get
@@ -20,15 +22,31 @@ public class GameManager : MonoSingleton<GameManager>
     {
         base.Awake();
 
-        Player.transform.position = new Vector2(0, StageSO.StartY);
+        Vector2 startPoint = new Vector2(0, StageSO.StartY);
+        Player.transform.position = startPoint;
+        cinemachineCam.transform.position = startPoint;
     }
 
     private void Start()
     {
-        Player.PositionCheckerCompo.OnNearClear += (value) =>
+        Player.PositionCheckerCompo.OnNearClear += CheckGameOver;
+        Player.PositionCheckerCompo.OnNearGround += CheckGameClear;
+    }
+    private void CheckGameOver(float value)
+    {
+        if (value == 1)
         {
-            Debug.Log("Clear!");
-            if (value == 1) UIManager.Instance.OpenUI(UIType.ClearUI);
-        };
+            UIManager.Instance.OpenUI(UIType.ClearUI);
+            Player.PositionCheckerCompo.OnNearClear -= CheckGameOver;
+        }
+    }
+
+    private void CheckGameClear(float value)
+    {
+        if (value == 1)
+        {
+            UIManager.Instance.OpenUI(UIType.GameOverUI);
+            Player.PositionCheckerCompo.OnNearGround -= CheckGameClear;
+        }
     }
 }

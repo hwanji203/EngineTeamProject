@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
     [field: SerializeField] public PlayerInputSO InputSO { get; private set; }
     public PlayerStamina StaminaCompo { get; private set; }
     public PlayerMovement MovementCompo { get; private set; }
-    private PlayerMoveController moveController = new PlayerMoveController();
     public PlayerAttack AttackCompo { get; private set; }
+    public PositionChecker PositionCheckerCompo { get; private set; }
+    private PlayerMoveController moveController = new PlayerMoveController();
     private PlayerAnimation AnimationCompo;
     private PlayerEyeAnimation eyeAnimation;
     private PlayerBlackEyeMove blackEyeMove;
-    public PositionChecker PositionCheckerCompo { get; private set; }
 
     private Vector2 MouseScreenPos => InputSO.MousePos;
     public event Action<float, Vector2> OnDamage;
@@ -32,10 +32,6 @@ public class Player : MonoBehaviour
         MovementCompo.MousePos = mouseWorldPos;
         moveController.UpdateState();
         blackEyeMove.Move(mouseWorldPos);
-        if (Keyboard.current.gKey.wasReleasedThisFrame)
-        {
-            GetDamage(UnityEngine.Random.Range(0, 10), UnityEngine.Random.insideUnitCircle.normalized * UnityEngine.Random.Range(0, 10));
-        }
     }
 
     private void GetComponents()

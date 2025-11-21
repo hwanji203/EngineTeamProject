@@ -25,6 +25,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         public float SkillCooltime { get; private set; }
         public float CurrentCooltime { get; private set; }
         
+        public bool IsInvincibility { get; private set; }
         public bool IsAttack { get; private set; } = false;
         
         public Animator Animator { get; private set; }

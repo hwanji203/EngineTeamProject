@@ -1,23 +1,22 @@
 using System;
 using System.CodeDom;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StaminaGaugeUI : MonoBehaviour, IUI
 {
-    [SerializeField] private float maxSize;
-    [SerializeField] private RectTransform gaugeTrn;
+    private float maxAmount;
+    [SerializeField] private Image gaugeImage;
     [field: SerializeField] public GameObject UIObject { get; private set; }
 
     public UIType UIType { get => UIType.GaugeUI; }
-
-    private float maxValue;
 
     public void Initialize() { }
 
     private void SetGauge(float value)
     {
-        Vector3 gaugeSize = gaugeTrn.transform.localScale;
-        gaugeTrn.localScale = new Vector3(Mathf.Lerp(0, maxSize, value / maxValue), gaugeSize.y, gaugeSize.z);
+        float gauge = value / maxAmount;
+        gaugeImage.fillAmount = gauge;
     }
 
     public void Open()
@@ -32,9 +31,9 @@ public class StaminaGaugeUI : MonoBehaviour, IUI
 
     public void LateInitialize()
     {
+        maxAmount = GameManager.Instance.Player.StatSO.MaxStamina;
         GameManager.Instance.Player.StaminaCompo.CurrentStamina.OnValueChange += SetGauge;
-        maxValue = GameManager.Instance.Player.StatSO.MaxStamina;
-        SetGauge(maxValue);
+        SetGauge(maxAmount);
         Open();
     }
 }

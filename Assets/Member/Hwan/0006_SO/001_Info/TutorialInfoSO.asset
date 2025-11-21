@@ -30,9 +30,9 @@ MonoBehaviour:
   - <TutorialMessage>k__BackingField: "\uC801\uC744 \uC4F0\uB7EC\uB728\uB9AC\uBA74
       \uC0B0\uC18C\uB97C \uC5BB\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \\n\uC88C\uD074\uB9AD\uC73C\uB85C
       \uACF5\uACA9\uD574 \uC801\uC5D0\uAC8C \uD55C\uBC29 \uBA39\uC5EC\uBCF4\uC138\uC694."
-    fadePosOffset: {x: -725, y: 570}
+    fadePosOffset: {x: -525, y: 470}
     messagePosOffset: {x: -440, y: 355}
-    <FadeScale>k__BackingField: {x: 1000, y: 300}
+    <FadeScale>k__BackingField: {x: 1200, y: 300}
     <TargetType>k__BackingField: 4
   - <TutorialMessage>k__BackingField: "\uC801\uC774 \uACF5\uACA9\uC744 \uC900\uBE44\uD560
       \uB54C,\\n\uC6B0\uD074\uB9AD\uC73C\uB85C \uB300\uC2DC \uACF5\uACA9\uC744 \uBA85\uC911

@@ -33,8 +33,10 @@ public abstract class PlayerSkillSO : ScriptableObject
             if (detectedCollider.Contains(collider) == true) continue;
             if (collider.TryGetComponent(out IAgentable enemy))
             {
-                OnAttack?.Invoke(enemy.GetDamage(defaultDamage * damagePercent, attackType));
                 detectedCollider.Add(collider);
+                AttackReturnType returnType = enemy.GetDamage(defaultDamage * damagePercent, attackType);
+                if (returnType == AttackReturnType.None) return;
+                OnAttack?.Invoke(returnType == AttackReturnType.Counter);
             }
         }
     }

@@ -6,12 +6,17 @@ public class TutorialMove : MonoBehaviour
     [SerializeField] private RectTransform messageRectTrn;
     [SerializeField] private RectTransform sliderRect;
     [SerializeField] private RectTransform stamina;
-    [SerializeField] private Transform player;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private RectTransform _canvasRect;
     [SerializeField] private Vector2 leftTopEndPosition = new Vector2(530, 445);
     [SerializeField] private Vector2 rightBottomPosition = new Vector2(300, 200);
     public Transform Enemy { get; set; }
+    private Transform player;
+
+    private void Awake()
+    {
+        player = GameManager.Instance.Player.transform;
+    }
 
     private void Start()
     {

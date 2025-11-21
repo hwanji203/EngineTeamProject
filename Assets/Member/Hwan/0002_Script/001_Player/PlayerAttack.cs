@@ -18,16 +18,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private PlayerSkillType seeSkill;
     public event Action<bool> OnAttack;
 
-    private void Start()
-    {
-        AddSkill(PlayerSkillType.Flip);
-
-        foreach (PlayerSkillSO skillSO in skillDictionarySO.Dictionary.Values)
-        {
-            skillSO.OnAttack += OnAttack;
-        }
-    }
-
     private void Update()
     {
         PlayerSkillSO skill = skillDictionarySO.Dictionary[seeSkill];
@@ -95,6 +85,13 @@ public class PlayerAttack : MonoBehaviour
 
     public void Initialize(PlayerStatSO statSO)
     {
-        this.statSO = statSO;
+        this.statSO = statSO; 
+        
+        AddSkill(PlayerSkillType.Flip);
+
+        foreach (PlayerSkillSO skillSO in skillDictionarySO.Dictionary.Values)
+        {
+            skillSO.OnAttack += (isCounter) => OnAttack?.Invoke(isCounter);
+        }
     }
 }
