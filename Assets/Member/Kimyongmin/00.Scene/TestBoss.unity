@@ -14961,6 +14961,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3691045956710459228, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
+      propertyPath: camTrn
+      value: 
+      objectReference: {fileID: 984063917}
     - target: {fileID: 5787300782477870990, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15235,10 +15239,22 @@ PrefabInstance:
       propertyPath: doTuto
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3180350471169619785, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: <DoTuto>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: cinemachineCam
+      value: 
+      objectReference: {fileID: 984063917}
     - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: <Player>k__BackingField
       value: 
       objectReference: {fileID: 902677221}
+    - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: <CinemachineCam>k__BackingField
+      value: 
+      objectReference: {fileID: 984063917}
     - target: {fileID: 6541987100514202507, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

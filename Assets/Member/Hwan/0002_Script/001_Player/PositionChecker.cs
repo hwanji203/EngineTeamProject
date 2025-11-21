@@ -12,7 +12,7 @@ public class PositionChecker : MonoBehaviour
     private float startClearY;
     private StageInfoSO stageSO;
 
-    [SerializeField] private CinemachineCamera camTrn;
+    private CinemachineCamera camTrn;
 
     public event Action<float> OnNearGround;
     public event Action<float> OnNearClear;

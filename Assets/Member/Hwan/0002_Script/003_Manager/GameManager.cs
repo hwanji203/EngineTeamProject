@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameManager : MonoSingleton<GameManager>
 {
     private Player player;
-    [SerializeField] private CinemachineCamera cinemachineCam;
+    [field: SerializeField] public CinemachineCamera CinemachineCam { get; private set; }
     public Player Player
     {
         get
@@ -23,8 +23,8 @@ public class GameManager : MonoSingleton<GameManager>
         base.Awake();
 
         Vector2 startPoint = new Vector2(0, StageSO.StartY);
-        Player.transform.position = startPoint;
-        cinemachineCam.transform.position = startPoint;
+        Player.transform.position = new Vector3(startPoint.x, startPoint.y, Player.transform.position.z);
+        CinemachineCam.transform.position = new Vector3(startPoint.x, startPoint.y, CinemachineCam.transform.position.z);
     }
 
     private void Start()
