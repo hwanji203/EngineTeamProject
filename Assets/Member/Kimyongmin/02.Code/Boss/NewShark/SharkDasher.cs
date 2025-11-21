@@ -7,7 +7,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
     {
         public IEnumerator ChargeAttack(Transform self, Vector3 target, SharkMovement sharkMovement)
         {
-            
+            yield return null;
         }
     }
 }
