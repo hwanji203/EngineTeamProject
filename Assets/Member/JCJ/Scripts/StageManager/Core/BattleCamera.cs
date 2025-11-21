@@ -6,7 +6,8 @@ public class BattleCamera : MonoBehaviour
     public static BattleCamera Instance { get; private set; }
 
     [SerializeField] private CinemachineCamera mainFollowCamera;
-    [SerializeField] private CinemachineCamera battleCamera;
+
+    private CinemachinePositionComposer positionComposer;
 
     private void Awake()
     {
@@ -19,33 +20,33 @@ public class BattleCamera : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        // Position Composer 캐싱 (메인카메라에 붙어있어야 함)
+        positionComposer = mainFollowCamera.GetComponent<CinemachinePositionComposer>();
+        if (positionComposer == null)
+            Debug.LogWarning("mainFollowCamera에 CinemachinePositionComposer가 없습니다.");
     }
-    //배틀 카메라 전환
-    public void SwitchToBattleCamera(Transform battleCameraTransform)
+
+    // 배틀 상황에서 카메라 멈춤
+    public void PauseCameraFollow()
     {
-        if (battleCameraTransform == null)
+        if (positionComposer == null)
         {
-            Debug.LogError("Battle camera transform is null");
+            Debug.LogError("Position Composer is null");
             return;
         }
-
-        // 배틀 카메라 위치 설정
-        battleCamera.transform.position = battleCameraTransform.position;
-        
-        // 우선순위 변경
-        battleCamera.Priority = 10;
-        mainFollowCamera.Priority = 0;
-        
-        Debug.Log($"<color=cyan>Battle Camera activated at {battleCameraTransform.position}</color>");
+        positionComposer.enabled = false;
+        Debug.Log("<color=cyan>Main Camera Position Composer OFF (Follow Pause)</color>");
     }
 
-    // 메인 카메라로 복귀
-    public void SwitchToMainCamera()
+    // 배틀 끝나면 다시 자동 추적 켜기
+    public void ResumeCameraFollow()
     {
-        // 우선순위 원래대로
-        mainFollowCamera.Priority = 10;
-        battleCamera.Priority = 0;
-        
-        Debug.Log("<color=cyan>Main Camera restored</color>");
+        if (positionComposer == null)
+        {
+            Debug.LogError("Position Composer is null");
+            return;
+        }
+        positionComposer.enabled = true;
+        Debug.Log("<color=cyan>Main Camera Position Composer ON (Follow Resume)</color>");
     }
 }
