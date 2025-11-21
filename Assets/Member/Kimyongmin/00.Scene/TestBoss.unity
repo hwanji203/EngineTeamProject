@@ -119,55 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &12010752
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 12010754}
-  - component: {fileID: 12010753}
-  m_Layer: 0
-  m_Name: PP
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &12010753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12010752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 4326f6dd6fea67b4e80912833e2031bf, type: 2}
---- !u!4 &12010754
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12010752}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8171363, y: -2.2696455, z: -0.580792}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &258387878
 GameObject:
   m_ObjectHideFlags: 0
@@ -14864,6 +14815,7 @@ Transform:
   - {fileID: 1195577109}
   - {fileID: 7928452029070618240}
   - {fileID: 752957544}
+  - {fileID: 1421283211}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &799401052
@@ -15045,6 +14997,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3691045956710459228, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
+      propertyPath: camTrn
+      value: 
+      objectReference: {fileID: 984063917}
     - target: {fileID: 5787300782477870990, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15319,6 +15275,14 @@ PrefabInstance:
       propertyPath: doTuto
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3180350471169619785, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: <DoTuto>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: cinemachineCam
+      value: 
+      objectReference: {fileID: 984063917}
     - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: <Player>k__BackingField
       value: 
@@ -15497,6 +15461,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   biteEffectAnimator: {fileID: 2527206798437625193}
   roarEffect: {fileID: 785815229}
+--- !u!1 &1421283210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1421283211}
+  m_Layer: 7
+  m_Name: SharkDasher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1421283211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421283210}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 799401049}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467202646
 GameObject:
   m_ObjectHideFlags: 0
@@ -16222,4 +16217,3 @@ SceneRoots:
   - {fileID: 799401049}
   - {fileID: 1185629201}
   - {fileID: 984063918}
-  - {fileID: 12010754}
