@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class EnemySpawnInfo
 {
     [Tooltip("소환할 몬스터 타입")]
