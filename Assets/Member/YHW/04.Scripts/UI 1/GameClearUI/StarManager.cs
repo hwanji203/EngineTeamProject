@@ -79,7 +79,7 @@ public class StarManager : MonoSingleton<StarManager>,IUI
 
     [field:SerializeField]public GameObject UIObject { get; set; }
 
-    public UIType UIType => UIType.GameClearUI;
+    public UIType UIType => UIType.ClearUI;
 
     public void Retry()
     {
