@@ -32,7 +32,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
             {
                 _currentTime = 0f;
                 Shark.Animator.SetBool(_biteHash, true);
-                Shark.SharkSkills.Bite(0.9f, Shark.LayerMask, Shark.SharkData, Shark.SharkMovement.ShortDash, Shark.GetTargetDir(), 20);
+                Shark.SharkAttacks.Bite(0.9f, Shark.LayerMask, Shark.SharkData, Shark.SharkMovement.ShortDash, Shark.GetTargetDir(), 20);
                 _skillUsedNum++;
             }
         }
