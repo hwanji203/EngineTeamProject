@@ -54,6 +54,7 @@ public enum UIType
     TutorialUI,
     FadeUI,
     SettingUI,
+    GameClearUI
 }
 
 public enum TutorialTarget
