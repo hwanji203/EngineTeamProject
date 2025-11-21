@@ -25,6 +25,8 @@ public class PositionChecker : MonoBehaviour
 
         camHalfSize = Camera.main.orthographicSize;
         nearGroundYValue = 2 * camHalfSize * nearGroundYValuePercent - camHalfSize;
+
+        camTrn = GameManager.Instance.CinemachineCam;
     }
 
     private void Start()
