@@ -14,10 +14,6 @@ public class BattleRoundManager : MonoBehaviour
     private int remainingEnemiesInWave;
     private bool isRoundActive = false;
     
-    [SerializeField] private TextMeshProUGUI enemyLeftText;
-    [SerializeField] private TextMeshProUGUI roundLeftText;
-    [SerializeField] private GameObject leftCanvas;
-    
 
     void Start()
     {
@@ -34,8 +30,6 @@ public class BattleRoundManager : MonoBehaviour
         if (other.CompareTag("Player") && !isRoundActive)
         {
             StartWave(0);
-            leftCanvas.SetActive(true);
-            roundLeftText.text = $"Round : {currentWaveIndex}";
         }
     }
 
@@ -52,14 +46,10 @@ public class BattleRoundManager : MonoBehaviour
         isRoundActive = true;
 
         // 카메라 고정
-        BattleCamera.Instance.SwitchToBattleCamera(wave.cameraTransform);
+        BattleCamera.Instance.PauseCameraFollow();
 
         // 총 몬스터 수 계산 및 소환
         remainingEnemiesInWave = wave.GetTotalEnemyCount();
-        if (waveIndex == 0)
-        {
-            enemyLeftText.text = $"Enemy : {remainingEnemiesInWave}";
-        }
         SpawnWaveEnemies(wave);
     }
 
@@ -85,23 +75,20 @@ public class BattleRoundManager : MonoBehaviour
         if (!isRoundActive) return;
 
         remainingEnemiesInWave--;
-        enemyLeftText.text = $"Enemy : {remainingEnemiesInWave}";
         Debug.Log($"{remainingEnemiesInWave} left");
 
         if (remainingEnemiesInWave <= 0)
         {
             // 다음 웨이브 시작
             StartWave(currentWaveIndex + 1);
-            roundLeftText.text = $"Round : {currentWaveIndex}";
         }
     }
 
     private void CompleteRound()
     {
         Debug.Log("All waves cleared!");
-        leftCanvas.SetActive(false);
         isRoundActive = false;
         GetComponent<Collider2D>().enabled = false;
-        BattleCamera.Instance.SwitchToMainCamera();
+        BattleCamera.Instance.ResumeCameraFollow();
     }
 }
