@@ -10,13 +10,13 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 {
     public class Shark : MonoBehaviour, IAgentable
     {
-        [field:SerializeField] public SharkDataSO SharkData { get; private set; }
+        [field:SerializeField] public SharkDataSo SharkData { get; private set; }
         [SerializeField] private Transform target;
         [Header("상어 설정")]
         [SerializeField] private Vector2 attackRange;
         [SerializeField] private SharkLaserD sharkLaserD;
         public SharkMovement SharkMovement { get; private set; }
-        public SharkSkills SharkSkills { get; private set; }
+        public SharkAttacks SharkAttacks { get; private set; }
         private HealthSystem _healthSystem;
 
         [field:SerializeField] public LayerMask LayerMask { get; private set; }
@@ -35,7 +35,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             SharkMovement = GetComponent<SharkMovement>();
             _healthSystem = GetComponent<HealthSystem>();
-            SharkSkills = GetComponent<SharkSkills>();
+            SharkAttacks = GetComponent<SharkAttacks>();
             Animator = GetComponentInChildren<Animator>();
                 
             _healthSystem.SetHealth(SharkData.Hp);

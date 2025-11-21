@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Boss.NewShark
 {
-    public class SharkSkills : MonoBehaviour
+    public class SharkAttacks : MonoBehaviour
     {
         public AttackHitbox AttackHitbox { get; private set; }
         private SharkLaser _laser;
@@ -23,12 +23,12 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             StartCoroutine(_laser.FocusOn(dir));
         }
-        public void Bite(float delay, LayerMask layerMask, SharkDataSO sharkData, Action<Vector3,float> callback, Vector3 dir, float power)
+        public void Bite(float delay, LayerMask layerMask, SharkDataSo sharkData, Action<Vector3,float> callback, Vector3 dir, float power)
         {
             StartCoroutine(BiteCor(delay, layerMask, sharkData, callback, dir,power));
         }
 
-        private IEnumerator BiteCor(float delay, LayerMask layerMask, SharkDataSO sharkData, Action<Vector3,float> callback,  Vector3 dir, float power)
+        private IEnumerator BiteCor(float delay, LayerMask layerMask, SharkDataSo sharkData, Action<Vector3,float> callback,  Vector3 dir, float power)
         {
             transform.DOKill(true);
             
@@ -40,7 +40,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         private float _panjeongTime = 0;
         private float _panjeongDuration = 0.05f;
-        private IEnumerator HitPanJeong(LayerMask layerMask, SharkDataSO sharkData)
+        private IEnumerator HitPanJeong(LayerMask layerMask, SharkDataSo sharkData)
         {
             while (_panjeongTime < _panjeongDuration)
             {

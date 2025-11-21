@@ -13,7 +13,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         {
             base.EnterState();
             Shark.transform.DOKill(true);
-            Shark.SharkSkills.LaserFocusOn(Shark.GetTargetDir());
+            Shark.SharkAttacks.LaserFocusOn(Shark.GetTargetDir());
         }
 
         public override void UpdateState()

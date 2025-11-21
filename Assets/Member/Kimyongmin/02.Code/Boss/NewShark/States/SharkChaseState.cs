@@ -12,9 +12,10 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
-            Shark.transform.DORotate(new Vector3(0, 0, 0), 0);
+            Shark.transform.DORotate(new Vector3(Shark.transform.rotation.x, Shark.transform.rotation.y, 0), 0);
         }
 
+        private int _skillSelectNum = 0;
         public override void UpdateState()
         {
             base.UpdateState();
@@ -38,13 +39,13 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
 
             if (Shark.CurrentCooltime > Shark.SkillCooltime)
             {
-                if (Shark.ChargeStack > 2)
+                _skillSelectNum = Random.Range(0, 3);
+                if (Shark.ChargeStack > Random.Range(1,3))
                 {
-                    Shark.AttackBool(true);
-                    SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
+                    _skillSelectNum = 3;
                 }
                 
-                switch (1)
+                switch (_skillSelectNum)
                 {
                     case 0:
                         Shark.AttackBool(true);
