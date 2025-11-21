@@ -11,6 +11,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         private float _speed;
 
+        private bool _isDashing = false;
+
         private void Awake()
         {
             RbCompo = GetComponent<Rigidbody2D>();
@@ -25,7 +27,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             
             Vector2 newDir = Vector2.Lerp(currentDir, _moveDir, _smooth * Time.fixedDeltaTime).normalized;
             
-            RbCompo.linearVelocity = newDir * _speed;
+            if (!_isDashing)
+                RbCompo.linearVelocity = newDir * _speed;
         }
 
         public void SetMoveDir(Vector3 moveDir)
@@ -37,6 +40,16 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             _speed = speed;
         }
-    
+
+        public void ShortDash(Vector3 dir , float power)
+        {
+            RbCompo.linearVelocity = dir * power;
+            SetDashing(true);
+        }
+
+        public void SetDashing(bool isDashing)
+        {
+            _isDashing = isDashing;
+        }
     }
 }

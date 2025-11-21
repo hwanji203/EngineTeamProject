@@ -4,6 +4,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
 {
     public class SharkRoarState : SharkState
     {
+        private float _currentTime;
         public SharkRoarState(Shark shark, SharkStateMachine sharkStateMachine, string animBoolName) : base(shark, sharkStateMachine, animBoolName)
         {
         }
@@ -11,12 +12,18 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
-            Debug.Log("포효");
+            _currentTime = 0;
         }
 
         public override void UpdateState()
         {
             base.UpdateState();
+            _currentTime += Time.deltaTime;
+
+            if (_currentTime > 0.6f)
+            {
+                
+            }
         }
 
         public override void ExitState()

@@ -21,7 +21,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         public virtual void UpdateState()
         {
-        
+            
         }
     
         public virtual void ExitState()
