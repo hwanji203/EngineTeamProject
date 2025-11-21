@@ -694,6 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87ff81aaa36cc64eae2cec5bc6d7f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachineCam: {fileID: 0}
   <StageSO>k__BackingField: {fileID: 11400000, guid: 9f10682f72660df4fa9dcf31a0334bac, type: 2}
 --- !u!1 &7848488231887453350
 GameObject:
@@ -840,7 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634a7086fae46c2478140a096f765283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DoTuto>k__BackingField: 0
+  <DoTuto>k__BackingField: 1
   tutorialEnemy: {fileID: 6802907738643528409, guid: c173cb78e9696d2429224482ad528cd4, type: 3}
 --- !u!1001 &509392682818208472
 PrefabInstance:

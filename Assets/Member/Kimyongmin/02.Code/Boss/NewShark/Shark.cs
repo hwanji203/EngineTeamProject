@@ -128,6 +128,9 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         }
 
         public bool IsAttaking { get; }
+
+        public bool IsInvincibility { get; private set; }
+
         void IAgentable.CounterDamage(float damage)
         {
             _healthSystem.GetDamage(damage * 1.5f);
