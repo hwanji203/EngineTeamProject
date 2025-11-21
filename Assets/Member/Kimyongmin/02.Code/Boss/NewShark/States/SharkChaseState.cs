@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
@@ -11,39 +12,44 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
+            Shark.transform.DORotate(new Vector3(Shark.transform.rotation.x, Shark.transform.rotation.y, 0), 0);
         }
 
+        private int _skillSelectNum = 0;
         public override void UpdateState()
         {
             base.UpdateState();
             Shark.SharkMovement.SetMoveDir(Shark.GetTargetDir());
             
-            Shark.SkillTick();
+            Shark.CooltimeTick();
             
             if (!Shark.IsAttack)
                 Shark.FilpX(Shark.GetTargetDir().x);
             
-            Debug.Log(Shark.AttackInPlayer());
 
-            if (Shark.AttackInPlayer() && !Shark.IsAttack)
+            if (Shark.AttackInPlayer() && Shark.CurrentAttackCool > Shark.SharkData.AttackDelay)
             {
                 Shark.AttackBool(true);
+                Shark.ResetAttackCooltime();
+                Shark.SkillCoolPlus(2);
+                SharkAttackState attackState = (SharkAttackState)SharkStateMachine.StateDictionary[SharkStateType.Attack];
+                attackState.SetPower(10);
                 SharkStateMachine.ChangeState(SharkStateType.Attack);
             }
 
             if (Shark.CurrentCooltime > Shark.SkillCooltime)
             {
-                if (Shark.ChargeStack > 2)
+                _skillSelectNum = Random.Range(0, 3);
+                if (Shark.ChargeStack > Random.Range(1,3))
                 {
-                    Shark.AttackBool(true);
-                    SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
+                    _skillSelectNum = 3;
                 }
                 
-                switch (Random.Range(0,3))
+                switch (_skillSelectNum)
                 {
                     case 0:
                         Shark.AttackBool(true);
-                        SharkStateMachine.ChangeState(SharkStateType.BiteSkill);
+                        SharkStateMachine.StateSharkBrain.BiteAttack();
                         Shark.Charging();
                         break;
                     case 1:

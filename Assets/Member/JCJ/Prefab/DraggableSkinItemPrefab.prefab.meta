@@ -1,6 +1,12 @@
 fileFormatVersion: 2
-guid: 398879944afd5314ca55e0145410b6f0
+<<<<<<<< HEAD:Assets/Member/JCJ/Prefab/DraggableSkinItemPrefab.prefab.meta
+guid: 17da66de2d94e584d9cbe521906c6454
 PrefabImporter:
+========
+guid: 864b05471e81684458be3e3cb482d40d
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> YHW:Assets/Member/YHW/Audio.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -3,12 +3,14 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class StarManager : MonoSingleton<StarManager>
+public class StarManager : MonoSingleton<StarManager>,IUI
 {
     [SerializeField]private List<GameObject> starList = new List<GameObject>();
 
@@ -19,13 +21,17 @@ public class StarManager : MonoSingleton<StarManager>
 
     private int starCount = 0;
 
-    public int acquiredMoney { get; set; }
+    private int acquiredMoney;
 
-
+    protected override void Awake()
+    {
+        base.Awake();
+        GameObject.DontDestroyOnLoad(this.gameObject);
+    }
     private void OnEnable()
     {
         FadeIn();
-
+        ShowScore(acquiredMoney, 2f);
         StartCoroutine(Clear());
     }
 
@@ -68,5 +74,58 @@ public class StarManager : MonoSingleton<StarManager>
         {
             starList[i].GetComponent<Animator>().SetTrigger(clearHash);
         }
+    }
+    [SerializeField] private TextMeshProUGUI acMoneyT;
+
+    [field:SerializeField]public GameObject UIObject { get; set; }
+
+    public UIType UIType => UIType.GameClearUI;
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Quit()
+    {
+
+    }
+
+    public void NextStage()
+    {
+    }
+
+
+    
+
+    public void ShowScore(int finalScore, float duration = 1f)
+    {
+        int current = 0;
+
+        DOTween.To(() => current, x =>
+        {
+            current = x;
+            acMoneyT.text = "AcquiredGold : " + current.ToString();
+        },
+        finalScore,
+        duration).SetEase(Ease.OutCubic);
+    }
+
+    public void Initialize()
+    {
+    }
+
+    public void LateInitialize()
+    {
+    }
+
+    public void Open()
+    {
+        UIObject.SetActive(true);
+    }
+
+    public void Close()
+    {
+        UIObject.SetActive(false);
     }
 }

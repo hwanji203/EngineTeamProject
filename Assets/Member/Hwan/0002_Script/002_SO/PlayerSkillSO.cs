@@ -22,6 +22,8 @@ public abstract class PlayerSkillSO : ScriptableObject
 
     public abstract IEnumerator AttackStart(Transform playerTrn, float defaultDamage);
 
+    public event Action<bool> OnAttack;
+
     protected void CheckBox(Transform playerTrn, float defaultDamage, PlayerAttackType attackType)
     {
         Vector2 attackPoint = playerTrn.position + Quaternion.Euler(0, 0, playerTrn.eulerAngles.z) * RealOffSet;
@@ -31,8 +33,10 @@ public abstract class PlayerSkillSO : ScriptableObject
             if (detectedCollider.Contains(collider) == true) continue;
             if (collider.TryGetComponent(out IAgentable enemy))
             {
-                enemy.GetDamage(defaultDamage * damagePercent, attackType);
                 detectedCollider.Add(collider);
+                AttackReturnType returnType = enemy.GetDamage(defaultDamage * damagePercent, attackType);
+                if (returnType == AttackReturnType.None) return;
+                OnAttack?.Invoke(returnType == AttackReturnType.Counter);
             }
         }
     }

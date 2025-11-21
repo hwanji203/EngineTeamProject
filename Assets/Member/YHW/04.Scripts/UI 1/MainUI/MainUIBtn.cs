@@ -1,12 +1,13 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MainUIBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public void Play()
     {
-        
+        SceneManager.LoadScene("ShopUI");
     }
 
     public void Quit()
@@ -16,6 +17,7 @@ public class MainUIBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void Setting()
     {
+        UIManager.Instance.OpenUI(UIType.SettingUI);
 
     }
 

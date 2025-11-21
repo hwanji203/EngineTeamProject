@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StageInfoSO
   m_EditorClassIdentifier: 
   <StartY>k__BackingField: 0
-  <EndY>k__BackingField: 0
+  <EndY>k__BackingField: 10
   EnemyList: []

@@ -14,8 +14,6 @@ public class ComboSystem : MonoSingleton<ComboSystem>
     [SerializeField] private GameObject comboPrefab;  
     [SerializeField] private Transform spawnParent;
 
-    public bool isCounter { get; set; } = false;
-
     private GameObject currentComboObj; 
     private TextMeshProUGUI comboText;
     private TextMeshProUGUI counterText;
@@ -25,21 +23,25 @@ public class ComboSystem : MonoSingleton<ComboSystem>
     private RectTransform comboRectTransform;
     private Image comboImage;
 
+    private void Start()
+    {
+        GameManager.Instance.Player.AttackCompo.OnAttack += DoCombo;
+    }
+
     private void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (Keyboard.current.yKey.wasPressedThisFrame)
         {
-            DoCombo();
+            DoCombo(true);
         }
         if (Keyboard.current.cKey.wasPressedThisFrame)
         {
-            Counter();
+            //Counter();
         }
     }
 
-    public void DoCombo()
+    public void DoCombo(bool isCounter)
     {
-
         if (currentComboObj == null)
         {
             currentComboObj = Instantiate(comboPrefab, spawnParent);
@@ -72,18 +74,11 @@ public class ComboSystem : MonoSingleton<ComboSystem>
         {
             counterText.gameObject.SetActive(true);
             isCounter = false;
-
         }
         else
         {
             counterText.gameObject.SetActive(false);
         }
-    }
-
-    
-    public void Counter()
-    {
-        isCounter = true;
     }
 
     IEnumerator FillRoutine()

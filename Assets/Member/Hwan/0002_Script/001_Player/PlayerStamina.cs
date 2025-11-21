@@ -1,15 +1,16 @@
 using System;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerStamina : MonoBehaviour
 {
-    [SerializeField] private float noAirBenchmark = 0.4f;
+    [SerializeField] private float noStaminaPercent = 0.4f;
 
     private PlayerStatSO statSO;
     public NotifyValue<float> CurrentStamina;
-    public Action<float> OnNoAir;
+    public event Action<float> OnNoAir;
 
     private Dictionary<PlayerMoveType, StaminaValue> staminaDictionary = new();
     private WaitForSeconds waitForSec;
@@ -21,11 +22,7 @@ public class PlayerStamina : MonoBehaviour
         CurrentStamina = new(0);
         CurrentStamina.Value = statSO.MaxStamina;
 
-        float noAirValue = statSO.MaxStamina * noAirBenchmark;
-        CurrentStamina.OnValueChange += (value) =>
-        {
-            if (value < noAirValue) OnNoAir?.Invoke(1 - value / noAirValue);
-        };
+        CurrentStamina.OnValueChange += NoStaminaCheck;
 
         waitForSec = new WaitForSeconds(statSO.FlipCool);
 
@@ -35,9 +32,22 @@ public class PlayerStamina : MonoBehaviour
         }
     }
 
+    public void NoStaminaCheck(float value)
+    {
+        float noStaminaValue = statSO.MaxStamina * noStaminaPercent;
+        
+        if (value <= noStaminaValue)
+        {
+            float currentPercent = 1 - value / noStaminaValue;
+            if (currentPercent < 0.01f) currentPercent = 0;
+            else if (currentPercent > 0.99f) currentPercent = 1;
+
+            OnNoAir?.Invoke(currentPercent);
+        }
+    }
+
     public bool TryMove(PlayerMoveType type)
     {
-        //타입에 따라 스테미나를 사용해 코루틴을 실행하거나 실행하지 않기, 코루틴이 이미 시작되어 있으면 시작되어야 하는 애는 그냥 true 반환하기]\
         if (CurrentStamina.Value == 0) return false;
 
         StaminaValue stamina = staminaDictionary[type];
@@ -68,6 +78,11 @@ public class PlayerStamina : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void SubOnNoAir(Action<float> method)
+    {
+        OnNoAir += method;
     }
 
     public void LostStamina(float damage)

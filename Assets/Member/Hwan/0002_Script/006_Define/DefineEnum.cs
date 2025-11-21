@@ -52,7 +52,10 @@ public enum UIType
     GaugeUI,
     DistanceBarUI,
     TutorialUI,
-    FadeUI
+    FadeUI,
+    SettingUI,
+    ClearUI,
+    GameOverUI
 }
 
 public enum TutorialTarget
@@ -78,5 +81,13 @@ public enum VolumeType
     Normal,
     Hit,
     NoAir,
-    EndOfCam
+    EndOfCam,
+    EndOfClear
+}
+
+public enum AttackReturnType
+{
+    None,
+    Counter,
+    Default
 }

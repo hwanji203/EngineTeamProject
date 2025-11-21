@@ -10,12 +10,15 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 {
     public class Shark : MonoBehaviour, IAgentable
     {
-        [field:SerializeField] public SharkDataSO SharkData { get; private set; }
+        [field:SerializeField] public SharkDataSo SharkData { get; private set; }
         [SerializeField] private Transform target;
         [Header("상어 설정")]
         [SerializeField] private Vector2 attackRange;
+        [SerializeField] private SharkLaserD sharkLaserD;
+        
+        public SharkDasher SharkDasher { get; private set; }
         public SharkMovement SharkMovement { get; private set; }
-        public SharkSkills SharkSkills { get; private set; }
+        public SharkAttacks SharkAttacks { get; private set; }
         private HealthSystem _healthSystem;
 
         [field:SerializeField] public LayerMask LayerMask { get; private set; }
@@ -24,7 +27,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         public float SkillCooltime { get; private set; }
         public float CurrentCooltime { get; private set; }
-        
+        public float CurrentAttackCool {get; private set; }
+
         public bool IsAttack { get; private set; } = false;
         
         public Animator Animator { get; private set; }
@@ -33,10 +37,12 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             SharkMovement = GetComponent<SharkMovement>();
             _healthSystem = GetComponent<HealthSystem>();
-            SharkSkills = GetComponent<SharkSkills>();
+            SharkAttacks = GetComponent<SharkAttacks>();
             Animator = GetComponentInChildren<Animator>();
+            SharkDasher = GetComponentInChildren<SharkDasher>();
                 
             _healthSystem.SetHealth(SharkData.Hp);
+            sharkLaserD.LaserSetting(SharkData.LaserTickDamage, transform.position);
             
             ResetCooltime();
         }
@@ -95,9 +101,19 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             SkillCooltime = Random.Range(SharkData.MinSkillCool, SharkData.MaxSkillCool);
         }
 
-        public void SkillTick()
+        public void ResetAttackCooltime()
+        {
+            CurrentAttackCool = 0;
+        }
+
+        public void SkillCoolPlus(float value)
+        {
+            CurrentCooltime += value;
+        }
+        public void CooltimeTick()
         {
             CurrentCooltime += Time.deltaTime;
+            CurrentAttackCool += Time.deltaTime;
         }
         private void OnDrawGizmos()
         {
@@ -115,6 +131,9 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         }
 
         public bool IsAttaking { get; }
+
+        public bool IsInvincibility { get; private set; }
+
         void IAgentable.CounterDamage(float damage)
         {
             _healthSystem.GetDamage(damage * 1.5f);
@@ -124,5 +143,6 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             _healthSystem.GetDamage(damage);
         }
+        
     }
 }

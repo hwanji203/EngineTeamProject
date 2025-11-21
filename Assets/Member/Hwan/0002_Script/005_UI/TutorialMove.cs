@@ -6,11 +6,17 @@ public class TutorialMove : MonoBehaviour
     [SerializeField] private RectTransform messageRectTrn;
     [SerializeField] private RectTransform sliderRect;
     [SerializeField] private RectTransform stamina;
-    [SerializeField] private Transform player;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private RectTransform _canvasRect;
-    [SerializeField] private Vector2 endPosition;
+    [SerializeField] private Vector2 leftTopEndPosition = new Vector2(530, 445);
+    [SerializeField] private Vector2 rightBottomPosition = new Vector2(300, 200);
     public Transform Enemy { get; set; }
+    private Transform player;
+
+    private void Awake()
+    {
+        player = GameManager.Instance.Player.transform;
+    }
 
     private void Start()
     {
@@ -45,18 +51,27 @@ public class TutorialMove : MonoBehaviour
 
     private void SetRectValue(Vector3 pos, TutorialInfo info)
     {
-        // FadeRect 위치는 그대로
+        // FadeRect는 원래대로
         fadeRectTrn.anchoredPosition = pos + (Vector3)info.FadePosOffset;
         fadeRectTrn.sizeDelta = info.FadeScale;
 
         // MessageRect 위치 계산
         Vector3 messagePos = pos + (Vector3)info.MessagePosOffset;
 
-        // ★ 여기서만 Clamp 적용
-        messagePos.x = Mathf.Clamp(messagePos.x, -endPosition.x, endPosition.x);
-        messagePos.y = Mathf.Clamp(messagePos.y, -endPosition.y, endPosition.y);
+        // Clamp 범위 계산
+        float minX = -leftTopEndPosition.x;
+        float maxX = rightBottomPosition.x;
+
+        float maxY = leftTopEndPosition.y;
+        float minY = -rightBottomPosition.y;
+
+        // Clamp 적용
+        messagePos.x = Mathf.Clamp(messagePos.x, minX, maxX);
+        messagePos.y = Mathf.Clamp(messagePos.y, minY, maxY);
+
         messageRectTrn.anchoredPosition = messagePos;
     }
+
 
     private Vector2 WorldToCanvasPos(Vector3 worldPos)
     {

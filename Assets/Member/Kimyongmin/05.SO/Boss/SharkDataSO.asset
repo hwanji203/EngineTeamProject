@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SharkDataSO
   m_EditorClassIdentifier: 
   <Hp>k__BackingField: 1000
-  <Speed>k__BackingField: 1
-  <NormalAttackDamage>k__BackingField: 10
+  <Speed>k__BackingField: 2
+  <AttackDelay>k__BackingField: 2
+  <NormalAttackDamage>k__BackingField: 15
   <ChargeDamage>k__BackingField: 15
-  <LaserTickDamage>k__BackingField: 2
-  <MinSkillCool>k__BackingField: 999
-  <MaxSkillCool>k__BackingField: 999
+  <LaserTickDamage>k__BackingField: 1
+  <MinSkillCool>k__BackingField: 0.5
+  <MaxSkillCool>k__BackingField: 5

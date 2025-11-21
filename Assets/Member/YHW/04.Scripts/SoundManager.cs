@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+public enum EAudioMixerType { Master, BGM, SFX }
 
 public class SoundManager : MonoSingleton<SoundManager>
 {
@@ -7,7 +9,7 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     public enum BGM
     {
-        
+        test
     }
 
     public enum SFX
@@ -22,8 +24,12 @@ public class SoundManager : MonoSingleton<SoundManager>
     [SerializeField]private AudioSource bgmAS;
     [SerializeField]private AudioSource sfxAS;
 
+    override protected void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(this.gameObject);
+    }
 
-   
 
     public void PlayBgm(BGM bgmidx)
     {
@@ -39,4 +45,8 @@ public class SoundManager : MonoSingleton<SoundManager>
     {
         bgmAS.Stop();   
     }
+
+    
+
+    
 }
