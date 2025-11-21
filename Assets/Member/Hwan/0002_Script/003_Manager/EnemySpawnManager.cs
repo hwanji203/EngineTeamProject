@@ -1,17 +1,84 @@
+using Member.Kimyongmin._02.Code.Enemy.SO;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
+    [SerializeField] private float defaultSpawnCool;
+    [SerializeField] private float errorSpawnCool;
+    [SerializeField] private float spawnOffset;
+
     private StageInfoSO stageInfoSO;
-    private Transform camTrn;
+    private CinemachineCamera cinemachine;
 
     private bool isPlayerOnFightField;
+
+    private Dictionary<EnemyName, GameObject> enemyDicionary = new();
+    private EnemyName[] spawnableEnemies;
 
     private void Awake()
     {
         stageInfoSO = GameManager.Instance.StageSO;
-        camTrn = GameManager.Instance.CinemachineCam.transform;
+        cinemachine = GameManager.Instance.CinemachineCam;
+
+        spawnableEnemies = new EnemyName[stageInfoSO.EnemyList.Length];
+
+        for (int i = 0; i < stageInfoSO.EnemyList.Length; i++)
+        {
+            var enemy = stageInfoSO.EnemyList[i];
+            enemyDicionary[enemy.name] = enemy.enemyPrefab;
+            spawnableEnemies[i] = enemy.name;
+        }
     }
 
+    private void Start()
+    {
+        StartCoroutine(StartSpawn());
+    }
 
+    private IEnumerator StartSpawn()
+    {
+        while (true)
+        {
+            float currentTime = UnityEngine.Random.Range(defaultSpawnCool - errorSpawnCool, defaultSpawnCool + errorSpawnCool);
+
+            while (currentTime > 0)
+            {
+                if (isPlayerOnFightField == true)
+                {
+                    yield return null;
+                    continue;
+                }
+
+                currentTime -= Time.deltaTime;
+                yield return null;
+            }
+
+            SpawnRandomEnemy();
+        }
+    }
+
+    private void SpawnRandomEnemy()
+    {
+        int index = UnityEngine.Random.Range(0, spawnableEnemies.Length);
+        EnemyName selectedEnemy = spawnableEnemies[index];
+
+        Vector2 spawnPos = GetRandomSpawnPosition();
+        Instantiate(enemyDicionary[selectedEnemy], spawnPos, Quaternion.identity, transform);
+    }
+
+    private Vector2 GetRandomSpawnPosition()
+    {
+        int spawnSide = UnityEngine.Random.Range(0, 2);
+        if (spawnSide == 0) spawnSide = -1;
+
+        float spawnXPos = spawnSide * (cinemachine.Lens.Aspect * cinemachine.Lens.OrthographicSize + spawnOffset);
+        float spawnYPos = cinemachine.State.RawPosition.y + UnityEngine.Random.Range(0f, cinemachine.Lens.OrthographicSize);
+
+        return new Vector2(spawnXPos, spawnYPos);
+    }
 }

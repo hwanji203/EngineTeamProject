@@ -97,6 +97,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Damaged(Vector2 enemyPos)
     {
+        if (isStaminaZero == true) return;
+
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(((Vector2)transform.position - enemyPos), ForceMode2D.Impulse);
         StartCoroutine(StunCoroutine(movementSO.StunTime));
