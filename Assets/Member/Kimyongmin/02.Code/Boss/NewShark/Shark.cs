@@ -15,6 +15,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         [Header("상어 설정")]
         [SerializeField] private Vector2 attackRange;
         [SerializeField] private SharkLaserD sharkLaserD;
+        
+        public SharkDasher SharkDasher { get; private set; }
         public SharkMovement SharkMovement { get; private set; }
         public SharkAttacks SharkAttacks { get; private set; }
         private HealthSystem _healthSystem;
@@ -37,6 +39,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             _healthSystem = GetComponent<HealthSystem>();
             SharkAttacks = GetComponent<SharkAttacks>();
             Animator = GetComponentInChildren<Animator>();
+            SharkDasher = GetComponentInChildren<SharkDasher>();
                 
             _healthSystem.SetHealth(SharkData.Hp);
             sharkLaserD.LaserSetting(SharkData.LaserTickDamage, transform.position);

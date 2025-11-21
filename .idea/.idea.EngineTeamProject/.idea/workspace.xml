@@ -8,17 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkLaser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkLaser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkSkills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkAttacks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkSkills.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkAttacks.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkBiteSkillState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkBiteSkillState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkLaserSkillState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkLaserSkillState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/SO/SharkDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/SO/SharkDataSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Visual.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Visual.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +235,7 @@
       <workItem from="1763556363570" duration="624000" />
       <workItem from="1763599497338" duration="2329000" />
       <workItem from="1763648547780" duration="4811000" />
-      <workItem from="1763682231917" duration="4664000" />
+      <workItem from="1763682231917" duration="5562000" />
     </task>
     <servers />
   </component>
