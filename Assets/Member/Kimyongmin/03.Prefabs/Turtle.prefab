@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6095614382014592602}
   - component: {fileID: 8248262902979086954}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1261383766792276980}
   - component: {fileID: 1966250871230351308}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8522668884425720842}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxParent
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 1875204415448443700}
   - component: {fileID: 4476034533896151888}
   - component: {fileID: 2444820779856246089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,6 +459,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 6534170236908996508}
     m_Modifications:
     - target: {fileID: 3079570437871356487, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3079570437871356487, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -515,12 +519,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5553926421590699018, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553926421590699018, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6973282780006548037, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
       propertyPath: m_Name
       value: DashEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973282780006548037, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6973282780006548037, guid: d211b1b415b4a9545a53e211e0226e49, type: 3}
       propertyPath: m_IsActive

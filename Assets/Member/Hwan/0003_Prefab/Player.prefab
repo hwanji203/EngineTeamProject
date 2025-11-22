@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 2689647187483368514}
   m_Layer: 6
   m_Name: Visual
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -578,6 +578,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192551a7dfb72414d8ffc2cf03fd3c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nearGroundYValuePercent: 0.2
+  outOfCamYValuePercent: 0.2
   startClearYOffset: 0.5
-  camTrn: {fileID: 0}

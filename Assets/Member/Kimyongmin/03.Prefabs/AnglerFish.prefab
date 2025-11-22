@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7024622309153111133}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxParent
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 803395341203505548}
   - component: {fileID: 5683806649770279833}
   - component: {fileID: 1282722620748884281}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2130411732287685077}
   - component: {fileID: 3778253483327635042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1003139399863647453}
   - component: {fileID: 732690607868474834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxPivot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 7610478250844507613}
   - component: {fileID: 6373376255467655530}
   - component: {fileID: 5249132143125202876}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BiteEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}

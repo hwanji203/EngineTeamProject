@@ -931,7 +931,6 @@ MonoBehaviour:
   messageRectTrn: {fileID: 5436906890400571309}
   sliderRect: {fileID: 8421984654428459394}
   stamina: {fileID: 3796241091594324166}
-  player: {fileID: 0}
   _canvas: {fileID: 4026531177672851847}
   _canvasRect: {fileID: 4774500425106999731}
   leftTopEndPosition: {x: 530, y: 445}
