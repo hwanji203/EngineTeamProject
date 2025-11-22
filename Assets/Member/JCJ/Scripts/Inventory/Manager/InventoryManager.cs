@@ -9,15 +9,18 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject draggableItemPrefab;
     [SerializeField] private Transform inventoryParent;
     
-    private List<SkinItemSO> ownedSkins = new List<SkinItemSO>();
+    [Header("All Skins Database")]
+    [SerializeField] private SkinSO[] allSkins;
     
-    private Dictionary<SkinItemSO, GameObject> skinUIObjects = new Dictionary<SkinItemSO, GameObject>();
+    private List<SkinSO> ownedSkins = new List<SkinSO>();
+    private Dictionary<SkinSO, GameObject> skinUIObjects = new Dictionary<SkinSO, GameObject>();
     
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -25,17 +28,29 @@ public class InventoryManager : MonoBehaviour
         }
     }
     
-    public void AddSkin(SkinItemSO skin)
+    private void Start()
+    {
+        LoadOwnedSkins();
+        CreateAllSkinUI();
+    }
+    
+    public void AddSkin(SkinSO skin)
     {
         if (!ownedSkins.Contains(skin))
         {
             ownedSkins.Add(skin);
             CreateSkinUI(skin);
+            SaveOwnedSkins();
         }
     }
     
-    private void CreateSkinUI(SkinItemSO skin)
+    private void CreateSkinUI(SkinSO skin)
     {
+        if (skinUIObjects.ContainsKey(skin))
+        {
+            return;
+        }
+        
         GameObject obj = Instantiate(draggableItemPrefab, inventoryParent);
         var draggable = obj.GetComponent<DraggableSkinItem>();
         if (draggable != null)
@@ -46,7 +61,15 @@ public class InventoryManager : MonoBehaviour
         skinUIObjects[skin] = obj;
     }
     
-    public void HideSkin(SkinItemSO skin)
+    private void CreateAllSkinUI()
+    {
+        foreach (var skin in ownedSkins)
+        {
+            CreateSkinUI(skin);
+        }
+    }
+    
+    public void HideSkin(SkinSO skin)
     {
         if (skinUIObjects.ContainsKey(skin))
         {
@@ -65,9 +88,8 @@ public class InventoryManager : MonoBehaviour
             obj.SetActive(false);
         }
     }
-
     
-    public void ShowSkin(SkinItemSO skin)
+    public void ShowSkin(SkinSO skin)
     {
         if (skinUIObjects.ContainsKey(skin))
         {
@@ -83,10 +105,56 @@ public class InventoryManager : MonoBehaviour
             obj.SetActive(true);
         }
     }
-
     
-    public bool HasSkin(SkinItemSO skin)
+    public bool HasSkin(SkinSO skin)
     {
         return ownedSkins.Contains(skin);
+    }
+    
+    // ===== PlayerPrefs 저장/불러오기 =====
+    
+    private void SaveOwnedSkins()
+    {
+        PlayerPrefs.SetInt("OwnedSkinsCount", ownedSkins.Count);
+        
+        for (int i = 0; i < ownedSkins.Count; i++)
+        {
+            PlayerPrefs.SetInt($"OwnedSkin_{i}", ownedSkins[i].SkinID);
+        }
+        
+        PlayerPrefs.Save();
+    }
+    
+    private void LoadOwnedSkins()
+    {
+        ownedSkins.Clear();
+        
+        int count = PlayerPrefs.GetInt("OwnedSkinsCount", 0);
+        
+        for (int i = 0; i < count; i++)
+        {
+            if (PlayerPrefs.HasKey($"OwnedSkin_{i}"))
+            {
+                int skinID = PlayerPrefs.GetInt($"OwnedSkin_{i}");
+                SkinSO skin = FindSkinByID(skinID);
+                
+                if (skin != null && !ownedSkins.Contains(skin))
+                {
+                    ownedSkins.Add(skin);
+                }
+            }
+        }
+    }
+    
+    private SkinSO FindSkinByID(int skinID)
+    {
+        foreach (var skin in allSkins)
+        {
+            if (skin != null && skin.SkinID == skinID)
+            {
+                return skin;
+            }
+        }
+        return null;
     }
 }

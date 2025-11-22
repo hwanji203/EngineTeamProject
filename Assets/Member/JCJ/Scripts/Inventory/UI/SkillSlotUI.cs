@@ -5,10 +5,9 @@ using UnityEngine.EventSystems;
 public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
 {
     [Header("슬롯 설정")]
-    [SerializeField] private int slotIndex;
-    [SerializeField] private SkinBodyPart requiredBodyPart;
+    [SerializeField] private int slotIndex = 0;
+    [SerializeField] private SkinBodyPart requiredBodyPart = SkinBodyPart.Head;
     [SerializeField] private Image iconImage;
-    [SerializeField] private Image backgroundImage;
     [SerializeField] private Button removeButton;
     
     [Header("빈 슬롯 설정")]
@@ -43,7 +42,7 @@ public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
     
     private void RemoveSkin()
     {
-        SkinItemSO currentSkin = skinManager.GetEquippedSkin(slotIndex);
+        SkinSO currentSkin = skinManager.GetEquippedSkin(slotIndex);
         
         if (currentSkin != null)
         {
@@ -53,12 +52,6 @@ public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
     
     public void OnDrop(PointerEventData eventData)
     {
-        SkinSlotUI sourceSlot = eventData.pointerDrag?.GetComponent<SkinSlotUI>();
-        if (sourceSlot != null)
-        {
-            HandleSlotToSlotDrop(sourceSlot);
-            return;
-        }
         DraggableSkinItem draggedItem = eventData.pointerDrag?.GetComponent<DraggableSkinItem>();
         if (draggedItem != null && draggedItem.SkinData != null)
         {
@@ -67,48 +60,17 @@ public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         }
     }
     
-    private void HandleSlotToSlotDrop(SkinSlotUI sourceSlot)
-    {
-        int fromSlot = sourceSlot.slotIndex;
-        int toSlot = slotIndex;
-        
-        if (fromSlot == toSlot)
-        {
-            return;
-        }
-        
-        SkinItemSO fromSkin = skinManager.GetEquippedSkin(fromSlot);
-        SkinItemSO toSkin = skinManager.GetEquippedSkin(toSlot);
-        
-        if (toSkin == null)
-        {
-            skinManager.EquipSkin(toSlot, fromSkin);
-            skinManager.EquipSkin(fromSlot, null);
-            return;
-        }
-        
-        skinManager.SwapSkins(fromSlot, toSlot);
-    }
-    
-    private void HandleInventoryToDrop(SkinItemSO skin)
+    private void HandleInventoryToDrop(SkinSO skin)
     {
         if (skin.BodyPart != requiredBodyPart)
         {
             return;
         }
         
-        SkinItemSO currentSkin = skinManager.GetEquippedSkin(slotIndex);
-        
-        if (currentSkin == null)
-        {
-            skinManager.EquipSkin(slotIndex, skin);
-            return;
-        }
-        
         skinManager.EquipSkin(slotIndex, skin);
     }
     
-    private void OnSkinChanged(int changedSlot, SkinItemSO newSkin)
+    private void OnSkinChanged(int changedSlot, SkinSO newSkin)
     {
         if (changedSlot == slotIndex)
         {
@@ -118,11 +80,11 @@ public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
     
     private void UpdateUI()
     {
-        SkinItemSO currentSkin = skinManager.GetEquippedSkin(slotIndex);
+        SkinSO currentSkin = skinManager.GetEquippedSkin(slotIndex);
     
         if (currentSkin != null)
         {
-            iconImage.sprite = currentSkin.ItemIcon;
+            iconImage.sprite = currentSkin.SkinIcon;
         }
         else
         {
@@ -138,4 +100,3 @@ public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         }
     }
 }
- 

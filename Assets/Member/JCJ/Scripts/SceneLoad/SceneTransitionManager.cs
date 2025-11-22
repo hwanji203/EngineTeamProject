@@ -13,9 +13,6 @@ public class SceneTransitionManager : MonoBehaviour
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private float fadeDuration = 0.5f;
     
-    [Header("Loading Settings")]
-    [SerializeField] private TextMeshProUGUI loadingText;
-    
     private void Awake()
     {
         if (Instance == null)
@@ -52,39 +49,15 @@ public class SceneTransitionManager : MonoBehaviour
             .SetEase(Ease.InOutQuad)
             .WaitForCompletion();
         
-        if (loadingText != null)
-        {
-            loadingText.gameObject.SetActive(true);
-        }
-        
         // 비동기 씬 로드
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         operation.allowSceneActivation = false;
-        
-        // 로딩 진행률 표시
-        while (operation.progress < 0.9f)
-        {
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            
-            if (loadingText != null)
-            {
-                loadingText.text = $"Loading... {(progress * 100):F0}%";
-            }
-            
-            yield return null;
-        }
         
         // 씬 활성화
         operation.allowSceneActivation = true;
         
         // 씬이 완전히 로드될 때까지 대기
         yield return new WaitUntil(() => operation.isDone);
-        
-        // 로딩바 숨기기
-        if (loadingText != null)
-        {
-            loadingText.gameObject.SetActive(false);
-        }
         
         // Fade In
         yield return fadeCanvasGroup.DOFade(0f, fadeDuration)

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941f8b5cea4255042a6b3f419554e626, type: 3}
   m_Name: Skin_
   m_EditorClassIdentifier: 
+  skinID: 1001
   skinName: "\uBE68\uAC04\uBAA8\uC790"
   skinIcon: {fileID: 4630197722770085722, guid: d94d638f2c9b4a5498407a8417322c3f, type: 3}
   skinSprite: {fileID: 4630197722770085722, guid: d94d638f2c9b4a5498407a8417322c3f, type: 3}
