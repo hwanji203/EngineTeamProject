@@ -11,7 +11,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
-            Debug.Log("돌진");
+            Shark.ChargeBool(true);
         }
 
         public override void UpdateState()
@@ -22,6 +22,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void ExitState()
         {
             base.ExitState();
+            Shark.ChargeBool(false);
         }
     }
 }
