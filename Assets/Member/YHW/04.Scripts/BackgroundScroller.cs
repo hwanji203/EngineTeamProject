@@ -1,53 +1,63 @@
 using UnityEngine;
 
-public class BackgroundTextureScroller : MonoBehaviour
+public class BackgroundScroller : MonoBehaviour
 {
-    [Tooltip("스크롤 속도 (x, y)")]
-    public Vector2 scrollSpeed = new Vector2(0.1f, 0f); // X축으로 초당 0.1씩 이동
+    [Tooltip("추적할 메인 카메라 (자동으로 찾지만, 수동 할당 권장)")]
+    public Camera mainCamera;
 
-    // 스크롤할 머티리얼 (Inspector에서 할당해도 되고, Start에서 찾아도 됨)
-    public Material scrollMaterial;
+    [Tooltip("시차 스크롤 속도 (0.1 = 배경이 10% 속도로 느리게 움직여서 멀어 보임)")]
+    public float scrollSpeedX = 0.1f;
 
-    // 쉐이더 프로퍼티 ID (성능을 위해 캐시)
+    [Tooltip("Y축 스크롤 속도 (좌우로만 움직이면 0)")]
+    public float scrollSpeedY = 0f; // Y축은 필요 없으면 0으로 둡니다.
+
+    // 쉐이더에 값을 전달할 머티리얼
+    private Material backgroundMaterial;
+
+    // 쉐이더 프로퍼티 ID (성능 향상)
     private int offsetPropertyID;
-
-    // 현재 누적된 오프셋 값
-    private Vector2 currentOffset = Vector2.zero;
 
     void Start()
     {
-        // 만약 Inspector에서 머티리얼을 할당하지 않았다면,
-        // 이 오브젝트의 렌더러에서 머티리얼을 직접 가져옵니다.
-        if (scrollMaterial == null)
+        // 카메라를 자동으로 찾기
+        if (mainCamera == null)
         {
-            Renderer renderer = GetComponent<Renderer>();
-            if (renderer != null)
-            {
-                // material을 사용해야 이 오브젝트만의 머티리얼 인스턴스가 생성됩니다.
-                scrollMaterial = renderer.material;
-            }
+            mainCamera = Camera.main;
         }
 
-        if (scrollMaterial != null)
+        // 이 오브젝트의 렌더러에서 머티리얼 인스턴스를 가져옵니다.
+        Renderer renderer = GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            backgroundMaterial = renderer.material; // .material을 써야 인스턴스가 복제됩니다.
+        }
+
+        if (backgroundMaterial != null)
         {
             // 쉐이더 그래프에서 만든 프로퍼티 이름("_Offset")으로 ID를 찾습니다.
             offsetPropertyID = Shader.PropertyToID("_Offset");
         }
         else
         {
-            Debug.LogError("스크롤할 머티리얼이 없습니다!", this);
-            this.enabled = false; // 스크립트 비활성화
+            Debug.LogError("배경 머티리얼을 찾을 수 없습니다!", this);
+            enabled = false;
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
-        // 매 프레임마다 속도와 시간에 맞춰 오프셋 값을 누적시킵니다.
-        // Time.deltaTime을 곱해줘서 프레임 속도와 관계없이 일정하게 움직입니다.
-        currentOffset += scrollSpeed * Time.deltaTime;
+        if (backgroundMaterial == null || mainCamera == null) return;
 
-        // 쉐이더의 "_Offset" 프로퍼티에 계산된 값을 전달합니다.
-        // Frac 노드가 1.0이 넘는 값을 알아서 0~1 사이로 "래핑"해줍니다.
-        scrollMaterial.SetVector(offsetPropertyID, currentOffset);
+        // --- 1. 쉐이더 오프셋 계산 (원래 하던 일) ---
+        float cameraPosX = mainCamera.transform.position.x;
+        float cameraPosY = mainCamera.transform.position.y;
+        Vector2 offset = new Vector2(cameraPosX * scrollSpeedX, cameraPosY * scrollSpeedY);
+        backgroundMaterial.SetVector(offsetPropertyID, offset);
+
+        // --- 2. Quad 오브젝트 위치를 카메라에 고정 (추가된 부분) ---
+        // 이 스크립트가 붙은 Quad의 위치를 카메라의 XY 위치와 강제로 동기화시킵니다.
+        // Z 값은 Quad가 원래 있던 Z값(예: 10)을 유지합니다.
+        float quadZ = transform.position.z;
+        transform.position = new Vector3(cameraPosX, cameraPosY, quadZ);
     }
 }
