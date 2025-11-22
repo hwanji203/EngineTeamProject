@@ -27,5 +27,16 @@ public class Testor : MonoBehaviour
         {
             UIManager.Instance.OpenUI(UIType.ClearUI);
         }
+
+        if(Keyboard.current.aKey.isPressed)
+        {
+            transform.position += Vector3.left * 5 * Time.deltaTime;
+        }
+        if(Keyboard.current.dKey.isPressed)
+        {
+            transform.position += Vector3.right * 5 * Time.deltaTime;
+
+        }
+
     }
 }
