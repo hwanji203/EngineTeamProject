@@ -5,20 +5,21 @@ public class SkinManager : MonoBehaviour
 {
     public static SkinManager Instance { get; private set; }
     
-    private const int slotCount = 3;
-    private SkinItemSO[] equippedSkins = new SkinItemSO[slotCount];
+    private const int slotCount = 1;
+    private SkinSO[] equippedSkins = new SkinSO[slotCount];
     
-    public event Action<int, SkinItemSO> OnSkinChanged;
+    public event Action<int, SkinSO> OnSkinChanged;
     
-    [Header("Character Sprite Renderers")]
+    [Header("Character Sprite Renderer")]
     [SerializeField] private SpriteRenderer headRenderer;
-    [SerializeField] private SpriteRenderer bodyRenderer;
-    [SerializeField] private SpriteRenderer weaponRenderer;
     
-    [Header("Default Sprites")]
+    [Header("Default Sprite")]
     [SerializeField] private Sprite defaultHeadSprite;
-    [SerializeField] private Sprite defaultBodySprite;
-    [SerializeField] private Sprite defaultWeaponSprite;
+    
+    [Header("All Skins Database")]
+    [SerializeField] private SkinSO[] allSkins;
+    
+    private bool isInitialized = false;
     
     private void Awake()
     {
@@ -26,19 +27,71 @@ public class SkinManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            Debug.Log("SkinManager 인스턴스 생성 및 DontDestroyOnLoad 적용");
         }
-        else
+        else if (Instance != this)
         {
+            Debug.Log("SkinManager 중복 인스턴스 제거");
             Destroy(gameObject);
+            return;
         }
     }
     
     private void Start()
     {
-        ResetToDefaultSkins();
+        if (!isInitialized)
+        {
+            LoadEquippedSkins();
+            ApplyAllSkins();
+            isInitialized = true;
+            Debug.Log("SkinManager 초기화 완료");
+        }
     }
     
-    public void EquipSkin(int slotIndex, SkinItemSO skin)
+    private void OnEnable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    private void OnDisable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        Debug.Log($"씬 로드됨: {scene.name}");
+        
+        if (headRenderer == null)
+        {
+            FindRenderersInScene();
+        }
+        
+        ApplyAllSkins();
+    }
+    
+    private void FindRenderersInScene()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        if (player != null)
+        {
+            Transform[] children = player.GetComponentsInChildren<Transform>();
+            
+            foreach (Transform child in children)
+            {
+                if (child.name.Contains("Head") && headRenderer == null)
+                {
+                    headRenderer = child.GetComponent<SpriteRenderer>();
+                    break;
+                }
+            }
+            
+            Debug.Log($"렌더러 재연결: Head={headRenderer != null}");
+        }
+    }
+    
+    public void EquipSkin(int slotIndex, SkinSO skin)
     {
         if (!IsValidSlotIndex(slotIndex))
         {
@@ -57,7 +110,7 @@ public class SkinManager : MonoBehaviour
         
         if (skin != null)
         {
-            int existingSlot = FindSkinSlot(skin.ItemID);
+            int existingSlot = FindSkinSlot(skin.SkinID);
             
             if (existingSlot != -1 && existingSlot != slotIndex)
             {
@@ -75,56 +128,36 @@ public class SkinManager : MonoBehaviour
         }
         
         OnSkinChanged?.Invoke(slotIndex, skin);
+        
+        SaveEquippedSkins();
     }
     
-    private void ApplySkinToCharacter(int slotIndex, SkinItemSO skin)
+    private void ApplySkinToCharacter(int slotIndex, SkinSO skin)
     {
         Sprite spriteToApply = null;
         
         if (skin != null)
         {
-            spriteToApply = skin.ItemSprite;
+            spriteToApply = skin.SkinSprite;
         }
         else
         {
-            spriteToApply = GetDefaultSprite(slotIndex);
+            spriteToApply = defaultHeadSprite;
         }
         
-        switch (slotIndex)
+        if (headRenderer != null)
         {
-            case 0: // Head
-                if (headRenderer != null)
-                    headRenderer.sprite = spriteToApply;
-                break;
-            case 1: // Body
-                if (bodyRenderer != null)
-                    bodyRenderer.sprite = spriteToApply;
-                break;
-            case 2: // Weapon
-                if (weaponRenderer != null)
-                    weaponRenderer.sprite = spriteToApply;
-                break;
+            headRenderer.sprite = spriteToApply;
         }
     }
     
-    public void SwapSkins(int fromSlot, int toSlot)
+    private void ApplyAllSkins()
     {
-        if (!IsValidSlotIndex(fromSlot) || !IsValidSlotIndex(toSlot))
+        Debug.Log("모든 스킨 적용 중...");
+        for (int i = 0; i < slotCount; i++)
         {
-            return;
+            ApplySkinToCharacter(i, equippedSkins[i]);
         }
-        
-        SkinItemSO temp = equippedSkins[fromSlot];
-        equippedSkins[fromSlot] = equippedSkins[toSlot];
-        equippedSkins[toSlot] = temp;
-        
-        ApplySkinToCharacter(fromSlot, equippedSkins[fromSlot]);
-        ApplySkinToCharacter(toSlot, equippedSkins[toSlot]);
-        
-        Debug.Log($"스킨 교환: 슬롯 {fromSlot} ↔ 슬롯 {toSlot}");
-        
-        OnSkinChanged?.Invoke(fromSlot, equippedSkins[fromSlot]);
-        OnSkinChanged?.Invoke(toSlot, equippedSkins[toSlot]);
     }
     
     public void UnequipSkin(int slotIndex)
@@ -136,7 +169,7 @@ public class SkinManager : MonoBehaviour
     {
         for (int i = 0; i < slotCount; i++)
         {
-            if (equippedSkins[i] != null && equippedSkins[i].ItemID == skinID)
+            if (equippedSkins[i] != null && equippedSkins[i].SkinID == skinID)
             {
                 return i;
             }
@@ -144,39 +177,71 @@ public class SkinManager : MonoBehaviour
         return -1;
     }
     
-    private void ResetToDefaultSkins()
-    {
-        if (headRenderer != null)
-            headRenderer.sprite = defaultHeadSprite;
-        if (bodyRenderer != null)
-            bodyRenderer.sprite = defaultBodySprite;
-        if (weaponRenderer != null)
-            weaponRenderer.sprite = defaultWeaponSprite;
-    }
-    
-    private Sprite GetDefaultSprite(int slotIndex)
-    {
-        return slotIndex switch
-        {
-            0 => defaultHeadSprite,
-            1 => defaultBodySprite,
-            2 => defaultWeaponSprite,
-            _ => null
-        };
-    }
-    
-    public SkinItemSO GetEquippedSkin(int slotIndex)
+    public SkinSO GetEquippedSkin(int slotIndex)
     {
         return IsValidSlotIndex(slotIndex) ? equippedSkins[slotIndex] : null;
     }
     
-    public SkinItemSO[] GetAllEquippedSkins()
+    public SkinSO[] GetAllEquippedSkins()
     {
-        return (SkinItemSO[])equippedSkins.Clone();
+        return (SkinSO[])equippedSkins.Clone();
     }
     
     private bool IsValidSlotIndex(int index)
     {
         return index >= 0 && index < slotCount;
+    }
+    
+    private void SaveEquippedSkins()
+    {
+        for (int i = 0; i < slotCount; i++)
+        {
+            if (equippedSkins[i] != null)
+            {
+                PlayerPrefs.SetInt($"EquippedSkin_{i}", equippedSkins[i].SkinID);
+                Debug.Log($"스킨 저장: 슬롯 {i} = ID {equippedSkins[i].SkinID}");
+            }
+            else
+            {
+                PlayerPrefs.DeleteKey($"EquippedSkin_{i}");
+                Debug.Log($"스킨 제거: 슬롯 {i}");
+            }
+        }
+        PlayerPrefs.Save();
+    }
+    
+    private void LoadEquippedSkins()
+    {
+        Debug.Log("장착된 스킨 불러오기 시작");
+        for (int i = 0; i < slotCount; i++)
+        {
+            if (PlayerPrefs.HasKey($"EquippedSkin_{i}"))
+            {
+                int skinID = PlayerPrefs.GetInt($"EquippedSkin_{i}");
+                SkinSO skin = FindSkinByID(skinID);
+                
+                if (skin != null)
+                {
+                    equippedSkins[i] = skin;
+                    Debug.Log($"스킨 불러오기: 슬롯 {i} = {skin.SkinName} (ID {skinID})");
+                }
+                else
+                {
+                    Debug.LogWarning($"스킨 ID {skinID}를 찾을 수 없음");
+                }
+            }
+        }
+    }
+    
+    private SkinSO FindSkinByID(int skinID)
+    {
+        foreach (var skin in allSkins)
+        {
+            if (skin != null && skin.SkinID == skinID)
+            {
+                return skin;
+            }
+        }
+        return null;
     }
 }

@@ -43,15 +43,15 @@ public class SlidingUI : MonoBehaviour
         currentText.fontSize = 72;
         if (mapText != currentText)
         {
-            mapText.fontSize = 32;
+            mapText.fontSize = 48;
         }
         if (inventoryText != currentText)
         {
-            inventoryText.fontSize = 32;
+            inventoryText.fontSize = 48;
         }
         if (shopText != currentText)
         {
-            shopText.fontSize = 32;
+            shopText.fontSize = 48;
         }
     }
 }

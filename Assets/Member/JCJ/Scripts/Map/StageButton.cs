@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class StageButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
+public class StageButton : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private int stageLevel; // 현재 버튼에 해당 하는 레벨
@@ -12,19 +12,11 @@ public class StageButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
     [Header("Icons")]
     [SerializeField] private Button button;
     [SerializeField] private TextMeshProUGUI levelText;
-    // [SerializeField] private GameObject lockIcon; // 잠금 외형
-    // [SerializeField] private GameObject clearIcon; // 클리어 외형
     
     [Header("Visual")]
     [SerializeField] private Color lockedColor = Color.gray;
     [SerializeField] private Color unlockedColor = Color.white;
     [SerializeField] private Color clearedColor = Color.yellow;
-    
-    [SerializeField] private StageSO stageSO;
-    [SerializeField] private GameObject stageDescriptionPanel;
-    [SerializeField] private Image stageDescriptionImage;
-    [SerializeField] private TextMeshProUGUI stageNameText;
-    [SerializeField] private TextMeshProUGUI descriptionText;
     
     private Image buttonImage;
     
@@ -33,9 +25,6 @@ public class StageButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         buttonImage = GetComponent<Image>();
         button.onClick.AddListener(OnClick);
         UpdateVisual();
-        stageDescriptionImage.sprite = stageSO.stageSprite;
-        stageNameText.text = stageSO.stageName;
-        descriptionText.text = stageSO.stageDescription;
     }
     
     void OnEnable()
@@ -106,17 +95,5 @@ public class StageButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         {
             UpdateVisual();
         }
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        stageDescriptionPanel.SetActive(true);
-        
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        stageDescriptionPanel.SetActive(false);
-        
     }
 }

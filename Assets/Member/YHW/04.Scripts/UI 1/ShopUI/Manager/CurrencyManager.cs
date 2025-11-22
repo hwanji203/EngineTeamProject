@@ -4,14 +4,21 @@ using System;
 public class CurrencyManager : MonoSingleton<CurrencyManager>
 {
 
-    private int gold = 500;
+    private int gold;
     public int Gold => gold;
 
     public event Action<int> OnGoldChanged;
 
-    private void Start()
+    private bool isLoaded = false;
+
+    protected override void Awake()
     {
-        PlayerPrefs.SetInt("Gold", gold);
+        base.Awake();
+        if (Instance == this && !isLoaded)
+        {
+            LoadGold();
+            isLoaded = true;
+        }
     }
 
     public bool SpendGold(int amount)
@@ -20,12 +27,25 @@ public class CurrencyManager : MonoSingleton<CurrencyManager>
 
         gold -= amount;
         OnGoldChanged?.Invoke(gold);
+        SaveGold();
         return true;
     }
 
     public void AddGold(int amount)
     {
         gold += amount;
+        OnGoldChanged?.Invoke(gold);
+        SaveGold();
+    }
+    private void SaveGold()
+    {
+        PlayerPrefs.SetInt("Gold", gold);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadGold()
+    {
+        gold = PlayerPrefs.GetInt("Gold",500);
         OnGoldChanged?.Invoke(gold);
     }
 }
