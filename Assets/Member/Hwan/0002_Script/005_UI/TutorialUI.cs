@@ -55,6 +55,7 @@ public class TutorialUI : MonoBehaviour, IUI
                 break;
             case 4:
                 inputSO.LookInput(InputType.Dash, true);
+                SaveManager.Instance.SaveValue("Tutorial", 1);
                 break;
         }
     }

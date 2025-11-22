@@ -28,23 +28,11 @@ public class ComboSystem : MonoSingleton<ComboSystem>
         GameManager.Instance.Player.AttackCompo.OnAttack += DoCombo;
     }
 
-    private void Update()
-    {
-        if (Keyboard.current.yKey.wasPressedThisFrame)
-        {
-            DoCombo(true);
-        }
-        if (Keyboard.current.cKey.wasPressedThisFrame)
-        {
-            //Counter();
-        }
-    }
-
     public void DoCombo(bool isCounter)
     {
         if (currentComboObj == null)
         {
-            currentComboObj = Instantiate(comboPrefab, spawnParent);
+            currentComboObj = Instantiate(comboPrefab, spawnParent.position, Quaternion.identity, spawnParent);
             originalScale = currentComboObj.transform.localScale;
             comboRectTransform = currentComboObj.GetComponentInChildren<RectTransform>();
             comboImage = currentComboObj.GetComponentInChildren<Image>();
@@ -68,7 +56,7 @@ public class ComboSystem : MonoSingleton<ComboSystem>
 
         if (comboCoroutine != null)
             StopCoroutine(comboCoroutine);
-        comboCoroutine = TimeManager.Instance.StartUICoroutine(FillRoutine());
+        comboCoroutine = StartCoroutine(FillRoutine());
 
         if (isCounter)
         {
@@ -88,7 +76,7 @@ public class ComboSystem : MonoSingleton<ComboSystem>
 
         while (timer < comboDuration)
         {
-            timer += Time.deltaTime;
+            timer += Time.unscaledDeltaTime;
             comboImage.fillAmount = 1f - (timer / comboDuration);
             yield return null;
         }

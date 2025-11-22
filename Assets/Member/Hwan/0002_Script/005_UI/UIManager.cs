@@ -48,4 +48,14 @@ public class UIManager : MonoSingleton<UIManager>
             ui.Close();
         }
     }
+
+    public void CloseAllUI(UIType type)
+    {
+        foreach (IUI ui in uiDictionary.Values)
+        {
+            Time.timeScale = 0;
+            ui.Close();
+        }
+        uiDictionary[type].Open();
+    }
 }

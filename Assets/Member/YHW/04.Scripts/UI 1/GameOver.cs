@@ -41,7 +41,6 @@ public class GameOver : MonoBehaviour, IUI
         Time.timeScale = 0f;
         UIObject.SetActive(true);
         fadePanel.DOFade(0.5f, 1f).UI();
-
     }
 
    

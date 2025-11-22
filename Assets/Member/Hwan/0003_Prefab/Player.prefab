@@ -579,4 +579,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outOfCamYValuePercent: 0.2
+  outOfCamOffset: 2
   startClearYOffset: 0.5

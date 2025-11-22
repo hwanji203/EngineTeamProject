@@ -5,11 +5,15 @@ public class TutorialManager : MonoSingleton<TutorialManager>
 {
     [field: SerializeField] public bool DoTuto { get; private set; }
     [SerializeField] private TutorialEnemy tutorialEnemy;
+    [SerializeField] private bool inGame;
 
     private void Start()
     {
-        if (DoTuto) SaveManager.Instance.SaveValue("Tutorial", 0);
-        else SaveManager.Instance.SaveValue("Tutorial", 1);
+        if (inGame == false)
+        {
+            if (DoTuto) SaveManager.Instance.SaveValue("Tutorial", 0);
+            else SaveManager.Instance.SaveValue("Tutorial", 1);
+        }
 
         if (PlayerPrefs.GetInt("Tutorial", 0) == 0)
         {

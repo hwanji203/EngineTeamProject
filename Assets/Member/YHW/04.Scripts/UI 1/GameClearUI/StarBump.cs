@@ -10,11 +10,11 @@ public class StarBump : MonoBehaviour
 
     private void OnEnable()
     {
-        TimeManager.Instance.StartUICoroutine(Bump());
+        StartCoroutine(Bump());
     }
     private IEnumerator Bump()
     {
-        yield return new WaitForSeconds(delayDuration);
+        yield return new WaitForSecondsRealtime(delayDuration);
 
         Sequence mySequence = DOTween.Sequence();
 

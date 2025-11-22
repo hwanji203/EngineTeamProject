@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
   priority: 0
-  blendDistance: 0
+  blendDistance: 16.9
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 8d56b194869c521458a96bf1c03947b1, type: 2}
 --- !u!114 &9222949857423591986
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3d791a1baebcf4e8006f3d734c333a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnCool: 1000
+  defaultSpawnCool: 8
   errorSpawnCool: 1
   spawnOffset: 1
 --- !u!1 &5317108150255212542
@@ -519,7 +519,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c755da5389ec45d45ad342c29e0f96b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakePower: 0.1
+  shakePower: 0.05
+  isBossStage: 0
+  defaultShakeDuration: 0.2
+  cameraRoot: {fileID: 0}
 --- !u!114 &6761930849506449915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,8 +892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634a7086fae46c2478140a096f765283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DoTuto>k__BackingField: 0
+  <DoTuto>k__BackingField: 1
   tutorialEnemy: {fileID: 6802907738643528409, guid: c173cb78e9696d2429224482ad528cd4, type: 3}
+  inGame: 0
 --- !u!1001 &509392682818208472
 PrefabInstance:
   m_ObjectHideFlags: 0

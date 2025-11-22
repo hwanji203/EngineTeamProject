@@ -95,12 +95,12 @@ public class PlayerMovement : MonoBehaviour
         isStaminaZero = value == 0;
     }
 
-    public void Damaged(Vector2 enemyPos)
+    public void Damaged(Vector2 enemyReDir)
     {
         if (isStaminaZero == true) return;
 
         rb.linearVelocity = Vector2.zero;
-        rb.AddForce(((Vector2)transform.position - enemyPos), ForceMode2D.Impulse);
+        rb.AddForce(enemyReDir, ForceMode2D.Impulse);
         StartCoroutine(StunCoroutine(movementSO.StunTime));
     }
 

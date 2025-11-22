@@ -20,7 +20,7 @@ public class EnemySpawnManager : MonoSingleton<EnemySpawnManager>
     private Dictionary<EnemyName, GameObject> enemyDicionary = new();
     private EnemyName[] spawnableEnemies;
 
-    private void Awake()
+    protected override void Awake()
     {
         stageInfoSO = GameManager.Instance.StageSO;
         cinemachine = GameManager.Instance.CinemachineCam;

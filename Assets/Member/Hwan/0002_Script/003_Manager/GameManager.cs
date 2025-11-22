@@ -36,7 +36,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (value == 1)
         {
-            UIManager.Instance.OpenUI(UIType.ClearUI);
+            UIManager.Instance.CloseAllUI(UIType.ClearUI);
             Player.PositionCheckerCompo.OnNearClear -= CheckGameOver;
         }
     }
@@ -45,7 +45,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (value == 1)
         {
-            UIManager.Instance.OpenUI(UIType.GameOverUI);
+            UIManager.Instance.CloseAllUI(UIType.GameOverUI);
             Player.PositionCheckerCompo.OnNearOutOfCam -= CheckGameClear;
         }
     }

@@ -26,7 +26,6 @@ public class StarManager : MonoSingleton<StarManager>,IUI
     protected override void Awake()
     {
         base.Awake();
-        GameObject.DontDestroyOnLoad(this.gameObject);
     }
     private void OnEnable()
     {

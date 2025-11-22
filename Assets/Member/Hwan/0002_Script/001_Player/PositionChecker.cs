@@ -5,6 +5,7 @@ using UnityEngine;
 public class PositionChecker : MonoBehaviour
 {
     [SerializeField] private float outOfCamYValuePercent;
+    [SerializeField] private float outOfCamOffset;
     private float camHalfSize;
     private float nearOutOfCamYValue;
 
@@ -23,7 +24,7 @@ public class PositionChecker : MonoBehaviour
         stageSO = GameManager.Instance.StageSO;
         startClearY = stageSO.EndY - startClearYOffset;
 
-        camHalfSize = Camera.main.orthographicSize;
+        camHalfSize = Camera.main.orthographicSize + outOfCamOffset;
         nearOutOfCamYValue = Mathf.Abs(2 * camHalfSize * outOfCamYValuePercent - camHalfSize);
 
         camTrn = GameManager.Instance.CinemachineCam;

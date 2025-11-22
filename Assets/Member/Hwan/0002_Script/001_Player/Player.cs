@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
 
     public void GetDamage(float value, Vector2 enemyPos)
     {
-        OnDamage?.Invoke(value, enemyPos);
+        OnDamage?.Invoke(value, (transform.position - (Vector3)enemyPos).normalized);
     }
 
     public void RecoveryStamina(float value)
