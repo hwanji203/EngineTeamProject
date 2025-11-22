@@ -6,7 +6,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
     public class SharkProxy : MonoBehaviour
     {
         [SerializeField] private Animator biteEffectAnimator;
-        [SerializeField] private GameObject roarEffect;
+        [SerializeField] private PointEffector2D roarEffect;
         private readonly int _biteHash = Animator.StringToHash("Bite");
 
         private SharkBrain _sharkBrain;
@@ -41,18 +41,23 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         public void OnRoarEffect()
         {
-            roarEffect.SetActive(true);
+            if (_shark.RoarDir > 0)
+                roarEffect.forceMagnitude = -200;
+            else
+                roarEffect.forceMagnitude = 200;
+            
+            roarEffect.gameObject.SetActive(true);
         }
 
         public void ChargeReady()
         {
             _dir = _shark.GetTargetDir();
-            StartCoroutine(sharkDasher.ChargeReady(_dir, _shark.SharkMovement));
+            StartCoroutine(sharkDasher.ChargeReady(_dir));
         }
         
         public void ChargeAttack()
         {
-            StartCoroutine(sharkDasher.ChargeAttack(_dir, _shark.SharkMovement));
+            StartCoroutine(sharkDasher.ChargeAttack(_dir));
         }
     }
 }

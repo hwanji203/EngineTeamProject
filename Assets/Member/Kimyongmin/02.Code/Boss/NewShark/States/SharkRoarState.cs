@@ -19,16 +19,16 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         {
             base.UpdateState();
             _currentTime += Time.deltaTime;
-
-            if (_currentTime > 0.6f)
-            {
-                
-            }
         }
 
         public override void ExitState()
         {
             base.ExitState();
+        }
+
+        public void SetRoarDir(float a)
+        {
+            
         }
     }
 }
