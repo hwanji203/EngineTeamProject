@@ -8,6 +8,7 @@ public class BackgroundMove : MonoBehaviour
     [SerializeField] private float maxRange = 10;
     [SerializeField] private float oneBlock = 1;
     [SerializeField] private bool doTeleport = true;
+    [SerializeField] private bool isBackground = false;
     private Transform camTrn;
 
     private float lastPrameCamYValue;
@@ -17,6 +18,10 @@ public class BackgroundMove : MonoBehaviour
     private void Awake()
     {
         camTrn = Camera.main.transform;
+        if (isBackground == true)
+        {
+            transform.localPosition -= new Vector3(0, GameManager.Instance.StageSO.StartY);
+        }
     }
 
     private void Start()
