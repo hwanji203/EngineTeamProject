@@ -11,7 +11,10 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         private SharkBrain _sharkBrain;
         private Shark _shark;
+        [SerializeField] private SharkDasher sharkDasher;
 
+        private Vector3 _dir;
+        
         private void Awake()
         {
             _sharkBrain = GetComponentInParent<SharkBrain>();
@@ -39,6 +42,17 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         public void OnRoarEffect()
         {
             roarEffect.SetActive(true);
+        }
+
+        public void ChargeReady()
+        {
+            _dir = _shark.GetTargetDir();
+            StartCoroutine(sharkDasher.ChargeReady(_dir, _shark.SharkMovement));
+        }
+        
+        public void ChargeAttack()
+        {
+            StartCoroutine(sharkDasher.ChargeAttack(_dir, _shark.SharkMovement));
         }
     }
 }
