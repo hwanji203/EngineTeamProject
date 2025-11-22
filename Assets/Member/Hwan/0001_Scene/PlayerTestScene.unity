@@ -240,6 +240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1169212003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3756948587150055519, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+  m_PrefabInstance: {fileID: 4286624530262655171}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1223511596
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,9 +533,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2912686802379999408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: <UIObject>k__BackingField
+      value: 
+      objectReference: {fileID: 1169212003}
+    - target: {fileID: 3756948587150055519, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3865464881108447983, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -532
+      objectReference: {fileID: 0}
     - target: {fileID: 5297201439296408010, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6696930346262889461, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1511
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055751425609371069, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1428
       objectReference: {fileID: 0}
     - target: {fileID: 9110312959600200776, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -585,6 +610,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3180350471169619785, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: inGame
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180350471169619785, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: <DoTuto>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161526947667860811, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: defaultSpawnCool
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 5790650499866188833, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: cameraRoot
       value: 

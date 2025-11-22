@@ -29,15 +29,13 @@ public class StarManager : MonoSingleton<StarManager>,IUI
     }
     private void OnEnable()
     {
-        FadeIn();
-        ShowScore(acquiredMoney, 2f);
-        StartCoroutine(Clear());
+
     }
 
     
     private void FadeIn()
     {   
-        fadePanel.DOFade(0.5f, 1f);
+        fadePanel.DOFade(0.5f, 1f).UI();
     }
 
     private void OnDisable()
@@ -121,7 +119,10 @@ public class StarManager : MonoSingleton<StarManager>,IUI
     public void Open()
     {
         Time.timeScale = 0;
-        UIObject.SetActive(true);
+        UIObject.SetActive(true); 
+        FadeIn();
+        ShowScore(acquiredMoney, 2f);
+        StartCoroutine(Clear());
     }
 
     public void Close()

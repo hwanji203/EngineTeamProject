@@ -35,15 +35,12 @@ public class PlayerStamina : MonoBehaviour
     public void NoStaminaCheck(float value)
     {
         float noStaminaValue = statSO.MaxStamina * noStaminaPercent;
-        
-        if (value <= noStaminaValue)
-        {
-            float currentPercent = 1 - value / noStaminaValue;
-            if (currentPercent < 0.01f) currentPercent = 0;
-            else if (currentPercent > 0.99f) currentPercent = 1;
 
-            OnNoAir?.Invoke(currentPercent);
-        }
+        float currentPercent = 1 - value / noStaminaValue;
+        if (currentPercent < 0.01f) currentPercent = 0;
+        else if (currentPercent > 0.99f) currentPercent = 1;
+
+        OnNoAir?.Invoke(currentPercent);
     }
 
     public bool TryMove(PlayerMoveType type)

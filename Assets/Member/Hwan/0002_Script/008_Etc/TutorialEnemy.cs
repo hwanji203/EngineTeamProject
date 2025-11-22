@@ -1,6 +1,7 @@
 using Member.Kimyongmin._02.Code.Agent;
 using UnityEngine;
 using System.Collections;
+using Unity.Cinemachine;
 
 public class TutorialEnemy : MonoBehaviour
 {
@@ -19,9 +20,9 @@ public class TutorialEnemy : MonoBehaviour
         tutorialManager =  TutorialManager.Instance;
         playerTrn = GameManager.Instance.Player.transform;
         healthSystem = GetComponent<HealthSystem>();
-        if (tutorialManager.DoTuto == false) return;
         healthSystem.OnHealthChanged += Damaged;
         healthSystem.OnDeath += () => StartCoroutine(WaitAndOnTrigger());
+        GameManager.Instance.CinemachineCam.GetComponent<CinemachinePositionComposer>().enabled = false;
     }
 
     private void Update()

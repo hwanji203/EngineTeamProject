@@ -15,8 +15,8 @@ MonoBehaviour:
   enemyType: 2
   hp: 50
   attackDelay: 5
-  idleSpeed: 1.5
-  moveSpeed: 2
+  idleSpeed: 2.5
+  moveSpeed: 3
   damage: 20
   detectDelay: 0
   deadStamina: 50

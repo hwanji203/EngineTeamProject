@@ -14,7 +14,6 @@ public class TutorialManager : MonoSingleton<TutorialManager>
             if (DoTuto) SaveManager.Instance.SaveValue("Tutorial", 0);
             else SaveManager.Instance.SaveValue("Tutorial", 1);
         }
-
         if (PlayerPrefs.GetInt("Tutorial", 0) == 0)
         {
             StartCoroutine(StartTutorial());
@@ -31,7 +30,6 @@ public class TutorialManager : MonoSingleton<TutorialManager>
 
     public void TutorialTriggerOn()
     {
-        if (DoTuto == false) return;
         UIManager.Instance.OpenUI(UIType.TutorialUI);
     }
 

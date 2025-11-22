@@ -35,7 +35,6 @@ namespace Member.Kimyongmin._02.Code.Agent
                     _health = Mathf.Clamp(value, 0, _maxHealth);
             }
         }
-
         public void GetDamage(float damage)
         {
             Health -= damage;

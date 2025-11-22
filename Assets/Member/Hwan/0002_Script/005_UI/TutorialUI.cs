@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -55,6 +56,7 @@ public class TutorialUI : MonoBehaviour, IUI
                 break;
             case 4:
                 inputSO.LookInput(InputType.Dash, true);
+                GameManager.Instance.CinemachineCam.GetComponent<CinemachinePositionComposer>().enabled = true;
                 SaveManager.Instance.SaveValue("Tutorial", 1);
                 break;
         }
