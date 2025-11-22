@@ -6,15 +6,158 @@
   <component name="ChangeListManager">
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/00.Scene/TestBoss.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkDasher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkDasher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkProxy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChargeState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChargeState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/SO/SharkDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/SO/SharkDataSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/05.SO/Boss/SharkDataSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/SharkCharge.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/SharkCharge.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Visual.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Shark/Visual.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 4.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 4.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 5.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_ 5.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Skin/Skin_.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/BattleRound.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/BattleRound.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/JCJ.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/JCJ.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Fight.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_11.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_13.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_13.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_14.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_14.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_14.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_15.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_17.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_18.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_19.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_20.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_21.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_24.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_26.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_29.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_30.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_32.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_34.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_35.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Food_7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Foods.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Foods/Foods.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_10.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_10.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_14.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_15.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_16.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_16.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_17.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_18.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_19.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_20.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_21.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_22.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_22.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_23.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_24.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_26.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_27.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_28.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_28.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_29.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_30.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_31.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_32.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_33.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_34.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_34.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_35.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_8.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potions.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potions.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,22 +168,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2431722e3e3e41d78b6718bb39ab91111df400/32/f88f2c8c/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/10/a2a6461a/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/32/4d316c86/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/52/0ddd64af/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/9b/15941dad/Component.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/9c/39c6bea2/Transform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41be6feeab6c4531be9c4de02d5acaa92f400/49/b6bb16ce/Rigidbody2D.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41be6feeab6c4531be9c4de02d5acaa92f400/5d/992e8472/Physics2D.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/b8/d3b9e340/IEnumerable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cca89918937e838503d883f1aa1784c57493a1cacd61b1f5fe1ebf5a1e3567a/System.Numerics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Boss/BossIntroController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/StageManager/Data/EnemyDatabase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/HealthSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Ang.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/BT/Action/AddNumberAction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkAttacks.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkLaserD.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/SharkStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/EffectActive.cs" root0="FORCE_HIGHLIGHTING" />
@@ -73,8 +206,14 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Runtime/Execution/Nodes/Decorators/Aborts/AbortModifier.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Runtime/Execution/RuntimeBlackboardAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@e4cb49353899/Tools/Graph/Asset/GraphNodeModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@23b1a4ff749d/Runtime/UGUI/EventSystem/EventInterfaces.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/10/a2a6461a/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25ce29052dfe4e49a635a42f7798806b1e0000/9c/39c6bea2/Transform.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -89,7 +228,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Kimyongmin&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;jcj&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -244,6 +383,9 @@
       <workItem from="1763599497338" duration="2329000" />
       <workItem from="1763648547780" duration="4811000" />
       <workItem from="1763682231917" duration="5562000" />
+      <workItem from="1763791712807" duration="6140000" />
+      <workItem from="1763799653109" duration="2681000" />
+      <workItem from="1763810828627" duration="3039000" />
     </task>
     <servers />
   </component>
