@@ -92,6 +92,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void GetStaminaIsZero(float value)
     {
+        if (value == 0)
+        {
+            isStaminaZero = true;
+            EndAttack(PlayerAttackType.Dash);
+        }
         isStaminaZero = value == 0;
     }
 

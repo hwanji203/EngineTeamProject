@@ -12,14 +12,10 @@ using UnityEngine.UI;
 
 public class StarManager : MonoSingleton<StarManager>,IUI
 {
-    [SerializeField]private List<GameObject> starList = new List<GameObject>();
-
     [SerializeField]private Image fadePanel;
     [SerializeField]private Sprite filledStarSprite;
 
     private int clearHash = Animator.StringToHash("Clear");
-
-    private int starCount = 0;
 
     private int acquiredMoney;
 
@@ -38,40 +34,12 @@ public class StarManager : MonoSingleton<StarManager>,IUI
         fadePanel.DOFade(0.5f, 1f).UI();
     }
 
-    private void OnDisable()
-    {
-        starCount = 0;
-    }
-
-    public void AddStar()
-    {
-        starCount++;
-    }
-
     public void AddGold(int howmuch)
     {
         acquiredMoney += howmuch;
         CurrencyManager.Instance.AddGold(howmuch);
     }
-
-    public void ChangeState()
-    {
-        for (int i = 0; i <starCount ; i++)
-        {
-            starList[i].GetComponent<Animator>().enabled = false;
-            starList[i].GetComponent<SpriteRenderer>().sprite = filledStarSprite;
-        }
-    }
     
-
-    IEnumerator Clear()
-    {
-        yield return new WaitForSecondsRealtime(0.7f);
-        for (int i = 0; i < starCount; i++)
-        {
-            starList[i].GetComponent<Animator>().SetTrigger(clearHash);
-        }
-    }
     [SerializeField] private TextMeshProUGUI acMoneyT;
 
     [field:SerializeField]public GameObject UIObject { get; set; }
@@ -122,7 +90,6 @@ public class StarManager : MonoSingleton<StarManager>,IUI
         UIObject.SetActive(true); 
         FadeIn();
         ShowScore(acquiredMoney, 2f);
-        StartCoroutine(Clear());
     }
 
     public void Close()

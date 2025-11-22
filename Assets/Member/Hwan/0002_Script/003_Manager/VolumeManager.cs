@@ -36,7 +36,7 @@ public class VolumeManager : MonoSingleton<VolumeManager>
         {
             if (value == true)
             {
-                DefAfterInc(VolumeType.Counter, 0.2f);
+                DefAfterInc(VolumeType.Counter, 0.365f);
             }
         };
     }
