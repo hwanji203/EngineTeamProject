@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class DraggableSkinItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("스킨 데이터")]
-    [SerializeField] private SkinItemSO skinData;
+    [SerializeField] private SkinSO skinData;
     
     private Image iconImage;
     
-    public SkinItemSO SkinData => skinData;
+    public SkinSO SkinData => skinData;
     
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
@@ -37,7 +37,7 @@ public class DraggableSkinItem : MonoBehaviour, IBeginDragHandler, IDragHandler,
         iconImage = GetComponent<Image>();
     }
 
-    public void Init(SkinItemSO data)
+    public void Init(SkinSO data)
     {
         skinData = data;
 
@@ -48,7 +48,7 @@ public class DraggableSkinItem : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
         if (iconImage != null && skinData != null)
         {
-            iconImage.sprite = skinData.ItemIcon;
+            iconImage.sprite = skinData.SkinIcon;
         }
     }
     

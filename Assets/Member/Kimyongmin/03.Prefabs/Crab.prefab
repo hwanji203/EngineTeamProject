@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1589020861637226914}
   - component: {fileID: 3328675381591825400}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5904402753145293069}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShotPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5806311883835856927}
   - component: {fileID: 1349448287096123658}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3267363311057309270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxParent
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 4108736915025140887}
   - component: {fileID: 893401405211705425}
   - component: {fileID: 2827233899088184596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

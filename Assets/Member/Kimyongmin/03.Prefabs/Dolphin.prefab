@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7977358060037857268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxParent
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7686931793599814969}
   - component: {fileID: 667151410085719990}
   - component: {fileID: 4079953009910722586}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TurnAttackEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3487484697209350493}
   - component: {fileID: 2326476604723461391}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8959091393587309615}
   - component: {fileID: 695261654929567156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4940656318714610057}
   - component: {fileID: 883390725689787629}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxPivot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 7890019973167772103}
   - component: {fileID: 7239501088176761038}
   - component: {fileID: 966819763973977552}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4507489399860287223}
   - component: {fileID: 947424828392158316}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4941080232057660128}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxParent (2)
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -785,7 +785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4741027781471550102}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitboxParent (1)
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}

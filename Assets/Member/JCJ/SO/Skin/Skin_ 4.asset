@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 941f8b5cea4255042a6b3f419554e626, type: 3}
-  m_Name: Skin_ 1
+  m_Name: Skin_ 4
   m_EditorClassIdentifier: 
-  skinID: 1002
-  skinName: "\uD30C\uB780\uC637"
-  skinIcon: {fileID: 4514861930614876757, guid: c0867027d019d1d40a3e49dfb224d3dc, type: 3}
-  skinSprite: {fileID: 4514861930614876757, guid: c0867027d019d1d40a3e49dfb224d3dc, type: 3}
-  cost: 200
+  skinID: 1005
+  skinName: "\uBE68\uAC04\uBAA8\uC790???"
+  skinIcon: {fileID: -3048215833592900396, guid: 91b13b6e6e751be42b795ad7ffaa7368, type: 3}
+  skinSprite: {fileID: -3048215833592900396, guid: 91b13b6e6e751be42b795ad7ffaa7368, type: 3}
+  cost: 450
   bodyPart: 0

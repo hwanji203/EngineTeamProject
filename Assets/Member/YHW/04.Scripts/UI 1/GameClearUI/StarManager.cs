@@ -69,7 +69,7 @@ public class StarManager : MonoSingleton<StarManager>,IUI
 
     IEnumerator Clear()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSecondsRealtime(0.7f);
         for (int i = 0; i < starCount; i++)
         {
             starList[i].GetComponent<Animator>().SetTrigger(clearHash);

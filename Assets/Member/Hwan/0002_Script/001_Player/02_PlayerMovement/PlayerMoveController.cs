@@ -32,7 +32,7 @@ public class PlayerMoveController
     {
         if (playerMovement.CanMove == false) return;
 
-        if (currentAttackState.doing == true && playerAnimation.CanAttack() == true && playerMovement.CurrentState != PlayerState.ZeroStamina)
+        if (currentAttackState.doing == true && playerAnimation.CanAttack() == true && playerMovement.CurrentState != PlayerState.ZeroStamina && Time.timeScale != 0)
         {
             if (TryAttack(currentAttackState.attackType) == true) return;
         }
