@@ -30,13 +30,9 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Update()
     {
-        if (Keyboard.current.gKey.wasPressedThisFrame)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame && TutorialManager.Instance.IsTutorialing == false && Time.timeScale != 0)
         {
-            VolumeManager.Instance.DefAfterInc(VolumeType.Counter, 0.2f);
-        }
-        if (Keyboard.current.hKey.wasPressedThisFrame)
-        {
-            VolumeManager.Instance.DefAfterInc(VolumeType.Hit, 0.35f);
+            UIManager.Instance.OpenUI(UIType.SettingUI);
         }
     }
 

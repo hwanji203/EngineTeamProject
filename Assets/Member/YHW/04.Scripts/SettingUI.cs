@@ -18,27 +18,6 @@ public class SettingUI : MonoBehaviour,IUI
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Update()
-    {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame && UIObject.activeSelf == true)
-        {
-            TurnOff();
-        }
-        else if (Keyboard.current.escapeKey.wasPressedThisFrame && UIObject.activeSelf == false)
-        {
-            Open();
-        }
-
-        if(SceneManager.GetActiveScene().name == "HWTestScene")
-        {
-            InStageUI.SetActive(false);
-        }
-        else
-        {
-            InStageUI.SetActive(true);
-        }
-    }
-
     public void SetMasterLevel(float sliderVal)
     {
         mixer.SetFloat("Master", Mathf.Log10(sliderVal) * 20);
@@ -51,18 +30,13 @@ public class SettingUI : MonoBehaviour,IUI
     {
         mixer.SetFloat("BGM", Mathf.Log10(sliderVal) * 20);
     }
-    public void TurnOff()
-    {
-        Close();
-        Time.timeScale = 1f;
-    }
     public void ExitStage()
     {
-
+        Debug.Log("메인 화면");
     }
     public void Continue()
     {
-        Time.timeScale = 1f;
+        Close();
     }
 
     public void Initialize()
@@ -77,11 +51,11 @@ public class SettingUI : MonoBehaviour,IUI
     {
         UIObject.SetActive(true);
         Time.timeScale = 0f;
-
     }
 
     public void Close()
     {
+        Time.timeScale = 1;
         UIObject.SetActive(false);
     }
     

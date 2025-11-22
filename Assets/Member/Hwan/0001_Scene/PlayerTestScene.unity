@@ -543,63 +543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainFollowCamera: {fileID: 1748796849}
---- !u!1001 &2143141744
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2036001933743822104, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_Name
-      value: AnglerFish
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.8006453
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5456009767120832872, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
 --- !u!4 &750559528303023978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 868099284106409586, guid: d09f58af5f4c0974cb2d1430ac01a505, type: 3}
@@ -670,6 +613,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3180350471169619785, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: inGame
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180350471169619785, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: <DoTuto>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5790650499866188833, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: cameraRoot
       value: 
@@ -896,4 +847,3 @@ SceneRoots:
   - {fileID: 1223511599}
   - {fileID: 5047805736535623817}
   - {fileID: 1468168822}
-  - {fileID: 2143141744}

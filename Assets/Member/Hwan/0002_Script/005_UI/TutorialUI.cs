@@ -56,8 +56,11 @@ public class TutorialUI : MonoBehaviour, IUI
                 break;
             case 4:
                 inputSO.LookInput(InputType.Dash, true);
+                break;
+            case 5:
                 GameManager.Instance.CinemachineCam.GetComponent<CinemachinePositionComposer>().enabled = true;
                 SaveManager.Instance.SaveValue("Tutorial", 1);
+                TutorialManager.Instance.EndTutorial();
                 break;
         }
     }

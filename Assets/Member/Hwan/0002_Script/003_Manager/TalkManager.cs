@@ -137,16 +137,23 @@ public class TalkManager : MonoSingleton<TalkManager>
 
     private void StopFloating()
     {
-        isFloatingChars = false;
+        try
+        {
+            textMeshPro.ForceMeshUpdate();
+            mesh = textMeshPro.mesh;
+            vertices = mesh.vertices;
 
-        textMeshPro.ForceMeshUpdate();
-        mesh = textMeshPro.mesh;
-        vertices = mesh.vertices;
+            isFloatingChars = false;
 
-        for (int i = 0; i < vertices.Length; i++)
-            vertices[i] = Vector3.zero;
+            for (int i = 0; i < vertices.Length; i++)
+                vertices[i] = Vector3.zero;
 
-        textMeshPro.canvasRenderer.SetMesh(mesh);
+            textMeshPro.canvasRenderer.SetMesh(mesh);
+        }
+        catch
+        {
+            return;
+        }
     }
 
     public void ActiveFalse()

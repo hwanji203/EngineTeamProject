@@ -7,6 +7,8 @@ public class TutorialManager : MonoSingleton<TutorialManager>
     [SerializeField] private TutorialEnemy tutorialEnemy;
     [SerializeField] private bool inGame;
 
+    public bool IsTutorialing { get; private set; }
+
     private void Start()
     {
         if (inGame == false)
@@ -14,6 +16,7 @@ public class TutorialManager : MonoSingleton<TutorialManager>
             if (DoTuto) SaveManager.Instance.SaveValue("Tutorial", 0);
             else SaveManager.Instance.SaveValue("Tutorial", 1);
         }
+
         if (PlayerPrefs.GetInt("Tutorial", 0) == 0)
         {
             StartCoroutine(StartTutorial());
@@ -22,6 +25,7 @@ public class TutorialManager : MonoSingleton<TutorialManager>
 
     private IEnumerator StartTutorial()
     {
+        IsTutorialing = true;
         GameManager.Instance.Player.InputSO.LookInput(false);
         GameManager.Instance.Player.InputSO.LookInput(InputType.Aim, true);
         yield return new WaitForSeconds(0.35f);
@@ -36,5 +40,10 @@ public class TutorialManager : MonoSingleton<TutorialManager>
     public Transform SpawnTutorialEnemy()
     {
         return Instantiate(tutorialEnemy, transform).transform;
+    }
+
+    public void EndTutorial()
+    {
+        IsTutorialing = false;
     }
 }
