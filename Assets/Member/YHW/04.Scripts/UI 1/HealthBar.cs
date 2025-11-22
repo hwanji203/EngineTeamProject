@@ -26,7 +26,7 @@ public class HealthBar : MonoBehaviour
 
     private void UpdateBar()
     {
-        StartCoroutine(FirstCoroutine());
+       TimeManager.Instance.StartUICoroutine(FirstCoroutine());
     }
 
     private IEnumerator FirstCoroutine()
@@ -51,7 +51,7 @@ public class HealthBar : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += TimeManager.Instance.UIDeltaTime;
 
             float newFill = Mathf.Lerp(initialFill, targetFill, elapsedTime / duration);
 
