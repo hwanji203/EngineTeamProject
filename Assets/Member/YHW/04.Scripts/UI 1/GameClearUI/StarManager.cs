@@ -108,7 +108,7 @@ public class StarManager : MonoSingleton<StarManager>,IUI
             acMoneyT.text = "AcquiredGold : " + current.ToString();
         },
         finalScore,
-        duration).SetEase(Ease.OutCubic);
+        duration).SetEase(Ease.OutCubic).UI();
     }
 
     public void Initialize()
