@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941f8b5cea4255042a6b3f419554e626, type: 3}
+  m_Name: Skin_Potion_ 3
+  m_EditorClassIdentifier: 
+  skinID: 2004
+  skinName: Yellow Potion
+  skinIcon: {fileID: -8842849235552991198, guid: cef5d61277acf7042849b6b5ce406d71, type: 3}
+  skinSprite: {fileID: -8842849235552991198, guid: cef5d61277acf7042849b6b5ce406d71, type: 3}
+  cost: 100
+  bodyPart: 0
