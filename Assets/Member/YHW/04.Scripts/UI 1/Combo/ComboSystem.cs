@@ -60,15 +60,15 @@ public class ComboSystem : MonoSingleton<ComboSystem>
 
         comboRectTransform
             .DOScale(originalScale * scaleUpSize, scaleDuration)
-            .SetEase(Ease.OutBack)
+            .SetEase(Ease.OutBack).UI()
             .OnComplete(() =>
             {
-                currentComboObj.transform.DOScale(originalScale, scaleDuration).SetEase(Ease.InBack);
+                currentComboObj.transform.DOScale(originalScale, scaleDuration).SetEase(Ease.InBack).UI();
             });
 
         if (comboCoroutine != null)
             StopCoroutine(comboCoroutine);
-        comboCoroutine = StartCoroutine(FillRoutine());
+        comboCoroutine = TimeManager.Instance.StartUICoroutine(FillRoutine());
 
         if (isCounter)
         {

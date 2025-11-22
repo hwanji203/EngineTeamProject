@@ -58,7 +58,7 @@ public class MainUIBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         currentTween = transform.DOScale(originalScale, scaleDuration)
                               .SetEase(scaleEase)
-                              .SetUpdate(true);
+                              .SetUpdate(true).UI();
     }
 
     private void OnDisable()

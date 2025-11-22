@@ -10,7 +10,7 @@ public class StarBump : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(Bump());
+        TimeManager.Instance.StartUICoroutine(Bump());
     }
     private IEnumerator Bump()
     {
@@ -19,10 +19,10 @@ public class StarBump : MonoBehaviour
         Sequence mySequence = DOTween.Sequence();
 
         mySequence.Append(transform.DOScale(bumpScale + 0.3f, bumpDuration / 2)
-                                   .SetEase(Ease.OutQuad));
+                                   .SetEase(Ease.OutQuad).UI());
 
         mySequence.Append(transform.DOScale(bumpScale, bumpDuration / 2)
-                                   .SetEase(Ease.InQuad));
+                                   .SetEase(Ease.InQuad).UI());
 
         mySequence.Play();
 
