@@ -3,7 +3,6 @@ using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Boss.SO;
 using Member.Kimyongmin._02.Code.Enemy;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -19,7 +18,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         
         public SharkMovement SharkMovement { get; private set; }
         public SharkAttacks SharkAttacks { get; private set; }
-        private HealthSystem _healthSystem;
+        public HealthSystem Healthsystem { get; private set; }
 
         [field:SerializeField] public LayerMask LayerMask { get; private set; }
 
@@ -32,18 +31,27 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         public bool IsAttack { get; private set; } = false;
         
         public Animator Animator { get; private set; }
+        
+        private readonly int _hitHash = Animator.StringToHash("Hit");
 
         private void Awake()
         {
             SharkMovement = GetComponent<SharkMovement>();
-            _healthSystem = GetComponent<HealthSystem>();
+            Healthsystem = GetComponent<HealthSystem>();
             SharkAttacks = GetComponent<SharkAttacks>();
             Animator = GetComponentInChildren<Animator>();
-                
-            _healthSystem.SetHealth(SharkData.Hp);
+        }
+
+        private void Start()
+        {
+            Healthsystem.SetHealth(SharkData.Hp);
             sharkLaserD.LaserSetting(SharkData.LaserTickDamage, transform.position);
-            
+
+            Healthsystem.OnHealthChanged += HitAnim;
+            Healthsystem.OnHealthChanged += SharkMovement.ZeroVelocity;
             ResetCooltime();
+            
+            Healthsystem.SetInvincibility(true);
         }
 
         private void FixedUpdate()
@@ -93,6 +101,12 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             ChargeStack++;
         }
+        
+        public void ResetCharging()
+        {
+            ChargeStack = 0;
+        }
+
 
         public void ResetCooltime()
         {
@@ -139,31 +153,55 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         void IAgentable.CounterDamage(float damage)
         {
-            _healthSystem.GetDamage(damage * 1.5f);
+            Healthsystem.GetDamage(damage * 1.5f);
         }
 
         void IAgentable.DefaultDamage(float damage)
         {
-            _healthSystem.GetDamage(damage);
+            Healthsystem.GetDamage(damage);
         }
 
         public Action OnWallBurt;
 
-        private bool _charge = false;
+        public bool Charge {get; private set;}
         public void ChargeBool(bool value)
         {
-            _charge = value;
+             Charge = value;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (_charge)
+            if (Charge)
             {
                 if (other.TryGetcomponentInParent(out Player player))
                 {
                     player.GetDamage(SharkData.ChargeDamage, transform.position);
                 }
             }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (Charge)
+            {
+                if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+                {
+                    OnWallBurt?.Invoke();
+                }
+            }
+        }
+        
+        public float RoarDir { get; set; }
+
+        private void HitAnim()
+        {
+            Animator.SetTrigger(_hitHash);
+        }
+
+        private void OnDestroy()
+        {
+            Healthsystem.OnHealthChanged -= HitAnim;
+            Healthsystem.OnHealthChanged -= SharkMovement.ZeroVelocity;
         }
     }
 }
