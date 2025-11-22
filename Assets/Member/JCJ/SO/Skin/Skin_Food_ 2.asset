@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941f8b5cea4255042a6b3f419554e626, type: 3}
+  m_Name: Skin_Food_ 2
+  m_EditorClassIdentifier: 
+  skinID: 1003
+  skinName: IceCream
+  skinIcon: {fileID: 3960676619140101740, guid: 3b042879079883540ba1f6d364e612f6, type: 3}
+  skinSprite: {fileID: 3960676619140101740, guid: 3b042879079883540ba1f6d364e612f6, type: 3}
+  cost: 100
+  bodyPart: 0
