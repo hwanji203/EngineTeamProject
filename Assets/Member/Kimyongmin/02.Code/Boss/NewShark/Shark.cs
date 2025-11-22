@@ -3,6 +3,7 @@ using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Boss.SO;
 using Member.Kimyongmin._02.Code.Enemy;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,7 +17,6 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         [SerializeField] private Vector2 attackRange;
         [SerializeField] private SharkLaserD sharkLaserD;
         
-        public SharkDasher SharkDasher { get; private set; }
         public SharkMovement SharkMovement { get; private set; }
         public SharkAttacks SharkAttacks { get; private set; }
         private HealthSystem _healthSystem;
@@ -39,7 +39,6 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             _healthSystem = GetComponent<HealthSystem>();
             SharkAttacks = GetComponent<SharkAttacks>();
             Animator = GetComponentInChildren<Animator>();
-            SharkDasher = GetComponentInChildren<SharkDasher>();
                 
             _healthSystem.SetHealth(SharkData.Hp);
             sharkLaserD.LaserSetting(SharkData.LaserTickDamage, transform.position);
@@ -52,8 +51,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             if (!IsAttack)
             {
                 SharkMovement.SetSpeed(SharkData.Speed);
+                SharkMovement.RbMove();
             }
-            SharkMovement.RbMove();
             
         }
 
@@ -125,7 +124,11 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             IsAttack = value;
             if (value)
+            {
                 SharkMovement.SetSpeed(0);
+                SharkMovement.RbMove();
+            }
+                
             else
                 SharkMovement.SetSpeed(SharkData.Speed);
         }
@@ -143,6 +146,24 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             _healthSystem.GetDamage(damage);
         }
-        
+
+        public Action OnWallBurt;
+
+        private bool _charge = false;
+        public void ChargeBool(bool value)
+        {
+            _charge = value;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (_charge)
+            {
+                if (other.TryGetcomponentInParent(out Player player))
+                {
+                    player.GetDamage(SharkData.ChargeDamage, transform.position);
+                }
+            }
+        }
     }
 }

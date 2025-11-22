@@ -11,9 +11,12 @@ namespace Member.Kimyongmin._02.Code.Boss.SO
         [field:SerializeField] public float NormalAttackDamage {get; private set;}
         [field:SerializeField] public float ChargeDamage {get; private set;}
         [field:SerializeField] public float LaserTickDamage {get; private set;}
+        [field: SerializeField] public float StunDuration {get; private set;}
 
         [field: SerializeField] public float MinSkillCool {get; private set;}
         [field: SerializeField] public float MaxSkillCool {get; private set;}
+        
+        
 
     }
 }
