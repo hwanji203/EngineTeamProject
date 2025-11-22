@@ -7,6 +7,8 @@ public class VolumeManager : MonoSingleton<VolumeManager>
     [SerializeField] private Volumes[] volumes;
     private Dictionary<VolumeType, VolumeValueChanger> volumeDictionary = new();
 
+    private Coroutine defAfterInCoroutine;
+
     protected override void Awake()
     {
         base.Awake();
@@ -30,6 +32,13 @@ public class VolumeManager : MonoSingleton<VolumeManager>
         player.StaminaCompo.SubOnNoAir((value) => SetVolume(VolumeType.NoAir, value));
         player.PositionCheckerCompo.SubNearGround((value) => SetVolume(VolumeType.EndOfCam, value));
         player.PositionCheckerCompo.SubNearClear((value) => SetVolume(VolumeType.EndOfClear, value));
+        player.AttackCompo.OnAttack += (value) =>
+        {
+            if (value == true)
+            {
+                DefAfterInc(VolumeType.Counter, 0.2f);
+            }
+        };
     }
 
     public void IncreaseVolume(VolumeType type, float time)
@@ -44,7 +53,8 @@ public class VolumeManager : MonoSingleton<VolumeManager>
 
     public void DefAfterInc(VolumeType type, float time)
     {
-        StartCoroutine(volumeDictionary[type].DecAfterInc(time));   
+        if (defAfterInCoroutine != null) StopCoroutine(defAfterInCoroutine);
+        defAfterInCoroutine = StartCoroutine(volumeDictionary[type].DecAfterInc(time));   
     }
 
     public void SetVolume(VolumeType type, float value)

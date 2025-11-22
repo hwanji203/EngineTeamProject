@@ -82,7 +82,8 @@ public enum VolumeType
     Hit,
     NoAir,
     EndOfCam,
-    EndOfClear
+    EndOfClear,
+    Counter
 }
 
 public enum AttackReturnType

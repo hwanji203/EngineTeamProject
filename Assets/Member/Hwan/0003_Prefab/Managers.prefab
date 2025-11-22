@@ -35,6 +35,7 @@ Transform:
   - {fileID: 1300192655797679495}
   - {fileID: 3893763982612847071}
   - {fileID: 3138706932738761243}
+  - {fileID: 7564569132685726991}
   m_Father: {fileID: 6541987100514202507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5322458015859479785
@@ -60,6 +61,8 @@ MonoBehaviour:
     <VolumeChanger>k__BackingField: {fileID: 351626055176933586}
   - <VolumeType>k__BackingField: 5
     <VolumeChanger>k__BackingField: {fileID: 2138135687779919168}
+  - <VolumeType>k__BackingField: 6
+    <VolumeChanger>k__BackingField: {fileID: 8010918889276491470}
 --- !u!1 &603084265105092288
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +430,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typingSpeed: 0.1
   textMeshPro: {fileID: 0}
+--- !u!1 &3914274874149213630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7564569132685726991}
+  - component: {fileID: 327211371866837832}
+  - component: {fileID: 8010918889276491470}
+  m_Layer: 0
+  m_Name: Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7564569132685726991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914274874149213630}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6194641924754436220}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &327211371866837832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914274874149213630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: 8fa8df712d3462d4f92cec1d8dfee0ea, type: 2}
+--- !u!114 &8010918889276491470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914274874149213630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501473aeb7e37df46b6f7de05d1dbd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4974536578114612968
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3d791a1baebcf4e8006f3d734c333a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnCool: 8
+  defaultSpawnCool: 10000
   errorSpawnCool: 1
   spawnOffset: 1
 --- !u!1 &5317108150255212542
@@ -892,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634a7086fae46c2478140a096f765283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DoTuto>k__BackingField: 1
+  <DoTuto>k__BackingField: 0
   tutorialEnemy: {fileID: 6802907738643528409, guid: c173cb78e9696d2429224482ad528cd4, type: 3}
   inGame: 0
 --- !u!1001 &509392682818208472

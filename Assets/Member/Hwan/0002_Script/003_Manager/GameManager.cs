@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -25,6 +26,18 @@ public class GameManager : MonoSingleton<GameManager>
         Vector2 startPoint = new Vector2(0, StageSO.StartY);
         Player.transform.position = new Vector3(startPoint.x, startPoint.y, Player.transform.position.z);
         CinemachineCam.transform.position = new Vector3(startPoint.x, startPoint.y, CinemachineCam.transform.position.z);
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            VolumeManager.Instance.DefAfterInc(VolumeType.Counter, 0.2f);
+        }
+        if (Keyboard.current.hKey.wasPressedThisFrame)
+        {
+            VolumeManager.Instance.DefAfterInc(VolumeType.Hit, 0.35f);
+        }
     }
 
     private void Start()

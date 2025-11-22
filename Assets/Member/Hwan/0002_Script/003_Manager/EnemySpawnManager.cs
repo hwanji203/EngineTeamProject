@@ -33,6 +33,8 @@ public class EnemySpawnManager : MonoSingleton<EnemySpawnManager>
             enemyDicionary[enemy.name] = enemy.enemyPrefab;
             spawnableEnemies[i] = enemy.name;
         }
+
+        BattleRoundManager.Instance.OnBattle += (value) => isPlayerOnFightField = value;
     }
 
     private void Start()

@@ -1,8 +1,9 @@
 using UnityEngine;
 using Member.Kimyongmin._02.Code.Agent;
 using System.Collections.Generic;
+using System;
 
-public class BattleRoundManager : MonoBehaviour
+public class BattleRoundManager : MonoSingleton<BattleRoundManager>
 {
     [Header("Database")]
     [SerializeField] private EnemyDatabase enemyDatabase;
@@ -16,11 +17,14 @@ public class BattleRoundManager : MonoBehaviour
     
     private List<HealthSystem> currentWaveEnemies = new List<HealthSystem>();
 
+    public event Action<bool> OnBattle;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isRoundActive)
         {
             StartWave(0);
+            OnBattle?.Invoke(true);
         }
     }
 
@@ -93,8 +97,9 @@ public class BattleRoundManager : MonoBehaviour
         isRoundActive = false;
         GetComponent<Collider2D>().enabled = false;
         BattleCamera.Instance.ResumeCameraFollow();
-        
+
         // 모든 이벤트 구독 해제
+        OnBattle?.Invoke(true);
         UnsubscribeAllEnemies();
         currentWaveEnemies.Clear();
     }
@@ -110,8 +115,9 @@ public class BattleRoundManager : MonoBehaviour
         }
     }
     
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         UnsubscribeAllEnemies();
+        base.OnDestroy();
     }
 }
