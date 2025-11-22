@@ -12,7 +12,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
-            Shark.transform.DORotate(new Vector3(Shark.transform.rotation.x, Shark.transform.rotation.y, 0), 0);
+            Shark.transform.DORotate(new Vector3(0, Shark.GetTargetDir().x < 0 ? 180 : 0, 0), 0);
         }
 
         private int _skillSelectNum = 0;
@@ -43,6 +43,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
                 if (Shark.ChargeStack > Random.Range(1,3))
                 {
                     _skillSelectNum = 3;
+                    Shark.ResetCharging();
                 }
                 
                 switch (_skillSelectNum)
@@ -59,11 +60,11 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
                         break;
                     case 2:
                         Shark.AttackBool(true);
+                        Shark.RoarDir = 1;
                         SharkStateMachine.ChangeState(SharkStateType.RoarSkill);
                         Shark.Charging();
                         break;
                     default:
-                        Shark.AttackBool(true);
                         SharkStateMachine.ChangeState(SharkStateType.ChargeSkill);
                         break;
                 }

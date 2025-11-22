@@ -25,10 +25,10 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             SharkStateMachine.AddState(SharkStateType.ChargeSkill, new SharkChargeState(Shark, SharkStateMachine,"Charge"));
             SharkStateMachine.AddState(SharkStateType.RoarSkill, new SharkRoarState(Shark, SharkStateMachine,"Roar"));
             SharkStateMachine.AddState(SharkStateType.LaserSkill, new SharkLaserSkillState(Shark, SharkStateMachine,"Laser"));
-            SharkStateMachine.AddState(SharkStateType.Hit, new SharkHitState(Shark, SharkStateMachine,"Hit"));
             SharkStateMachine.AddState(SharkStateType.Dead, new SharkDeadState(Shark, SharkStateMachine,"Dead"));
-
-            _healthSystem.OnHealthChanged += HitSad;
+            SharkStateMachine.AddState(SharkStateType.Stun, new SharkStunState(Shark, SharkStateMachine,"Stun"));
+            
+            Shark.OnWallBurt += StunState;
         }
 
         private void Start()
@@ -46,19 +46,19 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             
         }
 
-        private void HitSad()
-        {
-            SharkStateMachine.ChangeState(SharkStateType.Hit);
-        }
-
         private void OnDestroy()
         {
-            _healthSystem.OnHealthChanged -= HitSad;
+            Shark.OnWallBurt -= StunState;
         }
 
         public void BiteAttack()
         {
             StartCoroutine(BiteAttackCor());
+        }
+
+        private void StunState()
+        {
+            SharkStateMachine.ChangeState(SharkStateType.Stun);
         }
         private IEnumerator BiteAttackCor()
         {

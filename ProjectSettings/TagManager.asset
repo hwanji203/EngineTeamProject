@@ -57,5 +57,8 @@ TagManager:
   - name: VFX
     uniqueID: 2224331157
     locked: 0
+  - name: Wall
+    uniqueID: 2661465123
+    locked: 0
   m_RenderingLayers:
   - Default

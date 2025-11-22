@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39215d9a76ca17a42a613630e82af25f, type: 3}
-  m_Name: StageInfoSO
+  m_Name: SharkBossFightSO
   m_EditorClassIdentifier: 
   <StartY>k__BackingField: 0
-  <EndY>k__BackingField: 10
+  <EndY>k__BackingField: 999
   EnemyList:
   - name: 0
     enemyPrefab: {fileID: 6617325858536452346, guid: 8329e78f8f8be5148a3493a00a0b3d54, type: 3}
-  - name: 1
-    enemyPrefab: {fileID: 2036001933743822104, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-  - name: 2
-    enemyPrefab: {fileID: 8691667978067916852, guid: 7480d7d3ba7342346bed19c49006bc16, type: 3}

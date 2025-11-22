@@ -47,6 +47,16 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             SetDashing(true);
         }
 
+        public void LongDash(Vector3 dir)
+        {
+            RbCompo.linearVelocity = dir * _speed;
+        }
+
+        public void ZeroVelocity()
+        {
+            RbCompo.linearVelocity = Vector2.zero;
+        }
+
         public void SetDashing(bool isDashing)
         {
             _isDashing = isDashing;

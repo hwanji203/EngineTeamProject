@@ -9,6 +9,8 @@ namespace Member.Kimyongmin._02.Code.Agent
         private float _maxHealth;
 
         private float _health;
+
+        private bool _isiIvincibility = false;
         
         public event Action OnHealthChanged;
         public event Action OnDeath;
@@ -22,14 +24,15 @@ namespace Member.Kimyongmin._02.Code.Agent
             set
             {
                 float before = _health;
-                if (value != before && !IsDead)
+                if (value != before && !IsDead && !_isiIvincibility)
                 {
-                    //OnHealthChanged?.Invoke();
+                    OnHealthChanged?.Invoke();
                     CameraShaker.Instance.RandomShake(value);
                     Hit = true;
                 }
                 
-                _health = Mathf.Clamp(value, 0, _maxHealth);
+                if (!_isiIvincibility)
+                    _health = Mathf.Clamp(value, 0, _maxHealth);
             }
         }
 
@@ -52,6 +55,11 @@ namespace Member.Kimyongmin._02.Code.Agent
         public float GetHealthPercent()
         {
             return Health / _maxHealth;
+        }
+
+        public void SetInvincibility(bool value)
+        {
+            _isiIvincibility = value;
         }
     }
 }
