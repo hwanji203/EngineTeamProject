@@ -30,6 +30,11 @@ public class StoreManager : MonoBehaviour
             itemUI.Setup(itemData, this);
 
             activeItems.Add(itemData);
+            
+            if (InventoryManager.Instance != null && InventoryManager.Instance.HasSkin(itemData))
+            {
+                itemUI.SetPurchased();
+            }
         }
     }
 
@@ -49,12 +54,17 @@ public class StoreManager : MonoBehaviour
 
     public void TryPurchaseItem(SkinSO itemData, StoreItemUI itemUI)
     {
+        if (InventoryManager.Instance != null && InventoryManager.Instance.HasSkin(itemData))
+        {
+            Debug.LogWarning($"이미 보유한 스킨입니다:{itemData.SkinName}");
+            itemUI.SetPurchased();
+            return;
+        }
         if (CurrencyManager.Instance.SpendGold(itemData.Cost))
         {
             itemUI.SetPurchased();
             Debug.Log("구매 완료");
-            SkinItemSO skinItem = CreateSkinItemFromSkin(itemData);
-            InventoryManager.Instance?.AddSkin(skinItem);
+            InventoryManager.Instance?.AddSkin(itemData);
 
             AfterBuying();
         }
@@ -63,13 +73,6 @@ public class StoreManager : MonoBehaviour
             itemUI.PlayInsufficientFundsFeedback();
             Debug.Log("골드 부족");
         }
-    }
-
-    private SkinItemSO CreateSkinItemFromSkin(SkinSO skinData)
-    {
-        SkinItemSO skinItem = ScriptableObject.CreateInstance<SkinItemSO>();
-        skinItem.InitFromSkin(skinData);
-        return skinItem;
     }
 
     private void AfterBuying()
