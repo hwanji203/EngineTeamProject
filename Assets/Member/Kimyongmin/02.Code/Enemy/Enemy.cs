@@ -36,7 +36,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     {
         try
         {
-            _currentAttackTime = EnemyDataSo.attackDelay;
+            _currentAttackTime = EnemyDataSo.attackDelay - 1;
         }
         catch (NullReferenceException)
         {
