@@ -6,6 +6,8 @@ using System.Collections;
 
 public class BossIntroController : MonoBehaviour
 {
+    public static BossIntroController Instance { get; private set; }
+
     [Header("UI References")]
     [SerializeField] private CanvasGroup bossIntroOverlay;
     [SerializeField] private Image darkBackground;
@@ -17,7 +19,7 @@ public class BossIntroController : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystem;
 
     [Header("Boss Info")]
-    [SerializeField] private string bossName = "DEVIL'S SNARE";
+    [SerializeField] private string bossName = "Shark";
     [SerializeField] private Sprite bossSprite;
 
     [Header("Animation Settings")]
@@ -26,55 +28,87 @@ public class BossIntroController : MonoBehaviour
     [SerializeField] private float totalIntroDuration = 4.0f;
 
     [Header("Position Settings")]
-    [SerializeField] private float bossCharacterTargetX = -350f; // 보스 최종 X 위치
-    [SerializeField] private float bossCharacterTargetY = 0f;    // 보스 최종 Y 위치
-    [SerializeField] private float bossNameTextTargetX = 400f;   // 텍스트 최종 X 위치
-    [SerializeField] private float bossNameTextTargetY = 0f;     // 텍스트 최종 Y 위치
+    [SerializeField] private float bossCharacterTargetX = -350f;
+    [SerializeField] private float bossCharacterTargetY = 0f;
+    [SerializeField] private float bossNameTextTargetX = 400f;
+    [SerializeField] private float bossNameTextTargetY = 0f;
 
     [Header("Camera Shake")]
     [SerializeField] private Camera mainCamera;
     [SerializeField] private float shakeIntensity = 0.5f;
     [SerializeField] private float shakeDuration = 0.3f;
 
+    [Header("Time Scale Settings")]
+    [SerializeField] private bool pauseGameDuringIntro = true;
+
+    [Header("Debug")]
+    [SerializeField] private bool autoPlayOnStart = false;
+
     private Vector3 originalCameraPosition;
     private Sequence bossIntroSequence;
-
-    // 초기 위치 저장용
     private Vector2 originalTextPosition;
+    private float originalTimeScale = 1f;
+    private bool isIntroPlaying = false;
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
         if (mainCamera == null)
             mainCamera = Camera.main;
         
-        originalCameraPosition = mainCamera.transform.position;
+        if (mainCamera != null)
+            originalCameraPosition = mainCamera.transform.position;
 
-        // 보스 스프라이트 설정
-        if (bossSprite != null)
+        if (bossSprite != null && bossCharacter != null)
             bossCharacter.sprite = bossSprite;
 
-        // 텍스트 초기 위치 저장
-        originalTextPosition = bossNameText.rectTransform.anchoredPosition;
+        if (bossNameText != null)
+            originalTextPosition = bossNameText.rectTransform.anchoredPosition;
 
-        // 초기 상태 설정
         ResetIntro();
     }
 
     private void Start()
     {
-        // 테스트용 자동 재생
-        StartCoroutine(TestPlayAfterDelay(1f));
+        #if UNITY_EDITOR
+        if (autoPlayOnStart)
+        {
+            StartCoroutine(TestPlayAfterDelay(1f));
+        }
+        #endif
     }
 
     private IEnumerator TestPlayAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         TriggerBossIntro();
     }
 
-    // 외부에서 호출할 보스 등장
+    public void SetBossInfo(string name, Sprite sprite)
+    {
+        bossName = name;
+        bossSprite = sprite;
+        
+        if (bossCharacter != null && sprite != null)
+        {
+            bossCharacter.sprite = sprite;
+        }
+    }
+
     public void TriggerBossIntro()
     {
+        if (isIntroPlaying)
+        {
+            Debug.LogWarning("Boss intro is already playing!");
+            return;
+        }
+
         StopAllCoroutines();
         ResetIntro();
         PlayBossIntro();
@@ -82,55 +116,75 @@ public class BossIntroController : MonoBehaviour
 
     private void ResetIntro()
     {
-        // 모든 요소를 초기 상태로
+        if (bossIntroOverlay == null) return;
+
         bossIntroOverlay.alpha = 1;
         bossIntroOverlay.gameObject.SetActive(false);
 
-        darkBackground.color = new Color(0, 0, 0, 0);
+        if (darkBackground != null)
+            darkBackground.color = new Color(0, 0, 0, 0);
         
-        // 배너를 화면 왼쪽 밖으로
-        greenBanner.rectTransform.anchoredPosition = new Vector2(-2500, 0);
+        if (greenBanner != null)
+            greenBanner.rectTransform.anchoredPosition = new Vector2(-2500, 0);
         
-        // 텍스트 초기화 (화면 밖으로)
-        bossNameText.text = "";
-        bossNameText.alpha = 0;
-        bossNameText.rectTransform.anchoredPosition = new Vector2(-2000, bossNameTextTargetY);
+        if (bossNameText != null)
+        {
+            bossNameText.text = "";
+            bossNameText.alpha = 0;
+            bossNameText.rectTransform.anchoredPosition = new Vector2(-2000, bossNameTextTargetY);
+        }
 
-        // 보스 캐릭터를 화면 오른쪽 밖으로
-        bossCharacter.rectTransform.anchoredPosition = new Vector2(2000, bossCharacterTargetY);
-        bossCharacter.color = new Color(1, 1, 1, 0);
-        bossCharacter.transform.localScale = Vector3.one * 0.5f;
-        bossCharacter.transform.rotation = Quaternion.Euler(0, 0, -15f);
+        if (bossCharacter != null)
+        {
+            bossCharacter.rectTransform.anchoredPosition = new Vector2(2000, bossCharacterTargetY);
+            bossCharacter.color = new Color(1, 1, 1, 0);
+            bossCharacter.transform.localScale = Vector3.one * 0.5f;
+            bossCharacter.transform.rotation = Quaternion.Euler(0, 0, -15f);
+        }
 
-        // 경고선 초기화
-        warningLine1.color = new Color(1, 0.27f, 0.27f, 0);
-        warningLine2.color = new Color(1, 0.27f, 0.27f, 0);
+        if (warningLine1 != null)
+            warningLine1.color = new Color(1, 0.27f, 0.27f, 0);
+        
+        if (warningLine2 != null)
+            warningLine2.color = new Color(1, 0.27f, 0.27f, 0);
 
-        // 파티클 정지
-        particleSystem.Stop();
-        particleSystem.Clear();
+        if (particleSystem != null)
+        {
+            particleSystem.Stop();
+            particleSystem.Clear();
+        }
     }
 
     private void PlayBossIntro()
     {
+        if (bossIntroOverlay == null)
+        {
+            Debug.LogError("Boss intro overlay is not assigned!");
+            return;
+        }
+
         bossIntroOverlay.gameObject.SetActive(true);
 
-        bossIntroSequence = DOTween.Sequence();
+        if (pauseGameDuringIntro)
+        {
+            originalTimeScale = Time.timeScale;
+            Time.timeScale = 0f;
+            isIntroPlaying = true;
+        }
 
-        //화면 어둡게 + 플래시 효과
+        bossIntroSequence = DOTween.Sequence();
+        bossIntroSequence.SetUpdate(true);
+
         bossIntroSequence.Append(darkBackground.DOColor(new Color(0, 0, 0, 0.7f), 0.3f).SetEase(Ease.OutCubic));
         bossIntroSequence.Join(ScreenFlash());
 
-        //경고선 등장 (0.2초 후)
         bossIntroSequence.AppendInterval(0.2f);
         bossIntroSequence.Append(warningLine1.DOColor(new Color(1, 0.27f, 0.27f, 0.8f), 0.2f));
         bossIntroSequence.Join(warningLine2.DOColor(new Color(1, 0.27f, 0.27f, 0.8f), 0.2f));
 
-        //그린 배너 슬라이드 인 (0.3초 후)
         bossIntroSequence.AppendInterval(0.3f);
         bossIntroSequence.Append(greenBanner.rectTransform.DOAnchorPosX(0, bannerSlideInDuration).SetEase(Ease.OutExpo));
 
-        //보스 이름 타이핑 효과 (0.2초 후) - Position Settings 변수 사용!
         bossIntroSequence.AppendInterval(0.2f);
         bossIntroSequence.Append(bossNameText.rectTransform.DOAnchorPos(
             new Vector2(bossNameTextTargetX, bossNameTextTargetY), 
@@ -138,7 +192,6 @@ public class BossIntroController : MonoBehaviour
         bossIntroSequence.Join(bossNameText.DOFade(1, 0.3f));
         bossIntroSequence.Join(TypewriterEffect());
 
-        //보스 캐릭터 등장 + 카메라 셰이크 (0.3초 후) - Position Settings 변수 사용!
         bossIntroSequence.AppendInterval(0.3f);
         bossIntroSequence.Append(bossCharacter.rectTransform.DOAnchorPos(
             new Vector2(bossCharacterTargetX, bossCharacterTargetY), 
@@ -148,14 +201,14 @@ public class BossIntroController : MonoBehaviour
         bossIntroSequence.Join(bossCharacter.transform.DORotate(Vector3.zero, characterAppearDuration).SetEase(Ease.OutBack));
         bossIntroSequence.AppendCallback(() => CameraShake());
 
-        //글로우 효과 + 파티클 (0.2초 후)
         bossIntroSequence.AppendInterval(0.2f);
-        bossIntroSequence.AppendCallback(() => particleSystem.Play());
+        bossIntroSequence.AppendCallback(() => {
+            if (particleSystem != null)
+                particleSystem.Play();
+        });
 
-        //1초 동안 유지
         bossIntroSequence.AppendInterval(1.0f);
 
-        //페이드 아웃 (모든 요소)
         bossIntroSequence.Append(greenBanner.rectTransform.DOAnchorPosX(2500, 0.8f).SetEase(Ease.InExpo));
         bossIntroSequence.Join(bossCharacter.rectTransform.DOAnchorPosX(2000, 0.8f).SetEase(Ease.InExpo));
         bossIntroSequence.Join(bossNameText.rectTransform.DOAnchorPosX(2000, 0.8f).SetEase(Ease.InExpo));
@@ -164,11 +217,18 @@ public class BossIntroController : MonoBehaviour
         bossIntroSequence.Join(warningLine2.DOColor(new Color(1, 0.27f, 0.27f, 0), 0.5f));
         bossIntroSequence.Join(darkBackground.DOColor(new Color(0, 0, 0, 0), 0.8f));
 
-        //완료 후 비활성화
         bossIntroSequence.OnComplete(() =>
         {
-            particleSystem.Stop();
+            if (particleSystem != null)
+                particleSystem.Stop();
+            
             bossIntroOverlay.gameObject.SetActive(false);
+            
+            if (pauseGameDuringIntro && isIntroPlaying)
+            {
+                Time.timeScale = originalTimeScale;
+                isIntroPlaying = false;
+            }
         });
     }
 
@@ -178,7 +238,8 @@ public class BossIntroController : MonoBehaviour
         
         return DOTween.Sequence()
             .Append(flashImage.DOColor(new Color(1, 1, 1, 0.5f), 0.1f))
-            .Append(flashImage.DOColor(new Color(0, 0, 0, 0.7f), 0.2f));
+            .Append(flashImage.DOColor(new Color(0, 0, 0, 0.7f), 0.2f))
+            .SetUpdate(true);
     }
 
     private Tween TypewriterEffect()
@@ -189,18 +250,67 @@ public class BossIntroController : MonoBehaviour
         return DOTween.To(() => bossNameText.maxVisibleCharacters,
             x => bossNameText.maxVisibleCharacters = x,
             bossName.Length,
-            0.8f).SetEase(Ease.Linear);
+            0.8f)
+            .SetEase(Ease.Linear)
+            .SetUpdate(true);
     }
 
     private void CameraShake()
     {
+        if (mainCamera == null) return;
+
         mainCamera.transform.DOShakePosition(shakeDuration, shakeIntensity, 20, 90, false, true)
-            .OnComplete(() => mainCamera.transform.position = originalCameraPosition);
+            .SetUpdate(true)
+            .OnComplete(() => {
+                if (mainCamera != null)
+                    mainCamera.transform.position = originalCameraPosition;
+            });
     }
 
     private void OnDestroy()
     {
-        // DOTween 시퀀스 정리
         bossIntroSequence?.Kill();
+        
+        if (isIntroPlaying)
+        {
+            Time.timeScale = originalTimeScale;
+            isIntroPlaying = false;
+        }
+
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (isIntroPlaying)
+        {
+            Time.timeScale = originalTimeScale;
+        }
+    }
+
+    // Public API
+    public bool IsPlaying => isIntroPlaying;
+
+    public void StopIntro()
+    {
+        if (bossIntroSequence != null && bossIntroSequence.IsActive())
+        {
+            bossIntroSequence.Kill();
+        }
+
+        if (particleSystem != null)
+            particleSystem.Stop();
+
+        if (bossIntroOverlay != null)
+            bossIntroOverlay.gameObject.SetActive(false);
+
+        if (pauseGameDuringIntro && isIntroPlaying)
+        {
+            Time.timeScale = originalTimeScale;
+            isIntroPlaying = false;
+        }
     }
 }

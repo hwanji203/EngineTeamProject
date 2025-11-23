@@ -43,7 +43,7 @@ public class PositionChecker : MonoBehaviour
 
     private void CheckOutOfCam(float value)
     {
-        float playerYPos = Mathf.Abs(Camera.main.transform.position.y - value);
+        float playerYPos = Mathf.Abs(camTrn.State.RawPosition.y - value);
 
         float currentPercent = 1 - (playerYPos - camHalfSize) / (nearOutOfCamYValue - camHalfSize);
         if (currentPercent < 0.1f) currentPercent = 0;

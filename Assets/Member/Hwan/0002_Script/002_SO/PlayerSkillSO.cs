@@ -35,6 +35,12 @@ public abstract class PlayerSkillSO : ScriptableObject
             {
                 detectedCollider.Add(collider);
                 AttackReturnType returnType = enemy.GetDamage(defaultDamage * damagePercent, attackType);
+                SoundManager.Instance.Play(attackType switch
+                {
+                    PlayerAttackType.Dash => SFXSoundType.EnemyDashDamaged,
+                    PlayerAttackType.Flip => SFXSoundType.EnemyFlipDamaged,
+                    _ => SFXSoundType.EnemyDashDamaged
+                });
                 if (returnType == AttackReturnType.None) return;
                 OnAttack?.Invoke(returnType == AttackReturnType.Counter);
             }

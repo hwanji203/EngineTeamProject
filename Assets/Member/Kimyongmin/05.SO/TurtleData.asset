@@ -17,6 +17,7 @@ MonoBehaviour:
   attackDelay: 5
   idleSpeed: 1.5
   moveSpeed: 2
-  damage: 20
+  damage: 17
   detectDelay: 0
   deadStamina: 35
+  price: 150

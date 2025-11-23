@@ -20,7 +20,6 @@ public class InventoryManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -111,8 +110,6 @@ public class InventoryManager : MonoBehaviour
         return ownedSkins.Contains(skin);
     }
     
-    // ===== PlayerPrefs 저장/불러오기 =====
-    
     private void SaveOwnedSkins()
     {
         PlayerPrefs.SetInt("OwnedSkinsCount", ownedSkins.Count);
@@ -156,5 +153,13 @@ public class InventoryManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 }

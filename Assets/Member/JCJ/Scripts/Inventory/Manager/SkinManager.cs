@@ -13,25 +13,25 @@ public class SkinManager : MonoBehaviour
     [Header("Character Sprite Renderer")]
     [SerializeField] private SpriteRenderer headRenderer;
     
+    [Header("Auto Find Settings")]
+    [SerializeField] private bool autoFindRenderer = true;
+    [SerializeField] private string playerTag = "Player";
+    [SerializeField] private string headObjectName = "Head";
+    
     [Header("Default Sprite")]
     [SerializeField] private Sprite defaultHeadSprite;
     
     [Header("All Skins Database")]
     [SerializeField] private SkinSO[] allSkins;
     
-    private bool isInitialized = false;
-    
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-            Debug.Log("SkinManager 인스턴스 생성 및 DontDestroyOnLoad 적용");
         }
         else if (Instance != this)
         {
-            Debug.Log("SkinManager 중복 인스턴스 제거");
             Destroy(gameObject);
             return;
         }
@@ -39,55 +39,87 @@ public class SkinManager : MonoBehaviour
     
     private void Start()
     {
-        if (!isInitialized)
+        if (autoFindRenderer && headRenderer == null)
         {
-            LoadEquippedSkins();
-            ApplyAllSkins();
-            isInitialized = true;
-            Debug.Log("SkinManager 초기화 완료");
+            FindHeadRenderer();
         }
-    }
-    
-    private void OnEnable()
-    {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-    
-    private void OnDisable()
-    {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-    
-    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
-    {
-        Debug.Log($"씬 로드됨: {scene.name}");
         
         if (headRenderer == null)
         {
-            FindRenderersInScene();
+            Debug.LogError("[SkinManager] Cannot find Head Renderer");
+            return;
         }
         
+        LoadEquippedSkins();
         ApplyAllSkins();
     }
     
-    private void FindRenderersInScene()
+    private void FindHeadRenderer()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject[] players = GameObject.FindGameObjectsWithTag(playerTag);
         
-        if (player != null)
+        if (players.Length == 0)
         {
-            Transform[] children = player.GetComponentsInChildren<Transform>();
-            
-            foreach (Transform child in children)
+            Debug.LogWarning($"[SkinManager] Cannot find object with '{playerTag}' tag.");
+            return;
+        }
+        
+        GameObject player = players[0];
+        
+        if (players.Length > 1)
+        {
+            Debug.LogWarning($"[SkinManager] Found {players.Length} objects with '{playerTag}' tag. Using first one.");
+        }
+        
+        Transform headTransform = FindChildByName(player.transform, headObjectName);
+        
+        if (headTransform == null)
+        {
+            Debug.LogError($"[SkinManager] Cannot find '{headObjectName}' in Player children.");
+            return;
+        }
+        
+        headRenderer = headTransform.GetComponent<SpriteRenderer>();
+        
+        if (headRenderer == null)
+        {
+            Debug.LogError($"[SkinManager] '{headObjectName}' object does not have SpriteRenderer!");
+        }
+        else
+        {
+            Debug.Log($"[SkinManager] Successfully found Head Renderer: {headTransform.name}");
+        }
+    }
+    
+    private Transform FindChildByName(Transform parent, string childName)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == childName)
             {
-                if (child.name.Contains("Head") && headRenderer == null)
-                {
-                    headRenderer = child.GetComponent<SpriteRenderer>();
-                    break;
-                }
+                return child;
             }
-            
-            Debug.Log($"렌더러 재연결: Head={headRenderer != null}");
+        }
+        
+        foreach (Transform child in parent)
+        {
+            Transform found = FindChildByName(child, childName);
+            if (found != null)
+            {
+                return found;
+            }
+        }
+        
+        return null;
+    }
+    
+    public void RefreshHeadRenderer()
+    {
+        FindHeadRenderer();
+        
+        if (headRenderer != null)
+        {
+            ApplyAllSkins();
         }
     }
     
@@ -95,11 +127,13 @@ public class SkinManager : MonoBehaviour
     {
         if (!IsValidSlotIndex(slotIndex))
         {
+            Debug.LogWarning($"[SkinManager] Invalid slot index: {slotIndex}");
             return;
         }
         
         if (equippedSkins[slotIndex] == skin)
         {
+            Debug.Log($"[SkinManager] Skin already equipped: {skin?.SkinName}");
             return;
         }
         
@@ -114,6 +148,7 @@ public class SkinManager : MonoBehaviour
             
             if (existingSlot != -1 && existingSlot != slotIndex)
             {
+                Debug.LogWarning($"[SkinManager] Skin already equipped in another slot.");
                 return;
             }
         }
@@ -130,30 +165,45 @@ public class SkinManager : MonoBehaviour
         OnSkinChanged?.Invoke(slotIndex, skin);
         
         SaveEquippedSkins();
+        
+        Debug.Log($"[SkinManager] Skin equipped: {skin?.SkinName ?? "None"}");
     }
     
     private void ApplySkinToCharacter(int slotIndex, SkinSO skin)
     {
+        if (headRenderer == null)
+        {
+            Debug.LogError("[SkinManager] Cannot apply skin - Head Renderer is null!");
+            return;
+        }
+        
         Sprite spriteToApply = null;
         
         if (skin != null)
         {
             spriteToApply = skin.SkinSprite;
+            Debug.Log($"[SkinManager] Applying skin sprite: {skin.SkinName}");
         }
         else
         {
             spriteToApply = defaultHeadSprite;
+            Debug.Log("[SkinManager] Applying default sprite");
         }
         
-        if (headRenderer != null)
+        if (spriteToApply != null)
         {
             headRenderer.sprite = spriteToApply;
+        }
+        else
+        {
+            Debug.LogWarning("[SkinManager] No sprite to apply!");
         }
     }
     
     private void ApplyAllSkins()
     {
-        Debug.Log("모든 스킨 적용 중...");
+        Debug.Log("[SkinManager] ApplyAllSkins called");
+        
         for (int i = 0; i < slotCount; i++)
         {
             ApplySkinToCharacter(i, equippedSkins[i]);
@@ -199,12 +249,10 @@ public class SkinManager : MonoBehaviour
             if (equippedSkins[i] != null)
             {
                 PlayerPrefs.SetInt($"EquippedSkin_{i}", equippedSkins[i].SkinID);
-                Debug.Log($"스킨 저장: 슬롯 {i} = ID {equippedSkins[i].SkinID}");
             }
             else
             {
                 PlayerPrefs.DeleteKey($"EquippedSkin_{i}");
-                Debug.Log($"스킨 제거: 슬롯 {i}");
             }
         }
         PlayerPrefs.Save();
@@ -212,7 +260,6 @@ public class SkinManager : MonoBehaviour
     
     private void LoadEquippedSkins()
     {
-        Debug.Log("장착된 스킨 불러오기 시작");
         for (int i = 0; i < slotCount; i++)
         {
             if (PlayerPrefs.HasKey($"EquippedSkin_{i}"))
@@ -223,11 +270,7 @@ public class SkinManager : MonoBehaviour
                 if (skin != null)
                 {
                     equippedSkins[i] = skin;
-                    Debug.Log($"스킨 불러오기: 슬롯 {i} = {skin.SkinName} (ID {skinID})");
-                }
-                else
-                {
-                    Debug.LogWarning($"스킨 ID {skinID}를 찾을 수 없음");
+                    Debug.Log($"[SkinManager] Loaded saved skin: {skin.SkinName}");
                 }
             }
         }
@@ -243,5 +286,13 @@ public class SkinManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 }

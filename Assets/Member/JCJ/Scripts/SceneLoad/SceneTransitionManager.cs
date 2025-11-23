@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using DG.Tweening;
-using TMPro;
 
 public class SceneTransitionManager : MonoBehaviour
 {
@@ -13,57 +12,76 @@ public class SceneTransitionManager : MonoBehaviour
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private float fadeDuration = 0.5f;
     
+    [Header("Scene Entry")]
+    [SerializeField] private bool fadeInOnStart = true;
+    
+    private bool isTransitioning = false;
+    
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
+            return;
         }
     }
     
     private void Start()
     {
-        // 시작할 때 페이드 인
-        fadeCanvasGroup.alpha = 1f;
-        fadeCanvasGroup.DOFade(0f, fadeDuration)
-            .SetEase(Ease.InOutQuad)
-            .OnComplete(() => fadeCanvasGroup.blocksRaycasts = false);
+        if (fadeInOnStart)
+        {
+            fadeCanvasGroup.alpha = 1f;
+            fadeCanvasGroup.blocksRaycasts = true;
+            
+            fadeCanvasGroup.DOFade(0f, fadeDuration)
+                .SetEase(Ease.InOutQuad)
+                .OnComplete(() => fadeCanvasGroup.blocksRaycasts = false);
+        }
+        else
+        {
+            fadeCanvasGroup.alpha = 0f;
+            fadeCanvasGroup.blocksRaycasts = false;
+        }
     }
     
     public void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadSceneAsync(sceneName));
+        if (!isTransitioning)
+        {
+            StartCoroutine(LoadSceneAsync(sceneName));
+        }
     }
     
     private IEnumerator LoadSceneAsync(string sceneName)
     {
+        isTransitioning = true;
         fadeCanvasGroup.blocksRaycasts = true;
         
-        // Fade Out
         yield return fadeCanvasGroup.DOFade(1f, fadeDuration)
             .SetEase(Ease.InOutQuad)
             .WaitForCompletion();
         
-        // 비동기 씬 로드
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         operation.allowSceneActivation = false;
         
-        // 씬 활성화
+        while (operation.progress < 0.9f)
+        {
+            yield return null;
+        }
+        
         operation.allowSceneActivation = true;
-        
-        // 씬이 완전히 로드될 때까지 대기
         yield return new WaitUntil(() => operation.isDone);
-        
-        // Fade In
-        yield return fadeCanvasGroup.DOFade(0f, fadeDuration)
-            .SetEase(Ease.InOutQuad)
-            .WaitForCompletion();
-        
-        fadeCanvasGroup.blocksRaycasts = false;
+    }
+    
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 }

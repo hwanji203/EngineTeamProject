@@ -20,3 +20,4 @@ MonoBehaviour:
   damage: 10
   detectDelay: 2
   deadStamina: 10
+  price: 75

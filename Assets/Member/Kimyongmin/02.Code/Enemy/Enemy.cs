@@ -4,6 +4,7 @@ using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Enemy;
 using Member.Kimyongmin._02.Code.Enemy.SO;
+using Random = UnityEngine.Random;
 
 public abstract class Enemy : MonoBehaviour, IAgentable
 {
@@ -36,7 +37,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     {
         try
         {
-            _currentAttackTime = EnemyDataSo.attackDelay;
+            _currentAttackTime = EnemyDataSo.attackDelay - Random.Range(1,3);
         }
         catch (NullReferenceException)
         {
@@ -65,7 +66,9 @@ public abstract class Enemy : MonoBehaviour, IAgentable
 
     protected virtual void Start()
     {
+        DisbleAttackRange();
         HealthSystem.OnDeath += Death;
+        HealthSystem.OnDeath += DeathSound;
     }
 
     public void FilpX(float xDir)
@@ -133,6 +136,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
         {
             d = true;
             GameManager.Instance.Player.RecoveryStamina(EnemyDataSo.deadStamina);
+            StarManager.Instance.AddGold((int)EnemyDataSo.price);
         }
     }
 
@@ -161,6 +165,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     private void OnDestroy()
     {
         HealthSystem.OnDeath -= Death;
+        HealthSystem.OnDeath -= DeathSound;
     }
 
     public void DeadGameobject()
@@ -191,5 +196,10 @@ public abstract class Enemy : MonoBehaviour, IAgentable
             AgentMovement.SetMoveDir(Target.position - transform.position);
             FilpX((Target.position - transform.position).x);
         }
+    }
+
+    private void DeathSound()
+    {
+        SoundManager.Instance.Play(SFXSoundType.GenEnemy);
     }
 }
