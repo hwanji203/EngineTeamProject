@@ -28,7 +28,6 @@ namespace Member.Kimyongmin._02.Code.Agent
                 {
                     OnHealthChanged?.Invoke();
                     CameraShaker.Instance.RandomShake(_health - value);
-                    SoundManager.Instance.Play(SFXSoundType.EnemyGetDamage);
                     Hit = true;
                 }
                 
