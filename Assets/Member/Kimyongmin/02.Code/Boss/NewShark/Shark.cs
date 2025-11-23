@@ -75,7 +75,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         
         public void FilpX(float xDir)
         {
-            float duration = 1f / SharkData.Speed;
+            float duration = 0;
 
 
             if (xDir > 0)

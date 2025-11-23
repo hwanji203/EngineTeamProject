@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f22f192bf6cc24686979248028fb85, type: 3}
   m_Name: SharkDataSO
   m_EditorClassIdentifier: 
-  <Hp>k__BackingField: 700
+  <Hp>k__BackingField: 600
   <Speed>k__BackingField: 2
   <AttackDelay>k__BackingField: 2
-  <NormalAttackDamage>k__BackingField: 15
+  <NormalAttackDamage>k__BackingField: 13
   <ChargeDamage>k__BackingField: 5
   <LaserTickDamage>k__BackingField: 1
   <StunDuration>k__BackingField: 10

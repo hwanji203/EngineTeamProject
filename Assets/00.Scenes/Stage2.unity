@@ -370,9 +370,121 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 769092803227260815, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.020445
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206826173396603442, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5297201439296408010, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388293093675355061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 67.561966
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].spawnPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[1].enemyType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[2].enemyType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[0].enemyType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[1].enemyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[0].spawnCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[1].spawnCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[2].spawnCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[0].spawnCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[1].spawnCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[2].spawnCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591983352955039723, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 37.804367
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[1].enemyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[0].enemyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[0].spawnCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[1].spawnCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[0].spawnCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[1].spawnCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670310445786161760, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.052929
       objectReference: {fileID: 0}
     - target: {fileID: 9110312959600200776, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: m_LocalPosition.x
