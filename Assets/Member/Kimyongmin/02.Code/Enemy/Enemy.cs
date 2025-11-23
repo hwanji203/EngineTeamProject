@@ -68,6 +68,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     {
         DisbleAttackRange();
         HealthSystem.OnDeath += Death;
+        HealthSystem.OnDeath += DeathSound;
     }
 
     public void FilpX(float xDir)
@@ -164,6 +165,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     private void OnDestroy()
     {
         HealthSystem.OnDeath -= Death;
+        HealthSystem.OnDeath -= DeathSound;
     }
 
     public void DeadGameobject()
@@ -194,5 +196,10 @@ public abstract class Enemy : MonoBehaviour, IAgentable
             AgentMovement.SetMoveDir(Target.position - transform.position);
             FilpX((Target.position - transform.position).x);
         }
+    }
+
+    private void DeathSound()
+    {
+        SoundManager.Instance.Play(SFXSoundType.GenEnemy);
     }
 }
