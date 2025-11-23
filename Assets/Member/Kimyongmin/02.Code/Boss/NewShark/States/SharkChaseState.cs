@@ -33,7 +33,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
                 Shark.ResetAttackCooltime();
                 Shark.SkillCoolPlus(2);
                 SharkAttackState attackState = (SharkAttackState)SharkStateMachine.StateDictionary[SharkStateType.Attack];
-                attackState.SetPower(10);
+                attackState.SetPower(5);
                 SharkStateMachine.ChangeState(SharkStateType.Attack);
             }
 
