@@ -61,6 +61,7 @@ public class TutorialUI : MonoBehaviour, IUI
                 GameManager.Instance.CinemachineCam.GetComponent<CinemachinePositionComposer>().enabled = true;
                 SaveManager.Instance.SaveValue("Tutorial", 1);
                 TutorialManager.Instance.EndTutorial();
+                StarManager.Instance.AddGold(500);
                 break;
         }
     }

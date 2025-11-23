@@ -7,7 +7,7 @@ public enum SFXSoundType
 {
     None,
     OnBattle,
-    EnemyGetDamage,
+    EnemyDashDamaged,
     GenEnemy,
     Spin,
     Clear,
@@ -17,7 +17,8 @@ public enum SFXSoundType
     GameOver,
     Counter,
     Dash,
-    ButtonMouseIn
+    ButtonMouseIn,
+    EnemyFlipDamaged
 }
 
 public enum BGMSoundType
@@ -88,6 +89,7 @@ public class SoundManager : MonoSingleton<SoundManager>
     // 지정된 타입의 사운드 재생
     public void Play(SFXSoundType type)
     {
+        Debug.Log(type);
         if (sfxSoundDict.TryGetValue(type, out var clip))
         {
             sfxAudioSource.PlayOneShot(clip);
