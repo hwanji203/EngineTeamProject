@@ -21169,7 +21169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8b1ce35c958fc4ab3f1c7986657216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   errorRange: 0.1
   maxRange: 8
   oneBlock: 1
