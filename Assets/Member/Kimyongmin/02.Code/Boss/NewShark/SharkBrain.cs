@@ -65,7 +65,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             for (int i = 0; i < 3; i++)
             {
                 SharkAttackState attackState = (SharkAttackState)SharkStateMachine.StateDictionary[SharkStateType.Attack];
-                attackState.SetPower(25);
+                attackState.SetPower(15);
                 SharkStateMachine.ChangeState(SharkStateType.Attack);
                 yield return new WaitForSeconds(1.05f);
             

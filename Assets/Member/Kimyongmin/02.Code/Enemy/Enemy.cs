@@ -1,10 +1,8 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Enemy;
-using Member.Kimyongmin._02.Code.Enemy.Enemy;
 using Member.Kimyongmin._02.Code.Enemy.SO;
 
 public abstract class Enemy : MonoBehaviour, IAgentable
@@ -30,6 +28,8 @@ public abstract class Enemy : MonoBehaviour, IAgentable
 
     public bool IsAttack { get; set; } = false;
     public event Action OnDead;
+
+    private LayerMask _wallMask;
 
     protected virtual void Awake()
     {
@@ -57,6 +57,8 @@ public abstract class Enemy : MonoBehaviour, IAgentable
         AgentMovement.SetSpeed(EnemyDataSo.moveSpeed, EnemyDataSo.detectDelay);
 
         HealthSystem.OnDeath += () => OnDead?.Invoke();
+        
+        _wallMask= LayerMask.NameToLayer("Wall");
     }
 
     protected virtual void Start()
@@ -177,5 +179,14 @@ public abstract class Enemy : MonoBehaviour, IAgentable
         }
 
         HealthSystem.GetDamage(damage);
+    }
+
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.layer == _wallMask)
+        {
+            AgentMovement.SetMoveDir(Target.position - transform.position);
+        }
     }
 }
