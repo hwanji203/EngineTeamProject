@@ -38,7 +38,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Death()
         {
-            VFXManager.Instance.Play(VFXType.EnemyDead,transform.position,Quaternion.identity, transform);
+            VFXManager.Instance.Play(VFXType.EnemyDead,transform.position,Quaternion.identity, transform.parent);
             Animator.SetBool(HitHash, true);
             _attackHitbox.ShowHitbox(Vector2.zero, 1.2f);
         }

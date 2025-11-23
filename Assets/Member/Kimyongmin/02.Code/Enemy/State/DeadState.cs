@@ -14,6 +14,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.State
         {
             base.EnterState();
             
+            Enemy.GetComponent<Collider2D>().isTrigger = true;
             SpriteRenderer spriteRenderer = Enemy.transform.GetComponentInDirectChildren<SpriteRenderer>();
             spriteRenderer.DOColor(new Color(0, 0, 0), 3f);
         }
