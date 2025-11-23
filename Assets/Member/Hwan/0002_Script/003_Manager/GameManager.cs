@@ -45,6 +45,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (value == 1)
         {
+            SoundManager.Instance.Play(SFXSoundType.GameOver);
             UIManager.Instance.CloseAllUI(UIType.GameOverUI);
             Player.PositionCheckerCompo.OnNearOutOfCam -= CheckGameOver;
         }
@@ -54,6 +55,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (value == 1)
         {
+            SoundManager.Instance.Play(SFXSoundType.Clear);
             UIManager.Instance.CloseAllUI(UIType.ClearUI);
             Player.PositionCheckerCompo.OnNearClear -= CheckGameClear;
         }

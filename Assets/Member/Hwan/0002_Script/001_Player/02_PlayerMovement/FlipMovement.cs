@@ -8,5 +8,7 @@ public class FlipMovement : Movement
         moveValue.Trn.DOBlendableRotateBy(new Vector3(0, 0, 360f),
             moveValue.MovementSO.skillDictionarySO.Dictionary[PlayerSkillType.Flip].AttackTime, RotateMode.FastBeyond360)
             .SetEase(Ease.OutCirc);
+
+        SoundManager.Instance.Play(SFXSoundType.Spin);
     }
 }

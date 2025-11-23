@@ -71,6 +71,8 @@ public class EnemySpawnManager : MonoSingleton<EnemySpawnManager>
 
         Vector2 spawnPos = GetRandomSpawnPosition();
         Instantiate(enemyDicionary[selectedEnemy], spawnPos, Quaternion.identity, transform);
+
+        SoundManager.Instance.Play(SFXSoundType.GenEnemy);
     }
 
     public Vector2 GetRandomSpawnPosition()

@@ -25,6 +25,7 @@ public class BattleRoundManager : MonoBehaviour
         {
             StartWave(0);
             OnBattle?.Invoke(true);
+            SoundManager.Instance.Play(SFXSoundType.OnBattle);
         }
     }
 
