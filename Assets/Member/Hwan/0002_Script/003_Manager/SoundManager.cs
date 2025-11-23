@@ -4,10 +4,15 @@ using UnityEngine;
 public enum SFXSoundType
 {
     None,
-    SliderValueChange,
-    BirdsSwing,
-    GetBird,
-    Hited
+    OnBattle,
+    EnemyGetDamage,
+    GenEnemy,
+    Spin,
+    Clear,
+    GetDamage,
+    GetHeal,
+    Typing,
+    GameOver
 }
 
 public enum BGMSoundType

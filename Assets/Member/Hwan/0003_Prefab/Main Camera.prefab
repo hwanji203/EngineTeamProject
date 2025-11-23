@@ -24686,23 +24686,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4706655042318959119, guid: e635eb98da3c17f4da5ba6d4bc0c0e7c, type: 3}
       propertyPath: moveDistance
-      value: 18
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6002018823460689357, guid: e635eb98da3c17f4da5ba6d4bc0c0e7c, type: 3}
       propertyPath: moveDistance
-      value: 18
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6315609589109480151, guid: e635eb98da3c17f4da5ba6d4bc0c0e7c, type: 3}
       propertyPath: moveDistance
-      value: 18
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6343818027906028581, guid: e635eb98da3c17f4da5ba6d4bc0c0e7c, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 6341497734929757865}
+    - target: {fileID: 6785642061131099777, guid: e635eb98da3c17f4da5ba6d4bc0c0e7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1500.94
+      objectReference: {fileID: 0}
     - target: {fileID: 6947121945252735545, guid: e635eb98da3c17f4da5ba6d4bc0c0e7c, type: 3}
       propertyPath: m_Name
       value: ClearUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147256186830889161, guid: e635eb98da3c17f4da5ba6d4bc0c0e7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1500.94
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -25,7 +25,7 @@ public class StarManager : MonoSingleton<StarManager>,IUI
     }
     private void OnEnable()
     {
-
+        Open();
     }
 
     

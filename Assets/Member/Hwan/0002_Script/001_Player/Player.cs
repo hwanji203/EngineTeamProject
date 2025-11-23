@@ -72,17 +72,18 @@ public class Player : MonoBehaviour
         OnDamage += (damage, _) => StaminaCompo.LostStamina(damage);
         OnDamage += (_, enemyPos) => MovementCompo.Damaged(enemyPos);
         OnDamage += (_, _) => MovementCompo.ChangeState(PlayerState.Hit);
-
         MovementCompo.OnStateChange += eyeAnimation.ChangeAnimation;
     }
 
     public void GetDamage(float value, Vector2 enemyPos)
     {
         OnDamage?.Invoke(value, (transform.position - (Vector3)enemyPos).normalized);
+        SoundManager.Instance.Play(SFXSoundType.GetDamage);
     }
 
     public void RecoveryStamina(float value)
     {
         StaminaCompo.RecoveryStamina(value);
+        SoundManager.Instance.Play(SFXSoundType.GetHeal);
     }
 }

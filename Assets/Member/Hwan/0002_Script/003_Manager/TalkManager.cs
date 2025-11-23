@@ -96,6 +96,7 @@ public class TalkManager : MonoSingleton<TalkManager>
 
 
             textMeshPro.text += c;
+            SoundManager.Instance.Play(SFXSoundType.Typing);
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
 
