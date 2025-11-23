@@ -22,9 +22,17 @@ public class ComboSystem : MonoSingleton<ComboSystem>
     private RectTransform comboRectTransform;
     private Image comboImage;
 
+    private PlayerAttack playerAttack;
+
     private void Start()
     {
-        GameManager.Instance.Player.AttackCompo.OnAttack += DoCombo;
+        playerAttack = GameManager.Instance.Player.AttackCompo;
+        playerAttack.OnAttack += DoCombo;
+    }
+
+    protected override void OnDestroy()
+    {
+        playerAttack.OnAttack -= DoCombo;
     }
 
     // Unity 오브젝트가 진짜로 살아있는지 체크하는 헬퍼
@@ -35,6 +43,8 @@ public class ComboSystem : MonoSingleton<ComboSystem>
 
     public void DoCombo(bool isCounter)
     {
+        Debug.Log(this);
+        Debug.Log(currentCombo);
         // 1) 콤보 오브젝트가 없거나, 이미 Destroy 된 상태면 새로 생성
         if (!IsValid(currentComboObj))
         {
