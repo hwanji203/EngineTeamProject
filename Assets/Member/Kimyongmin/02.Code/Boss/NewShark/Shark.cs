@@ -75,19 +75,15 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         
         public void FilpX(float xDir)
         {
-            float duration = 0;
-
-
             if (xDir > 0)
             {
-                transform.DORotate(
-                    new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z), duration);
+                transform.rotation = Quaternion.Euler(
+                    new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z));
             }
             else if (xDir < 0)
             {
-                transform.DORotate(
-                    new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z),
-                    duration);
+                transform.rotation = Quaternion.Euler(
+                    new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z));
             }
         }
 
@@ -207,6 +203,11 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             Healthsystem.OnHealthChanged -= HitAnim;
             Healthsystem.OnHealthChanged -= SharkMovement.ZeroVelocity;
+        }
+
+        public void Death()
+        {
+            StarManager.Instance.AddGold(SharkData.Price);
         }
     }
 }
