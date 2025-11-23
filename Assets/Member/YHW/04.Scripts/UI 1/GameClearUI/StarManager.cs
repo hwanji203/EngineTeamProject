@@ -1,11 +1,6 @@
 using DG.Tweening;
-using NUnit.Framework;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -49,15 +44,17 @@ public class StarManager : MonoSingleton<StarManager>,IUI
 
     public void Quit()
     {
-
+        SceneManager.LoadScene("Lobby");
     }
 
     public void NextStage()
     {
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentIndex + 1);
     }
 
 
-    
+
 
     public void ShowScore(int finalScore, float duration = 1f)
     {

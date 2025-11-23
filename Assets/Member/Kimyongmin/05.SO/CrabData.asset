@@ -19,4 +19,5 @@ MonoBehaviour:
   moveSpeed: 0
   damage: 30
   detectDelay: 0
-  deadStamina: 30
+  deadStamina: 35
+  price: 0

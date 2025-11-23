@@ -325,6 +325,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa81c27b94813c4895f563eb9547c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2526221989904479430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3828638920849618796}
+  - component: {fileID: 1634688233992846622}
+  m_Layer: 0
+  m_Name: StageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3828638920849618796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526221989904479430}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6541987100514202507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1634688233992846622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526221989904479430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4906ba8bbe837d34ba2fa7deb094fa15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2794877085354498448
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +501,8 @@ MonoBehaviour:
       <Clip>k__BackingField: {fileID: 8300000, guid: 0f6d8a8eba2142946b5d6e698f9dfdf6, type: 3}
     - <Type>k__BackingField: 12
       <Clip>k__BackingField: {fileID: 8300000, guid: 7e0aa40f2f2d5c047b0dc65dcb00428e, type: 3}
+    - <Type>k__BackingField: 13
+      <Clip>k__BackingField: {fileID: 8300000, guid: 6f4398c94051d4245862da5d706ad87d, type: 3}
     <Mixer>k__BackingField: {fileID: 3643321774804691864, guid: df8cc3f159ac11747a5c886c5bf924ed, type: 2}
   bgmSounds:
     <ClipDatas>k__BackingField:
@@ -575,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3d791a1baebcf4e8006f3d734c333a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnCool: 4
+  defaultSpawnCool: 3
   errorSpawnCool: 1
   spawnOffset: 1
 --- !u!1 &5317108150255212542
@@ -955,7 +1001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CinemachineCam>k__BackingField: {fileID: 0}
-  <StageSO>k__BackingField: {fileID: 11400000, guid: 0727bc34a0caa744993eab7c1e13fdf1, type: 2}
+  <StageSO>k__BackingField: {fileID: 11400000, guid: 67d5fa51573e82f4b957d43ec5968c41, type: 2}
 --- !u!1 &7848488231887453350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1102,7 @@ Transform:
   - {fileID: 7570132852983017180}
   - {fileID: 2178269953546895105}
   - {fileID: 6265189045218918681}
+  - {fileID: 3828638920849618796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &509392682818208472

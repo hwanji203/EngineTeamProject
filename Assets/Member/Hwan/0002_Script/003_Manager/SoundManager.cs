@@ -30,7 +30,9 @@ public enum BGMSoundType
     Stage3,
     Stage4,
     Boss,
-    Intro
+    Intro,
+    Stage5,
+    Stage6
 }
 public class SoundManager : MonoSingleton<SoundManager>
 {

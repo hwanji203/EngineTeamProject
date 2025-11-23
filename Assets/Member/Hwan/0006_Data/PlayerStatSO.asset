@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staminaValues:
   - <MoveType>k__BackingField: 0
-    <UseStamina>k__BackingField: 0.5
+    <UseStamina>k__BackingField: 1
     <UseTime>k__BackingField: 1
     <IsOneShot>k__BackingField: 0
   - <MoveType>k__BackingField: 1

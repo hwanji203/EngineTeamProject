@@ -101,7 +101,7 @@ public class BattleRoundManager : MonoBehaviour
         BattleCamera.Instance.ResumeCameraFollow();
 
         // 모든 이벤트 구독 해제
-        OnBattle?.Invoke(true);
+        OnBattle?.Invoke(false);
         UnsubscribeAllEnemies();
         currentWaveEnemies.Clear();
         VolumeManager.Instance.DecreaseVolume(VolumeType.Battle, 0.5f);

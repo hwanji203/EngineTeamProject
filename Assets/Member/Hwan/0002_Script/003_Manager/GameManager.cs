@@ -74,6 +74,7 @@ public class GameManager : MonoSingleton<GameManager>
             SoundManager.Instance.Play(SFXSoundType.Clear);
             UIManager.Instance.CloseAllUI(UIType.ClearUI);
             Player.PositionCheckerCompo.OnNearClear -= CheckGameClear;
+            StageManager.Instance.ClearLevel(StageSO.StageLevel);
         }
     }
 }

@@ -598,9 +598,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 8.031033
       objectReference: {fileID: 0}
+    - target: {fileID: 983155981477780586, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756948587150055519, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4206826173396603442, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238162444168474518, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: m_text
+      value: View ending
       objectReference: {fileID: 0}
     - target: {fileID: 5297201439296408010, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: m_Name
@@ -771,7 +783,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7206351676284085192, guid: 24666c4458341954fa26221d76b514bf, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6873001365132361404, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       insertIndex: -1
@@ -790,10 +803,6 @@ PrefabInstance:
       propertyPath: cameraRoot
       value: 
       objectReference: {fileID: 1748796850}
-    - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
-      propertyPath: <StageSO>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 67d5fa51573e82f4b957d43ec5968c41, type: 2}
     - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: <CinemachineCam>k__BackingField
       value: 

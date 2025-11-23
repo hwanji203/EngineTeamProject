@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39215d9a76ca17a42a613630e82af25f, type: 3}
   m_Name: Stage_6
   m_EditorClassIdentifier: 
-  <StageBGM>k__BackingField: 0
+  <StageBGM>k__BackingField: 9
   <StartY>k__BackingField: 140
-  <EndY>k__BackingField: 180
+  <EndY>k__BackingField: 170
+  <StageLevel>k__BackingField: 6
   EnemyList:
   - name: 0
     enemyPrefab: {fileID: 6617325858536452346, guid: 8329e78f8f8be5148a3493a00a0b3d54, type: 3}
