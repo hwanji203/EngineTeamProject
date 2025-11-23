@@ -56,7 +56,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Death()
         {
-            
+            VFXManager.Instance.Play(VFXType.EnemyDead,transform.position,Quaternion.identity, transform);
         }
 
         private IEnumerator ShootStoneCor(float delay)

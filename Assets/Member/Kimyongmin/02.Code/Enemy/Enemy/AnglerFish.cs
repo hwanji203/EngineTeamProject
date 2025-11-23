@@ -34,7 +34,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         public override void Death()
         {
-            //Destroy(gameObject);
+            VFXManager.Instance.Play(VFXType.EnemyDead,transform.position,Quaternion.identity, transform);
         }
 
         public float PanjeongTime { get; set; }
