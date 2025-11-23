@@ -1,7 +1,9 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class StageButton : MonoBehaviour
 {
@@ -53,7 +55,25 @@ public class StageButton : MonoBehaviour
         }
         
         Debug.Log($"레벨 {stageLevel}");
-        SceneTransitionManager.Instance.LoadScene($"Stage{stageLevel}");
+        LoadStageByPrefix(stageLevel);
+    }
+    private void LoadStageByPrefix(int stageLevel)
+    {
+        string prefix = $"Stage{stageLevel}";
+
+        string targetSceneName = Enumerable.Range(0, SceneManager.sceneCountInBuildSettings)
+            .Select(i => System.IO.Path.GetFileNameWithoutExtension(
+                SceneUtility.GetScenePathByBuildIndex(i)))
+            .FirstOrDefault(name => name.StartsWith(prefix));
+
+        if (!string.IsNullOrEmpty(targetSceneName))
+        {
+            SceneTransitionManager.Instance.LoadScene(targetSceneName);
+        }
+        else
+        {
+            Debug.LogError($"'{prefix}' 로 시작하는 씬을 찾을 수 없습니다.");
+        }
     }
     
     void UpdateVisual()
