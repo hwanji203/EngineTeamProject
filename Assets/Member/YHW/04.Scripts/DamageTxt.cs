@@ -26,13 +26,7 @@ public class DamageTxt : MonoSingleton<DamageTxt>
         }
     }
 
-    private void Update()
-    {
-        if (Keyboard.current.aKey.wasPressedThisFrame)
-        {
-            ShowDamageTxt(10);
-        }
-    }
+    
 
     public void ShowDamageTxt(float damage)
     {
