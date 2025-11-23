@@ -2581,7 +2581,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 886438681967480742, guid: d89ac665e5ee112468d90b01f336eefe, type: 3}
       propertyPath: m_text
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2475198210544195108, guid: d89ac665e5ee112468d90b01f336eefe, type: 3}
       propertyPath: stageSO
@@ -2589,7 +2589,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 00c24ff339a085a47bd3a34e7d9c2025, type: 2}
     - target: {fileID: 2475198210544195108, guid: d89ac665e5ee112468d90b01f336eefe, type: 3}
       propertyPath: stageLevel
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2475198210544195108, guid: d89ac665e5ee112468d90b01f336eefe, type: 3}
       propertyPath: lockedColor.b
