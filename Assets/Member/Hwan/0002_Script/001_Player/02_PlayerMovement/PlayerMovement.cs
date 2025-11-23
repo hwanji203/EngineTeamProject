@@ -70,7 +70,8 @@ public class PlayerMovement : MonoBehaviour
     public void StartAttack(PlayerAttackType type)
     {
         if (type == PlayerAttackType.Dash) isDashing = true;
-        rb.linearVelocity = Vector2.zero;
+        else SoundManager.Instance.Play(SFXSoundType.Spin);
+            rb.linearVelocity = Vector2.zero;
         ChangeState(PlayerState.WaitForAttack);
         CanMove = false;
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -13,39 +14,44 @@ public enum SFXSoundType
     GetDamage,
     GetHeal,
     Typing,
-    GameOver
+    GameOver,
+    Counter,
+    Dash,
+    ButtonMouseIn
 }
 
 public enum BGMSoundType
 {
     None,
-    Stage1BGM,
-    Stage2BGM,
-    Stage3BGM
+    MainScene,
+    Tutorial,
+    Stage2,
+    Stage3,
+    Stage4,
+    Boss,
+    Intro
 }
 public class SoundManager : MonoSingleton<SoundManager>
 {
-    public class SoundData <T>
+    [Serializable]
+    public class ClipData <T>
     {
-        public T type;     // 사운드 구분 타입
-        public AudioClip clip;   // 오디오 파일
+        [field: SerializeField] public T Type { get; private set; }     // 사운드 구분 타입
+        [field: SerializeField] public AudioClip Clip { get; private set; }      // 오디오 파일
     }
 
-    [System.Serializable]
-    public class SFXSoundData : SoundData<SFXSoundType> { }
-
-    [System.Serializable]
-    public class BGMSoundData : SoundData<BGMSoundType> { }
+    [Serializable]
+    public class SoundData<T>
+    {
+        [field: SerializeField] public ClipData<T>[] ClipDatas { get; private set; }
+        [field: SerializeField] public AudioMixerGroup Mixer { get; private set; }
+    }
 
     [Header("SFX Sound Daters")]
-    [SerializeField] private List<SFXSoundData> sfxSounds;
-    [Header("SFX Mixer")]
-    [SerializeField] private AudioMixer sfxMixer;
+    [SerializeField] private SoundData<SFXSoundType> sfxSounds;
 
     [Header("BGM Sound Daters")]
-    [SerializeField] private List<BGMSoundData> bgmSounds;
-    [Header("BGM Mixer")]
-    [SerializeField] private AudioMixer bgmMixer;
+    [SerializeField] private SoundData<BGMSoundType> bgmSounds;
 
     private Dictionary<SFXSoundType, AudioClip> sfxSoundDict;
     private AudioSource sfxAudioSource;
@@ -56,22 +62,26 @@ public class SoundManager : MonoSingleton<SoundManager>
     protected override void Awake()
     {
         base.Awake();
-        DontDestroyOnLoad(gameObject);
 
-        AudioInitialized(out sfxAudioSource, out sfxSoundDict, sfxSounds);
-        AudioInitialized(out bgmAudioSource, out bgmSoundDict, bgmSounds);
+        AudioInitialize<SFXSoundType>(out sfxAudioSource, out sfxSoundDict, sfxSounds);
+        AudioInitialize<BGMSoundType>(out bgmAudioSource, out bgmSoundDict, bgmSounds);
+
+        bgmAudioSource.loop = true;
     }
 
-    private void AudioInitialized<T1, T2>(out AudioSource audioSource, out Dictionary<T1, AudioClip> dict, List<T2> data) where T2 : SoundData<T1>
+    private void AudioInitialize<T>(out AudioSource audioSource, out Dictionary<T, AudioClip> dict, SoundData<T> soundData)
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
+        audioSource.outputAudioMixerGroup = soundData.Mixer;
 
-        dict = new Dictionary<T1, AudioClip>();
-        foreach (T2 s in data)
+        dict = new Dictionary<T, AudioClip>();
+        foreach (ClipData<T> clipData in soundData.ClipDatas)
         {
-            if (!dict.ContainsKey(s.type))
-                dict.Add(s.type, s.clip);
+            if (dict.ContainsKey(clipData.Type) == false)
+            {
+                dict.Add(clipData.Type, clipData.Clip);
+            }
         }
     }
 

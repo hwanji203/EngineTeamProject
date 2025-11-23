@@ -69,19 +69,20 @@ public class EnemySpawnManager : MonoSingleton<EnemySpawnManager>
         int index = UnityEngine.Random.Range(0, spawnableEnemies.Length);
         EnemyName selectedEnemy = spawnableEnemies[index];
 
-        Vector2 spawnPos = GetRandomSpawnPosition();
+        Vector2 spawnPos = GetRandomSpawnPosition(false);
         Instantiate(enemyDicionary[selectedEnemy], spawnPos, Quaternion.identity, transform);
 
         SoundManager.Instance.Play(SFXSoundType.GenEnemy);
     }
 
-    public Vector2 GetRandomSpawnPosition()
+    public Vector2 GetRandomSpawnPosition(bool isBattle)
     {
         int spawnSide = UnityEngine.Random.Range(0, 2);
         if (spawnSide == 0) spawnSide = -1;
 
-        float spawnXPos = spawnSide * (cinemachine.Lens.Aspect * cinemachine.Lens.OrthographicSize + spawnOffset);
-        float spawnYPos = cinemachine.State.RawPosition.y + UnityEngine.Random.Range(0f, cinemachine.Lens.OrthographicSize);
+        float camOrthographicSize = cinemachine.Lens.OrthographicSize;
+        float spawnXPos = spawnSide * (cinemachine.Lens.Aspect * camOrthographicSize + spawnOffset);
+        float spawnYPos = cinemachine.State.RawPosition.y + UnityEngine.Random.Range(isBattle ? -camOrthographicSize : 0, camOrthographicSize);
 
         return new Vector2(spawnXPos, spawnYPos);
     }

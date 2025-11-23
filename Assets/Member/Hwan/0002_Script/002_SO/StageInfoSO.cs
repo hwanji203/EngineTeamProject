@@ -14,6 +14,7 @@ public enum EnemyName
 [CreateAssetMenu(fileName = "StageInfoSO", menuName = "HwanSO/StageInfoSO")]
 public class StageInfoSO : ScriptableObject
 {
+    [field: SerializeField] public BGMSoundType StageBGM { get; private set; }
     [field: SerializeField] public float StartY { get; set; }
     [field: SerializeField] public float EndY { get; set; }
 

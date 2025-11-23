@@ -26,6 +26,7 @@ public class GameManager : MonoSingleton<GameManager>
         Vector2 startPoint = new Vector2(0, StageSO.StartY);
         Player.transform.position = new Vector3(startPoint.x, startPoint.y, Player.transform.position.z);
         CinemachineCam.transform.position = new Vector3(startPoint.x, startPoint.y, CinemachineCam.transform.position.z);
+        SoundManager.Instance.Play(StageSO.StageBGM);
     }
     private void Start()
     {

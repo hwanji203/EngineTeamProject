@@ -64,7 +64,7 @@ public class BattleRoundManager : MonoBehaviour
                 if (spawnIndex >= wave.spawnPoints.Length)
                     spawnIndex = 0;
 
-                GameObject enemy = Instantiate(prefab, EnemySpawnManager.Instance.GetRandomSpawnPosition(), Quaternion.identity, transform);
+                GameObject enemy = Instantiate(prefab, EnemySpawnManager.Instance.GetRandomSpawnPosition(true), Quaternion.identity, transform);
                 
                 // 각 적의 HealthSystem에 이벤트 구독
                 HealthSystem healthSystem = enemy.GetComponent<HealthSystem>();
@@ -118,7 +118,6 @@ public class BattleRoundManager : MonoBehaviour
     
     private void OnDestroy()
     {
-        Debug.Log("SFDF");
         UnsubscribeAllEnemies();
     }
 }

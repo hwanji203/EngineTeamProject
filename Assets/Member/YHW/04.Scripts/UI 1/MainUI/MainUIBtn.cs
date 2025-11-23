@@ -41,7 +41,7 @@ public class MainUIBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             currentTween.Kill();
         }
-
+        SoundManager.Instance.Play(SFXSoundType.ButtonMouseIn);
         currentTween = transform.DOScale(originalScale * hoverScaleFactor, scaleDuration)
                               .SetEase(scaleEase)
                               .SetUpdate(true); 
