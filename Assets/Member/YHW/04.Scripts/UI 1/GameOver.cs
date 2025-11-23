@@ -20,6 +20,7 @@ public class GameOver : MonoBehaviour, IUI
     public void RePlay()
     {
         Time.timeScale = 1f;
+        Close();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

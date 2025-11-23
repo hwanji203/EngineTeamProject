@@ -3,7 +3,7 @@ using Member.Kimyongmin._02.Code.Agent;
 using System.Collections.Generic;
 using System;
 
-public class BattleRoundManager : MonoSingleton<BattleRoundManager>
+public class BattleRoundManager : MonoBehaviour
 {
     [Header("Database")]
     [SerializeField] private EnemyDatabase enemyDatabase;
@@ -17,7 +17,7 @@ public class BattleRoundManager : MonoSingleton<BattleRoundManager>
     
     private List<HealthSystem> currentWaveEnemies = new List<HealthSystem>();
 
-    public event Action<bool> OnBattle;
+    public static event Action<bool> OnBattle;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -63,7 +63,7 @@ public class BattleRoundManager : MonoSingleton<BattleRoundManager>
                 if (spawnIndex >= wave.spawnPoints.Length)
                     spawnIndex = 0;
 
-                GameObject enemy = Instantiate(prefab, wave.spawnPoints[spawnIndex].position, Quaternion.identity, transform);
+                GameObject enemy = Instantiate(prefab, EnemySpawnManager.Instance.GetRandomSpawnPosition(), Quaternion.identity, transform);
                 
                 // 각 적의 HealthSystem에 이벤트 구독
                 HealthSystem healthSystem = enemy.GetComponent<HealthSystem>();
@@ -115,9 +115,9 @@ public class BattleRoundManager : MonoSingleton<BattleRoundManager>
         }
     }
     
-    protected override void OnDestroy()
+    private void OnDestroy()
     {
+        Debug.Log("SFDF");
         UnsubscribeAllEnemies();
-        base.OnDestroy();
     }
 }

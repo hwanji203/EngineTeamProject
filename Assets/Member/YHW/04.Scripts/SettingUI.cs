@@ -12,12 +12,6 @@ public class SettingUI : MonoBehaviour,IUI
 
     public UIType UIType => UIType.SettingUI;
 
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-
     public void SetMasterLevel(float sliderVal)
     {
         mixer.SetFloat("Master", Mathf.Log10(sliderVal) * 20);

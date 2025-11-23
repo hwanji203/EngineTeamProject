@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class TalkManager : MonoSingleton<TalkManager>
 {
@@ -19,7 +18,7 @@ public class TalkManager : MonoSingleton<TalkManager>
     private Mesh mesh;
     private Vector3[] vertices;
     private string currentMessage;
-    
+
     private void Update()
     {
         // ★ 1) 클릭으로 타이핑 스킵

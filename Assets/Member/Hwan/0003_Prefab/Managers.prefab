@@ -384,52 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501473aeb7e37df46b6f7de05d1dbd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3451851875864884706
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3771217289892925976}
-  - component: {fileID: 7067815477678725951}
-  m_Layer: 0
-  m_Name: TalkManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3771217289892925976
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451851875864884706}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6541987100514202507}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7067815477678725951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451851875864884706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c66ecb25bcd9d504eb0d19bc7e5a65c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  typingSpeed: 0.1
-  textMeshPro: {fileID: 0}
 --- !u!1 &3914274874149213630
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3d791a1baebcf4e8006f3d734c333a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnCool: 10000
+  defaultSpawnCool: 7
   errorSpawnCool: 1
   spawnOffset: 1
 --- !u!1 &5317108150255212542
@@ -810,7 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CinemachineCam>k__BackingField: {fileID: 0}
-  <StageSO>k__BackingField: {fileID: 11400000, guid: 9f10682f72660df4fa9dcf31a0334bac, type: 2}
+  <StageSO>k__BackingField: {fileID: 11400000, guid: 0727bc34a0caa744993eab7c1e13fdf1, type: 2}
 --- !u!1 &7848488231887453350
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,60 +860,11 @@ Transform:
   - {fileID: 9164046997093698700}
   - {fileID: 877070722210708203}
   - {fileID: 5468877319690872155}
-  - {fileID: 9114661840075956167}
-  - {fileID: 3771217289892925976}
   - {fileID: 3775515022942765117}
   - {fileID: 6194641924754436220}
   - {fileID: 7570132852983017180}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9004704611262778281
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9114661840075956167}
-  - component: {fileID: 3180350471169619785}
-  m_Layer: 0
-  m_Name: TutorialManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9114661840075956167
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9004704611262778281}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2539677, y: 0.22522764, z: -0.07827723}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6541987100514202507}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3180350471169619785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9004704611262778281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 634a7086fae46c2478140a096f765283, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <DoTuto>k__BackingField: 0
-  tutorialEnemy: {fileID: 6802907738643528409, guid: c173cb78e9696d2429224482ad528cd4, type: 3}
-  inGame: 0
 --- !u!1001 &509392682818208472
 PrefabInstance:
   m_ObjectHideFlags: 0

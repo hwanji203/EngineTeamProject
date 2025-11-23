@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 
 public class BackgroundMove : MonoBehaviour
 {
-    [SerializeField] [Range(0, 10)] private float speed;
+    [SerializeField] [Range(0, 30)] private float speed;
     [SerializeField] private float errorRange = 0.05f;
     [SerializeField] private float maxRange = 10;
     [SerializeField] private float oneBlock = 1;

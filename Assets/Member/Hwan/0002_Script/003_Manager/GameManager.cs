@@ -27,6 +27,11 @@ public class GameManager : MonoSingleton<GameManager>
         Player.transform.position = new Vector3(startPoint.x, startPoint.y, Player.transform.position.z);
         CinemachineCam.transform.position = new Vector3(startPoint.x, startPoint.y, CinemachineCam.transform.position.z);
     }
+    private void Start()
+    {
+        Player.PositionCheckerCompo.OnNearClear += CheckGameClear;
+        Player.PositionCheckerCompo.OnNearOutOfCam += CheckGameOver;
+    }
 
     private void Update()
     {
@@ -36,17 +41,12 @@ public class GameManager : MonoSingleton<GameManager>
         }
     }
 
-    private void Start()
-    {
-        Player.PositionCheckerCompo.OnNearClear += CheckGameOver;
-        Player.PositionCheckerCompo.OnNearOutOfCam += CheckGameClear;
-    }
     private void CheckGameOver(float value)
     {
         if (value == 1)
         {
-            UIManager.Instance.CloseAllUI(UIType.ClearUI);
-            Player.PositionCheckerCompo.OnNearClear -= CheckGameOver;
+            UIManager.Instance.CloseAllUI(UIType.GameOverUI);
+            Player.PositionCheckerCompo.OnNearOutOfCam -= CheckGameOver;
         }
     }
 
@@ -54,8 +54,8 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (value == 1)
         {
-            UIManager.Instance.CloseAllUI(UIType.GameOverUI);
-            Player.PositionCheckerCompo.OnNearOutOfCam -= CheckGameClear;
+            UIManager.Instance.CloseAllUI(UIType.ClearUI);
+            Player.PositionCheckerCompo.OnNearClear -= CheckGameClear;
         }
     }
 }

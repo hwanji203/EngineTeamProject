@@ -43,18 +43,13 @@ public class PositionChecker : MonoBehaviour
 
     private void CheckOutOfCam(float value)
     {
-        float currentNearOutOfCamYValue = nearOutOfCamYValue + camTrn.State.RawPosition.y;
-        float currentOutOfCamYValue = camHalfSize + camTrn.State.RawPosition.y;
-        float playerYPos = Mathf.Abs(camTrn.State.RawPosition.y - value);
+        float playerYPos = Mathf.Abs(Camera.main.transform.position.y - value);
 
-        if (playerYPos >= currentNearOutOfCamYValue)
-        {
-            float currentPercent = 1 - (playerYPos - currentOutOfCamYValue) / (currentNearOutOfCamYValue - currentOutOfCamYValue);
-            if (currentPercent < 0.1f) currentPercent = 0;
-            else if (currentPercent > 0.9f) currentPercent = 1;
+        float currentPercent = 1 - (playerYPos - camHalfSize) / (nearOutOfCamYValue - camHalfSize);
+        if (currentPercent < 0.1f) currentPercent = 0;
+        else if (currentPercent > 0.9f) currentPercent = 1;
 
-            OnNearOutOfCam?.Invoke(currentPercent);
-        }
+        OnNearOutOfCam?.Invoke(currentPercent);
     }
 
     private void CheckClear(float playerYPos)

@@ -51,9 +51,10 @@ public class UIManager : MonoSingleton<UIManager>
 
     public void CloseAllUI(UIType type)
     {
+        Time.timeScale = 0;
         foreach (IUI ui in uiDictionary.Values)
         {
-            Time.timeScale = 0;
+            if (ui.UIType == UIType.TutorialUI) continue;
             ui.Close();
         }
         uiDictionary[type].Open();
