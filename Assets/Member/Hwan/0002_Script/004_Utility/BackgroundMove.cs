@@ -15,17 +15,14 @@ public class BackgroundMove : MonoBehaviour
     private float movedCamYValue;
     private Vector3 offset;
 
-    private void Awake()
+
+    private void Start()
     {
         camTrn = Camera.main.transform;
         if (isBackground == true)
         {
             transform.localPosition -= new Vector3(0, GameManager.Instance.StageSO.StartY);
         }
-    }
-
-    private void Start()
-    {
         offset = transform.localPosition;
         lastPrameCamYValue = camTrn.position.y;
     }

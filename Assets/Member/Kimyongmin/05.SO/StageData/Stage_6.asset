@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39215d9a76ca17a42a613630e82af25f, type: 3}
   m_Name: Stage_6
   m_EditorClassIdentifier: 
-  <StageBGM>k__BackingField: 9
+  <StageBGM>k__BackingField: 7
   <StartY>k__BackingField: 140
   <EndY>k__BackingField: 176
   <StageLevel>k__BackingField: 6

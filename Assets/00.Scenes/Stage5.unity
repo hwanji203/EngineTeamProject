@@ -658,10 +658,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 110
       objectReference: {fileID: 0}
-    - target: {fileID: 8192467403648871711, guid: 24666c4458341954fa26221d76b514bf, type: 3}
-      propertyPath: comboDuration
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.size
       value: 2
