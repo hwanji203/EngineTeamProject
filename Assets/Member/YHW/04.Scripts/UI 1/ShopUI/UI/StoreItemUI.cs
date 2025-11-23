@@ -48,6 +48,6 @@ public class StoreItemUI : MonoBehaviour
 
     private void ResetPriceColor()
     {
-        priceText.color = Color.white;
+        priceText.color = Color.black;
     }
 }
