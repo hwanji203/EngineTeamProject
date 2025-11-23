@@ -91,7 +91,11 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (PlayerSkillSO skillSO in skillDictionarySO.Dictionary.Values)
         {
-            skillSO.OnAttack += (isCounter) => OnAttack?.Invoke(isCounter);
+            skillSO.OnAttack += (isCounter) =>
+            {
+                if (isCounter == true) SoundManager.Instance.Play(SFXSoundType.Counter);
+                OnAttack?.Invoke(isCounter);
+            };
         }
     }
 }
