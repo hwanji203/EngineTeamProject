@@ -11,7 +11,7 @@ public class MainUIBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void Play()
     {
-        SceneManager.LoadScene("ShopUI");
+        SceneManager.LoadScene("Lobby");
     }
 
     public void Quit()

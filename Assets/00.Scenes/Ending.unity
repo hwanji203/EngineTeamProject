@@ -355,7 +355,7 @@ MonoBehaviour:
   startY: 5
   surfaceY: 160
   climbDuration: 6
-  endingImage: {fileID: 1881723524}
+  endingImage: {fileID: 0}
   creditPanel: {fileID: 1822389625}
   creditText: {fileID: 1869717067}
   imageFadeTime: 1.5
@@ -1775,7 +1775,7 @@ Animator:
   m_GameObject: {fileID: 7576601593705210888}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 266c12d61ebf818469c7913d1fc7dbef, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8d155c7c166cb754088240c53d3c95b1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
