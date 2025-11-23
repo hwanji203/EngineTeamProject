@@ -4665,9 +4665,9 @@ TextureImporter:
       name: All_134
       rect:
         serializedVersion: 2
-        x: 632
+        x: 634
         y: 165
-        width: 34
+        width: 30
         height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

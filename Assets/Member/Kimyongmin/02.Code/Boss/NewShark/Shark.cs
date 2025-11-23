@@ -34,12 +34,16 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         
         private readonly int _hitHash = Animator.StringToHash("Hit");
 
+        private LayerMask _wallMask;
+
         private void Awake()
         {
             SharkMovement = GetComponent<SharkMovement>();
             Healthsystem = GetComponent<HealthSystem>();
             SharkAttacks = GetComponent<SharkAttacks>();
             Animator = GetComponentInChildren<Animator>();
+            
+            _wallMask = LayerMask.NameToLayer("Wall");
         }
 
         private void Start()
@@ -184,7 +188,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             if (Charge)
             {
-                if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+                if (other.gameObject.layer == _wallMask)
                 {
                     OnWallBurt?.Invoke();
                 }

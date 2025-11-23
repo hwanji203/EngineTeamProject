@@ -27,12 +27,14 @@ namespace Member.Kimyongmin._02.Code.Agent
                 if (value != before && !IsDead && !_isiIvincibility)
                 {
                     OnHealthChanged?.Invoke();
-                    CameraShaker.Instance.RandomShake(value);
+                    CameraShaker.Instance.RandomShake(_health - value);
                     Hit = true;
                 }
                 
                 if (!_isiIvincibility)
                     _health = Mathf.Clamp(value, 0, _maxHealth);
+                
+                Debug.Log(_health);
             }
         }
 
@@ -60,6 +62,11 @@ namespace Member.Kimyongmin._02.Code.Agent
         public void SetInvincibility(bool value)
         {
             _isiIvincibility = value;
+        }
+
+        public float HealthBarValue()
+        {
+            return Health / _maxHealth;
         }
     }
 }
