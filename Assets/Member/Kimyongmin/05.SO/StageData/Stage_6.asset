@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StageBGM>k__BackingField: 9
   <StartY>k__BackingField: 140
-  <EndY>k__BackingField: 170
+  <EndY>k__BackingField: 176
   <StageLevel>k__BackingField: 6
   EnemyList:
   - name: 0

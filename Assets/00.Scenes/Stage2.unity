@@ -376,7 +376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3756948587150055519, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4206826173396603442, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: m_Layer
@@ -551,6 +551,10 @@ PrefabInstance:
       propertyPath: cameraRoot
       value: 
       objectReference: {fileID: 1748796850}
+    - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: <StageSO>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 0727bc34a0caa744993eab7c1e13fdf1, type: 2}
     - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: <CinemachineCam>k__BackingField
       value: 

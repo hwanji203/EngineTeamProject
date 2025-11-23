@@ -34,6 +34,7 @@ public class SceneTransitionManager : MonoBehaviour
     {
         if (fadeInOnStart)
         {
+            Time.timeScale = 1;
             fadeCanvasGroup.alpha = 1f;
             fadeCanvasGroup.blocksRaycasts = true;
             
