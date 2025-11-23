@@ -1,10 +1,14 @@
 using DG.Tweening;
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainUIBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+
     public void Play()
     {
         SceneManager.LoadScene("ShopUI");
@@ -20,6 +24,7 @@ public class MainUIBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         UIManager.Instance.OpenUI(UIType.SettingUI);
 
     }
+    
 
     [SerializeField] private float hoverScaleFactor = 1.1f;
 
@@ -41,7 +46,6 @@ public class MainUIBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             currentTween.Kill();
         }
-        SoundManager.Instance.Play(SFXSoundType.ButtonMouseIn);
         currentTween = transform.DOScale(originalScale * hoverScaleFactor, scaleDuration)
                               .SetEase(scaleEase)
                               .SetUpdate(true); 
