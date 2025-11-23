@@ -41,11 +41,12 @@ public class CurrencyManager : MonoSingleton<CurrencyManager>
     {
         PlayerPrefs.SetInt("Gold", gold);
         PlayerPrefs.Save();
+        Debug.Log(PlayerPrefs.GetInt("Gold", 0));
     }
 
     private void LoadGold()
     {
-        gold = PlayerPrefs.GetInt("Gold",500);
+        gold = PlayerPrefs.GetInt("Gold", 0);
         OnGoldChanged?.Invoke(gold);
     }
 }

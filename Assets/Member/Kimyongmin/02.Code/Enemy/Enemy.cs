@@ -133,6 +133,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
         {
             d = true;
             GameManager.Instance.Player.RecoveryStamina(EnemyDataSo.deadStamina);
+            StarManager.Instance.AddGold((int)EnemyDataSo.price);
         }
     }
 
