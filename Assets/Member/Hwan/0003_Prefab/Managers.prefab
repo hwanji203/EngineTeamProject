@@ -457,8 +457,16 @@ MonoBehaviour:
       <Clip>k__BackingField: {fileID: 8300000, guid: 0f6d8a8eba2142946b5d6e698f9dfdf6, type: 3}
     - <Type>k__BackingField: 12
       <Clip>k__BackingField: {fileID: 8300000, guid: 7e0aa40f2f2d5c047b0dc65dcb00428e, type: 3}
-    - <Type>k__BackingField: 13
-      <Clip>k__BackingField: {fileID: 8300000, guid: 6f4398c94051d4245862da5d706ad87d, type: 3}
+    - <Type>k__BackingField: 14
+      <Clip>k__BackingField: {fileID: 8300000, guid: 5ff71dc085fc17c43923c635b8ffd9af, type: 3}
+    - <Type>k__BackingField: 15
+      <Clip>k__BackingField: {fileID: 8300000, guid: a73387e15c5810e4f8be4d7a5bb961d5, type: 3}
+    - <Type>k__BackingField: 16
+      <Clip>k__BackingField: {fileID: 8300000, guid: fb6c33361fb36774785b48ab38f87309, type: 3}
+    - <Type>k__BackingField: 17
+      <Clip>k__BackingField: {fileID: 8300000, guid: 358f7e65ea2dd624683e4832fbf858de, type: 3}
+    - <Type>k__BackingField: 18
+      <Clip>k__BackingField: {fileID: 8300000, guid: a0b053e71bf55be41934bd35c392f047, type: 3}
     <Mixer>k__BackingField: {fileID: 3643321774804691864, guid: df8cc3f159ac11747a5c886c5bf924ed, type: 2}
   bgmSounds:
     <ClipDatas>k__BackingField:
@@ -466,10 +474,18 @@ MonoBehaviour:
       <Clip>k__BackingField: {fileID: 8300000, guid: 8737a7123ebd61944bfca219e2d48463, type: 3}
     - <Type>k__BackingField: 2
       <Clip>k__BackingField: {fileID: 8300000, guid: b127698d91571c049960d6cb9dfd385a, type: 3}
+    - <Type>k__BackingField: 8
+      <Clip>k__BackingField: {fileID: 8300000, guid: dda04b31b0704be488f05c7170576e76, type: 3}
     - <Type>k__BackingField: 3
       <Clip>k__BackingField: {fileID: 8300000, guid: 233326bcb1d7c3c48b5918becddb0e32, type: 3}
+    - <Type>k__BackingField: 4
+      <Clip>k__BackingField: {fileID: 8300000, guid: f9f261e2085068b4da7ffb38afee670e, type: 3}
+    - <Type>k__BackingField: 5
+      <Clip>k__BackingField: {fileID: 8300000, guid: 820353bbb3b5f134f916a508ca13e5ba, type: 3}
+    - <Type>k__BackingField: 6
+      <Clip>k__BackingField: {fileID: 8300000, guid: 451bb993ec926f648b1ec1fc3b4b32a7, type: 3}
     - <Type>k__BackingField: 7
-      <Clip>k__BackingField: {fileID: 8300000, guid: dda04b31b0704be488f05c7170576e76, type: 3}
+      <Clip>k__BackingField: {fileID: 8300000, guid: d348095903bba5e4799bce27b1b69409, type: 3}
     <Mixer>k__BackingField: {fileID: -1066874836619776042, guid: df8cc3f159ac11747a5c886c5bf924ed, type: 2}
 --- !u!1 &3914274874149213630
 GameObject:
