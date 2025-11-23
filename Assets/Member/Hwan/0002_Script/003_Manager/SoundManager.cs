@@ -18,7 +18,12 @@ public enum SFXSoundType
     Counter,
     Dash,
     ButtonMouseIn,
-    EnemyFlipDamaged
+    EnemyFlipDamaged,
+    SharkRoar,
+    SharkRoarShorts,
+    SharkLaserPointer,
+    SharkLaser,
+    SharkBite
 }
 
 public enum BGMSoundType
@@ -27,12 +32,11 @@ public enum BGMSoundType
     MainScene,
     Tutorial,
     Stage2,
-    Stage3,
+    BossStage3,
     Stage4,
-    Boss,
-    Intro,
     Stage5,
-    Stage6
+    Stage6,
+    Intro
 }
 public class SoundManager : MonoSingleton<SoundManager>
 {

@@ -39,6 +39,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
 
         public void OnBiteEffect()
         {
+            SoundManager.Instance.Play(SFXSoundType.SharkBite);
             biteEffectAnimator.gameObject.SetActive(true);
             biteEffectAnimator.SetTrigger(_biteHash);
         }
@@ -73,6 +74,26 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         {
             OnSharkFightEnd?.Invoke();
             OnSharkFightEndUI?.Invoke(UIType.ClearUI);
+        }
+
+        public void LaserPointSound()
+        {
+            SoundManager.Instance.Play(SFXSoundType.SharkLaserPointer);
+        }
+        
+        public void LaserSound()
+        {
+            SoundManager.Instance.Play(SFXSoundType.SharkLaser);
+        }
+
+        public void ShortsRoarSound()
+        {
+            SoundManager.Instance.Play(SFXSoundType.SharkRoarShorts);
+        }
+        
+        public void LongRoarSound()
+        {
+            SoundManager.Instance.Play(SFXSoundType.SharkRoar);
         }
     }
 }
