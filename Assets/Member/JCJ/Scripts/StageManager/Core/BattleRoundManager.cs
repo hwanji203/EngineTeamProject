@@ -26,6 +26,7 @@ public class BattleRoundManager : MonoBehaviour
             StartWave(0);
             OnBattle?.Invoke(true);
             SoundManager.Instance.Play(SFXSoundType.OnBattle);
+            VolumeManager.Instance.IncreaseVolume(VolumeType.Battle, 0.75f);
         }
     }
 
@@ -103,6 +104,7 @@ public class BattleRoundManager : MonoBehaviour
         OnBattle?.Invoke(true);
         UnsubscribeAllEnemies();
         currentWaveEnemies.Clear();
+        VolumeManager.Instance.DecreaseVolume(VolumeType.Battle, 0.5f);
     }
     
     private void UnsubscribeAllEnemies()

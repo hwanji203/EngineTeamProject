@@ -427,26 +427,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2205230139960840162, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
-      propertyPath: sfxSounds.<ClipDatas>k__BackingField.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2205230139960840162, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
-      propertyPath: sfxSounds.<ClipDatas>k__BackingField.Array.data[11].<Clip>k__BackingField
-      value: 
-      objectReference: {fileID: 8300000, guid: 7e0aa40f2f2d5c047b0dc65dcb00428e, type: 3}
-    - target: {fileID: 2205230139960840162, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
-      propertyPath: sfxSounds.<ClipDatas>k__BackingField.Array.data[11].<Type>k__BackingField
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 5790650499866188833, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: cameraRoot
       value: 
       objectReference: {fileID: 1748796850}
-    - target: {fileID: 5790650499866188833, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
-      propertyPath: shakePower
-      value: 0.07
-      objectReference: {fileID: 0}
     - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: <CinemachineCam>k__BackingField
       value: 

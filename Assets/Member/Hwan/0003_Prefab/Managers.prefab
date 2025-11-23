@@ -36,6 +36,7 @@ Transform:
   - {fileID: 3893763982612847071}
   - {fileID: 3138706932738761243}
   - {fileID: 7564569132685726991}
+  - {fileID: 563082438443582200}
   m_Father: {fileID: 6541987100514202507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5322458015859479785
@@ -63,6 +64,8 @@ MonoBehaviour:
     <VolumeChanger>k__BackingField: {fileID: 2138135687779919168}
   - <VolumeType>k__BackingField: 6
     <VolumeChanger>k__BackingField: {fileID: 8010918889276491470}
+  - <VolumeType>k__BackingField: 7
+    <VolumeChanger>k__BackingField: {fileID: 985681403429416012}
 --- !u!1 &603084265105092288
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +455,8 @@ MonoBehaviour:
       <Clip>k__BackingField: {fileID: 8300000, guid: 36f97a56d83d39949be92c65836dcc6b, type: 3}
     - <Type>k__BackingField: 11
       <Clip>k__BackingField: {fileID: 8300000, guid: 0f6d8a8eba2142946b5d6e698f9dfdf6, type: 3}
+    - <Type>k__BackingField: 12
+      <Clip>k__BackingField: {fileID: 8300000, guid: 7e0aa40f2f2d5c047b0dc65dcb00428e, type: 3}
     <Mixer>k__BackingField: {fileID: 3643321774804691864, guid: df8cc3f159ac11747a5c886c5bf924ed, type: 2}
   bgmSounds:
     <ClipDatas>k__BackingField:
@@ -570,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3d791a1baebcf4e8006f3d734c333a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnCool: 7
+  defaultSpawnCool: 4
   errorSpawnCool: 1
   spawnOffset: 1
 --- !u!1 &5317108150255212542
@@ -618,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c755da5389ec45d45ad342c29e0f96b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakePower: 0.1
+  shakePower: 0.07
   isBossStage: 0
   defaultShakeDuration: 0.2
   cameraRoot: {fileID: 0}
@@ -732,6 +737,68 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5544069501795257636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501473aeb7e37df46b6f7de05d1dbd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5870138529237735066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563082438443582200}
+  - component: {fileID: 8430512559403717314}
+  - component: {fileID: 985681403429416012}
+  m_Layer: 0
+  m_Name: Battle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &563082438443582200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870138529237735066}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6194641924754436220}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8430512559403717314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870138529237735066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 10
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: 54e92f2aa59df134e9b6a29a88c7793b, type: 2}
+--- !u!114 &985681403429416012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870138529237735066}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 501473aeb7e37df46b6f7de05d1dbd01, type: 3}

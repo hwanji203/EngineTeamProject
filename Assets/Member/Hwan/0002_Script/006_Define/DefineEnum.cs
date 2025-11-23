@@ -83,7 +83,8 @@ public enum VolumeType
     NoAir,
     EndOfCam,
     EndOfClear,
-    Counter
+    Counter,
+    Battle
 }
 
 public enum AttackReturnType

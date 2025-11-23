@@ -16,7 +16,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackCount: 8
+  attackCount: 20
   effects: []
   <AttackTime>k__BackingField: 0.35
   range: {x: 1, y: 1}
