@@ -14,6 +14,7 @@ public class InventoryManager : MonoBehaviour
     
     private List<SkinSO> ownedSkins = new List<SkinSO>();
     private Dictionary<SkinSO, GameObject> skinUIObjects = new Dictionary<SkinSO, GameObject>();
+    private SkinManager skinManager;
     
     private void Awake()
     {
@@ -29,8 +30,46 @@ public class InventoryManager : MonoBehaviour
     
     private void Start()
     {
+        skinManager = SkinManager.Instance;
+        
+        if (skinManager != null)
+        {
+            skinManager.OnSkinChanged += OnSkinEquipChanged;
+        }
+        
         LoadOwnedSkins();
         CreateAllSkinUI();
+        
+        HideEquippedSkins();
+    }
+    
+    private void HideEquippedSkins()
+    {
+        if (skinManager == null) return;
+        
+        for (int i = 0; i < 10; i++)
+        {
+            SkinSO equippedSkin = skinManager.GetEquippedSkin(i);
+            if (equippedSkin != null)
+            {
+                HideSkin(equippedSkin);
+            }
+        }
+    }
+    private void OnSkinEquipChanged(int slotIndex, SkinSO skin)
+    {
+        if (skin != null)
+        {
+            HideSkin(skin);
+        }
+    }
+    
+    public void ShowSkinIfOwned(SkinSO skin)
+    {
+        if (HasSkin(skin))
+        {
+            ShowSkin(skin);
+        }
     }
     
     public void AddSkin(SkinSO skin)
@@ -58,6 +97,24 @@ public class InventoryManager : MonoBehaviour
         }
         
         skinUIObjects[skin] = obj;
+        
+        if (skinManager != null && IsCurrentlyEquipped(skin))
+        {
+            obj.SetActive(false);
+        }
+    }
+    private bool IsCurrentlyEquipped(SkinSO skin)
+    {
+        if (skinManager == null) return false;
+        
+        for (int i = 0; i < 10; i++)
+        {
+            if (skinManager.GetEquippedSkin(i) == skin)
+            {
+                return true;
+            }
+        }
+        return false;
     }
     
     private void CreateAllSkinUI()
@@ -73,17 +130,29 @@ public class InventoryManager : MonoBehaviour
         if (skinUIObjects.ContainsKey(skin))
         {
             var obj = skinUIObjects[skin];
+            
             var canvasGroup = obj.GetComponent<CanvasGroup>();
-            if (canvasGroup != null) {
+            if (canvasGroup != null) 
+            {
                 canvasGroup.alpha = 1f;
                 canvasGroup.blocksRaycasts = true;
             }
+            
             var image = obj.GetComponent<UnityEngine.UI.Image>();
             if (image != null)
                 image.raycastTarget = true;
         
             if (obj.transform.parent != inventoryParent)
                 obj.transform.SetParent(inventoryParent, false);
+            
+            var rect = obj.GetComponent<RectTransform>();
+            if (rect != null)
+            {
+                rect.anchoredPosition = Vector2.zero;
+                rect.localScale = Vector3.one;
+                rect.localRotation = Quaternion.identity;
+            }
+            
             obj.SetActive(false);
         }
     }
@@ -99,7 +168,17 @@ public class InventoryManager : MonoBehaviour
 
             var rect = obj.GetComponent<RectTransform>();
             if (rect != null)
+            {
                 rect.anchoredPosition = Vector2.zero;
+                rect.localScale = Vector3.one;
+                rect.localRotation = Quaternion.identity;
+            }
+            var canvasGroup = obj.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                canvasGroup.alpha = 1f;
+                canvasGroup.blocksRaycasts = true;
+            }
 
             obj.SetActive(true);
         }
@@ -157,6 +236,11 @@ public class InventoryManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (skinManager != null)
+        {
+            skinManager.OnSkinChanged -= OnSkinEquipChanged;
+        }
+        
         if (Instance == this)
         {
             Instance = null;
