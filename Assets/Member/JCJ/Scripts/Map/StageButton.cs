@@ -2,12 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.EventSystems;
 
 public class StageButton : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int stageLevel; // 현재 버튼에 해당 하는 레벨
+    [SerializeField] private int stageLevel;
     
     [Header("Icons")]
     [SerializeField] private Button button;
@@ -29,15 +28,22 @@ public class StageButton : MonoBehaviour
     
     void OnEnable()
     {
-        StageManager.OnStageCleared += OnAnyStageCleared;
-        StageManager.OnStageUnlocked += OnAnyStageUnlocked;
+        if (StageManager.Instance != null)
+        {
+            StageManager.Instance.OnStageCleared += OnAnyStageCleared;
+            StageManager.Instance.OnStageUnlocked += OnAnyStageUnlocked;
+        }
     }
     
     void OnDisable()
     {
-        StageManager.OnStageCleared -= OnAnyStageCleared;
-        StageManager.OnStageUnlocked -= OnAnyStageUnlocked;
+        if (StageManager.Instance != null)
+        {
+            StageManager.Instance.OnStageCleared -= OnAnyStageCleared;
+            StageManager.Instance.OnStageUnlocked -= OnAnyStageUnlocked;
+        }
     }
+    
     void OnClick()
     {
         if (!StageManager.Instance.CanOpenLevel(stageLevel))
@@ -56,30 +62,22 @@ public class StageButton : MonoBehaviour
         bool canOpen = StageManager.Instance.CanOpenLevel(stageLevel);
         bool isCleared = StageManager.Instance.IsLevelCleared(stageLevel);
         
-        
-        if (levelText != null)// 레벨 텍스트
+        if (levelText != null)
             levelText.text = stageLevel.ToString();
         
-        if (isCleared)// 클리어 상태
+        if (isCleared)
         {
             button.interactable = true;
-            // if (lockIcon != null) lockIcon.SetActive(false);
-            // if (clearIcon != null) clearIcon.SetActive(true);
             if (buttonImage != null) buttonImage.color = clearedColor;
         }
-        else if (canOpen) // 언락 상태
+        else if (canOpen)
         {
             button.interactable = true;
-            // if (lockIcon != null) lockIcon.SetActive(false);
-            // if (clearIcon != null) clearIcon.SetActive(false);
             if (buttonImage != null) buttonImage.color = unlockedColor;
         }
-        
-        else// 잠김 상태
+        else
         {
             button.interactable = false;
-            // if (lockIcon != null) lockIcon.SetActive(true);
-            // if (clearIcon != null) clearIcon.SetActive(false);
             if (buttonImage != null) buttonImage.color = lockedColor;
         }
     }

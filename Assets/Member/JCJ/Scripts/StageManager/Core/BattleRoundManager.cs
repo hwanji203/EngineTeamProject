@@ -41,12 +41,11 @@ public class BattleRoundManager : MonoBehaviour
         remainingEnemiesInWave = wave.GetTotalEnemyCount();
         SpawnWaveEnemies(wave);
         
-        Debug.Log($"웨이브 {waveIndex + 1} 시작! 총 적: {remainingEnemiesInWave}");
+        Debug.Log($"웨이브 {waveIndex + 1} 시작, 총 적: {remainingEnemiesInWave}");
     }
 
     private void SpawnWaveEnemies(BattleWaveData wave)
     {
-        // 이전 웨이브 적들 이벤트 구독 해제
         UnsubscribeAllEnemies();
         currentWaveEnemies.Clear();
         
@@ -79,11 +78,11 @@ public class BattleRoundManager : MonoBehaviour
         if (!isRoundActive) return;
 
         remainingEnemiesInWave--;
-        Debug.Log($"적 처치! 남은 적: {remainingEnemiesInWave}");
+        Debug.Log($"남은 적: {remainingEnemiesInWave}");
 
         if (remainingEnemiesInWave <= 0)
         {
-            Debug.Log("웨이브 클리어!");
+            Debug.Log("웨이브 클리어");
             StartWave(currentWaveIndex + 1);
         }
     }
@@ -93,8 +92,6 @@ public class BattleRoundManager : MonoBehaviour
         isRoundActive = false;
         GetComponent<Collider2D>().enabled = false;
         BattleCamera.Instance.ResumeCameraFollow();
-        
-        // 모든 이벤트 구독 해제
         UnsubscribeAllEnemies();
         currentWaveEnemies.Clear();
     }

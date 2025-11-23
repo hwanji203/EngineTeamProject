@@ -6,6 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/StoreItemPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/StoreItemPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Equipment.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Equipment/Conc.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Equipment/Conc.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Equipment/Octopus.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Equipment/Octopus.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Equipment/Urchin.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/SO/Equipment/Urchin.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/Boss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/Boss.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/Ending.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/Ending.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/JCJ.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scene/JCJ.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Boss/BossIntroController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Boss/BossIntroController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Ending/SquidEndingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Ending/SquidEndingController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Data/SkinItemSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Data/SkinItemSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/InventoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/SkinManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/SkinManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Map/StageButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Map/StageButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Map/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Map/StageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/SceneLoad/SceneTransitionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/SceneLoad/SceneTransitionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/SimpleMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/SimpleMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/StageManager/Core/BattleCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/StageManager/Core/BattleCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/StageManager/Core/BattleRoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/StageManager/Core/BattleRoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +42,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Boss/BossIntroTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Ending/SquidEndingController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/HealthSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Agent/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
@@ -228,7 +255,8 @@
       <workItem from="1763648547780" duration="4811000" />
       <workItem from="1763682231917" duration="5562000" />
       <workItem from="1763781847340" duration="14805000" />
-      <workItem from="1763825464696" duration="2799000" />
+      <workItem from="1763825464696" duration="3046000" />
+      <workItem from="1763878259606" duration="7793000" />
     </task>
     <servers />
   </component>
