@@ -6,7 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Inventory/Manager/InventoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0003_Prefab/Managers.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0003_Prefab/Managers.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0003_Prefab/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0003_Prefab/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/SceneTransitionManager.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/SceneTransitionManager.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/TestEnemy.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/TestEnemy.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_11.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_13.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_13.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_14.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_14.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Currency/Currency_8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_10.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_10.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_16.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_16.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_22.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_22.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_28.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_28.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_34.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_34.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Sprite/Foods_Potions_&amp;_Potions/Potions/Potion_4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
