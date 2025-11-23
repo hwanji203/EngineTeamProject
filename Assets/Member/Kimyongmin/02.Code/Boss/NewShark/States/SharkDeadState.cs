@@ -9,6 +9,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
+            Shark.SharkMovement.RbCompo.gravityScale = 1f;
         }
 
         public override void UpdateState()

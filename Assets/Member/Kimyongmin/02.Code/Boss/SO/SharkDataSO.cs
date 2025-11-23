@@ -15,8 +15,9 @@ namespace Member.Kimyongmin._02.Code.Boss.SO
 
         [field: SerializeField] public float MinSkillCool {get; private set;}
         [field: SerializeField] public float MaxSkillCool {get; private set;}
+        [field: SerializeField] public int Price {get; private set;}
         
         
-
+        
     }
 }

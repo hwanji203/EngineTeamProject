@@ -73,19 +73,15 @@ public abstract class Enemy : MonoBehaviour, IAgentable
 
     public void FilpX(float xDir)
     {
-        float duration = 0;
-
-
         if (xDir > 0)
         {
-            transform.DORotate(
-                new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z), duration);
+            transform.rotation = Quaternion.Euler(
+                new Vector3(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z));
         }
         else if (xDir < 0)
         {
-            transform.DORotate(
-                new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z),
-                duration);
+            transform.rotation = Quaternion.Euler(
+                new Vector3(transform.localRotation.eulerAngles.x, 180, transform.localRotation.eulerAngles.z));
         }
     }
 
