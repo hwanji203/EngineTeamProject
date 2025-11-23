@@ -557,7 +557,7 @@ PrefabInstance:
       objectReference: {fileID: 1748796850}
     - target: {fileID: 5790650499866188833, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: shakePower
-      value: 0.7
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: <CinemachineCam>k__BackingField
