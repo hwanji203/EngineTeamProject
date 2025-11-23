@@ -4,6 +4,7 @@ using DG.Tweening;
 using Member.Kimyongmin._02.Code.Agent;
 using Member.Kimyongmin._02.Code.Enemy;
 using Member.Kimyongmin._02.Code.Enemy.SO;
+using Random = UnityEngine.Random;
 
 public abstract class Enemy : MonoBehaviour, IAgentable
 {
@@ -36,7 +37,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     {
         try
         {
-            _currentAttackTime = EnemyDataSo.attackDelay - 1;
+            _currentAttackTime = EnemyDataSo.attackDelay - Random.Range(1,3);
         }
         catch (NullReferenceException)
         {
@@ -65,6 +66,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
 
     protected virtual void Start()
     {
+        DisbleAttackRange();
         HealthSystem.OnDeath += Death;
     }
 
