@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 public enum SFXSoundType
 {
     None,
@@ -36,11 +37,15 @@ public class SoundManager : MonoSingleton<SoundManager>
     [System.Serializable]
     public class BGMSoundData : SoundData<BGMSoundType> { }
 
-    [Header("SFX 사운드 데이터 목록")]
+    [Header("SFX Sound Daters")]
     [SerializeField] private List<SFXSoundData> sfxSounds;
-    
-    [Header("BGM 사운드 데이터 목록")]
+    [Header("SFX Mixer")]
+    [SerializeField] private AudioMixer sfxMixer;
+
+    [Header("BGM Sound Daters")]
     [SerializeField] private List<BGMSoundData> bgmSounds;
+    [Header("BGM Mixer")]
+    [SerializeField] private AudioMixer bgmMixer;
 
     private Dictionary<SFXSoundType, AudioClip> sfxSoundDict;
     private AudioSource sfxAudioSource;

@@ -23,10 +23,6 @@ public class StarManager : MonoSingleton<StarManager>,IUI
     {
         base.Awake();
     }
-    private void OnEnable()
-    {
-        Open();
-    }
 
     
     private void FadeIn()
