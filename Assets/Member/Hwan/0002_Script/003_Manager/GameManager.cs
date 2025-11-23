@@ -1,3 +1,4 @@
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,15 +24,29 @@ public class GameManager : MonoSingleton<GameManager>
     {
         base.Awake();
 
-        Vector2 startPoint = new Vector2(0, StageSO.StartY);
-        Player.transform.position = new Vector3(startPoint.x, startPoint.y, Player.transform.position.z);
-        CinemachineCam.transform.position = new Vector3(startPoint.x, startPoint.y, CinemachineCam.transform.position.z);
         SoundManager.Instance.Play(StageSO.StageBGM);
+        try
+        {
+            Vector2 startPoint = new Vector2(0, StageSO.StartY);
+            Player.transform.position = new Vector3(startPoint.x, startPoint.y, Player.transform.position.z);
+            CinemachineCam.transform.position = new Vector3(startPoint.x, startPoint.y, CinemachineCam.transform.position.z);
+        }
+        catch (NullReferenceException)
+        {
+            Debug.Log("Intro, Main Scene");
+        }
     }
     private void Start()
     {
-        Player.PositionCheckerCompo.OnNearClear += CheckGameClear;
-        Player.PositionCheckerCompo.OnNearOutOfCam += CheckGameOver;
+        try
+        {
+            Player.PositionCheckerCompo.OnNearClear += CheckGameClear;
+            Player.PositionCheckerCompo.OnNearOutOfCam += CheckGameOver;
+        }
+        catch
+        {
+            Debug.Log("Intro, Main Scene");
+        }
     }
 
     private void Update()
