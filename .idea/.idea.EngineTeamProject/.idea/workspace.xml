@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Map/StageButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Map/StageButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/StoreItemPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Prefab/StoreItemPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Overlay/SlidingUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/JCJ/Scripts/Overlay/SlidingUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/UI 1/ShopUI/UI/StoreItemUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/UI 1/ShopUI/UI/StoreItemUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +235,7 @@
       <workItem from="1763825464696" duration="2799000" />
       <workItem from="1763859101925" duration="12858000" />
       <workItem from="1763882124022" duration="3199000" />
-      <workItem from="1763899667686" duration="1067000" />
+      <workItem from="1763899667686" duration="2151000" />
     </task>
     <servers />
   </component>

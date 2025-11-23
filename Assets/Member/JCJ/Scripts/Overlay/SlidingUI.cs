@@ -6,6 +6,7 @@ public class SlidingUI : MonoBehaviour
 {
     public RectTransform containerPanel;
     public float slideDuration = 0.5f;
+    public float textAnimDuration = 0.3f;
     
     private float mapPosX = 1920f;
     private float inventoryPosX = 0;
@@ -14,6 +15,9 @@ public class SlidingUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mapText;
     [SerializeField] private TextMeshProUGUI inventoryText;
     [SerializeField] private TextMeshProUGUI shopText;
+
+    private float maxSize = 72f;
+    private float minSize = 48f;
 
     private TextMeshProUGUI currentText;
     
@@ -40,18 +44,29 @@ public class SlidingUI : MonoBehaviour
 
     private void ResetText()
     {
-        currentText.fontSize = 72;
+        TextSizeAnimation(currentText, maxSize);
+        
         if (mapText != currentText)
         {
-            mapText.fontSize = 48;
+            TextSizeAnimation(mapText, minSize);
         }
         if (inventoryText != currentText)
         {
-            inventoryText.fontSize = 48;
+            TextSizeAnimation(inventoryText, minSize);
         }
         if (shopText != currentText)
         {
-            shopText.fontSize = 48;
+            TextSizeAnimation(shopText, minSize);
         }
+    }
+
+    private void TextSizeAnimation(TextMeshProUGUI text, float targetSize)
+    {
+        float startSize = text.fontSize;
+        
+        DOTween.To(() => startSize, x => {
+            startSize = x;
+            text.fontSize = startSize;
+        }, targetSize, textAnimDuration).SetEase(Ease.OutQuad);
     }
 }
