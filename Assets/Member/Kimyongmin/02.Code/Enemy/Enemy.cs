@@ -30,6 +30,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     public event Action OnDead;
 
     private LayerMask _wallMask;
+    private LayerMask _wallMaskTwo;
 
     protected virtual void Awake()
     {
@@ -59,6 +60,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
         HealthSystem.OnDeath += () => OnDead?.Invoke();
         
         _wallMask= LayerMask.NameToLayer("Wall");
+        _wallMaskTwo = LayerMask.NameToLayer("EnemyWall");
     }
 
     protected virtual void Start()
@@ -68,7 +70,7 @@ public abstract class Enemy : MonoBehaviour, IAgentable
 
     public void FilpX(float xDir)
     {
-        float duration = 1f / EnemyDataSo.moveSpeed;
+        float duration = 0;
 
 
         if (xDir > 0)
@@ -184,9 +186,10 @@ public abstract class Enemy : MonoBehaviour, IAgentable
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.layer == _wallMask)
+        if (other.gameObject.layer == _wallMask || other.gameObject.layer == _wallMaskTwo)
         {
             AgentMovement.SetMoveDir(Target.position - transform.position);
+            FilpX((Target.position - transform.position).x);
         }
     }
 }
