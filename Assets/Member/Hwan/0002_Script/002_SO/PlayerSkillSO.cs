@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using Member.Kimyongmin._02.Code.Enemy;
+using NUnit.Framework.Constraints;
 
 public abstract class PlayerSkillSO : ScriptableObject
 {
@@ -18,7 +19,7 @@ public abstract class PlayerSkillSO : ScriptableObject
     public Vector3 RealOffSet { get => new Vector3(offset.y, offset.x);}
     public Vector3 RealRange { get => new Vector3(range.y, range.x);}
 
-    protected List<Collider2D> detectedCollider;
+    protected List<Collider2D> detectedCollider = new();
 
     public abstract IEnumerator AttackStart(Transform playerTrn, float defaultDamage);
 
