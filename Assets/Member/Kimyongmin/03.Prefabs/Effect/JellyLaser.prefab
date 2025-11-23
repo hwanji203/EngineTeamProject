@@ -134,9 +134,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: ff8ce01fe2dac9d4397d94394bd05675, type: 2}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!61 &3619416834391659568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -181,5 +178,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 50, y: 1.5}
+  m_Size: {x: 50, y: 0.1}
   m_EdgeRadius: 0
