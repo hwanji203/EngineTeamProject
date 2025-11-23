@@ -17,6 +17,6 @@ MonoBehaviour:
   attackDelay: 9999
   idleSpeed: 0.5
   moveSpeed: 0.5
-  damage: 25
+  damage: 10
   detectDelay: 2
   deadStamina: 20

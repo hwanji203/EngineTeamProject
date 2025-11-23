@@ -49,6 +49,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
                 Vector2 dir = Quaternion.AngleAxis(shotAngle * i, Vector3.forward) * _target;
                 
+                bullet.SetDamage(EnemyDataSo.damage);
                 bullet.Shoot(dir.normalized, bulletSpeed);
             }
         }

@@ -13,6 +13,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         private EdgeCollider2D _edgeCollider2D;
         private LineRenderer _lineRenderer;
         private List<Vector2> _points = new List<Vector2>();
+        private List<Vector2> _previousPoints = new List<Vector2>();
 
         private void Awake()
         {
@@ -27,18 +28,34 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
 
         private void SyncCollider()
         {
-            _points.Clear();
+            if (_lineRenderer.positionCount == 0)
+            {
+                _edgeCollider2D.enabled = false;
+                _previousPoints.Clear();
+                return;
+            }
             
+            List<Vector2> currentPoints = new List<Vector2>();
             Transform currentTransform = transform;
     
             for (int i = 0; i < _lineRenderer.positionCount; i++)
             {
                 Vector3 worldPos = _lineRenderer.GetPosition(i);
-                Vector2 localPos = currentTransform.InverseTransformPoint(worldPos); 
-                _points.Add(localPos);
+                Vector2 localPos = currentTransform.InverseTransformPoint(worldPos);
+                currentPoints.Add(localPos);
+
+                if (PointsEqual(currentPoints, _previousPoints))
+                {
+                    _edgeCollider2D.enabled = false;
+                    return;
+                }
             }
 
+            _previousPoints = new List<Vector2>(currentPoints);
+            
+            _points = currentPoints;
             _edgeCollider2D.SetPoints(_points);
+            
         }
 
         private void OnTriggerStay2D(Collider2D other)
@@ -47,7 +64,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             {
                 if (other.TryGetcomponentInParent(out Player player))
                 {
-                    player.GetDamage(1, Vector2.zero);
+                    player.GetDamage(0.01f, other.gameObject.transform.position * -1);
                 }
             }
         }
@@ -55,6 +72,24 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
         private void OnDestroy()
         {
             _edgeCollider2D.enabled = false;
+        }
+        
+        private bool PointsEqual(List<Vector2> current, List<Vector2> previous)
+        {
+            if (current.Count != previous.Count)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < current.Count; i++)
+            {
+                if (Vector2.SqrMagnitude(current[i] - previous[i]) > 0.000001f)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

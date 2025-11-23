@@ -675,7 +675,7 @@ MonoBehaviour:
   - {fileID: 4941080232057660128}
   projectile: {fileID: 8640571768716911685, guid: 4dcfb2bd1e7f30444b0ad927eaa9b47e, type: 3}
   bulletSpeed: 20
-  shotAngle: 10
+  shotAngle: 15
 --- !u!114 &5690814868693921348
 MonoBehaviour:
   m_ObjectHideFlags: 0

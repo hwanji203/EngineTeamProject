@@ -17,6 +17,8 @@ namespace Member.Kimyongmin._02.Code
         private float _currentTime = 0;
         private Rigidbody2D _rb;
 
+        private float _damage = 0;
+
         private bool _rotate = false;
 
         private void Awake()
@@ -35,6 +37,11 @@ namespace Member.Kimyongmin._02.Code
             }
         }
 
+        public void SetDamage(float damage)
+        {
+            _damage = damage;
+        }
+
         private void Update()
         {
             _currentTime += Time.deltaTime;
@@ -44,6 +51,15 @@ namespace Member.Kimyongmin._02.Code
             }
             if (_rotate)
                 transform.Rotate(new Vector3(0,0,spinSpeed));
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.TryGetcomponentInParent(out Player player))
+            {
+                player.GetDamage(_damage, transform.position);
+                Destroy(gameObject);
+            }
         }
     }
 }

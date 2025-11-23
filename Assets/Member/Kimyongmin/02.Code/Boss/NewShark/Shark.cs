@@ -191,6 +191,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
                 if (other.gameObject.layer == _wallMask)
                 {
                     OnWallBurt?.Invoke();
+                    CameraShaker.Instance.RandomShake(100);
                 }
             }
         }
