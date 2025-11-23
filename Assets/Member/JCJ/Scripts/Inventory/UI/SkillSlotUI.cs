@@ -14,6 +14,7 @@ public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
     [SerializeField] private Sprite emptySlotSprite;
     
     private SkinManager skinManager;
+    private SkinSO previousSkin;
     
     private void Start()
     {
@@ -46,6 +47,12 @@ public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         
         if (currentSkin != null)
         {
+            // 스킨 해제 전에 인벤토리에 보여주기
+            if (InventoryManager.Instance != null)
+            {
+                InventoryManager.Instance.ShowSkinIfOwned(currentSkin);
+            }
+            
             skinManager.UnequipSkin(slotIndex);
         }
     }
@@ -65,6 +72,13 @@ public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         if (skin.BodyPart != requiredBodyPart)
         {
             return;
+        }
+        
+        // 이전 스킨이 있으면 인벤토리에 복귀
+        SkinSO currentSkin = skinManager.GetEquippedSkin(slotIndex);
+        if (currentSkin != null && InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.ShowSkinIfOwned(currentSkin);
         }
         
         skinManager.EquipSkin(slotIndex, skin);
@@ -90,6 +104,8 @@ public class SkinSlotUI : MonoBehaviour, IDropHandler, IPointerClickHandler
         {
             iconImage.sprite = emptySlotSprite;
         }
+        
+        previousSkin = currentSkin;
     }
     
     private void OnDestroy()
