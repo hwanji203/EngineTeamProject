@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Member.Kimyongmin._02.Code.Boss.NewShark
 {
@@ -12,6 +13,9 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         private SharkBrain _sharkBrain;
         private Shark _shark;
         [SerializeField] private SharkDasher sharkDasher;
+
+        public UnityEvent OnSharkFightEnd;
+        public UnityEvent<UIType> OnSharkFightEndUI;
 
         private Vector3 _dir;
         
@@ -48,6 +52,11 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             
             roarEffect.gameObject.SetActive(true);
         }
+        
+        public void OffRoarEffect()
+        {
+            roarEffect.gameObject.SetActive(false);
+        }
 
         public void ChargeReady()
         {
@@ -58,6 +67,12 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         public void ChargeAttack()
         {
             StartCoroutine(sharkDasher.ChargeAttack(_dir));
+        }
+
+        public void BossFightEnd()
+        {
+            OnSharkFightEnd?.Invoke();
+            OnSharkFightEndUI?.Invoke(UIType.ClearUI);
         }
     }
 }

@@ -30,6 +30,12 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
                 Shark.RoarDir = -1;
                 SharkStateMachine.ChangeState(SharkStateType.RoarSkill);
             }
+            if (Shark.Healthsystem.Health <= 0)
+            {
+                Shark.RoarDir = -1;
+                SharkStateMachine.ChangeState(SharkStateType.Dead);
+                Shark.Death();
+            }
             base.UpdateState();
         }
 

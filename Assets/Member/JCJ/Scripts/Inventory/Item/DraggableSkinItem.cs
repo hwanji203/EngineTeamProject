@@ -16,6 +16,7 @@ public class DraggableSkinItem : MonoBehaviour, IBeginDragHandler, IDragHandler,
     private RectTransform rectTransform;
     private Transform originalParent;
     private Vector2 originalPosition;
+    private int originalSiblingIndex;
     private Canvas canvas;
     
     private void OnEnable()
@@ -56,6 +57,7 @@ public class DraggableSkinItem : MonoBehaviour, IBeginDragHandler, IDragHandler,
     {
         originalParent = transform.parent;
         originalPosition = rectTransform.anchoredPosition;
+        originalSiblingIndex = transform.GetSiblingIndex();
         
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
@@ -73,7 +75,26 @@ public class DraggableSkinItem : MonoBehaviour, IBeginDragHandler, IDragHandler,
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         
-        transform.SetParent(originalParent);
-        rectTransform.anchoredPosition = originalPosition;
+        // 드롭 성공 여부 확인
+        bool droppedOnSlot = false;
+        
+        if (eventData.pointerEnter != null)
+        {
+            var slotUI = eventData.pointerEnter.GetComponent<SkinSlotUI>();
+            if (slotUI != null)
+            {
+                droppedOnSlot = true;
+            }
+        }
+        
+        // 드롭 실패 시에만 원위치 복귀
+        if (!droppedOnSlot)
+        {
+            transform.SetParent(originalParent);
+            transform.SetSiblingIndex(originalSiblingIndex);
+            rectTransform.anchoredPosition = originalPosition;
+            rectTransform.localScale = Vector3.one;
+            rectTransform.localRotation = Quaternion.identity;
+        }
     }
 }

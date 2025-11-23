@@ -12,7 +12,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
-            Shark.transform.DORotate(new Vector3(0, Shark.GetTargetDir().x < 0 ? 180 : 0, 0), 0);
+            Shark.transform.rotation = Quaternion.Euler(new Vector3(0, Shark.GetTargetDir().x < 0 ? 180 : 0, 0));
         }
 
         private int _skillSelectNum = 0;

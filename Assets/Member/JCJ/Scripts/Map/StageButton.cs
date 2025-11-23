@@ -53,6 +53,7 @@ public class StageButton : MonoBehaviour
         }
         
         Debug.Log($"레벨 {stageLevel}");
+        SceneTransitionManager.Instance.LoadScene($"Stage{stageLevel}");
     }
     
     void UpdateVisual()

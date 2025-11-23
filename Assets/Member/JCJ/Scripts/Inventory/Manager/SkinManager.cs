@@ -57,38 +57,30 @@ public class SkinManager : MonoBehaviour
     private void FindHeadRenderer()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag(playerTag);
-        
+    
         if (players.Length == 0)
         {
-            Debug.LogWarning($"[SkinManager] Cannot find object with '{playerTag}' tag.");
-            return;
+            GameObject player = GameObject.Find("Player");
+            if (player != null)
+            {
+                players = new GameObject[] { player };
+            }
+            else
+            {
+                return;
+            }
         }
-        
-        GameObject player = players[0];
-        
-        if (players.Length > 1)
-        {
-            Debug.LogWarning($"[SkinManager] Found {players.Length} objects with '{playerTag}' tag. Using first one.");
-        }
-        
-        Transform headTransform = FindChildByName(player.transform, headObjectName);
-        
+    
+        GameObject targetPlayer = players[0];
+    
+        Transform headTransform = FindChildByName(targetPlayer.transform, headObjectName);
+    
         if (headTransform == null)
         {
-            Debug.LogError($"[SkinManager] Cannot find '{headObjectName}' in Player children.");
             return;
         }
-        
+    
         headRenderer = headTransform.GetComponent<SpriteRenderer>();
-        
-        if (headRenderer == null)
-        {
-            Debug.LogError($"[SkinManager] '{headObjectName}' object does not have SpriteRenderer!");
-        }
-        else
-        {
-            Debug.Log($"[SkinManager] Successfully found Head Renderer: {headTransform.name}");
-        }
     }
     
     private Transform FindChildByName(Transform parent, string childName)
