@@ -67,6 +67,7 @@ public class VolumeManager : MonoSingleton<VolumeManager>
     protected override void OnDestroy()
     {
         player.AttackCompo.OnAttack -= CounterPP;
+        base.OnDestroy();
     }
 }
 
