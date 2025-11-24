@@ -280,9 +280,9 @@ MonoBehaviour:
   waves:
   - enemySpawnInfos:
     - enemyType: 4
-      spawnCount: 3
+      spawnCount: 2
     - enemyType: 6
-      spawnCount: 3
+      spawnCount: 1
     spawnPoints: []
   - enemySpawnInfos:
     - enemyType: 3
@@ -292,9 +292,9 @@ MonoBehaviour:
     - enemyType: 0
       spawnCount: 1
     - enemyType: 4
-      spawnCount: 2
+      spawnCount: 1
     - enemyType: 5
-      spawnCount: 2
+      spawnCount: 1
     spawnPoints: []
 --- !u!1 &1174092335
 GameObject:
@@ -644,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[0].spawnCount
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[1].spawnCount
