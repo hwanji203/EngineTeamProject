@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/IntroScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/IntroScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/Effects/VFXManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/Effects/VFXManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Stage3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Stage3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Hwan/0002_Script/003_Manager/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Hwan/0002_Script/003_Manager/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/Shark.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChargeState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/02.Code/Boss/NewShark/States/SharkChargeState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/SettingUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/SettingUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -187,6 +187,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
                 if (other.gameObject.layer == _wallMask)
                 {
                     OnWallBurt?.Invoke();
+                    SoundManager.Instance.Play(SFXSoundType.SharkBoom);
                     CameraShaker.Instance.RandomShake(100);
                 }
             }

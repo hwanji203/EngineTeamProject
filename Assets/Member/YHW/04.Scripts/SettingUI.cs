@@ -26,7 +26,7 @@ public class SettingUI : MonoBehaviour,IUI
     }
     public void ExitStage()
     {
-        Debug.Log("메인 화면");
+        SceneManager.LoadScene("Lobby");
     }
     public void Continue()
     {

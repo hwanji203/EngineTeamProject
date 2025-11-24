@@ -11,6 +11,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void EnterState()
         {
             base.EnterState();
+            SoundManager.Instance.Play(SFXSoundType.SharkSpin);
             Shark.AttackBool(true);
             Shark.ChargeBool(true);
         }
