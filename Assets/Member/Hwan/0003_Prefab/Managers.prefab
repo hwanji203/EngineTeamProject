@@ -486,8 +486,6 @@ MonoBehaviour:
       <Clip>k__BackingField: {fileID: 8300000, guid: 451bb993ec926f648b1ec1fc3b4b32a7, type: 3}
     - <Type>k__BackingField: 7
       <Clip>k__BackingField: {fileID: 8300000, guid: d348095903bba5e4799bce27b1b69409, type: 3}
-    - <Type>k__BackingField: 4
-      <Clip>k__BackingField: {fileID: 8300000, guid: f9f261e2085068b4da7ffb38afee670e, type: 3}
     <Mixer>k__BackingField: {fileID: -1066874836619776042, guid: df8cc3f159ac11747a5c886c5bf924ed, type: 2}
 --- !u!1 &3914274874149213630
 GameObject:
@@ -975,7 +973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CinemachineCam>k__BackingField: {fileID: 0}
-  <StageSO>k__BackingField: {fileID: 11400000, guid: 67d5fa51573e82f4b957d43ec5968c41, type: 2}
+  <StageSO>k__BackingField: {fileID: 11400000, guid: cb847a14e5689d44aba3e65d76bd082a, type: 2}
 --- !u!1 &7848488231887453350
 GameObject:
   m_ObjectHideFlags: 0
