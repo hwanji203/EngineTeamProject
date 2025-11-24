@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Hambuger
   skinIcon: {fileID: 3064020999719980271, guid: 8037b0d93ed6372478276217e19eb593, type: 3}
   skinSprite: {fileID: 3064020999719980271, guid: 8037b0d93ed6372478276217e19eb593, type: 3}
-  cost: 100
+  cost: 1200
   bodyPart: 0

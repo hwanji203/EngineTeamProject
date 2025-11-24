@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Curry
   skinIcon: {fileID: -7075813466902684193, guid: d3f0386eaa191dd4dbad36026cd948ae, type: 3}
   skinSprite: {fileID: -7075813466902684193, guid: d3f0386eaa191dd4dbad36026cd948ae, type: 3}
-  cost: 100
+  cost: 1500
   bodyPart: 0

@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Sun Hat
   skinIcon: {fileID: 21300000, guid: 5710bba253f773f48a947cde911e3f31, type: 3}
   skinSprite: {fileID: 21300000, guid: 5710bba253f773f48a947cde911e3f31, type: 3}
-  cost: 100
+  cost: 3000
   bodyPart: 0

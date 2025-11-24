@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Bread
   skinIcon: {fileID: 4514861930614876757, guid: c0867027d019d1d40a3e49dfb224d3dc, type: 3}
   skinSprite: {fileID: 4514861930614876757, guid: c0867027d019d1d40a3e49dfb224d3dc, type: 3}
-  cost: 100
+  cost: 1200
   bodyPart: 0

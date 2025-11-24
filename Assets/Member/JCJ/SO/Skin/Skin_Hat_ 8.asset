@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Magic Hat
   skinIcon: {fileID: 21300000, guid: 486531e3c41c1b145a0bde2b3051b522, type: 3}
   skinSprite: {fileID: 21300000, guid: 486531e3c41c1b145a0bde2b3051b522, type: 3}
-  cost: 100
+  cost: 5000
   bodyPart: 0

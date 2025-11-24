@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Cheese
   skinIcon: {fileID: -6721888907555169154, guid: 7559f375b1acf9d43bdc5b5a59a12acc, type: 3}
   skinSprite: {fileID: -6721888907555169154, guid: 7559f375b1acf9d43bdc5b5a59a12acc, type: 3}
-  cost: 100
+  cost: 1250
   bodyPart: 0

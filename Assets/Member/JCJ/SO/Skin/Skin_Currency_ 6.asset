@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Bronze Bundle
   skinIcon: {fileID: 5573096507877209364, guid: 75c75d87abc6fae46ad1dd15e1be6f6b, type: 3}
   skinSprite: {fileID: 5573096507877209364, guid: 75c75d87abc6fae46ad1dd15e1be6f6b, type: 3}
-  cost: 100
+  cost: 2000
   bodyPart: 0

@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Pear
   skinIcon: {fileID: -3250960257539911704, guid: 9d5ecc5329df51c4a8eac97ba3d9ebb6, type: 3}
   skinSprite: {fileID: -3250960257539911704, guid: 9d5ecc5329df51c4a8eac97ba3d9ebb6, type: 3}
-  cost: 100
+  cost: 500
   bodyPart: 0

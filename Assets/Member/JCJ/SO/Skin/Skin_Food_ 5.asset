@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Drink
   skinIcon: {fileID: 8212969615330527591, guid: 04e05e471d654684297dfc6cc327a09d, type: 3}
   skinSprite: {fileID: 8212969615330527591, guid: 04e05e471d654684297dfc6cc327a09d, type: 3}
-  cost: 100
+  cost: 700
   bodyPart: 0

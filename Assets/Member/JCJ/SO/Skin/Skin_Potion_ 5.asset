@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Empty Potion
   skinIcon: {fileID: -8500314420961450495, guid: b40645f867e33364b886f01af4e43e52, type: 3}
   skinSprite: {fileID: -8500314420961450495, guid: b40645f867e33364b886f01af4e43e52, type: 3}
-  cost: 100
+  cost: 1000
   bodyPart: 0

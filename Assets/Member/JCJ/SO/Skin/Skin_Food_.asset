@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Apple
   skinIcon: {fileID: 4630197722770085722, guid: d94d638f2c9b4a5498407a8417322c3f, type: 3}
   skinSprite: {fileID: 4630197722770085722, guid: d94d638f2c9b4a5498407a8417322c3f, type: 3}
-  cost: 100
+  cost: 800
   bodyPart: 0

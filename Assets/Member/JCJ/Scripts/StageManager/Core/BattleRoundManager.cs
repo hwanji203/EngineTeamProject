@@ -47,7 +47,7 @@ public class BattleRoundManager : MonoBehaviour
         remainingEnemiesInWave = wave.GetTotalEnemyCount();
         SpawnWaveEnemies(wave);
         
-        Debug.Log($"웨이브 {waveIndex + 1} 시작! 총 적: {remainingEnemiesInWave}");
+        Debug.Log($"웨이브 {waveIndex + 1} 시작 총 적: {remainingEnemiesInWave}");
     }
 
     private void SpawnWaveEnemies(BattleWaveData wave)
@@ -85,7 +85,7 @@ public class BattleRoundManager : MonoBehaviour
         if (!isRoundActive) return;
 
         remainingEnemiesInWave--;
-        Debug.Log($"적 처치! 남은 적: {remainingEnemiesInWave}");
+        Debug.Log($"남은 적: {remainingEnemiesInWave}");
 
         if (remainingEnemiesInWave <= 0)
         {

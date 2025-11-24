@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Military Hat
   skinIcon: {fileID: 21300000, guid: 79264f57d0079394b81c0a96ed4353aa, type: 3}
   skinSprite: {fileID: 21300000, guid: 79264f57d0079394b81c0a96ed4353aa, type: 3}
-  cost: 100
+  cost: 2500
   bodyPart: 0

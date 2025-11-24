@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Taku Hat
   skinIcon: {fileID: 21300000, guid: b4d5a8e7a909b5f4c9a6e921b6a67e0a, type: 3}
   skinSprite: {fileID: 21300000, guid: b4d5a8e7a909b5f4c9a6e921b6a67e0a, type: 3}
-  cost: 100
+  cost: 4000
   bodyPart: 0

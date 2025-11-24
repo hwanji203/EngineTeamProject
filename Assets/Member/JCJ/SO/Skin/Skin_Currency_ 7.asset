@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Bundle
   skinIcon: {fileID: -2458016305716202060, guid: 67a9035ffcd7fe84fa6762a3457f7394, type: 3}
   skinSprite: {fileID: -2458016305716202060, guid: 67a9035ffcd7fe84fa6762a3457f7394, type: 3}
-  cost: 100
+  cost: 3500
   bodyPart: 0

@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Green Potion
   skinIcon: {fileID: 3652188633536898525, guid: 0a6f8e25d64efbf48969aaed4c396d17, type: 3}
   skinSprite: {fileID: 3652188633536898525, guid: 0a6f8e25d64efbf48969aaed4c396d17, type: 3}
-  cost: 100
+  cost: 1300
   bodyPart: 0

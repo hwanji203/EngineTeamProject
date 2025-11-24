@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Cake
   skinIcon: {fileID: 7400114942718975230, guid: 1ddb41bc0f2bf3445800b60c6d49cb74, type: 3}
   skinSprite: {fileID: 7400114942718975230, guid: 1ddb41bc0f2bf3445800b60c6d49cb74, type: 3}
-  cost: 100
+  cost: 1300
   bodyPart: 0
