@@ -15,7 +15,7 @@ public class GameOver : MonoBehaviour, IUI
     public void GoLobby()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("LobbyUI");
+        SceneManager.LoadScene("Lobby");
     }
     public void RePlay()
     {
