@@ -33,6 +33,7 @@ public class ComboSystem : MonoSingleton<ComboSystem>
     protected override void OnDestroy()
     {
         playerAttack.OnAttack -= DoCombo;
+        base.OnDestroy();
     }
 
     // Unity 오브젝트가 진짜로 살아있는지 체크하는 헬퍼

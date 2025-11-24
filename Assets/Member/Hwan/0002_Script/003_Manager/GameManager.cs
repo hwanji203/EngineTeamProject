@@ -24,9 +24,9 @@ public class GameManager : MonoSingleton<GameManager>
     {
         base.Awake();
 
-        SoundManager.Instance.Play(StageSO.StageBGM);
         try
         {
+            Debug.Log("sdfsf");
             Vector2 startPoint = new Vector2(0, StageSO.StartY);
             Player.transform.position = new Vector3(startPoint.x, startPoint.y, Player.transform.position.z);
             CinemachineCam.transform.position = new Vector3(startPoint.x, startPoint.y, CinemachineCam.transform.position.z);
@@ -38,6 +38,7 @@ public class GameManager : MonoSingleton<GameManager>
     }
     private void Start()
     {
+        SoundManager.Instance.Play(StageSO.StageBGM);
         try
         {
             Player.PositionCheckerCompo.OnNearClear += CheckGameClear;
@@ -47,6 +48,20 @@ public class GameManager : MonoSingleton<GameManager>
         {
             Debug.Log("Intro, Main Scene");
         }
+    }
+
+    protected override void OnDestroy()
+    {
+        try
+        {
+            Player.PositionCheckerCompo.OnNearClear -= CheckGameClear;
+            Player.PositionCheckerCompo.OnNearOutOfCam -= CheckGameOver;
+        }
+        catch
+        {
+            Debug.Log("Intro, Main Scene");
+        }
+        base.OnDestroy();
     }
 
     private void Update()

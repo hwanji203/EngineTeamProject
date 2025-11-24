@@ -30,9 +30,9 @@ public class VerticalParallax : MonoBehaviour
 
         // 이때의 위치를 기준(offset)으로 잡음
         offset = transform.localPosition;
-
+        Debug.Log(offset);
         // 첫 프레임 비교용으로 카메라 현재 Y 저장
-        lastFrameCamYValue = camTrn.position.y;
+        lastFrameCamYValue = GameManager.Instance.StageSO.StartY;
 
         // 초기값
         movedCamYValue = 0f;
@@ -40,52 +40,27 @@ public class VerticalParallax : MonoBehaviour
 
     private void Update()
     {
-        // 이번 프레임에서 카메라가 얼마나 움직였는지
-        float deltaY = camTrn.position.y - lastFrameCamYValue;
+        movedCamYValue += (camTrn.position.y - lastFrameCamYValue) * 0.1f * speed;
         lastFrameCamYValue = camTrn.position.y;
-
-        // 패럴럭스 이동량 계산
-        float parallaxMove = deltaY * parallaxFactor * speed;
-
-        // 배경 레이어는 움직임 방향을 반대로 줄 수도 있음(원하는 연출에 따라)
-        if (isBackground)
+        if (doTeleport == false)
         {
-            movedCamYValue -= parallaxMove;
-        }
-        else
-        {
-            movedCamYValue += parallaxMove;
-        }
-
-        // 텔레포트(순환) 기능이 꺼져 있으면 단순 패럴럭스만 적용
-        if (!doTeleport)
-        {
-            transform.localPosition = offset + new Vector3(0f, -movedCamYValue);
+            transform.localPosition = new Vector3(0, -movedCamYValue) + offset;
             return;
         }
 
-        // -----------------------
-        // 텔레포트(순환) 처리 부분
-        // -----------------------
-
-        // 한 블록 이상 이동했으면, 그만큼을 빼서 순환 효과 만들기
-        if (Mathf.Abs(movedCamYValue) >= oneBlock)
+        if (Mathf.Abs(movedCamYValue) >= oneBlock - errorRange && movedCamYValue % 1 < errorRange)
         {
-            float sign = Mathf.Sign(movedCamYValue);
-            movedCamYValue -= sign * oneBlock;
-
-            // 완전 리셋을 원하면 위 두 줄 대신 아래 한 줄로 사용:
-            // movedCamYValue = 0f;
+            transform.localPosition = offset;
+            movedCamYValue = 0;
         }
-
-        // 혹시라도 값이 너무 커졌을 때 비상 리셋
-        if (Mathf.Abs(movedCamYValue) > maxRange)
+        else if (movedCamYValue > maxRange)
         {
-            movedCamYValue = 0f;
+            transform.localPosition = offset;
         }
-
-        // 최종 위치 적용
-        transform.localPosition = offset + new Vector3(0f, -movedCamYValue);
+        else
+        {
+            transform.localPosition = new Vector3(0, -movedCamYValue) + offset;
+        }
     }
 
     // 필요하면 외부에서 전투 시작/끝 시점에 호출해서 기준 재설정 가능
