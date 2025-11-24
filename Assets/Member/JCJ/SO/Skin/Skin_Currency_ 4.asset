@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Silver Bundle
   skinIcon: {fileID: -5850005125244028987, guid: 7c91a73a187cbb94a956101cff642966, type: 3}
   skinSprite: {fileID: -5850005125244028987, guid: 7c91a73a187cbb94a956101cff642966, type: 3}
-  cost: 100
+  cost: 2250
   bodyPart: 0

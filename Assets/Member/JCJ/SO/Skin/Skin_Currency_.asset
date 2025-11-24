@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Gold
   skinIcon: {fileID: -6978704898551955010, guid: a22c3f6bec78e2b4194faafd9b6806a5, type: 3}
   skinSprite: {fileID: -6978704898551955010, guid: a22c3f6bec78e2b4194faafd9b6806a5, type: 3}
-  cost: 100
+  cost: 1500
   bodyPart: 0

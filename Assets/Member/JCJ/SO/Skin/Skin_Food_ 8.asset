@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: HotDog
   skinIcon: {fileID: 2899319983537504428, guid: df3300e9b4b221440a230186b0c9d086, type: 3}
   skinSprite: {fileID: 2899319983537504428, guid: df3300e9b4b221440a230186b0c9d086, type: 3}
-  cost: 100
+  cost: 1000
   bodyPart: 0

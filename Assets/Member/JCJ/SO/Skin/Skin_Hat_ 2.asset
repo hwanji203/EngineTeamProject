@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Gray Hat
   skinIcon: {fileID: 21300000, guid: 08085dcdc599d744daafcffde137a41a, type: 3}
   skinSprite: {fileID: 21300000, guid: 08085dcdc599d744daafcffde137a41a, type: 3}
-  cost: 100
+  cost: 2100
   bodyPart: 0

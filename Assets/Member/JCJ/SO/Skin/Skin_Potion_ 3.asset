@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Yellow Potion
   skinIcon: {fileID: -8842849235552991198, guid: cef5d61277acf7042849b6b5ce406d71, type: 3}
   skinSprite: {fileID: -8842849235552991198, guid: cef5d61277acf7042849b6b5ce406d71, type: 3}
-  cost: 100
+  cost: 1150
   bodyPart: 0

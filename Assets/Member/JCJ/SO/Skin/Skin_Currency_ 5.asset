@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Bronze
   skinIcon: {fileID: 1260735622367559352, guid: 65f975e2263bd1a4985ac5fe6a83b190, type: 3}
   skinSprite: {fileID: 1260735622367559352, guid: 65f975e2263bd1a4985ac5fe6a83b190, type: 3}
-  cost: 100
+  cost: 1200
   bodyPart: 0

@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Red Hat
   skinIcon: {fileID: 21300000, guid: ffbc22e2177df8347b3357e0cac3028f, type: 3}
   skinSprite: {fileID: 21300000, guid: ffbc22e2177df8347b3357e0cac3028f, type: 3}
-  cost: 100
+  cost: 2200
   bodyPart: 0

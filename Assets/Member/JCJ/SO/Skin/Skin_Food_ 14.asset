@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Donut
   skinIcon: {fileID: 6721670983605869325, guid: f76861df0890906459c24b5073f55559, type: 3}
   skinSprite: {fileID: 6721670983605869325, guid: f76861df0890906459c24b5073f55559, type: 3}
-  cost: 100
+  cost: 850
   bodyPart: 0

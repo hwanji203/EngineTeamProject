@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Gold Bundle
   skinIcon: {fileID: -4622792254396519419, guid: 1626088bcbb78cc45bf5dd93d54a07f2, type: 3}
   skinSprite: {fileID: -4622792254396519419, guid: 1626088bcbb78cc45bf5dd93d54a07f2, type: 3}
-  cost: 100
+  cost: 2500
   bodyPart: 0

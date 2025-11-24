@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Pink Potion
   skinIcon: {fileID: -5010516950607800172, guid: c36141386cd3fa34e9d6b858bfcfbf14, type: 3}
   skinSprite: {fileID: -5010516950607800172, guid: c36141386cd3fa34e9d6b858bfcfbf14, type: 3}
-  cost: 100
+  cost: 1050
   bodyPart: 0

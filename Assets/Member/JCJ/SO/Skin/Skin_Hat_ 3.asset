@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Brown Hat
   skinIcon: {fileID: 21300000, guid: b9603f9f084cafc4fb0de3fcf2217ff0, type: 3}
   skinSprite: {fileID: 21300000, guid: b9603f9f084cafc4fb0de3fcf2217ff0, type: 3}
-  cost: 100
+  cost: 2250
   bodyPart: 0

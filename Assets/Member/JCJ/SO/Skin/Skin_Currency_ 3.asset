@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Silver
   skinIcon: {fileID: 687051605843846071, guid: fd778d76ba22b354d82609daa10f74ca, type: 3}
   skinSprite: {fileID: 687051605843846071, guid: fd778d76ba22b354d82609daa10f74ca, type: 3}
-  cost: 100
+  cost: 1250
   bodyPart: 0

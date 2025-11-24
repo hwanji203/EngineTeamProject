@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Viking Hat
   skinIcon: {fileID: 21300000, guid: bd42eff5cad303549ad96f8d1034bcfe, type: 3}
   skinSprite: {fileID: 21300000, guid: bd42eff5cad303549ad96f8d1034bcfe, type: 3}
-  cost: 100
+  cost: 3500
   bodyPart: 0
