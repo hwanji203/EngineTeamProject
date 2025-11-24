@@ -54,8 +54,8 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
             Healthsystem.OnHealthChanged += HitAnim;
             Healthsystem.OnHealthChanged += SharkMovement.ZeroVelocity;
             ResetCooltime();
-            
-            Healthsystem.SetInvincibility(true);
+
+            SetInvincibility(true);
         }
 
         private void FixedUpdate()
@@ -66,6 +66,12 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
                 SharkMovement.RbMove();
             }
             
+        }
+
+        public void SetInvincibility(bool value)
+        {
+            Healthsystem.SetInvincibility(value);
+            IsInvincibility = value;
         }
 
         public Vector3 GetTargetDir()

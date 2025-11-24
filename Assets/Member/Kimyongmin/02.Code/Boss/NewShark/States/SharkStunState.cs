@@ -1,3 +1,4 @@
+using DG.Tweening.Core.Easing;
 using UnityEngine;
 
 namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
@@ -18,7 +19,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
             Shark.SharkMovement.SetSpeed(0);
             Shark.SharkMovement.RbCompo.linearVelocity = Vector3.zero;
             
-            Shark.Healthsystem.SetInvincibility(false);
+            Shark.SetInvincibility(false);
         }
 
         public override void UpdateState()
@@ -42,7 +43,7 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
         public override void ExitState()
         {
             base.ExitState();
-            Shark.Healthsystem.SetInvincibility(true);
+            Shark.SetInvincibility(true);
         }
     }
 }
