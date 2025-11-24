@@ -148,9 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634a7086fae46c2478140a096f765283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DoTuto>k__BackingField: 0
+  <DoTuto>k__BackingField: 1
   tutorialEnemy: {fileID: 6802907738643528409, guid: c173cb78e9696d2429224482ad528cd4, type: 3}
-  inGame: 1
+  inGame: 0
 --- !u!4 &170024986
 Transform:
   m_ObjectHideFlags: 0
