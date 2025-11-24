@@ -44,24 +44,24 @@ public enum BGMSoundType
 public class SoundManager : MonoSingleton<SoundManager>
 {
     [Serializable]
-    public class ClipData <T>
+    public class ClipData <T> where T : Enum
     {
         [field: SerializeField] public T Type { get; private set; }     // 사운드 구분 타입
         [field: SerializeField] public AudioClip Clip { get; private set; }      // 오디오 파일
     }
 
     [Serializable]
-    public class SoundData<T>
+    public class AudioData<T> where T : Enum
     {
         [field: SerializeField] public ClipData<T>[] ClipDatas { get; private set; }
         [field: SerializeField] public AudioMixerGroup Mixer { get; private set; }
     }
 
     [Header("SFX Sound Daters")]
-    [SerializeField] private SoundData<SFXSoundType> sfxSounds;
+    [SerializeField] private AudioData<SFXSoundType> sfxSounds;
 
     [Header("BGM Sound Daters")]
-    [SerializeField] private SoundData<BGMSoundType> bgmSounds;
+    [SerializeField] private AudioData<BGMSoundType> bgmSounds;
 
     private Dictionary<SFXSoundType, AudioClip> sfxSoundDict;
     private AudioSource sfxAudioSource;
@@ -79,7 +79,7 @@ public class SoundManager : MonoSingleton<SoundManager>
         bgmAudioSource.loop = true;
     }
 
-    private void AudioInitialize<T>(out AudioSource audioSource, out Dictionary<T, AudioClip> dict, SoundData<T> soundData)
+    private void AudioInitialize<T>(out AudioSource audioSource, out Dictionary<T, AudioClip> dict, AudioData<T> soundData) where T : Enum
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
@@ -98,7 +98,6 @@ public class SoundManager : MonoSingleton<SoundManager>
     // 지정된 타입의 사운드 재생
     public void Play(SFXSoundType type)
     {
-        Debug.Log(type);
         if (sfxSoundDict.TryGetValue(type, out var clip))
         {
             sfxAudioSource.PlayOneShot(clip);
