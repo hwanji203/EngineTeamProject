@@ -804,6 +804,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1748796850}
     - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: <StageSO>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 67d5fa51573e82f4b957d43ec5968c41, type: 2}
+    - target: {fileID: 5979538056297507563, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: <CinemachineCam>k__BackingField
       value: 
       objectReference: {fileID: 1748796849}

@@ -9,11 +9,17 @@ namespace Member.Kimyongmin._02.Code
     {
         [SerializeField] private HealthSystem healthSystem;
         [SerializeField] private Image healthBarImage;
+        [SerializeField] private Sprite[] barSprites;
 
         private float _t = 0;
 
         private void Update()
         {
+            if (healthSystem.ReturnInvi())
+                healthBarImage.sprite = barSprites[0];
+            else
+                healthBarImage.sprite = barSprites[1];
+            
             float value = healthSystem.HealthBarValue();
 
             healthBarImage.fillAmount = Mathf.SmoothDamp(

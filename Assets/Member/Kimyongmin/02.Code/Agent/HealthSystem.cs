@@ -29,6 +29,7 @@ namespace Member.Kimyongmin._02.Code.Agent
                     OnHealthChanged?.Invoke();
                     VFXManager.Instance.Play(VFXType.EnemyHit, transform.position, Quaternion.identity,
                         transform.parent);
+                    SoundManager.Instance.Play(SFXSoundType.Slap);
                     CameraShaker.Instance.RandomShake(_health - value);
                     Hit = true;
                 }
@@ -68,6 +69,11 @@ namespace Member.Kimyongmin._02.Code.Agent
         public float HealthBarValue()
         {
             return Health / _maxHealth;
+        }
+
+        public bool ReturnInvi()
+        {
+            return _isiIvincibility;
         }
     }
 }

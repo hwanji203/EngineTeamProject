@@ -76,12 +76,7 @@ public class BossIntroController : MonoBehaviour
 
     private void Start()
     {
-        #if UNITY_EDITOR
-        if (autoPlayOnStart)
-        {
-            StartCoroutine(TestPlayAfterDelay(1f));
-        }
-        #endif
+        StartCoroutine(TestPlayAfterDelay(1f));
     }
 
     private IEnumerator TestPlayAfterDelay(float delay)

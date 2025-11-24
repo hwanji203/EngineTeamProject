@@ -404,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[1].enemySpawnInfos.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[1].enemyType
@@ -421,6 +421,10 @@ PrefabInstance:
     - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[1].enemyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
+      propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[2].enemyType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[0].spawnCount
@@ -440,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[1].spawnCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6864915395726967061, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[2].spawnCount
@@ -480,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[0].spawnCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[1].enemySpawnInfos.Array.data[1].spawnCount

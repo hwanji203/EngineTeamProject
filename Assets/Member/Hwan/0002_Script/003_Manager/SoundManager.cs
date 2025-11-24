@@ -25,7 +25,8 @@ public enum SFXSoundType
     SharkLaser,
     SharkBite,
     SharkSpin,
-    SharkBoom
+    SharkBoom,
+    Slap
 }
 
 public enum BGMSoundType

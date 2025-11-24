@@ -82,7 +82,7 @@ public class GameManager : MonoSingleton<GameManager>
         }
     }
 
-    private void CheckGameClear(float value)
+    public void CheckGameClear(float value)
     {
         if (value == 1)
         {
@@ -90,6 +90,7 @@ public class GameManager : MonoSingleton<GameManager>
             UIManager.Instance.CloseAllUI(UIType.ClearUI);
             Player.PositionCheckerCompo.OnNearClear -= CheckGameClear;
             StageManager.Instance.ClearLevel(StageSO.StageLevel);
+            
         }
     }
 }
