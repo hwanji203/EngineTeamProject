@@ -8,7 +8,7 @@ public class VolumeManager : MonoSingleton<VolumeManager>
     private Dictionary<VolumeType, VolumeValueChanger> volumeDictionary = new();
 
     private Coroutine defAfterInCoroutine;
-
+    private Player player;
     protected override void Awake()
     {
         base.Awake();
@@ -27,18 +27,20 @@ public class VolumeManager : MonoSingleton<VolumeManager>
         }
         volumeDictionary[VolumeType.Normal].SetWeight(1);
 
-        Player player = GameManager.Instance.Player;
+        player = GameManager.Instance.Player;
         player.OnDamage += (_, _) => DefAfterInc(VolumeType.Hit, 0.35f);
         player.StaminaCompo.SubOnNoAir((value) => SetVolume(VolumeType.NoAir, value));
         player.PositionCheckerCompo.SubNearGround((value) => SetVolume(VolumeType.EndOfCam, value));
         player.PositionCheckerCompo.SubNearClear((value) => SetVolume(VolumeType.EndOfClear, value));
-        player.AttackCompo.OnAttack += (value) =>
+        player.AttackCompo.OnAttack += CounterPP;
+    }
+
+    private void CounterPP(bool value)
+    {
+        if (value == true)
         {
-            if (value == true)
-            {
-                DefAfterInc(VolumeType.Counter, 0.365f);
-            }
-        };
+            DefAfterInc(VolumeType.Counter, 0.365f);
+        }
     }
 
     public void IncreaseVolume(VolumeType type, float time)
@@ -60,6 +62,11 @@ public class VolumeManager : MonoSingleton<VolumeManager>
     public void SetVolume(VolumeType type, float value)
     {
         volumeDictionary[type].SetWeight(value);
+    }
+
+    protected override void OnDestroy()
+    {
+        player.AttackCompo.OnAttack += CounterPP;
     }
 }
 
