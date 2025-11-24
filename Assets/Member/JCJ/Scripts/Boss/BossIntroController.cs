@@ -76,8 +76,7 @@ public class BossIntroController : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(TestPlayAfterDelay(0.1f));
-    }
+        StartCoroutine(TestPlayAfterDelay(0.1f)); }
 
     private IEnumerator TestPlayAfterDelay(float delay)
     {
