@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Chicken
   skinIcon: {fileID: -8396039524521065272, guid: 0084fe7fcde157b499862843884c8f3d, type: 3}
   skinSprite: {fileID: -8396039524521065272, guid: 0084fe7fcde157b499862843884c8f3d, type: 3}
-  cost: 100
+  cost: 2000
   bodyPart: 0

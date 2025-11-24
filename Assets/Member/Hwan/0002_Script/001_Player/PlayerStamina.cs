@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerStamina : MonoBehaviour
@@ -104,5 +105,13 @@ public class PlayerStamina : MonoBehaviour
         }
 
         canMoveCoroutine = null;
+    }
+
+    private void Update()
+    {
+        if (CurrentStamina.Value <= 0)
+        {
+            GetComponentInChildren<CapsuleCollider2D>().isTrigger = true;
+        }
     }
 }

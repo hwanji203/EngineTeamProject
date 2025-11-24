@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Shark Hat
   skinIcon: {fileID: 21300000, guid: 8919fb6fdc56537469445fd6e15bc7cf, type: 3}
   skinSprite: {fileID: 21300000, guid: 8919fb6fdc56537469445fd6e15bc7cf, type: 3}
-  cost: 100
+  cost: 5000
   bodyPart: 0

@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Pizza
   skinIcon: {fileID: -8218559904757134559, guid: f77eb30cf218cbc408febe5e4f3985a6, type: 3}
   skinSprite: {fileID: -8218559904757134559, guid: f77eb30cf218cbc408febe5e4f3985a6, type: 3}
-  cost: 100
+  cost: 1300
   bodyPart: 0

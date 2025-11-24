@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Shrimp
   skinIcon: {fileID: 8550611643681762083, guid: 2bc838333b11d724d8e468a65d6cbbdf, type: 3}
   skinSprite: {fileID: 8550611643681762083, guid: 2bc838333b11d724d8e468a65d6cbbdf, type: 3}
-  cost: 100
+  cost: 2000
   bodyPart: 0

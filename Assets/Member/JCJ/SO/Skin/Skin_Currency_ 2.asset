@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Cash
   skinIcon: {fileID: -5416000463394703212, guid: 1bb363b52d0b7284983aad412ab95685, type: 3}
   skinSprite: {fileID: -5416000463394703212, guid: 1bb363b52d0b7284983aad412ab95685, type: 3}
-  cost: 100
+  cost: 1000
   bodyPart: 0

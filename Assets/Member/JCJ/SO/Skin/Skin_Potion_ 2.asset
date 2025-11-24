@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Cyan Potion
   skinIcon: {fileID: -6371757858882541230, guid: b5851dc10fb3f744eab5a1adf1e7a6aa, type: 3}
   skinSprite: {fileID: -6371757858882541230, guid: b5851dc10fb3f744eab5a1adf1e7a6aa, type: 3}
-  cost: 100
+  cost: 1300
   bodyPart: 0

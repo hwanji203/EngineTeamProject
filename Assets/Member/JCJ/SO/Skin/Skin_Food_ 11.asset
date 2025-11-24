@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Coconut
   skinIcon: {fileID: 6625807904509448618, guid: 148012c8a7cf42747bb56f9b165c0f63, type: 3}
   skinSprite: {fileID: 6625807904509448618, guid: 148012c8a7cf42747bb56f9b165c0f63, type: 3}
-  cost: 100
+  cost: 1300
   bodyPart: 0

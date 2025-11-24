@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Fried Egg
   skinIcon: {fileID: 2614752265519231004, guid: 283ee2f3354623a43a65374cdf411984, type: 3}
   skinSprite: {fileID: 2614752265519231004, guid: 283ee2f3354623a43a65374cdf411984, type: 3}
-  cost: 100
+  cost: 1150
   bodyPart: 0

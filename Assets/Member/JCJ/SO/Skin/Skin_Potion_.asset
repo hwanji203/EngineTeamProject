@@ -16,5 +16,5 @@ MonoBehaviour:
   skinName: Red Potion
   skinIcon: {fileID: 7283540583273214522, guid: 81ad7f9e501244e4d9ef78a995d48f7f, type: 3}
   skinSprite: {fileID: 7283540583273214522, guid: 81ad7f9e501244e4d9ef78a995d48f7f, type: 3}
-  cost: 100
+  cost: 1200
   bodyPart: 0
