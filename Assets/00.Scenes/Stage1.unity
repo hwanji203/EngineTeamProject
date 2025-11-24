@@ -256,6 +256,112 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1558035220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1558035222}
+  - component: {fileID: 1558035221}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1558035221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558035220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e57371e5bd3a564a940e6f52457f469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSounds:
+    <ClipDatas>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Clip>k__BackingField: {fileID: 8300000, guid: 3f347a57ec7b5b54db26b64cbe09c8ff, type: 3}
+    - <Type>k__BackingField: 2
+      <Clip>k__BackingField: {fileID: 8300000, guid: bcb7429777584eb4889d7110046ba177, type: 3}
+    - <Type>k__BackingField: 3
+      <Clip>k__BackingField: {fileID: 8300000, guid: 721b1bee3a482db4c82b5d76376321b2, type: 3}
+    - <Type>k__BackingField: 4
+      <Clip>k__BackingField: {fileID: 8300000, guid: 9942fe53fba7ba34eb8c7d025f4ad1b0, type: 3}
+    - <Type>k__BackingField: 5
+      <Clip>k__BackingField: {fileID: 8300000, guid: e48d5ab28b9282546ba50b05790f2208, type: 3}
+    - <Type>k__BackingField: 6
+      <Clip>k__BackingField: {fileID: 8300000, guid: e229850636f5c79458b5687a79c438a9, type: 3}
+    - <Type>k__BackingField: 7
+      <Clip>k__BackingField: {fileID: 8300000, guid: 69f6239ebd5b6b24fa3012f48c4394a9, type: 3}
+    - <Type>k__BackingField: 8
+      <Clip>k__BackingField: {fileID: 8300000, guid: 216847301cdfa6d4895cb86ecaa4aba6, type: 3}
+    - <Type>k__BackingField: 9
+      <Clip>k__BackingField: {fileID: 8300000, guid: 12f1f299defcd674694f63d856bb1a18, type: 3}
+    - <Type>k__BackingField: 10
+      <Clip>k__BackingField: {fileID: 8300000, guid: 36f97a56d83d39949be92c65836dcc6b, type: 3}
+    - <Type>k__BackingField: 11
+      <Clip>k__BackingField: {fileID: 8300000, guid: 0f6d8a8eba2142946b5d6e698f9dfdf6, type: 3}
+    - <Type>k__BackingField: 12
+      <Clip>k__BackingField: {fileID: 8300000, guid: 7e0aa40f2f2d5c047b0dc65dcb00428e, type: 3}
+    - <Type>k__BackingField: 14
+      <Clip>k__BackingField: {fileID: 8300000, guid: 5ff71dc085fc17c43923c635b8ffd9af, type: 3}
+    - <Type>k__BackingField: 15
+      <Clip>k__BackingField: {fileID: 8300000, guid: a73387e15c5810e4f8be4d7a5bb961d5, type: 3}
+    - <Type>k__BackingField: 16
+      <Clip>k__BackingField: {fileID: 8300000, guid: fb6c33361fb36774785b48ab38f87309, type: 3}
+    - <Type>k__BackingField: 17
+      <Clip>k__BackingField: {fileID: 8300000, guid: 358f7e65ea2dd624683e4832fbf858de, type: 3}
+    - <Type>k__BackingField: 18
+      <Clip>k__BackingField: {fileID: 8300000, guid: a0b053e71bf55be41934bd35c392f047, type: 3}
+    - <Type>k__BackingField: 19
+      <Clip>k__BackingField: {fileID: 8300000, guid: b14e28897ebf1c24e9cf5257ecbeb33a, type: 3}
+    - <Type>k__BackingField: 20
+      <Clip>k__BackingField: {fileID: 8300000, guid: 851bb06ea40fae94a8c34ee2d5641e42, type: 3}
+    - <Type>k__BackingField: 21
+      <Clip>k__BackingField: {fileID: 8300000, guid: ebe0f2ec603843a4b8b663d141580968, type: 3}
+    <Mixer>k__BackingField: {fileID: 3643321774804691864, guid: df8cc3f159ac11747a5c886c5bf924ed, type: 2}
+  bgmSounds:
+    <ClipDatas>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Clip>k__BackingField: {fileID: 8300000, guid: 8737a7123ebd61944bfca219e2d48463, type: 3}
+    - <Type>k__BackingField: 2
+      <Clip>k__BackingField: {fileID: 8300000, guid: b127698d91571c049960d6cb9dfd385a, type: 3}
+    - <Type>k__BackingField: 8
+      <Clip>k__BackingField: {fileID: 8300000, guid: dda04b31b0704be488f05c7170576e76, type: 3}
+    - <Type>k__BackingField: 3
+      <Clip>k__BackingField: {fileID: 8300000, guid: 233326bcb1d7c3c48b5918becddb0e32, type: 3}
+    - <Type>k__BackingField: 4
+      <Clip>k__BackingField: {fileID: 8300000, guid: f9f261e2085068b4da7ffb38afee670e, type: 3}
+    - <Type>k__BackingField: 5
+      <Clip>k__BackingField: {fileID: 8300000, guid: 820353bbb3b5f134f916a508ca13e5ba, type: 3}
+    - <Type>k__BackingField: 6
+      <Clip>k__BackingField: {fileID: 8300000, guid: 451bb993ec926f648b1ec1fc3b4b32a7, type: 3}
+    - <Type>k__BackingField: 7
+      <Clip>k__BackingField: {fileID: 8300000, guid: d348095903bba5e4799bce27b1b69409, type: 3}
+    <Mixer>k__BackingField: {fileID: -1066874836619776042, guid: df8cc3f159ac11747a5c886c5bf924ed, type: 2}
+--- !u!4 &1558035222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558035220}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5047805736535623818}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748796847
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,10 +715,19 @@ PrefabInstance:
       value: Managers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3864013269161091321, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6541987100514202507, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 1558035222}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+--- !u!4 &5047805736535623818 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6541987100514202507, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+  m_PrefabInstance: {fileID: 5047805736535623817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6411733614675175789
 PrefabInstance:
   m_ObjectHideFlags: 0
