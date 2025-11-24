@@ -1,17 +1,14 @@
-using Member.Kimyongmin._02.Code.Agent;
 using System;
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using Member.Kimyongmin._02.Code.Enemy;
-using NUnit.Framework.Constraints;
 
 public abstract class PlayerSkillSO : ScriptableObject
 {
     [SerializeField] protected float damagePercent;
     [SerializeField] protected LayerMask enemyLayer;
     [SerializeField] protected int attackCount;
-    [SerializeField] private SkillEffect[] effects;
     [field: SerializeField] public float AttackTime { get; private set; }
     [SerializeField] private Vector2 range;
     [SerializeField] private Vector3 offset;
@@ -47,11 +44,4 @@ public abstract class PlayerSkillSO : ScriptableObject
             }
         }
     }
-}
-
-[Serializable]
-public class SkillEffect
-{
-    [field: SerializeField] public bool isParticle { get; private set; }
-    [field: SerializeField] public GameObject effectPrefab { get; private set; }
 }
