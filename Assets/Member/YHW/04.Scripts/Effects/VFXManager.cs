@@ -9,6 +9,7 @@ public enum VFXType
     Hit,
     DashAttack,
     EnemyDead,
+    EnemyHit
 }
 
 public class VFXObject : MonoBehaviour
@@ -128,7 +129,7 @@ public class VFXManager : MonoSingleton<VFXManager>
             }
             catch (System.ArgumentException)
             {
-                Debug.LogWarning("Áßº¹ µî·Ï");
+                Debug.LogWarning("ï¿½ßºï¿½ ï¿½ï¿½ï¿½");
             }
         }
     }

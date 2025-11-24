@@ -27,6 +27,8 @@ namespace Member.Kimyongmin._02.Code.Agent
                 if (value != before && !IsDead && !_isiIvincibility)
                 {
                     OnHealthChanged?.Invoke();
+                    VFXManager.Instance.Play(VFXType.EnemyHit, transform.position, Quaternion.identity,
+                        transform.parent);
                     CameraShaker.Instance.RandomShake(_health - value);
                     Hit = true;
                 }
