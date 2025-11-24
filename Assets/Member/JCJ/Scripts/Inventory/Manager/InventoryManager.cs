@@ -204,21 +204,30 @@ public class InventoryManager : MonoBehaviour
     private void LoadOwnedSkins()
     {
         ownedSkins.Clear();
-        
-        int count = PlayerPrefs.GetInt("OwnedSkinsCount", 0);
-        
-        for (int i = 0; i < count; i++)
+    
+        try
         {
-            if (PlayerPrefs.HasKey($"OwnedSkin_{i}"))
+            int count = PlayerPrefs.GetInt("OwnedSkinsCount", 0);
+        
+            for (int i = 0; i < count; i++)
             {
-                int skinID = PlayerPrefs.GetInt($"OwnedSkin_{i}");
-                SkinSO skin = FindSkinByID(skinID);
-                
-                if (skin != null && !ownedSkins.Contains(skin))
+                if (PlayerPrefs.HasKey($"OwnedSkin_{i}"))
                 {
-                    ownedSkins.Add(skin);
+                    int skinID = PlayerPrefs.GetInt($"OwnedSkin_{i}");
+                    SkinSO skin = FindSkinByID(skinID);
+                
+                    if (skin != null && !ownedSkins.Contains(skin))
+                    {
+                        ownedSkins.Add(skin);
+                    }
                 }
             }
+        }
+        catch (System.Exception e)
+        {
+            ownedSkins.Clear();
+            PlayerPrefs.DeleteKey("OwnedSkinsCount");
+            PlayerPrefs.Save();
         }
     }
     
