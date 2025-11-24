@@ -21,8 +21,8 @@ MonoBehaviour:
     <FadeScale>k__BackingField: {x: 430, y: 430}
     <TargetType>k__BackingField: 1
   - <TutorialMessage>k__BackingField: "\uC801\uC774 \uB098\uD0C0\uB0AC\uC2B5\uB2C8\uB2E4.
-      \uC2A4\uD398\uC774\uC2A4\uBC14\uB85C \\n\uD5E4\uC5C4\uCCD0 \uC801\uC758 \uACF5\uACA9\uC744
-      \uD53C\uD574\uBCF4\uC138\uC694."
+      \uC2A4\uD398\uC774\uC2A4\uBC14\uB97C \uAFB9 \uB20C\uB7EC \\n\uD5E4\uC5C4\uCCD0
+      \uC801\uC758 \uACF5\uACA9\uC744 \uD53C\uD574\uBCF4\uC138\uC694."
     fadePosOffset: {x: 0, y: 0}
     messagePosOffset: {x: -400, y: 30}
     <FadeScale>k__BackingField: {x: 300, y: 300}
