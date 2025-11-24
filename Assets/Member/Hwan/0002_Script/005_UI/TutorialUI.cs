@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class TutorialUI : MonoBehaviour, IUI
@@ -20,12 +21,29 @@ public class TutorialUI : MonoBehaviour, IUI
     private Button checkButton;
     private int currentTutorialNumber;
     private PlayerInputSO inputSO;
+    private bool tutoing = false;
+    private bool tutoEnd = false;
 
+    public void Update()
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            if (tutoing == true)
+            {
+                Skip();
+            }
+        }
+
+        if( tutoEnd == true)
+        {
+            Time.timeScale = 0;
+        }
+    }
     public void Close()
     {
         SettingUIs();
         Time.timeScale = 1;
-
+        tutoing = false;
         talkManager.ActiveFalse();
 
         UIObject.SetActive(false);
@@ -62,6 +80,12 @@ public class TutorialUI : MonoBehaviour, IUI
                 SaveManager.Instance.SaveValue("Tutorial", 1);
                 TutorialManager.Instance.EndTutorial();
                 StarManager.Instance.AddGold(500);
+                SoundManager.Instance.Play(SFXSoundType.Clear);
+                UIManager.Instance.CloseAllUI(UIType.ClearUI);
+                VolumeManager.Instance.IncreaseVolume(VolumeType.EndOfClear, 1);
+                tutoEnd = true;
+                StageManager.Instance.ClearLevel(1);
+                Time.timeScale = 0;
                 break;
         }
     }
@@ -88,6 +112,7 @@ public class TutorialUI : MonoBehaviour, IUI
 
         fadeUIs[0].Initialize();
         fadeUIs[1].Initialize();
+        talkManager.OnTypingEnd += () => tutoing = true;
 
         SettingUIs();
     }
@@ -134,6 +159,7 @@ public class TutorialUI : MonoBehaviour, IUI
     private void Skip()
     {
         currentTutorialNumber++;
+        tutoing = false;
         Close();
     }
 
