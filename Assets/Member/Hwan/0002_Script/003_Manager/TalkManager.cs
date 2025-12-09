@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TalkManager : MonoSingleton<TalkManager>
 {
-    [SerializeField] private float typingSpeed = 0.05f; // 글자당 출력 속도
+    [SerializeField] private float typingSpeed = 0.01f; // 글자당 출력 속도
     //[SerializeField] private GameObject textBar;
     [SerializeField] private TextMeshProUGUI textMeshPro;
 
@@ -19,14 +19,14 @@ public class TalkManager : MonoSingleton<TalkManager>
     private Vector3[] vertices;
     private string currentMessage;
 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     private void Update()
     {
         // ★ 1) 클릭으로 타이핑 스킵
-        if (typingCoroutine != null && Input.GetMouseButtonDown(0))
-        {
-            CompleteTyping();   // 현재 문장으로 즉시 완성
-            return;             // 그 프레임은 흔들기 업데이트 안 해도 됨
-        }
 
         // ★ 2) 이하 기존 흔들기 코드
         if (!isFloatingChars) return;
@@ -117,7 +117,6 @@ public class TalkManager : MonoSingleton<TalkManager>
         }
 
         textMeshPro.text = message;
-
         OnTypingEnd?.Invoke();
     }
     public void CompleteTyping()

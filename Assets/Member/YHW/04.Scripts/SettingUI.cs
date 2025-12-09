@@ -54,6 +54,10 @@ public class SettingUI : MonoBehaviour,IUI
     {
         Close();
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
     public void Initialize()
     {
