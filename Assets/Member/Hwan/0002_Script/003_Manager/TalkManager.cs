@@ -19,6 +19,11 @@ public class TalkManager : MonoSingleton<TalkManager>
     private Vector3[] vertices;
     private string currentMessage;
 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     private void Update()
     {
         // ★ 1) 클릭으로 타이핑 스킵
@@ -117,7 +122,6 @@ public class TalkManager : MonoSingleton<TalkManager>
         }
 
         textMeshPro.text = message;
-
         OnTypingEnd?.Invoke();
     }
     public void CompleteTyping()
