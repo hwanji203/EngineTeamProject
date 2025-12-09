@@ -27,7 +27,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             IsAttack = true;
             AgentMovement.IsDashing = true;
             _dashDir = Target.position;
-            _hitboxCompo.ShowHitbox(exploDelay, exploRadius);
+            _hitboxCompo.ShowHitbox(exploDelay, exploRadius * 2);
             AgentMovement.RbCompo.linearVelocity = Vector2.zero;
         }
 
@@ -41,7 +41,7 @@ namespace Member.Kimyongmin._02.Code.Enemy.Enemy
             Sequence s = DOTween.Sequence();
 
             StartCoroutine(HitPanJeong());
-            s.Append(transform.DOScale(exploRadius, 0.125f).SetEase(Ease.InOutElastic));
+            s.Append(transform.DOScale(exploRadius * 2, 0.125f).SetEase(Ease.InOutElastic));
             s.Append(transform.DOScale(1, 0.75f).SetEase(Ease.InOutQuad));
         }
 
