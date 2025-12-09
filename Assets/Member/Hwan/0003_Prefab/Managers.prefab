@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3d791a1baebcf4e8006f3d734c333a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnCool: 3
+  defaultSpawnCool: 4.5
   errorSpawnCool: 1
   spawnOffset: 1
 --- !u!1 &5317108150255212542

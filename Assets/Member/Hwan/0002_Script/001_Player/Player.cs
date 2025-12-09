@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class Player : MonoBehaviour
 
     private Vector2 MouseScreenPos => InputSO.MousePos;
     public event Action<float, Vector2> OnDamage;
+
+    private Coroutine invinCorouine;
+    public event Action OnHeal;
 
     private void Awake()
     {
@@ -77,12 +81,22 @@ public class Player : MonoBehaviour
 
     public void GetDamage(float value, Vector2 enemyPos)
     {
+        if (invinCorouine != null) return;
+
         OnDamage?.Invoke(value, (transform.position - (Vector3)enemyPos).normalized);
         SoundManager.Instance.Play(SFXSoundType.GetDamage);
+        invinCorouine = StartCoroutine(StartInvinciblity());
+    }
+
+    private IEnumerator StartInvinciblity()
+    {
+        yield return new WaitForSeconds(MovementCompo.MovementSO.StunTime);
+        invinCorouine = null;
     }
 
     public void RecoveryStamina(float value)
     {
+        OnHeal?.Invoke();
         StaminaCompo.RecoveryStamina(value);
         SoundManager.Instance.Play(SFXSoundType.GetHeal);
     }

@@ -1387,7 +1387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bccc00e9541aa4a8d740f6d107b7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gaugeImage: {fileID: 1873107830322680956}
+  fillImage: {fileID: 1873107830322680956}
+  lerpTime: 0.2
   <UIObject>k__BackingField: {fileID: 4466047597426519092}
 --- !u!1 &8972424882273909356
 GameObject:

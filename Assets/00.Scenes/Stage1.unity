@@ -3212,10 +3212,6 @@ PrefabInstance:
       propertyPath: sfxSounds.<ClipDatas>k__BackingField.Array.data[12].<Type>k__BackingField
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 4161526947667860811, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
-      propertyPath: defaultSpawnCool
-      value: 10000
-      objectReference: {fileID: 0}
     - target: {fileID: 5790650499866188833, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: cameraRoot
       value: 

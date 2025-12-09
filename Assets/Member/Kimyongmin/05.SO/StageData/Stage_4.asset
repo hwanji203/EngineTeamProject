@@ -19,5 +19,3 @@ MonoBehaviour:
   EnemyList:
   - name: 1
     enemyPrefab: {fileID: 2036001933743822104, guid: 714f57c063635014d9ad3a9ae551558f, type: 3}
-  - name: 0
-    enemyPrefab: {fileID: 6617325858536452346, guid: 8329e78f8f8be5148a3493a00a0b3d54, type: 3}

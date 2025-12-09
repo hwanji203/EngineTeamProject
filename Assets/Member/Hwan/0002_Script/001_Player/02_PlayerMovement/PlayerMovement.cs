@@ -5,7 +5,7 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private PlayerMovementSO movementSO;
+    [field: SerializeField] public PlayerMovementSO MovementSO { get; private set; }
     [SerializeField] private Transform visualTrn;
     private Rigidbody2D rb;
 
@@ -28,11 +28,11 @@ public class PlayerMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-        rb.linearDamping = movementSO.DecreaseValue;
+        rb.linearDamping = MovementSO.DecreaseValue;
 
-        foreach (ValueByState value in movementSO.ValueByStates)
+        foreach (ValueByState value in MovementSO.ValueByStates)
         {
-            moveValueDictionary.Add(value.State, new MoveValue(transform, rb, movementSO, value));
+            moveValueDictionary.Add(value.State, new MoveValue(transform, rb, MovementSO, value));
         }
 
         ChangeState(PlayerState.Idle);
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isDashing = false;
         rb.linearVelocity = Vector2.zero;
-        rb.linearDamping = movementSO.DecreaseValue;
+        rb.linearDamping = MovementSO.DecreaseValue;
         CanMove = true;
     }
 
@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(enemyReDir, ForceMode2D.Impulse);
-        StartCoroutine(StunCoroutine(movementSO.StunTime));
+        StartCoroutine(StunCoroutine(MovementSO.StunTime));
     }
 
     private IEnumerator StunCoroutine(float waitTime)
