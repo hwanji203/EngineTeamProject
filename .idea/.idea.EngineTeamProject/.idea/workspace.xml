@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f0e8f994-604f-49b8-8dc2-de1d9b24688e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineTeamProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Stage1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Stage1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Stage2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Stage2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Stage3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Stage3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Stage4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Stage4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Stage5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Stage5.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Stage6.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Stage6.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/02.Prefab/SettingUICanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/YHW/02.Prefab/SettingUICanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/SettingUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/YHW/04.Scripts/SettingUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Turtle/TurtleMove.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Kimyongmin/06.Animation/Turtle/TurtleMove.anim" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +247,8 @@
       <workItem from="1764327593180" duration="1033000" />
       <workItem from="1764837757604" duration="434000" />
       <workItem from="1765115534540" duration="136000" />
-      <workItem from="1765248572307" duration="3606000" />
+      <workItem from="1765248572307" duration="3955000" />
+      <workItem from="1765260283889" duration="11000" />
     </task>
     <servers />
   </component>
