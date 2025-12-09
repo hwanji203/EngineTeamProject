@@ -908,6 +908,10 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: df8cc3f159ac11747a5c886c5bf924ed, type: 2}
   InStageUI: {fileID: 328839900838291814}
   <UIObject>k__BackingField: {fileID: 1055036291724596507}
+  allSlider:
+  - {fileID: 2065371071353602412}
+  - {fileID: 4761326453935078106}
+  - {fileID: 6590608159496866852}
 --- !u!1 &3125986091850014820
 GameObject:
   m_ObjectHideFlags: 0

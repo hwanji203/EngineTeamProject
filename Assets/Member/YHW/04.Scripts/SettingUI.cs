@@ -1,7 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SettingUI : MonoBehaviour,IUI
 {
@@ -11,6 +12,27 @@ public class SettingUI : MonoBehaviour,IUI
     [field:SerializeField]public GameObject UIObject { get; set; }
 
     public UIType UIType => UIType.SettingUI;
+
+    [SerializeField] private GameObject[] allSlider;
+
+    private void Awake()
+    {
+        SetSliderUI();
+    }
+
+    public void SetSliderUI()
+    {
+        float value;
+        
+        if (mixer.GetFloat("Master", out value))
+            allSlider[0].GetComponent<Slider>().value = Mathf.Pow(10, value / 20f);
+        
+        if (mixer.GetFloat("SFX", out value))
+            allSlider[1].GetComponent<Slider>().value = Mathf.Pow(10, value / 20f);
+
+        if (mixer.GetFloat("BGM", out value))
+            allSlider[2].GetComponent<Slider>().value = Mathf.Pow(10, value / 20f);
+    }
 
     public void SetMasterLevel(float sliderVal)
     {
