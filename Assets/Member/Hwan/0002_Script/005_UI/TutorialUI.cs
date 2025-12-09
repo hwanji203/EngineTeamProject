@@ -151,7 +151,7 @@ public class TutorialUI : MonoBehaviour, IUI
     private IEnumerator WaitSkip()
     {
         checkButton.interactable = false;
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.65f);
         checkButton.interactable = true;
         canSkip = true;
     }

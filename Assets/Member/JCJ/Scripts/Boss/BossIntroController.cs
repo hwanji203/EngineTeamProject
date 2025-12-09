@@ -267,7 +267,7 @@ public class BossIntroController : MonoBehaviour
         
         if (isIntroPlaying)
         {
-            Time.timeScale = originalTimeScale;
+            Time.timeScale = 1;
             isIntroPlaying = false;
         }
 

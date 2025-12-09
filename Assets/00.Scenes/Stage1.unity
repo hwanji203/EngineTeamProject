@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66ecb25bcd9d504eb0d19bc7e5a65c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typingSpeed: 0.1
+  typingSpeed: 0.075
   textMeshPro: {fileID: 742339627}
 --- !u!4 &2010203750
 Transform:
