@@ -47,9 +47,9 @@ namespace Member.Kimyongmin._02.Code.Boss.NewShark
         public void OnRoarEffect()
         {
             if (_shark.RoarDir > 0)
-                roarEffect.forceMagnitude = -200;
+                roarEffect.forceMagnitude = -100;
             else
-                roarEffect.forceMagnitude = 200;
+                roarEffect.forceMagnitude = 100;
             
             roarEffect.gameObject.SetActive(true);
         }
