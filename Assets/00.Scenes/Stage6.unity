@@ -720,7 +720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[0].spawnCount
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8633390056359302408, guid: 24666c4458341954fa26221d76b514bf, type: 3}
       propertyPath: waves.Array.data[0].enemySpawnInfos.Array.data[1].spawnCount
@@ -799,6 +799,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4161526947667860811, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
+      propertyPath: defaultSpawnCool
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5790650499866188833, guid: d6af3d61604512747b92885fbe0dbb7d, type: 3}
       propertyPath: cameraRoot
       value: 

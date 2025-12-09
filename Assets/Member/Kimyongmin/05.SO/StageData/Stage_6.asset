@@ -17,5 +17,7 @@ MonoBehaviour:
   <EndY>k__BackingField: 176
   <StageLevel>k__BackingField: 6
   EnemyList:
-  - name: 0
-    enemyPrefab: {fileID: 6617325858536452346, guid: 8329e78f8f8be5148a3493a00a0b3d54, type: 3}
+  - name: 4
+    enemyPrefab: {fileID: 5685988881162351197, guid: 4cc4b626f5899e1498964ede6815a716, type: 3}
+  - name: 5
+    enemyPrefab: {fileID: 8224190126119041332, guid: 8b2b9f6146aa5dd46a92fa2be131d2c5, type: 3}
