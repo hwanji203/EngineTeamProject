@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace Member.Kimyongmin._02.Code.Boss.NewShark.States
 {
     public class SharkAttackState : SharkState
