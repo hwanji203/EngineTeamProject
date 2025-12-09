@@ -17,7 +17,6 @@ public class TutorialUI : MonoBehaviour, IUI
 
     public UIType UIType => UIType.TutorialUI;
 
-    private TalkManager talkManager;
     private Button checkButton;
     private int currentTutorialNumber;
     private PlayerInputSO inputSO;
@@ -28,7 +27,7 @@ public class TutorialUI : MonoBehaviour, IUI
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (tutoing == true)
+            if (tutoing == true && canSkip)
             {
                 Skip();
             }
@@ -44,7 +43,7 @@ public class TutorialUI : MonoBehaviour, IUI
         SettingUIs();
         Time.timeScale = 1;
         tutoing = false;
-        talkManager.ActiveFalse();
+        TalkManager.Instance.ActiveFalse();
 
         UIObject.SetActive(false);
     }
@@ -94,7 +93,6 @@ public class TutorialUI : MonoBehaviour, IUI
     {
         inputSO = GameManager.Instance.Player.InputSO;
 
-        talkManager = TalkManager.Instance;
         checkButton = GetComponentInChildren<Button>(true);
         try
         {
@@ -112,7 +110,8 @@ public class TutorialUI : MonoBehaviour, IUI
 
         fadeUIs[0].Initialize();
         fadeUIs[1].Initialize();
-        talkManager.OnTypingEnd += () => tutoing = true;
+        TalkManager.Instance.OnTypingEnd += () => tutoing = true;
+        canSkip = false;
 
         SettingUIs();
     }
@@ -138,26 +137,30 @@ public class TutorialUI : MonoBehaviour, IUI
         fadeUIs[1].FadeOut(1);
         fadeUIs[0].OnFadeEnd += () =>
         {
-            talkManager.StartTyping(currentInfo.TutorialMessage);
-            talkManager.OnTypingEnd += CanSkip;
+            TalkManager.Instance.StartTyping(currentInfo.TutorialMessage);
+            TalkManager.Instance.OnTypingEnd += CanSkip;
         };
     }
 
     private void CanSkip()
     {
-        talkManager.OnTypingEnd -= CanSkip;
+        TalkManager.Instance.OnTypingEnd -= CanSkip;
         StartCoroutine(WaitSkip());
     }
 
     private IEnumerator WaitSkip()
     {
         checkButton.interactable = false;
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.65f);
         checkButton.interactable = true;
+        canSkip = true;
     }
+
+    private bool canSkip;
 
     private void Skip()
     {
+        canSkip = false;
         currentTutorialNumber++;
         tutoing = false;
         Close();
